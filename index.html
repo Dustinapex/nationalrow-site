@@ -513,36 +513,39 @@
 <section class="hero">
   <svg class="hero-scene" viewBox="0 0 1440 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#021834"/><stop offset="0.62" stop-color="#063061"/><stop offset="1" stop-color="#0c5088"/></linearGradient>
-    <linearGradient id="grnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#07254a"/><stop offset="1" stop-color="#041731"/></linearGradient>
-    <radialGradient id="glow" cx="0.5" cy="1" r="0.8"><stop offset="0" stop-color="#ecbf72" stop-opacity="0.95"/><stop offset="0.45" stop-color="#cf9a40" stop-opacity="0.35"/><stop offset="1" stop-color="#cf9a40" stop-opacity="0"/></radialGradient>
-    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcb75f"/><stop offset="1" stop-color="#9c7a2e"/></linearGradient>
-    <g id="twr">
-      <polygon points="-15,0 15,0 5,-118 -5,-118" fill="#05132e"/>
-      <path d="M-15,0 L5,-118 M15,0 L-5,-118 M-11,-34 L11,-34 M-8,-68 L8,-68 M-5,-95 L5,-95" stroke="#05132e" stroke-width="2.4" fill="none"/>
-      <rect x="-30" y="-92" width="60" height="5" fill="#05132e"/>
-      <rect x="-24" y="-114" width="48" height="5" fill="#05132e"/>
-      <polygon points="-5,-118 5,-118 0,-138" fill="#05132e"/>
-      <g fill="#0a2547"><circle cx="-30" cy="-86" r="3"/><circle cx="0" cy="-86" r="3"/><circle cx="30" cy="-86" r="3"/><circle cx="-24" cy="-108" r="2.6"/><circle cx="24" cy="-108" r="2.6"/></g>
-    </g>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b3a6e"/><stop offset="0.62" stop-color="#2168ac"/><stop offset="1" stop-color="#4a97d6"/></linearGradient>
+    <linearGradient id="grnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bd9e69"/><stop offset="0.5" stop-color="#8a6f45"/><stop offset="1" stop-color="#48381f"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="1" r="0.8"><stop offset="0" stop-color="#f3cd85" stop-opacity="0.95"/><stop offset="0.45" stop-color="#d8a851" stop-opacity="0.32"/><stop offset="1" stop-color="#cf9a40" stop-opacity="0"/></radialGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7c878"/><stop offset="1" stop-color="#8f6f29"/></linearGradient>
+    <g id="twr"><polygon points="-15,0 15,0 5,-118 -5,-118" fill="#05132e"/><path d="M-15,0 L5,-118 M15,0 L-5,-118 M-11,-34 L11,-34 M-8,-68 L8,-68 M-5,-95 L5,-95" stroke="#05132e" stroke-width="2.4" fill="none"/><rect x="-30" y="-92" width="60" height="5" fill="#05132e"/><rect x="-24" y="-114" width="48" height="5" fill="#05132e"/><polygon points="-5,-118 5,-118 0,-138" fill="#05132e"/><g fill="#0a2547"><circle cx="-30" cy="-86" r="3"/><circle cx="0" cy="-86" r="3"/><circle cx="30" cy="-86" r="3"/><circle cx="-24" cy="-108" r="2.6"/><circle cx="24" cy="-108" r="2.6"/></g></g>
+    <g id="drk" fill="none" stroke="#1c1409" stroke-width="2"><path d="M-11,0 L-4,-66 L4,-66 L11,0 M-11,0 L4,-66 M11,0 L-4,-66 M-8,-22 L8,-22 M-6,-44 L6,-44"/><rect x="-5" y="-74" width="10" height="9" fill="#1c1409" stroke="none"/><rect x="-2" y="-90" width="4" height="16" fill="#1c1409" stroke="none"/></g>
+    <g id="wt" stroke="#16243c" stroke-width="2.4" fill="none" stroke-linecap="round"><line x1="0" y1="0" x2="0" y2="-70"/><line x1="0" y1="-46" x2="-20" y2="-34"/><line x1="0" y1="-46" x2="20" y2="-34"/><circle cx="0" cy="-46" r="2.6" fill="#16243c" stroke="none"/></g>
   </defs>
   <rect x="0" y="0" width="1440" height="360" fill="url(#sky)"/>
   <ellipse cx="720" cy="360" rx="600" ry="170" fill="url(#glow)"/>
   <rect x="0" y="360" width="1440" height="320" fill="url(#grnd)"/>
-  <g fill="#0a2547" opacity="0.5"><rect x="110" y="300" width="26" height="60"/><rect x="140" y="316" width="30" height="44"/><rect x="176" y="290" width="24" height="70"/><rect x="206" y="322" width="34" height="38"/><rect x="244" y="306" width="22" height="54"/><rect x="272" y="326" width="30" height="34"/><rect x="308" y="312" width="26" height="48"/></g>
+  <g opacity="0.8">
+    <g fill="#241a0c"><rect x="1300" y="310" width="24" height="50"/><rect x="1330" y="294" width="28" height="66"/><rect x="1362" y="316" width="22" height="44"/><rect x="1390" y="302" width="26" height="58"/></g>
+    <use href="#drk" transform="translate(1052,420) scale(0.74)"/><use href="#drk" transform="translate(1110,405) scale(0.58)"/><use href="#drk" transform="translate(1164,394) scale(0.46)"/>
+  </g>
   <polygon points="600,680 840,680 742,360 698,360" fill="url(#road)"/>
-  <g fill="#ffffff" opacity="0.85"><rect x="715" y="648" width="10" height="28"/><rect x="716.5" y="592" width="7" height="22"/><rect x="717.5" y="540" width="5" height="17"/><rect x="718.1" y="496" width="3.8" height="13"/><rect x="718.5" y="458" width="3" height="10"/><rect x="718.8" y="428" width="2.4" height="7"/><rect x="719.1" y="404" width="1.8" height="5"/></g>
-  <g stroke="#0d2a52" stroke-width="1.6" fill="none" opacity="0.92">
+  <g stroke="#f3ead2" fill="none">
+    <line x1="608" y1="678" x2="699" y2="361" stroke-width="3.5" opacity="0.85"/>
+    <line x1="832" y1="678" x2="741" y2="361" stroke-width="3.5" opacity="0.85"/>
+    <line x1="660" y1="679" x2="709" y2="361" stroke-width="3" stroke-dasharray="26 20" opacity="0.7"/>
+    <line x1="780" y1="679" x2="731" y2="361" stroke-width="3" stroke-dasharray="26 20" opacity="0.7"/>
+  </g>
+  <g fill="#ffffff" opacity="0.92"><rect x="715" y="648" width="10" height="28"/><rect x="716.5" y="592" width="7" height="22"/><rect x="717.5" y="540" width="5" height="17"/><rect x="718.1" y="496" width="3.8" height="13"/><rect x="718.5" y="458" width="3" height="10"/></g>
+  <g stroke="#1f160c" stroke-width="1.6" fill="none" opacity="0.8">
     <path d="M1146.2,423.2 Q1068.2,415.4 990.24,367.6 Q939.5,368 888.72,348.4 Q854.8,349 820.8,339.8 Q801,341.5 781.2,337.2"/>
     <path d="M1203.8,423.2 Q1114.8,415.4 1025.76,367.6 Q968.5,368 911.28,348.4 Q873.2,349 835.2,339.8 Q813,341.5 790.8,337.2"/>
     <path d="M1139,449.6 Q1062.4,438.75 985.8,383.9 Q935.85,381.35 885.9,358.8"/>
     <path d="M1211,449.6 Q1120.6,438.75 1030.2,383.9 Q972.15,381.35 914.1,358.8"/>
   </g>
-  <use href="#twr" transform="translate(786,360) scale(0.2)"/>
-  <use href="#twr" transform="translate(828,374) scale(0.3)"/>
-  <use href="#twr" transform="translate(900,402) scale(0.47)"/>
-  <use href="#twr" transform="translate(1008,452) scale(0.74)"/>
-  <use href="#twr" transform="translate(1175,560) scale(1.2)"/>
+  <use href="#twr" transform="translate(786,360) scale(0.2)"/><use href="#twr" transform="translate(828,374) scale(0.3)"/><use href="#twr" transform="translate(900,402) scale(0.47)"/><use href="#twr" transform="translate(1008,452) scale(0.74)"/><use href="#twr" transform="translate(1175,560) scale(1.2)"/>
+  <g opacity="0.96">
+    <use href="#wt" transform="translate(815,478) scale(1.2)"/><use href="#wt" transform="translate(892,450) scale(0.92)"/><use href="#wt" transform="translate(958,428) scale(0.7)"/><use href="#wt" transform="translate(1015,410) scale(0.55)"/>
+  </g>
 </svg>
   <div class="hero-overlay"></div>
   <div class="wrap hero-content">
@@ -647,6 +650,10 @@
     </div>
 
     <div class="projects reveal">
+      <article class="proj">
+        <div class="map"><svg viewBox="0 0 200 90"><rect x="8" y="10" width="184" height="70" fill="none" stroke="#7e90ac" stroke-width="1"/><g stroke="#fff" stroke-width="1.4"><line x1="20" y1="32" x2="180" y2="32"/><line x1="20" y1="40" x2="180" y2="40"/><line x1="20" y1="48" x2="180" y2="48"/></g><g stroke="#C49A3D" stroke-width="2" fill="none"><path d="M50 26 l-10 34 20 0 z"/><path d="M150 26 l-10 34 20 0 z"/></g></svg></div>
+        <div class="meta"><span class="mono">TRANSMISSION &middot; WEST TEXAS</span><h3>Permian Basin 765-kV Lines</h3><p class="blurb">Texas&rsquo;s first 765-kV transmission lines, approved in 2025, will cross the Permian Basin on new high-voltage corridors. As routing and easement acquisition advance, we represent landowners on easement terms and full compensation along the path.</p></div>
+      </article>
       <article class="proj">
         <div class="map"><svg viewBox="0 0 200 90"><rect x="8" y="10" width="184" height="70" fill="none" stroke="#7e90ac" stroke-width="1"/><line x1="20" y1="72" x2="182" y2="18" stroke="#fff" stroke-width="2"/><g stroke="#C49A3D" stroke-width="2"><line x1="44" y1="64" x2="52" y2="58"/><line x1="76" y1="54" x2="84" y2="48"/><line x1="108" y1="43" x2="116" y2="37"/><line x1="140" y1="33" x2="148" y2="27"/></g></svg></div>
         <div class="meta"><span class="mono">TRANSIT / RAIL &middot; MD &amp; D.C.</span><h3>The Purple Line</h3><p class="blurb">A 16-mile light-rail line tying the D.C. suburbs together has forced takings all along its corridor. We&rsquo;ve won full compensation for owners in its path, with more cases active.</p></div>
