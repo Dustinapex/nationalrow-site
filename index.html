@@ -287,18 +287,18 @@
   .callstack a:hover{color:var(--gold)}
   .menu-btn{display:none;margin-left:auto;background:none;border:2px solid var(--navy);border-radius:3px;padding:8px 12px;font-family:var(--mono);font-size:12px;color:var(--navy);cursor:pointer}
   @media(max-width:960px){
-    .nav{flex-wrap:wrap;min-height:0;padding-top:12px;padding-bottom:10px;gap:12px}
-    .nav .links{order:3;flex:0 0 100%;margin:8px 0 0;gap:20px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px}
-    .nav .links a{display:inline-block;font-size:15px}
-    .nav-cta{margin-left:auto}
+    .nav{flex-wrap:nowrap;min-height:0;padding-top:10px;padding-bottom:10px;gap:8px}
+    .nav .links{display:none}
+    .nav-cta{display:none}
+    .menu-btn{display:flex;align-items:center;gap:6px;margin-left:auto}
     .topbar-tag{display:none}
     .topbar-in{justify-content:center}
-    .topbar-phones{gap:18px}
-    .topbar-phones a{font-size:17px}
+    .topbar-phones{gap:12px}
+    .topbar-phones a{font-size:15px}
   }
-  .mobile-links{display:none;border-top:1px solid var(--line);background:#fff}
+  .mobile-links{display:none;border-top:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 4px 12px rgba(0,0,0,.1)}
   .mobile-links.open{display:block}
-  .mobile-links a{display:block;padding:14px 24px;text-decoration:none;font-family:var(--disp);font-weight:600;color:var(--navy);border-bottom:1px solid var(--line)}
+  .mobile-links a{display:block;padding:16px 24px;text-decoration:none;font-family:var(--disp);font-weight:600;color:var(--navy);border-bottom:1px solid var(--line);font-size:17px;-webkit-tap-highlight-color:rgba(0,0,0,.05)}
 
   .hero{position:relative;overflow:hidden;background:#06203f;display:flex;align-items:center;min-height:clamp(540px,74vh,700px)}
   .hero-scene{position:absolute;inset:0;width:100%;height:100%;z-index:0}
@@ -543,9 +543,20 @@
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">&#9776; Menu</button>
     <a class="btn btn--gold nav-cta" href="#lead">Case review</a>
   </div>
 </header>
+<div class="mobile-links" id="mobileLinks" aria-hidden="true">
+  <a href="#how">How it works</a>
+  <a href="#help">What we handle</a>
+  <a href="#projects">Projects</a>
+  <a href="#blog">Resources</a>
+  <a href="#about">About</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn--gold" href="#lead" style="display:block;margin:12px 16px 4px;text-align:center;padding:14px;">Get a case review</a>
+</div>
 
 <main id="top">
 
@@ -1075,6 +1086,30 @@
   gModal.querySelector('[data-close]').addEventListener('click',closeGuide);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&gModal.classList.contains('open'))closeGuide();});
   gBody.addEventListener('click',function(e){var a=e.target.closest('a[href="#lead"]');if(a){e.preventDefault();closeGuide();var t=document.getElementById('lead');if(t)t.scrollIntoView({behavior:'smooth'});}});
+
+  // ── Mobile hamburger menu ──────────────────────────────────────
+  (function(){
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileLinks');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      btn.textContent = isOpen ? '✕ Close' : '☰ Menu';
+    });
+    // Close menu when a link is tapped
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.setAttribute('aria-label','Open menu');
+        menu.setAttribute('aria-hidden','true');
+        btn.textContent = '☰ Menu';
+      });
+    });
+  })();
 </script>
 </body>
 </html>
