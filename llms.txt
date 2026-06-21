@@ -55,6 +55,13 @@ National ROW has represented property owners on major right-of-way and condemnat
 - Georgia Eminent Domain (OCGA Title 22): https://nationalrow.com/states/georgia/
 - Oklahoma Eminent Domain (Oklahoma Title 27A, 66, 69): https://nationalrow.com/states/oklahoma/
 - Colorado Eminent Domain (CRS Title 38 Article 1): https://nationalrow.com/states/colorado/
+- California Eminent Domain (CCP Section 1230.010, Caltrans): https://nationalrow.com/states/california/
+- Ohio Eminent Domain (ORC Chapter 163, ODOT): https://nationalrow.com/states/ohio/
+- Pennsylvania Eminent Domain (26 Pa.C.S., PennDOT): https://nationalrow.com/states/pennsylvania/
+- Kansas Eminent Domain (K.S.A. Chapter 26, KDOT): https://nationalrow.com/states/kansas/
+- Wyoming Eminent Domain (W.S. Title 1 Chapter 26, WYDOT): https://nationalrow.com/states/wyoming/
+- Louisiana Eminent Domain / Expropriation (La. R.S. Title 19, DOTD): https://nationalrow.com/states/louisiana/
+- Tennessee Eminent Domain (T.C.A. Title 29 Chapter 16, TDOT): https://nationalrow.com/states/tennessee/
 
 ## Blog articles
 - How Much Is a Pipeline Easement Worth?: https://nationalrow.com/blog/how-much-pipeline-easement-worth/
