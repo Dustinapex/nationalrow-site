@@ -20,11 +20,11 @@
 {
   "@context":"https://schema.org",
   "@type":"Service",
-  "name":"Consultor&iacute;a de Expropiaci&oacute;n Forzosa — National ROW",
+  "name":"Consultoría de Expropiación Forzosa — National ROW",
   "provider":{"@type":"Organization","name":"National ROW","url":"https://nationalrow.com","telephone":"(469) 484-7960"},
-  "serviceType":"Consultor&iacute;a de Derechos de V&iacute;a",
+  "serviceType":"Consultoría de Derechos de Vía",
   "areaServed":"United States",
-  "description":"National ROW asesora a propietarios que enfrentan expropiaci&oacute;n forzosa y adquisiciones de servidumbre en todos los estados de EE.UU.",
+  "description":"National ROW asesora a propietarios que enfrentan expropiación forzosa y adquisiciones de servidumbre en todos los estados de EE.UU.",
   "availableLanguage":["Spanish","English"]
 }
 </script>
@@ -42,10 +42,11 @@ a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
 .hero .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,6vw,3.4rem);font-weight:700;line-height:1.1;margin-bottom:18px}
 .hero .deck{font-size:1.1rem;max-width:660px;margin:0 auto 32px;opacity:.9}
-.btn{display:inline-block;background:var(--gold);color:#fff;font-weight:700;padding:16px 36px;border-radius:4px;font-size:1.05rem}
+.btn{display:inline-block;background:var(--gold);color:#fff;font-weight:700;padding:16px 36px;border-radius:4px;font-size:1.05rem;cursor:pointer;border:none}
 .btn:hover{background:#9a7a22;text-decoration:none}
 .btn--outline{background:transparent;border:2px solid #fff;margin-left:12px}
 .btn--outline:hover{background:#fff;color:var(--navy)}
+.btn--full{width:100%;display:block;padding:16px;font-size:1.05rem;text-align:center}
 .container{max-width:900px;margin:0 auto;padding:0 24px}
 .section{padding:60px 24px}
 .section--white{background:#fff}
@@ -62,22 +63,42 @@ a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
 .stat-item .lbl{font-size:.9rem;margin-top:4px;opacity:.85}
 .faq-item{border-bottom:1px solid #ddd;padding:20px 0}
 .faq-item h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
-.cta-box{background:var(--navy);color:#fff;padding:60px 24px;text-align:center}
-.cta-box h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:14px;color:#fff}
-.cta-box p{max-width:580px;margin:0 auto 28px;opacity:.9;font-size:1.05rem}
-.contact-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:20px}
-.contact-item{background:rgba(255,255,255,.12);border-radius:6px;padding:12px 24px;font-size:.95rem}
-footer{background:var(--ink);color:#aaa;text-align:center;padding:28px 24px;font-size:.85rem}
+/* Lead form section */
+.lead-section{background:var(--navy);color:#fff;padding:60px 24px}
+.lead-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:700px){.lead-wrap{grid-template-columns:1fr}}
+.lead-left h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.1;margin-bottom:12px;color:#fff}
+.lead-left .sub{font-size:1rem;opacity:.85;margin-bottom:24px}
+.lead-left .italic{font-style:italic;color:var(--gold);font-size:1.05rem;margin-bottom:28px}
+.contact-list{list-style:none;margin-bottom:24px}
+.contact-list li{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:1rem}
+.contact-list .icon{font-size:1.3rem}
+.contact-list a{color:#fff;font-weight:600}
+.contact-list a:hover{color:var(--gold)}
+.trust-line{font-size:.8rem;opacity:.65;margin-top:16px}
+/* Form styles */
+.form-card{background:#fff;border-radius:8px;padding:32px 28px;color:var(--ink)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#444;margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1px solid #ccc;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.95rem;color:var(--ink);background:#fff;transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:90px}
+.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-trust{text-align:center;font-size:.78rem;color:#888;margin:12px 0 4px}
+.form-legal{font-size:.72rem;color:#999;margin-top:10px;line-height:1.5}
+.honeypot{display:none!important;visibility:hidden;position:absolute;left:-9999px}
 </style>
 </head>
 <body>
 <header class="site-header">
   <a href="/"><img src="/national-row-logo.png" alt="National ROW" height="48" style="display:block;background:#fff;border-radius:4px;padding:4px 8px;"></a>
   <nav>
-    <a href="/#how">C&oacute;mo Funciona</a>
-    <a href="/#help">Servicios</a>
-    <a href="/#faq">Preguntas</a>
-    <a href="/#lead">Consulta Gratis</a>
+    <a href="#como-funciona">C&oacute;mo Funciona</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#preguntas">Preguntas</a>
+    <a href="#formulario">Consulta Gratis</a>
     <a href="/">English</a>
   </nav>
 </header>
@@ -90,11 +111,11 @@ footer{background:var(--ink);color:#aaa;text-align:center;padding:28px 24px;font
   <div class="eyebrow">&iquest;Le est&aacute;n tomando su propiedad?</div>
   <h1>&iexcl;No acepte la primera oferta!</h1>
   <p class="deck">Si el gobierno, una empresa de gasoductos, una empresa el&eacute;ctrica, o una agencia de transporte quiere su tierra o una servidumbre sobre ella, usted tiene derechos. National ROW lucha por propietarios como usted en todos los estados.</p>
-  <a href="/#lead" class="btn">Consulta Gratuita</a>
+  <a href="#formulario" class="btn">Consulta Gratuita</a>
   <a href="tel:+14694847960" class="btn btn--outline">(469) 484-7960</a>
 </section>
 
-<div class="section container">
+<div class="section container" id="servicios">
   <h2>&iquest;Qu&eacute; es la expropiaci&oacute;n forzosa (Eminent Domain)?</h2>
   <p>En los Estados Unidos, el gobierno y ciertas empresas privadas (como compa&ntilde;&iacute;as de gasoductos o empresas el&eacute;ctricas) tienen el poder legal de tomar su propiedad o crear una servidumbre sobre ella, incluso si usted no quiere vender. Esto se llama <strong>expropiaci&oacute;n forzosa</strong> o <em>eminent domain</em> en ingl&eacute;s.</p>
   <p>Sin embargo, la ley federal y las leyes de cada estado exigen que usted reciba una <strong>compensaci&oacute;n justa</strong> (just compensation) por lo que le toman. El problema es que la primera oferta que recibe casi siempre es menor de lo que realmente merece.</p>
@@ -104,11 +125,11 @@ footer{background:var(--ink);color:#aaa;text-align:center;padding:28px 24px;font
   <h3>Gasoductos y Oleoductos (Pipeline Easements)</h3>
   <p>Si una empresa de gas natural o petr&oacute;leo quiere cruzar su propiedad con un tubo, usted tiene derecho a negociar. Muchos propietarios reciben pagos muy por debajo del valor real. Nosotros conocemos c&oacute;mo valoran estas servidumbres y c&oacute;mo negociar mejor.</p>
   <h3>Carreteras e Infraestructura (Highway Condemnation)</h3>
-  <p>Cuando el Departamento de Transporte de su estado (como TxDOT en Texas o FDOT en Florida) necesita ampliar una carretera o construir una nueva, puede tomar parte o toda su propiedad. Nosotros revisamos la oferta y luchamos por el m&aacute;ximo valor.</p>
+  <p>Cuando el Departamento de Transporte de su estado necesita ampliar una carretera o construir una nueva, puede tomar parte o toda su propiedad. Nosotros revisamos la oferta y luchamos por el m&aacute;ximo valor.</p>
   <h3>L&iacute;neas El&eacute;ctricas y Energ&iacute;a Renovable</h3>
-  <p>Compa&ntilde;&iacute;as el&eacute;ctricas, parques solares, y parques e&oacute;licos buscan servidumbres en tierras privadas en todo el pa&iacute;s. Los contratos que presentan pueden afectar el uso de su tierra por d&eacute;cadas. Es crucial negociar bien antes de firmar.</p>
+  <p>Compa&ntilde;&iacute;as el&eacute;ctricas, parques solares, y parques e&oacute;licos buscan servidumbres en tierras privadas en todo el pa&iacute;s. Es crucial negociar bien antes de firmar.</p>
   <h3>Otros Tipos de Servidumbres</h3>
-  <p>Tambi&eacute;n trabajamos en casos de acceso, drenaje, telecomunicaciones, tr&aacute;nsito, y tomas totales de propiedad (full takings). Si le han presentado cualquier tipo de acuerdo sobre su tierra, ll&aacute;menos antes de firmar.</p>
+  <p>Tambi&eacute;n trabajamos en casos de acceso, drenaje, telecomunicaciones, tr&aacute;nsito, y tomas totales de propiedad. Si le han presentado cualquier tipo de acuerdo sobre su tierra, ll&aacute;menos antes de firmar.</p>
 </div>
 
 <div class="stat-row">
@@ -117,51 +138,131 @@ footer{background:var(--ink);color:#aaa;text-align:center;padding:28px 24px;font
   <div class="stat-item"><div class="num">$0</div><div class="lbl">Costo por Adelantado</div></div>
 </div>
 
-<div class="section section--white">
+<div class="section section--white" id="como-funciona">
   <div class="container">
     <h2>C&oacute;mo Funciona el Proceso</h2>
     <ol class="steps">
       <li><strong>Recibe una oferta</strong>Alguien del gobierno o de una empresa le presenta un contrato o una oferta de compra de su propiedad o servidumbre.</li>
-      <li><strong>Ll&aacute;menos antes de firmar</strong>Antes de aceptar cualquier oferta, ll&aacute;menos. La consulta es completamente gratuita y sin compromiso. Le diremos honestamente si creemos que podemos obtener m&aacute;s para usted.</li>
+      <li><strong>Ll&eacute;nenos el formulario</strong>Antes de aceptar cualquier oferta, cont&aacute;ctenos. La consulta es completamente gratuita y sin compromiso.</li>
       <li><strong>Investigamos su caso</strong>Revisamos la oferta, la propiedad, y las leyes de su estado para determinar el valor justo de lo que le est&aacute;n tomando.</li>
-      <li><strong>Negociamos por usted</strong>Negociamos directamente con la agencia o empresa para maximizar su compensaci&oacute;n. Usted no tiene que hacerlo solo.</li>
-      <li><strong>Usted recibe m&aacute;s</strong>Si logramos una mejor compensaci&oacute;n, cobramos nuestra tarifa del aumento. Si no recuperamos m&aacute;s de la oferta original, no le cobramos nada.</li>
+      <li><strong>Negociamos por usted</strong>Negociamos directamente con la agencia o empresa para maximizar su compensaci&oacute;n.</li>
+      <li><strong>Usted recibe m&aacute;s</strong>Si logramos una mejor compensaci&oacute;n, cobramos nuestra tarifa del aumento. Si no recuperamos m&aacute;s, no le cobramos nada.</li>
     </ol>
   </div>
 </div>
 
-<div class="section container">
+<div class="section container" id="preguntas">
   <h2>Preguntas Frecuentes</h2>
   <div class="faq-item">
     <h3>&iquest;Puedo rechazar la oferta del gobierno?</h3>
-    <p>Usted puede rechazar o contraofertar la compensaci&oacute;n que le ofrecen, aunque en la mayor&iacute;a de los estados el gobierno puede eventualmente tomar la propiedad de todas formas si el proyecto es para uso p&uacute;blico. Lo que s&iacute; puede hacer es luchar por una compensaci&oacute;n justa, y eso es exactamente lo que hacemos nosotros.</p>
+    <p>Usted puede rechazar o contraofertar la compensaci&oacute;n que le ofrecen. Lo que s&iacute; puede hacer es luchar por una compensaci&oacute;n justa &mdash; y eso es exactamente lo que hacemos nosotros.</p>
   </div>
   <div class="faq-item">
     <h3>&iquest;Cu&aacute;nto cobran por sus servicios?</h3>
-    <p>Trabajamos en base a contingencia: solo cobramos si logramos recuperar m&aacute;s de la oferta inicial que usted recibi&oacute;. La consulta inicial siempre es gratuita. No hay ning&uacute;n costo por adelantado.</p>
+    <p>Trabajamos en base a contingencia: solo cobramos si logramos recuperar m&aacute;s de la oferta inicial. La consulta inicial siempre es gratuita. No hay ning&uacute;n costo por adelantado.</p>
   </div>
   <div class="faq-item">
     <h3>&iquest;Hablan espa&ntilde;ol?</h3>
-    <p>S&iacute;. Podemos atenderle en espa&ntilde;ol. No dude en llamarnos o escribirnos &mdash; nos aseguraremos de que entienda completamente su situaci&oacute;n y sus opciones.</p>
+    <p>S&iacute;. Podemos atenderle en espa&ntilde;ol. No dude en llamarnos o completar el formulario de abajo.</p>
   </div>
   <div class="faq-item">
     <h3>&iquest;Trabajan en mi estado?</h3>
-    <p>S&iacute;. Tenemos experiencia en los 50 estados de EE.UU., incluyendo Texas, Florida, California, Arizona, Colorado, Georgia, Carolina del Norte, y muchos m&aacute;s. Ll&aacute;menos sin importar d&oacute;nde est&eacute; ubicada su propiedad.</p>
+    <p>S&iacute;. Tenemos experiencia en los 50 estados de EE.UU., incluyendo Texas, Florida, California, Arizona, Colorado, Georgia, Carolina del Norte, y muchos m&aacute;s.</p>
   </div>
 </div>
 
-<section class="cta-box">
-  <h2>&iexcl;Defienda el Valor de Su Propiedad!</h2>
-  <p>No firme nada hasta hablar con nosotros. La consulta es completamente gratuita y sin compromiso. Llevamos m&aacute;s de 35 a&ntilde;os ayudando a propietarios como usted a recibir lo que merecen.</p>
-  <a href="/#lead" class="btn">Solicite Su Consulta Gratis</a>
-  <div class="contact-grid">
-    <div class="contact-item">&#128222; <a href="tel:+14694847960" style="color:#fff;">(469) 484-7960</a></div>
-    <div class="contact-item">&#128222; <a href="tel:+19563634144" style="color:#fff;">(956) 363-4144</a></div>
-    <div class="contact-item">&#9993; <a href="mailto:info@nationalrow.com" style="color:#fff;">info@nationalrow.com</a></div>
+<!-- SPANISH LEAD FORM -->
+<section class="lead-section" id="formulario">
+  <div class="lead-wrap">
+    <div class="lead-left">
+      <h2>Sepa cu&aacute;nto vale su propiedad realmente.</h2>
+      <p class="italic">Lo que le ofrecieron y lo que vale su tierra rara vez son el mismo n&uacute;mero.</p>
+      <p class="sub">No tiene que aceptar la primera oferta. Cu&eacute;ntenos sobre su caso y le llamaremos con respuestas claras &mdash; generalmente el mismo d&iacute;a. La revisi&oacute;n es gratuita y sin compromiso.</p>
+      <ul class="contact-list">
+        <li><span class="icon">&#128222;</span><a href="tel:+14694847960">(469) 484-7960</a></li>
+        <li><span class="icon">&#128222;</span><a href="tel:+19563634144">(956) 363-4144</a></li>
+        <li><span class="icon">&#9993;</span><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></li>
+      </ul>
+      <p class="trust-line">Sin obligaci&oacute;n &middot; Sin costo por adelantado &middot; Privado &middot; Nunca vendemos su informaci&oacute;n</p>
+    </div>
+    <div class="lead-right">
+      <div class="form-card">
+        <form action="https://formsubmit.co/dustin@apexfreedomfund.com" method="POST">
+          <!-- Hidden config fields -->
+          <input type="hidden" name="_subject" value="Nueva solicitud de revisi&oacute;n de caso (Espa&ntilde;ol) &mdash; National ROW">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
+          <input type="hidden" name="_next" value="https://nationalrow.com/es/?enviado=1">
+          <input type="hidden" name="idioma" value="Espa&ntilde;ol">
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="es_firstname">Nombre *</label>
+              <input type="text" id="es_firstname" name="firstname" placeholder="Juan" required>
+            </div>
+            <div class="form-group">
+              <label for="es_lastname">Apellido *</label>
+              <input type="text" id="es_lastname" name="lastname" placeholder="Garc&iacute;a" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="es_phone">Tel&eacute;fono *</label>
+              <input type="tel" id="es_phone" name="phone" placeholder="(555) 000-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="es_email">Correo electr&oacute;nico</label>
+              <input type="email" id="es_email" name="email" placeholder="juan@ejemplo.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="es_location">Condado y estado *</label>
+              <input type="text" id="es_location" name="location" placeholder="p.ej. Bexar, TX" required>
+            </div>
+            <div class="form-group">
+              <label for="es_acreage">Acres aproximados</label>
+              <input type="text" id="es_acreage" name="acreage" placeholder="p.ej. 18.6">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="es_parceladdress">Direcci&oacute;n de la propiedad afectada</label>
+            <input type="text" id="es_parceladdress" name="parceladdress" placeholder="Direcci&oacute;n, n&uacute;mero de parcela, o descripci&oacute;n legal">
+          </div>
+
+          <div class="form-group">
+            <label for="es_takingtype">&iquest;Qui&eacute;n quiere tomar su propiedad? *</label>
+            <select id="es_takingtype" name="takingtype" required>
+              <option value="">Seleccione una opci&oacute;n</option>
+              <option value="Highway / road agency">Agencia de carreteras o gobierno</option>
+              <option value="Electric / transmission utility">Empresa el&eacute;ctrica o de transmisi&oacute;n</option>
+              <option value="Pipeline company">Empresa de gasoducto u oleoducto</option>
+              <option value="Water / drainage / other utility">Empresa de agua, drenaje u otra</option>
+              <option value="Not sure — want to find out">No estoy seguro/a &mdash; quiero saber m&aacute;s</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="es_message">&iquest;Qu&eacute; le han enviado hasta ahora? (opcional)</label>
+            <textarea id="es_message" name="message" placeholder="Una carta, una oferta, un avaluo, un documento de servidumbre, una cuadrilla de encuesta..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--full">Obtener mi revisi&oacute;n de caso gratuita</button>
+          <p class="form-trust">Sin obligaci&oacute;n &middot; Sin costo &middot; Privado</p>
+          <p class="form-legal">Al enviar este formulario, usted acepta que National ROW puede comunicarse con usted por tel&eacute;fono, mensaje de texto (SMS) y correo electr&oacute;nico sobre su consulta. El consentimiento no es condici&oacute;n de ning&uacute;n servicio. Se pueden aplicar tarifas de mensajes y datos.</p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer>
+<footer style="background:#1a1a1a;color:#aaa;text-align:center;padding:28px 24px;font-size:.85rem;">
   &copy; 2026 National ROW &mdash; nationalrow.com &mdash; (469) 484-7960
 </footer>
 </body>
