@@ -62,6 +62,7 @@ National ROW has represented property owners on major right-of-way and condemnat
 - Wyoming Eminent Domain (W.S. Title 1 Chapter 26, WYDOT): https://nationalrow.com/states/wyoming/
 - Louisiana Eminent Domain / Expropriation (La. R.S. Title 19, DOTD): https://nationalrow.com/states/louisiana/
 - Tennessee Eminent Domain (T.C.A. Title 29 Chapter 16, TDOT): https://nationalrow.com/states/tennessee/
+- Washington DC Eminent Domain (DC Code Title 16 Ch. 13, DDOT, WMATA): https://nationalrow.com/states/washington-dc/
 
 ## Blog articles
 - How Much Is a Pipeline Easement Worth?: https://nationalrow.com/blog/how-much-pipeline-easement-worth/
