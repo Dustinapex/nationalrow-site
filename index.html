@@ -25,7 +25,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="National ROW" />
 <meta property="og:title" content="Eminent Domain &amp; Condemnation Help for Property Owners" />
-<meta property="og:description" content="Forced to sell or grant an easement? We represent owners to win more than the first offer. Highway, utility, pipeline, every easement.." />
+<meta property="og:description" content="Forced to sell or grant an easement? We represent owners to win more than the first offer. Highway, utility, pipeline, every easement." />
 <meta property="og:url" content="https://nationalrow.com/" />
 <meta property="og:image" content="https://nationalrow.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -65,7 +65,12 @@
       "slogan": "Maximizing compensation for property owners since the 1980s.",
       "areaServed": { "@type": "Country", "name": "United States" },
       "address": { "@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US" },
-      "knowsAbout": ["Eminent domain", "Condemnation", "Right-of-way acquisition", "Transmission line easements", "Pipeline easements", "Utility easements", "Partial takings", "Damages to the remainder", "Just compensation", "Relocation assistance"],
+      "knowsAbout": ["Eminent domain", "Condemnation", "Right-of-way acquisition", "Transmission line easements", "Pipeline easements", "Utility easements", "Partial takings", "Damages to the remainder", "Just compensation", "Relocation assistance",
+          "Transit and rail condemnation",
+          "765kV transmission line easements",
+          "Solar farm easements",
+          "Wind farm easements",
+          "Data center right-of-way"],
       "sameAs": [
         "https://www.linkedin.com/company/national-row",
         "https://www.bbb.org/us/tx"
@@ -82,7 +87,8 @@
       "@id": "https://nationalrow.com/#website",
       "url": "https://nationalrow.com/",
       "name": "National ROW",
-      "dateModified": "2026-06-18",
+      "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "h2", ".blurb", "#faq"]},
+        "dateModified": "2026-06-18",
       "publisher": { "@id": "https://nationalrow.com/#org" },
       "potentialAction": {
         "@type": "SearchAction",
@@ -143,6 +149,19 @@
       "isAccessibleForFree": true,
       "author": {
         "@id": "https://nationalrow.com/#org"
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://nationalrow.com/#howto",
+        "name": "How to Respond to a Condemnation or Easement Offer",
+        "description": "Step-by-step process for property owners who have received a condemnation notice or easement offer.",
+        "step": [
+          {"@type": "HowToStep", "position": 1, "name": "Do not sign anything yet", "text": "The agency's first offer is an opening position. You have the right to negotiate. Signing immediately may waive your right to pursue additional compensation."},
+          {"@type": "HowToStep", "position": 2, "name": "Document everything", "text": "Preserve the notice, all correspondence, and photographs of your property. Note every deadline."},
+          {"@type": "HowToStep", "position": 3, "name": "Get an independent valuation", "text": "An independent appraisal from a condemnation specialist often reveals significantly higher value than the agency's figure."},
+          {"@type": "HowToStep", "position": 4, "name": "Contact National ROW for a free case review", "text": "We review your notice, the offer, and your property at no upfront cost and tell you what the offer is missing."},
+          {"@type": "HowToStep", "position": 5, "name": "Negotiate from facts", "text": "Armed with an independent valuation, we negotiate directly with the agency, utility, or pipeline on your behalf."}
+        ]
       },
       "publisher": {
         "@id": "https://nationalrow.com/#org"
@@ -903,7 +922,7 @@
     <div class="projects reveal">
       <article class="proj">
         <div class="map"><svg viewBox="0 0 200 90"><rect x="8" y="10" width="184" height="70" fill="none" stroke="#7e90ac" stroke-width="1"/><g stroke="#fff" stroke-width="1.4"><line x1="20" y1="32" x2="180" y2="32"/><line x1="20" y1="40" x2="180" y2="40"/><line x1="20" y1="48" x2="180" y2="48"/></g><g stroke="#C49A3D" stroke-width="2" fill="none"><path d="M50 26 l-10 34 20 0 z"/><path d="M150 26 l-10 34 20 0 z"/></g></svg></div>
-        <div class="meta"><span class="mono">TRANSMISSION &middot; WEST TEXAS</span><h3>Permian Basin 765-kV Lines</h3><p class="blurb">Texas&rsquo;s first 765-kV transmission lines, approved in 2025, will cross the Permian Basin on new high-voltage corridors. As routing and easement acquisition advance, we represent landowners on easement terms and full compensation along the path.</p></div>
+        <div class="meta"><span class="mono">TRANSMISSION &middot; TEXAS STATEWIDE</span><h3>ERCOT 765-kV Transmission Lines</h3><p class="blurb">Texas&rsquo;s first 765-kV lines are part of ERCOT&rsquo;s statewide grid expansion &mdash; crossing West Texas, Central Texas, South Texas, and the Gulf Coast. Routing and easement acquisition are already underway. We represent landowners on easement terms and full compensation along every corridor.</p></div>
       </article>
       <article class="proj">
         <div class="map"><svg viewBox="0 0 200 90"><rect x="8" y="10" width="184" height="70" fill="none" stroke="#7e90ac" stroke-width="1"/><line x1="20" y1="72" x2="182" y2="18" stroke="#fff" stroke-width="2"/><g stroke="#C49A3D" stroke-width="2"><line x1="44" y1="64" x2="52" y2="58"/><line x1="76" y1="54" x2="84" y2="48"/><line x1="108" y1="43" x2="116" y2="37"/><line x1="140" y1="33" x2="148" y2="27"/></g></svg></div>
