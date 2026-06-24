@@ -1,35 +1,34 @@
-# National ROW — Website
+# National ROW — Project Landing Pages
 
-Marketing and lead-capture site for National ROW (National Right-of-Way), an eminent-domain
-and condemnation consulting firm representing property owners nationwide.
+## Deployment Structure
 
-Single-page static site. No build step, no framework — just static files served as-is.
+This repo powers **nationalrow-site.vercel.app** (auto-deploys on push to `main`).
 
-## Files
-| File | Purpose |
-|------|---------|
-| `index.html` | The entire website (HTML, CSS, and JS in one file; logo embedded inline) |
-| `national-row-logo.png` | Logo (used for social/share cards and structured data) |
-| `og-image.png` | 1200×630 social share image |
-| `favicon.ico`, `favicon.png`, `apple-touch-icon.png` | Browser/device icons |
-| `robots.txt` | Crawler rules + sitemap reference |
-| `sitemap.xml` | Sitemap for search engines |
-| `llms.txt` | Plain-text site summary for AI/search discovery |
+## Project Pages Built
 
-## Deploy (Vercel + GitHub)
-1. Push these files to the repo root on GitHub.
-2. In Vercel: **Add New → Project → Import** this repo. Framework Preset: **Other**. Deploy.
-3. Every push to GitHub auto-deploys to the same URL.
+| Page | Path | Status |
+|------|------|--------|
+| ERCOT 765kV Transmission | /projects/ercot-765kv/ | ✅ |
+| SH 68 Hidalgo County | /projects/sh-68-hidalgo/ | ✅ |
+| Loop 1604 / I-35 NEX San Antonio | /projects/loop-1604-i35-nex-san-antonio/ | ✅ |
+| I-2 / I-69C Interchange Hidalgo | /projects/i-2-i-69c-hidalgo/ | ✅ |
+| I-69 Connector RGV | /projects/i-69-connector-rgv/ | ✅ |
+| Hidalgo County RGV Hub | /projects/hidalgo-county-row/ | ✅ |
+| US 281 South Texas | /projects/us-281-south-texas/ | ✅ |
+| SH 99 Grand Parkway Houston | /projects/sh-99-grand-parkway/ | ✅ |
+| Pipeline Easement Blog Post | /blog/pipeline-easement-compensation-per-acre-texas/ | ✅ |
 
-## Custom domain (Cloudflare DNS)
-- Add `nationalrow.com` and `www.nationalrow.com` in **Vercel → Settings → Domains**.
-- In Cloudflare DNS, add the A record (apex) and CNAME (www) Vercel provides.
-- Set both records to **DNS only (grey cloud)**, not proxied.
+## Branding
+- Navy: #0d2340
+- Gold: #c9a227
+- Font: Arial/Helvetica Neue
 
-## Lead form
-The Case review form posts to FormSubmit and emails submissions to **info@nationalrow.com**.
-The first submission on the live site triggers a one-time activation email — click "Activate Form"
-once and all future submissions arrive automatically.
+## Compliance
+- TCPA consent on all lead forms
+- "National ROW is a right-of-way consulting firm, not a law firm" on all pages
+- No attorney-client relationship disclaimer
+- Privacy Policy: nationalrow.com/privacy-policy
 
-## Updating the site
-Replace `index.html` (or any file) in this repo. Vercel redeploys automatically.
+## Deployment
+Connected to Vercel — auto-deploys on every push to `main`.
+Live URL: https://nationalrow-site.vercel.app
