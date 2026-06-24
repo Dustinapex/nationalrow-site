@@ -265,5 +265,5 @@ a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
 <footer style="background:#1a1a1a;color:#aaa;text-align:center;padding:28px 24px;font-size:.85rem;">
    nationalrow.com &mdash; (469) 484-7960
 </footer>
-</body>
+<script>(function(){var btn=document.getElementById('menuBtn');var links=document.getElementById('mobileLinks');var cta=document.querySelector('.mobile-cta');if(!btn)return;btn.addEventListener('click',function(){var open=links.classList.toggle('open');if(cta)cta.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);btn.textContent=open?'\u2715 Cerrar':'\u2630 Men\u00fa';});links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');if(cta)cta.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='\u2630 Men\u00fa';});});})()</script></body>
 </html>
