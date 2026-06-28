@@ -641,5 +641,64 @@
     <p class="disclaimer">National ROW is a right-of-way and condemnation consulting firm. We are not a law firm and do not provide legal advice or legal services; where legal representation is needed, we help coordinate and consult every step of the way. Compensation outcomes depend on the facts of each case and are not guaranteed.</p>
   </div>
 </footer>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  (function(){var f=document.getElementById('howFlow');if(!f)return;var steps=[].slice.call(f.querySelectorAll('.fstep'));var fill=document.getElementById('howFill');var i=0;function tick(){steps.forEach(function(s,k){s.classList.toggle('active',k<=i);});if(fill)fill.style.width=Math.min(i/(steps.length-1)*100,100)+'%';i=(i+1)%(steps.length+1);}tick();setInterval(tick,1500);})();
+  document.querySelectorAll('.qa button').forEach(function(btn){btn.addEventListener('click',function(){var qa=btn.parentElement;var o=qa.classList.toggle('open');btn.setAttribute('aria-expanded',o);});});
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!rm && 'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  var form=document.getElementById('leadForm');
+  var formLoaded=Date.now();
+  var FORM_ENDPOINT='https://formsubmit.co/ajax/info@nationalrow.com';  // leads emailed here
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var btn=form.querySelector('button[type="submit"]'), err=document.getElementById('leadError');
+    if(err)err.style.display='none';
+    function done(){form.style.display='none';document.getElementById('leadSuccess').classList.add('show');}
+    var hp2=form.elements['website'];
+    if((hp2&&hp2.value.trim()!=='')||(Date.now()-formLoaded)<1500){done();return;}
+    var orig=btn.textContent; btn.disabled=true; btn.textContent='Sending&hellip;';
+    try{
+      var fd=new FormData(form); fd.delete('website');
+      var res=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:fd});
+      var data=await res.json();
+      if(res.ok && (data.success===true||data.success==='true')){done();}
+      else{throw new Error((data&&data.message)||'failed');}
+    }catch(ex){ btn.disabled=false; btn.textContent=orig; if(err)err.style.display='block'; }
+  });
+  var gModal=document.getElementById('guideModal'),gBody=document.getElementById('guideBody'),gClose=document.getElementById('guideClose'),gDialog=gModal.querySelector('.modal-dialog'),gLast=null;
+  function openGuide(id){var s=document.getElementById(id);if(!s)return;gBody.innerHTML=s.innerHTML;gModal.classList.add('open');document.body.style.overflow='hidden';gLast=document.activeElement;gDialog.scrollTop=0;gClose.focus();}
+  function closeGuide(){gModal.classList.remove('open');document.body.style.overflow='';if(gLast&&gLast.focus)gLast.focus();}
+  document.querySelectorAll('.post[data-guide]').forEach(function(b){b.addEventListener('click',function(){openGuide(b.getAttribute('data-guide'));});});
+  gClose.addEventListener('click',closeGuide);
+  gModal.querySelector('[data-close]').addEventListener('click',closeGuide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&gModal.classList.contains('open'))closeGuide();});
+  gBody.addEventListener('click',function(e){var a=e.target.closest('a[href="#lead"]');if(a){e.preventDefault();closeGuide();var t=document.getElementById('lead');if(t)t.scrollIntoView({behavior:'smooth'});}});
+
+  // ── Mobile hamburger menu ──────────────────────────────────────
+  (function(){
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileLinks');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      btn.textContent = isOpen ? '✕ Close' : '☰ Menu';
+    });
+    // Close menu when a link is tapped
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.setAttribute('aria-label','Open menu');
+        menu.setAttribute('aria-hidden','true');
+        btn.textContent = '☰ Menu';
+      });
+    });
+  })();
+</script>
 </body>
 </html>
