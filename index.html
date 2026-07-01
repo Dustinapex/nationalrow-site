@@ -1347,7 +1347,7 @@
     if(!form.checkValidity()){form.reportValidity();return;}
     var btn=form.querySelector('button[type="submit"]'), err=document.getElementById('leadError');
     if(err)err.style.display='none';
-    function done(){form.style.display='none';document.getElementById('leadSuccess').classList.add('show');}
+    function done(){form.style.display='none';document.getElementById('leadSuccess').classList.add('show');setTimeout(function(){window.location.href='/thank-you/';},800);}
     var hp2=form.elements['website'];
     if((hp2&&hp2.value.trim()!=='')||(Date.now()-formLoaded)<1500){done();return;}
     var orig=btn.textContent; btn.disabled=true; btn.textContent='Sending&hellip;';
