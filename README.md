@@ -17,6 +17,15 @@ This repo powers **nationalrow-site.vercel.app** (auto-deploys on push to `main`
 | US 281 South Texas | /projects/us-281-south-texas/ | ✅ |
 | SH 99 Grand Parkway Houston | /projects/sh-99-grand-parkway/ | ✅ |
 | Pipeline Easement Blog Post | /blog/pipeline-easement-compensation-per-acre-texas/ | ✅ |
+| Loop 88 Lubbock | /projects/loop-88-lubbock/ | ✅ |
+| East Wilco Highway (SH 130 to I-35) | /projects/east-wilco-highway/ | ✅ |
+| Yarrington Extension (FM 150) | /projects/yarrington-extension-fm150/ | ✅ |
+| Toby Keith Expressway (OK East-West Connector) | /projects/toby-keith-expressway/ | ✅ |
+| Cimarron Link Transmission (OK) | /projects/cimarron-link-transmission/ | ✅ |
+| US-81 Chickasha Bypass (OK) | /projects/us-81-chickasha-bypass/ | ✅ |
+| I-35 Widening, OKC to TX Line (OK) | /projects/i-35-widening-oklahoma/ | ✅ |
+| Oklahoma Pipeline Easements | /projects/oklahoma-pipeline-easements/ | ✅ |
+| NE Oklahoma Data-Center Transmission | /projects/ne-oklahoma-data-center-transmission/ | ✅ |
 
 ## Branding
 - Navy: #0d2340
