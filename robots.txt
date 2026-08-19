@@ -4,6 +4,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /_logo_backup/
 
 User-agent: GPTBot
 Allow: /
