@@ -133,6 +133,14 @@ img,svg{max-width:100%}
 .section--dark .mono{color:rgba(255,255,255,.5)}
 .hp{display:none!important;visibility:hidden!important}
 </style>
+
+<style>
+.services-on-state .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+.services-on-state .service-card{display:block;padding:18px 20px;border:1px solid rgba(0,0,0,.12);border-radius:6px;text-decoration:none;color:inherit;background:#fff;transition:border-color .15s,transform .15s}
+.services-on-state .service-card:hover,.services-on-state .service-card:focus-visible{border-color:#b8912f;transform:translateY(-2px)}
+.services-on-state .sc-title{font-weight:700;margin-bottom:5px}
+.services-on-state .sc-desc{font-size:.9rem;opacity:.78;line-height:1.5}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -154,7 +162,7 @@ img,svg{max-width:100%}
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
       <a href="/about/">About</a>
-      <a href="/states/">States</a>
+      <a href="/services/">Services</a><a href="/projects/">Projects</a><a href="/faq/">FAQ</a><a href="/states/">States</a>
       <a href="/es/">Espa&ntilde;ol</a>
       <a href="#lead" class="nav-cta">Free Case Review</a>
     </div>
@@ -315,6 +323,37 @@ img,svg{max-width:100%}
 <div class="disclaimer-bar">
   <p><strong>Important Notice:</strong> National ROW (nationalrow.com) is a right-of-way <strong>consulting firm</strong>. Information on this page is for general informational purposes only.</p>
 </div>
+<section class="section services-on-state">
+  <div class="section-inner">
+    <h2>Our Arizona ROW Consulting Services</h2>
+    <div class="services-grid">
+      <a href="/services/highway-condemnation/" class="service-card">
+        <div class="sc-title">Highway &amp; Road Condemnation</div>
+        <div class="sc-desc">TxDOT and state highway takings, frontage road access, widening projects</div>
+      </a>
+      <a href="/services/pipeline-easement/" class="service-card">
+        <div class="sc-title">Pipeline Easements</div>
+        <div class="sc-desc">Natural gas, crude, refined products, CO&#8322; and water pipeline right-of-way</div>
+      </a>
+      <a href="/services/transmission-line-easement/" class="service-card">
+        <div class="sc-title">Transmission Line Easements</div>
+        <div class="sc-desc">765kV, 345kV and distribution easements &mdash; AEP, Oncor, CenterPoint</div>
+      </a>
+      <a href="/services/solar-wind-easement/" class="service-card">
+        <div class="sc-title">Solar &amp; Wind Easements</div>
+        <div class="sc-desc">Long-term lease and easement review for solar and wind developers</div>
+      </a>
+      <a href="/services/transit-rail-condemnation/" class="service-card">
+        <div class="sc-title">Transit &amp; Rail Condemnation</div>
+        <div class="sc-desc">Light rail, commuter rail and BRT right-of-way acquisition</div>
+      </a>
+      <a href="/services/data-center-easement/" class="service-card">
+        <div class="sc-title">Data Center Easements</div>
+        <div class="sc-desc">Power infrastructure right-of-way for data center buildouts</div>
+      </a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="foot-grid">
     <div>
@@ -329,7 +368,7 @@ img,svg{max-width:100%}
     </div>
     <div class="foot-col">
       <h4>Site</h4>
-      <a href="/">Home</a>
+      <a href="/services/">Services</a><a href="/projects/">Projects</a><a href="/faq/">FAQ</a><a href="/">Home</a>
       <a href="/about/">About</a>
       <a href="/blog/">Blog</a>
       <a href="/states/">States</a>
@@ -347,7 +386,7 @@ img,svg{max-width:100%}
   <div class="foot-bottom">
     <span>&copy; 2026 National ROW &mdash; nationalrow.com &mdash; All rights reserved. National ROW is a right-of-way consulting firm.</span>
   
-    <span style="margin-left:1rem"><a href="/privacy-policy" style="color:inherit;text-decoration:none">Privacy Policy</a></span></div>
+    <span style="margin-left:1rem"><a href="/privacy-policy/" style="color:inherit;text-decoration:none">Privacy Policy</a></span></div>
 </footer>
 <script>
 const btn=document.getElementById('menuBtn');
