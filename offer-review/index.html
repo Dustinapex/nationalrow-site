@@ -49,6 +49,13 @@ p{max-width:66ch}
 .split p + p{margin-top:12px}
 a{color:var(--navy)}
 .eyebrow{font-family:var(--mono);font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+/* The asymmetry, said before the argument. Was buried at screen 6.5. */
+.gutline{font-family:var(--disp);font-weight:700;font-size:clamp(1.06rem,3.1vw,1.3rem);line-height:1.25;color:var(--gold-2);margin:10px 0 8px;max-width:30ch}
+/* Their deadline, on its own line. The only honest clock on the page. */
+.scrollcue{display:inline-block;margin:16px 0 2px;font-family:var(--disp);font-weight:700;font-size:1rem;line-height:1.35;color:var(--gold-2);text-decoration:none;border-bottom:1px solid rgba(216,180,90,.45);padding-bottom:3px}
+.scrollcue::after{content:'\00a0\00a0\2193'}
+.scrollcue:hover{color:#fff;border-bottom-color:#fff}
+.deadline{font-family:var(--disp);font-weight:800;font-size:clamp(1.1rem,3.3vw,1.35rem);color:#fff;border-left:3px solid var(--gold);padding-left:13px;margin:18px 0 10px;max-width:30ch}
 /* small card/list copy gets extra weight so it stays defined at small sizes */
 .hgroup li,.role p,.track p,.q p,.faq-item p,.result .meta{font-weight:500}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -77,8 +84,9 @@ a{color:var(--navy)}
 
 /* hero */
 .hero{background:linear-gradient(158deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:44px 0 0}
-.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:start}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:28px}}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:start}
+.hero-copy{max-width:700px;width:100%;margin-inline:auto}
+@media(max-width:900px){.hero-grid{gap:24px}}
 .hero .eyebrow{color:var(--gold-2);margin-bottom:14px}
 .hero h1{max-width:17ch;margin-bottom:16px;text-wrap:balance}
 .hero .sub{font-size:1.16rem;color:rgba(255,255,255,.9);max-width:50ch}
@@ -108,6 +116,13 @@ a{color:var(--navy)}
 
 /* proof band — asymmetric, not an even card grid */
 .proofband{background:var(--gold);color:#1a1204}
+/* One vertical order at every width: gut punch, then the proof, then the form.
+   The gold band bleeds past the wrap to the full viewport. */
+.hero-copy{order:1}
+.hero-grid > .proofband{order:2;width:100vw;margin-left:calc(50% - 50vw)}
+.not-law-foot{order:4;max-width:700px;width:100%;margin-inline:auto}
+.hero-grid > .card{order:3;max-width:700px;width:100%;margin-inline:auto}
+
 .proofband .wrap{display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch}
 @media(max-width:900px){.proofband .wrap{grid-template-columns:1fr}}
 .pcell{padding:22px 22px 22px 0;border-right:1px solid rgba(26,18,4,.22)}
@@ -121,6 +136,7 @@ a{color:var(--navy)}
 /* Why each number moved, stated under the number itself. */
 .pcell .why{margin-top:7px;font-size:.87rem;opacity:1;font-weight:700}
 .pcell .why strong{font-family:var(--mono);font-size:.62rem;letter-spacing:.11em;text-transform:uppercase;display:block;margin-bottom:3px;opacity:1;font-weight:700}
+.pband-h{grid-column:1/-1;font-family:var(--disp);font-weight:800;font-size:clamp(1.15rem,3vw,1.5rem);letter-spacing:-.01em;padding:20px 0 2px;margin:0;max-width:none}
 .pnote{grid-column:1/-1;border-top:1px solid rgba(26,18,4,.22);margin-top:4px;padding-top:14px;font-size:.83rem;line-height:1.5;opacity:.85;max-width:none}
 @media(max-width:820px){.pnote{padding-top:16px}}
 .pcell .jump{display:inline-block;margin-top:10px;font-family:var(--disp);font-weight:700;font-size:.95rem;color:#1a1204;text-decoration:underline;text-underline-offset:3px}
@@ -138,7 +154,7 @@ section{padding:52px 0}
 .punch p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:600;line-height:1.24;color:var(--navy);max-width:26ch}
 /* Comparison chart, ported from the homepage value-compare section.
    Square corners here to match this page rather than the homepage. */
-.vc-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;align-items:start;margin-top:26px}
+.vc-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:start;margin-top:26px}
 @media(max-width:820px){.vc-grid{grid-template-columns:1fr;gap:14px}}
 .vc-col{background:#fff;border:1px solid var(--line-2);padding:24px 22px;display:flex;flex-direction:column;gap:16px}
 .vc-col--us{background:var(--navy);border:2px solid var(--gold)}
@@ -215,8 +231,12 @@ section{padding:52px 0}
 .track p{font-size:1rem}
 .track .btn{align-self:flex-start;margin-top:auto;font-size:.98rem;padding:12px 20px}
 
-.faq-item{border-bottom:1px solid var(--line);padding:18px 0}
-.faq-item h3{margin-bottom:6px;color:var(--navy)}
+.faq-item{border-bottom:1px solid var(--line);padding:0}
+.faq-item summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;position:relative;font-family:var(--disp);font-weight:700;font-size:1.14rem;line-height:1.25;color:var(--navy)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';position:absolute;right:2px;top:50%;transform:translateY(-50%);font-family:var(--disp);font-weight:700;font-size:1.5rem;color:var(--gold);line-height:1}
+.faq-item[open] summary::after{content:'\2013'}
+.faq-item p{padding-bottom:18px}
 .faq-item p{font-size:1.03rem}
 .disclosure{background:var(--paper);border-left:3px solid var(--gold);padding:18px 22px;margin-top:26px}
 .disclosure p{font-size:.95rem;color:var(--gray);max-width:80ch}
@@ -272,9 +292,10 @@ form button.submit:hover{background:var(--gold-2)}
 
 .callbar{display:none}
 @media(max-width:760px){
-  .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;box-shadow:0 -2px 12px rgba(0,0,0,.2)}
+  .callbar{display:grid;grid-template-columns:1fr 1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;box-shadow:0 -2px 12px rgba(0,0,0,.2)}
   .callbar{padding-bottom:env(safe-area-inset-bottom,0)}
-  .callbar a{display:block;text-align:center;padding:15px 8px;font-family:var(--disp);font-weight:700;font-size:1.05rem;text-decoration:none}
+  .callbar a{display:block;text-align:center;padding:15px 4px;font-family:var(--disp);font-weight:700;font-size:.97rem;line-height:1.15;text-decoration:none}
+  .callbar a.rev{background:var(--paper-2);color:var(--navy);border-top:3px solid var(--gold)}
   .callbar a.call{background:var(--gold);color:#1a1204}
   .callbar a.text{background:var(--navy);color:#fff}
   body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0))}
@@ -386,8 +407,9 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 <div class="hero">
   <div class="wrap">
     <div class="hero-grid">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow">You got the letter</div>
+        <p class="gutline">The agency has a team. Right now, you have a letter.</p>
         <h1>Someone who never walked your property decided what it's worth.</h1>
         <p class="sub">Then they gave you a deadline. That number came from an appraiser <strong>the agency hired</strong> — an opening position, not a final answer.</p>
         <div class="cta-row hero-cta">
@@ -395,12 +417,13 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
           <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'hero'})">Call or Text (469) 484-7960</a>
           <a class="btn btn-gold" href="#review">Free review by a senior consultant</a>
         </div>
-        <p class="texthook"><strong>There is a date on that letter.</strong> What it does depends on your state, the agency, and which document you are holding. Send us a photo of it &mdash; <a href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'texthook'})">text (469) 484-7960</a> or <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request&amp;body=I%20received%20an%20offer%20on%20my%20property.%20The%20letter%20is%20attached.%0A%0AProperty%20county%20and%20state%3A%0AProject%20or%20agency%2C%20if%20known%3A%0ABest%20number%20to%20reach%20me%3A" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'texthook'})">email it</a> &mdash; and we will tell you what we are looking at.</p>
+        <a class="scrollcue" href="#results">See what the agency offered, and what the owner got</a>
+        <p class="deadline">There is a date on that letter.</p>
+        <p class="texthook">What that date does depends on your state, the agency, and which document you are holding. Send us a photo of it &mdash; <a href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'texthook'})">text (469) 484-7960</a> or <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request&amp;body=I%20received%20an%20offer%20on%20my%20property.%20The%20letter%20is%20attached.%0A%0AProperty%20county%20and%20state%3A%0AProject%20or%20agency%2C%20if%20known%3A%0ABest%20number%20to%20reach%20me%3A" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'texthook'})">email it</a> &mdash; and we will tell you what we are looking at.</p>
         <!-- The "not a law firm" line is required — it is what keeps this on the
              right side of unauthorised-practice rules. Do not delete it. The
              sentences after it exist so the disclosure doesn't read as "go hire
              a lawyer." Keep that balance if you reword. -->
-        <div class="not-law">A right-of-way consulting firm &mdash; not a law firm. Many of these never need a lawyer at all. If yours does, we already know who to bring in. You won't go looking.</div>
       </div>
 
       <div class="card" id="review">
@@ -484,38 +507,38 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
           </div>
         </form>
       </div>
+      <div class="not-law not-law-foot">A right-of-way consulting firm &mdash; not a law firm. Many of these never need a lawyer at all. If yours does, we already know who to bring in. You won't go looking.</div>
+      <!-- The long results section was cut: it restated these same two matters and
+           the same four figures one screen further down. The substantiation line
+           below is the part worth keeping. Do not re-add a second telling. -->
+      <div class="proofband" id="results">
+        <div class="wrap">
+          <p class="pband-h">Our documented results</p>
+          <div class="pcell">
+            <span class="k">Grand Parkway (SH&nbsp;99) &middot; Chambers County, TX</span>
+            <b>$2.5M <em>&rarr;</em> $5M</b>
+            <small><strong>+100%</strong></small>
+            <small class="why"><strong>Why the price increased</strong>The agency's appraisal left value out. We found it and argued it.</small>
+          </div>
+          <div class="pcell">
+            <span class="k">I-35 expansion &middot; McLennan County (Waco), TX</span>
+            <b>$20K <em>&rarr;</em> $385K</b>
+            <small><strong>+1,825%</strong> &mdash; the largest increase in our files.</small>
+            <small class="why"><strong>Why the price increased</strong>Same reason. Their team's number missed value on the take.</small>
+          </div>
+          <div class="pcell">
+            <span class="k">Free, no obligation</span>
+            <b>Text us the letter</b>
+            <small>A photo of the offer is enough. We read it and tell you what we see.</small>
+            <!-- TODO: tracked number (SMS-enabled) -->
+            <a class="jump" href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'proofband'})">Text (469) 484-7960 &rarr;</a>
+          </div>
+          <p class="pnote">Two real files, not a forecast. Each is a single documented matter, from the offer letter through to what the owner was finally paid. They are not an average and not a prediction &mdash; every take is different, and when we look at yours and think the number is close to right, we will tell you so.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- The long results section was cut: it restated these same two matters and
-     the same four figures one screen further down. The substantiation line
-     below is the part worth keeping. Do not re-add a second telling. -->
-<div class="proofband">
-  <div class="wrap">
-    <div class="pcell">
-      <span class="k">Documented result</span>
-      <b>$2.5M <em>&rarr;</em> $5M</b>
-      <small>Grand Parkway (SH&nbsp;99), Chambers County, TX &mdash; <strong>+100%</strong></small>
-      <small class="why"><strong>Why the price increased</strong>The agency's appraisal left value out. We found it and argued it.</small>
-    </div>
-    <div class="pcell">
-      <span class="k">Documented result</span>
-      <b>$20K <em>&rarr;</em> $385K</b>
-      <small>I-35, McLennan County, TX &mdash; <strong>+1,825%</strong>. The largest increase in our files.</small>
-      <small class="why"><strong>Why the price increased</strong>Same reason. Their team's number missed value on the take.</small>
-    </div>
-    <div class="pcell">
-      <span class="k">Free, no obligation</span>
-      <b>Text us the letter</b>
-      <small>A photo of the offer is enough. We read it and tell you what we see.</small>
-      <!-- TODO: tracked number (SMS-enabled) -->
-      <a class="jump" href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'proofband'})">Text (469) 484-7960 &rarr;</a>
-    </div>
-    <p class="pnote">Two real files, not a forecast. Each is a single documented matter, from the offer letter through to what the owner was finally paid. They are not an average and not a prediction &mdash; every take is different, and when we look at yours and think the number is close to right, we will tell you so.</p>
-  </div>
-</div>
-
 
 <div class="check-band">
   <div class="wrap">
@@ -543,19 +566,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <h2>You don't have to choose between valuation and legal protection.</h2>
     </div>
     <div class="vc-grid">
-      <div class="vc-col">
-        <div class="vc-head">
-          <h3>Legal counsel</h3>
-          <span class="vc-sub">What only an attorney can do</span>
-        </div>
-        <ul class="vc-list">
-          <li>Advise you on your legal rights</li>
-          <li>File objections and challenges</li>
-          <li>Represent you at a hearing</li>
-          <li>Argue your case before a judge or jury</li>
-          <li>Handle court filings and legal deadlines</li>
-        </ul>
-      </div>
       <div class="vc-col vc-col--us">
         <div class="vc-head">
           <h3>Working with National ROW</h3>
@@ -568,6 +578,19 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
           <li>Name the attorney or independent appraiser if your file needs one &mdash; you engage them directly, on their own paper</li>
           <li>Owner-side only &mdash; we never represent the agency, utility or pipeline</li>
           <li>No upfront cost &mdash; contingency only</li>
+        </ul>
+      </div>
+      <div class="vc-col">
+        <div class="vc-head">
+          <h3>Legal counsel</h3>
+          <span class="vc-sub">What only an attorney can do</span>
+        </div>
+        <ul class="vc-list">
+          <li>Advise you on your legal rights</li>
+          <li>File objections and challenges</li>
+          <li>Represent you at a hearing</li>
+          <li>Argue your case before a judge or jury</li>
+          <li>Handle court filings and legal deadlines</li>
         </ul>
       </div>
     </div>
@@ -644,18 +667,18 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="eyebrow">Straight answers</div>
       <h2>What owners ask first</h2>
     </div>
-    <div class="faq-item">
-      <h3>If I need an attorney, do I have to go find one myself?</h3>
+    <details class="faq-item">
+      <summary>If I need an attorney, do I have to go find one myself?</summary>
       <p>No. We give you options — owner-side condemnation attorneys matched to your county and project. You choose and engage them directly, so they work for you. You just don't start from a search engine with a deadline running.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What does it cost?</h3>
+    </details>
+    <details class="faq-item">
+      <summary>What does it cost?</summary>
       <p>The review costs nothing and there is no obligation attached to it. If we take the case on we work on contingency, so you pay us only out of an increase we obtain &mdash; if the number never moves, you owe us nothing. Any attorney or appraiser you choose to engage sets their own fee with you directly.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Will fighting this make them take more of my land?</h3>
+    </details>
+    <details class="faq-item">
+      <summary>Will fighting this make them take more of my land?</summary>
       <p>No. What's acquired is set by the project design, not by whether you question the price. Negotiating compensation doesn't change the footprint of the take.</p>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -694,6 +717,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 <div class="callbar">
   <a class="call" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'stickybar'})">Call now</a>
   <a class="text" href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'stickybar'})">Text the letter</a>
+<a class="rev" href="#review">Free review</a>
 </div>
 
 <script>
