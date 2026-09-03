@@ -57,6 +57,12 @@ a{color:var(--navy)}
    background baked in — on a navy bar it renders as a white box. */
 .lp-head{background:#fff;color:var(--ink);padding:11px 0;border-bottom:1px solid var(--line-2)}
 .lp-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+/* Firm descriptor locked up beside the logo, top of every screen. */
+.brandlock{display:flex;align-items:center;gap:14px;min-width:0;flex:1 1 auto}
+.tagline{font-family:var(--disp);font-weight:700;font-size:.95rem;line-height:1.22;color:var(--navy);max-width:30ch}
+@media(max-width:1000px){.tagline{font-size:.86rem;max-width:24ch}}
+@media(max-width:700px){.brandlock{gap:11px}.tagline{font-size:.8rem;max-width:22ch}}
+@media(max-width:380px){.tagline{font-size:.74rem}}
 .brand{display:flex;align-items:center;text-decoration:none}
 .brand img{height:42px;width:auto;display:block}
 .wordmark{font-family:var(--disp);font-weight:800;font-size:1.3rem;color:var(--navy);letter-spacing:.02em}
@@ -365,7 +371,10 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
            (206x124) and @3x.png (309x186) next to the original and they are
            used automatically. No code change needed. If neither exists the
            browser just uses the 1x file, exactly as now. -->
-      <span class="brand"><img src="/national-row-logo.png" srcset="/national-row-logo.png 1x, /national-row-logo@2x.png 2x, /national-row-logo@3x.png 3x" width="79" height="42" alt="National ROW" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;wordmark&quot;>NATIONAL <i>ROW</i></span>');" /></span>
+      <div class="brandlock">
+        <span class="brand"><img src="/national-row-logo.png" srcset="/national-row-logo.png 1x, /national-row-logo@2x.png 2x, /national-row-logo@3x.png 3x" width="79" height="42" alt="National ROW" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;wordmark&quot;>NATIONAL <i>ROW</i></span>');" /></span>
+        <span class="tagline">Right of Way &middot; Eminent Domain &amp; Condemnation Consulting Firm</span>
+      </div>
     <div class="head-call">
       <!-- TODO: tracked number (must be SMS-enabled) -->
       <span class="hc-line"><small>Call or text</small><a class="tel" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'header'})">(469) 484-7960</a></span>
