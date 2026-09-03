@@ -244,6 +244,7 @@ form button.submit:hover{background:var(--gold-2)}
 
 footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28px;font-size:.93rem}
 .foot-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.15)}
+.foot-logo{display:inline-flex;align-items:center;justify-content:center;background:#fff;padding:8px 12px;border-radius:7px;line-height:0;flex:0 0 auto}
 .foot-top img{height:34px;width:auto;display:block}
 .foot-contact{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
 .foot-top a.tel{font-family:var(--disp);font-weight:700;font-size:1.3rem;color:#fff;text-decoration:none}
@@ -680,7 +681,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <img src="/national-row-logo.png" alt="National ROW" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;wordmark&quot;>NATIONAL <i>ROW</i></span>');" />
+      <span class="foot-logo"><img src="/national-row-logo.png" srcset="/national-row-logo.png 1x, /national-row-logo@2x.png 2x, /national-row-logo@3x.png 3x" width="79" height="42" alt="National ROW" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;wordmark&quot;>NATIONAL <i>ROW</i></span>');" /></span>
       <div class="foot-contact">
         <!-- TODO: tracked number -->
         <a class="tel" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'footer'})">(469) 484-7960</a>
