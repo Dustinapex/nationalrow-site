@@ -91,21 +91,6 @@ a{color:var(--navy)}
 .btn-outline:hover{border-color:var(--navy)}
 .texthook{margin-top:13px;font-size:1rem;color:rgba(255,255,255,.88);padding-bottom:4px;max-width:56ch}
 .texthook a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px;font-weight:600}
-.offerbox{border:1px solid var(--line-2);border-top:3px solid var(--gold);background:var(--paper);padding:16px 18px;margin:0 0 18px}
-.offerbox .ob-k{display:block;font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:#8a6a20;font-weight:600;margin-bottom:9px}
-.offerbox ol{list-style:none;counter-reset:ob;margin:0}
-.offerbox li{counter-increment:ob;position:relative;padding-left:26px;margin-bottom:8px;font-size:.92rem;line-height:1.45;color:var(--ink);font-weight:450}
-.offerbox li:before{content:counter(ob);position:absolute;left:0;top:1px;width:18px;height:18px;background:var(--navy);color:#fff;font-family:var(--mono);font-size:.62rem;display:flex;align-items:center;justify-content:center;font-weight:600}
-.offerbox li:last-child{margin-bottom:0;font-weight:600;color:var(--navy)}
-.whois{margin-top:12px;font-family:var(--mono);font-size:.68rem;line-height:1.65;letter-spacing:.03em;color:rgba(255,255,255,.62)}
-.whois b{color:rgba(255,255,255,.9);font-weight:600}
-.dontlist{background:var(--navy-deep);color:#fff;padding:26px 28px}
-.dontlist h3{color:#fff;font-size:1.3rem;margin-bottom:6px}
-.dontlist .sub{color:rgba(255,255,255,.72);font-size:.95rem;margin-bottom:14px;max-width:60ch}
-.dontlist ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 26px}
-@media(max-width:760px){.dontlist ul{grid-template-columns:1fr}.dontlist{padding:20px 18px}}
-.dontlist li{position:relative;padding-left:20px;font-size:.95rem;line-height:1.45;color:rgba(255,255,255,.9)}
-.dontlist li:before{content:"\00d7";position:absolute;left:0;top:-1px;color:var(--gold-2);font-weight:700;font-size:1.05rem}
 .consent-note{margin-top:10px;font-size:.87rem;line-height:1.5;color:rgba(255,255,255,.6);max-width:56ch}
 .consent-note strong{color:rgba(255,255,255,.88)}
 
@@ -216,18 +201,9 @@ section{padding:52px 0}
 .card{background:var(--paper-2);box-shadow:var(--shadow);padding:24px 22px}
 .card h3{color:var(--navy);font-size:1.28rem;margin-bottom:4px}
 .card .card-sub{color:var(--gray);font-size:.97rem;margin-bottom:16px}
-/* One visible form. Nothing is hidden behind a step — an older visitor on a
-   phone should never have to guess that clicking something reveals fields. */
-.qlabel{font-family:var(--disp);font-weight:700;font-size:1.04rem;margin-bottom:11px;display:flex;align-items:baseline;gap:9px;color:var(--ink)}
-.qlabel i{font-family:var(--mono);font-style:normal;font-size:.7rem;font-weight:600;color:#fff;background:var(--navy);width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
-.fieldgroup{margin-top:22px}
-.reqnote{display:none;font-size:.86rem;color:#A3341F;margin-top:8px;font-weight:600}
-.reqnote.show{display:block}
 .opts{display:flex;flex-direction:column;gap:8px}
 .opt{text-align:left;width:100%;background:var(--paper);border:1px solid var(--line-2);padding:13px 14px;font-family:var(--body);font-size:.98rem;color:var(--ink);cursor:pointer;line-height:1.3}
 .opt:hover{border-color:var(--navy);background:#fff}
-.opt.sel{border-color:var(--navy);border-width:2px;background:#fff;box-shadow:inset 3px 0 0 var(--gold)}
-.opt.sel b:after{content:" \2713";color:var(--navy)}
 .opt b{display:block;font-family:var(--disp);font-weight:700;font-size:1.02rem}
 .opt span{color:var(--gray);font-size:.9rem}
 form label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin:0 0 5px}
@@ -238,6 +214,28 @@ form .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:520px){form .row2{grid-template-columns:1fr}}
 form button.submit{width:100%;border:none;font-family:var(--disp);font-weight:700;font-size:1.08rem;padding:15px;background:var(--gold);color:#1a1204;cursor:pointer}
 form button.submit:hover{background:var(--gold-2)}
+/* One-tap qualifier at the top of step 2. Deliberately a tap and not another
+   field to type — it costs the visitor nothing and lands on every lead. */
+/* One continuous form: every question numbered and visible, nothing hides. */
+.fq{margin:0 0 20px}
+.fq-h{display:flex;align-items:flex-start;gap:10px;font-family:var(--disp);font-weight:700;font-size:1.06rem;line-height:1.25;color:var(--ink);margin:0 0 11px}
+.fq-n{flex:0 0 auto;width:25px;height:25px;background:var(--navy);color:#fff;font-family:var(--disp);font-style:normal;font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+.opt.sel{background:#fff;border-color:var(--navy);border-left:4px solid var(--gold);padding-left:11px}
+.opt.sel b::after{content:" \2713";color:var(--navy)}
+.tapq{margin:0}
+.tapq .taplabel{display:block;font-family:var(--body);font-weight:600;font-size:.95rem;color:var(--ink);margin:0 0 8px;line-height:1.35}
+.tap3{display:flex;gap:7px}
+.tap3 button{flex:1;background:var(--paper);border:1px solid var(--line-2);color:var(--ink);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:10px 4px;min-height:44px;cursor:pointer}
+.tap3 button:hover{border-color:var(--navy)}
+.tap3 button.sel{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+/* Confirms the sixty-second check answers are riding along with the request. */
+.attached{display:flex;gap:9px;align-items:flex-start;background:rgba(196,154,61,.10);border-left:3px solid var(--gold);padding:10px 12px;margin:0 0 15px;font-size:.9rem;color:var(--gray);line-height:1.42}
+.attached b{color:var(--gold);font-weight:700;flex:0 0 auto}
+.attached[hidden]{display:none}
+/* Every CTA pulls the form up and pulses it once, so it is obvious what to do. */
+@keyframes cardflash{0%{box-shadow:0 0 0 0 rgba(196,154,61,.55),var(--shadow)}100%{box-shadow:0 0 0 15px rgba(196,154,61,0),var(--shadow)}}
+.card.flash{animation:cardflash .9s ease-out 1}
+@media(prefers-reduced-motion:reduce){.card.flash{animation:none}html{scroll-behavior:auto}}
 .consent{display:flex;gap:9px;align-items:flex-start;margin:4px 0 12px}
 .consent input{width:auto;margin-top:4px;flex:0 0 auto}
 .consent label{font-family:var(--body);font-size:.83rem;letter-spacing:0;text-transform:none;color:var(--gray);line-height:1.45;margin:0}
@@ -374,34 +372,20 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
         <div class="cta-row hero-cta">
           <!-- TODO: tracked number -->
           <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'hero'})">Call or Text (469) 484-7960</a>
-          <a class="btn btn-ghost" href="#review">Send us the offer</a>
+          <a class="btn btn-ghost" href="#review">Have us review the offer</a>
         </div>
         <p class="texthook"><strong>Fastest way:</strong> take a photo of the letter and text it to <a href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'texthook'})">(469) 484-7960</a>, or email it to <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request&amp;body=I%20received%20an%20offer%20on%20my%20property.%20The%20letter%20is%20attached.%0A%0AProperty%20county%20and%20state%3A%0AProject%20or%20agency%2C%20if%20known%3A%0ABest%20number%20to%20reach%20me%3A" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'texthook'})">info@nationalrow.com</a>. A consultant reads it before you ever speak to anyone. Then take thirty seconds on the <a href="#review">short form</a> so we have your number and your permission to get back to you.</p>
-        <p class="texthook" style="margin-top:12px"><strong>There is a date on that letter.</strong> What it does depends on your state, the agency, and which document you are holding. Tell us what it says and we will tell you what we are looking at.</p>
         <p class="consent-note">We reply to the message you send us and nothing more. Nobody gets added to any automated list unless you say so &mdash; on the form, or by replying <strong>YES</strong> to our first text.</p>
         <!-- The "not a law firm" line is required — it is what keeps this on the
              right side of unauthorised-practice rules. Do not delete it. The
              sentences after it exist so the disclosure doesn't read as "go hire
              a lawyer." Keep that balance if you reword. -->
-        <p class="whois"><b>Dustin Boese</b>, Principal (Texas) &nbsp;&middot;&nbsp; <b>Chris Wilson</b>, Principal (Arizona) &nbsp;&middot;&nbsp; HQ Texas</p>
         <div class="not-law">A right-of-way consulting firm &mdash; not a law firm. Many of these never need a lawyer at all. If yours does, we already know who to bring in. You won't go looking.</div>
       </div>
 
       <div class="card" id="review">
         <h3>Is the offer fair?</h3>
-        <p class="card-sub">Two questions, then we call you. A consultant reads every one of these.</p>
-        <!-- TODO: confirm the callback window and business hours below are ones
-             you keep every time. Same promise appears on the thank-you page. -->
-        <div class="offerbox">
-          <span class="ob-k">What you actually get</span>
-          <ol>
-            <li>Send the offer letter and their appraisal if they gave you one. A photo is enough.</li>
-            <li>A consultant reads it and calls you <strong>within the hour, 8am&ndash;6pm Central, Monday to Friday</strong>. Outside those hours, first thing the next morning.</li>
-            <li>You get three things: what we think their number left out, what we would argue for, and whether it is worth pursuing at all.</li>
-            <li>It costs nothing and commits you to nothing.</li>
-            <li>If we do not think we can move the number, we tell you on that call.</li>
-          </ol>
-        </div>
+        <p class="card-sub">Three questions. A consultant reads every one of these.</p>
         <!-- Posts to FormSubmit.co, same service your homepage form uses. -->
         <!-- NOTE: the First 10 Days guide is deliberately NOT offered here.
              The consultant sends it after the call. See the note on the
@@ -416,19 +400,30 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
           <input type="hidden" name="offer_status" id="offer_status" />
           <input type="hidden" name="selfcheck_gaps" id="selfcheck_gaps" />
           <input type="hidden" name="selfcheck_answers" id="selfcheck_answers" />
+          <input type="hidden" name="written_appraisal" id="written_appraisal" />
           <input type="hidden" name="source" value="offer_review_lp" />
-          <div class="step1" id="step1">
-            <span class="qlabel"><i>1</i>Where do you stand right now?</span>
+          <div class="attached" id="attached" hidden></div>
+          <div class="fq">
+            <span class="fq-h"><i class="fq-n">1</i>Where do you stand right now?</span>
             <div class="opts">
               <button type="button" class="opt" data-v="Written offer in hand"><b>They've made me a written offer</b><span>I have the letter, maybe an appraisal</span></button>
               <button type="button" class="opt" data-v="Notice received, no offer yet"><b>I got a notice, but no offer yet</b><span>Something's coming, nothing firm</span></button>
               <button type="button" class="opt" data-v="Agent has contacted me"><b>An agent has contacted me</b><span>Call, visit, or survey request</span></button>
               <button type="button" class="opt" data-v="Researching for now"><b>I'm trying to understand this</b><span>Nothing has happened yet</span></button>
             </div>
-            <p class="reqnote" id="pickOne">Pick the one that fits before you send.</p>
           </div>
-          <div class="step2 fieldgroup" id="step2">
-            <span class="qlabel"><i>2</i>Where do we reach you?</span>
+          <div class="fq">
+            <span class="fq-h"><i class="fq-n">2</i>Did they give you a written copy of the appraisal?</span>
+            <div class="tapq">
+              <div class="tap3" id="apprTap">
+                <button type="button" data-v="Yes">Yes</button>
+                <button type="button" data-v="No">No</button>
+                <button type="button" data-v="Not sure">Not sure</button>
+              </div>
+            </div>
+          </div>
+          <div class="fq">
+            <span class="fq-h"><i class="fq-n">3</i>Where can a consultant reach you?</span>
             <div class="row2">
               <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
               <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div>
@@ -438,6 +433,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
               <div class="field"><label for="county">County &amp; state</label><input id="county" name="county" type="text" placeholder="Hidalgo County, TX" required /></div>
               <div class="field"><label for="project">Project, if known</label><input id="project" name="project" type="text" placeholder="SH 68, Eiger Express…" /></div>
             </div>
+          </div>
             <!-- CONSENT — read before editing.
                  TCPA express written consent must NOT be a condition of getting
                  the service. This box is therefore deliberately NOT `required`.
@@ -454,7 +450,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
             <input type="hidden" name="consent_language_shown" id="consentText" />
             <input type="hidden" name="consent_timestamp" id="consentTime" />
             <input type="hidden" name="consent_page" id="consentPage" />
-            <button type="submit" class="submit">Send us the offer</button>
+            <button type="submit" class="submit">Tell me if the offer is fair</button>
             <p class="form-fine">Sending this asks National ROW to review your offer and to get back to you about it. If you leave the box above unchecked we'll still respond &mdash; a person will simply call or email you rather than anything automated.</p>
             <p class="form-fine" id="formErr" style="display:none;color:#A3341F">Couldn't send just now — please call <a href="tel:4694847960">(469) 484-7960</a> and we'll take your details.</p>
             <p class="form-fine">Prefer to send the document itself? Email it to <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'form'})">info@nationalrow.com</a>.</p>
@@ -467,7 +463,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
                 <li>We tell you what we see. No obligation.</li>
               </ol>
             </div>
-          </div>
         </form>
       </div>
     </div>
@@ -501,6 +496,42 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
   </div>
 </div>
 
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="sec-head">
+          <div class="eyebrow">Who you call matters</div>
+          <h2>Your family attorney is excellent at wills.</h2>
+          <p class="standfirst">He has also, in all likelihood, never valued a partial take in his life. That's not a shot at him — it's a different job. Same reason you wouldn't ask us to write your will. We don't. We're not lawyers.</p>
+        </div>
+        <div class="punch"><p>Almost every condemnation case is a fight about a number, not about the law.</p></div>
+        <p>The agency's right to take is usually not in question. What they owe you for it is. That's an appraisal argument — and appraisal is the whole job here.</p>
+      </div>
+      <div class="roles">
+        <div class="role">
+          <span class="tag">Your general-practice attorney</span>
+          <h3>Knows you, not this</h3>
+          <p>Wills, closings, contracts. A partial take with remainder damages is something most general practices see once a decade, if ever.</p>
+        </div>
+        <div class="role">
+          <span class="tag">An eminent domain attorney</span>
+          <h3>Handles the law</h3>
+          <p>Pleadings, procedure, the courtroom. If it becomes litigation, this is who you want. Good ones bring valuation people in.</p>
+        </div>
+        <div class="role us">
+          <span class="tag">National ROW</span>
+          <h3>Handles the number</h3>
+          <p>What's being taken, what it does to what's left, and where their appraisal fell short. Many owners start here and never need more.</p>
+        </div>
+      </div>
+    </div>
+    <div class="disclosure">
+      <p>National ROW does not practice law, does not give legal advice, and does not represent anyone in court. Nothing here is legal advice, and contacting us does not create an attorney-client relationship. That does <em>not</em> mean you face this alone — see how the team comes together below.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== SELF-CHECK: diagnostic only. Deliberately makes NO estimate of
      value and NO claim that the user is owed more. Asks about the agency's
      process, then invites a conversation. ===== -->
@@ -522,64 +553,11 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="cta-row">
         <!-- TODO: tracked number -->
         <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'selfcheck'})">Call or Text (469) 484-7960</a>
-        <a class="btn btn-ghost" href="#review" id="checkToForm">Send us the offer</a>
+        <a class="btn btn-ghost" href="#review" id="checkToForm">Send these answers with my request</a>
       </div>
     </div>
   </div>
 </div>
-
-<div class="check-band" style="padding-top:0">
-  <div class="wrap">
-    <div class="dontlist">
-      <h3>Five things not to do this week</h3>
-      <p class="sub">None of this is legal advice. It is all about your own property and your own paperwork, and every one of them gets harder the longer you wait.</p>
-      <ul>
-        <li>Don't sign anything yet, including a form that only lets them come survey.</li>
-        <li>Don't let their appraiser walk the property without you there.</li>
-        <li>Don't clear, mow, or move a fence until it is photographed.</li>
-        <li>Don't talk to the right-of-way agent without writing down afterwards who said what.</li>
-        <li>Don't throw away the envelope. The postmark is sometimes the only date on the whole thing.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<section>
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <div class="sec-head">
-          <div class="eyebrow">Who you call matters</div>
-          <h2>Your family attorney is excellent at wills.</h2>
-          <p class="standfirst">He has probably never valued a partial take in his life. That's not a shot at him — it's a different job. Same reason you wouldn't ask us to write your will. We don't. We're not lawyers.</p>
-        </div>
-        <div class="punch"><p>Almost every condemnation case is a fight about a number, not about the law.</p></div>
-        <p>The agency's right to take is usually not in question. What they owe you for it is. That's an appraisal argument — and appraisal is the whole job here.</p>
-      </div>
-      <div class="roles">
-        <div class="role">
-          <span class="tag">Your general-practice attorney</span>
-          <h3>Knows you. Has never done this.</h3>
-          <p>Wills, closings, contracts. A partial take with remainder damages is something most general practices see once a decade, if ever.</p>
-        </div>
-        <div class="role">
-          <span class="tag">An eminent domain attorney</span>
-          <h3>Handles the law</h3>
-          <p>Pleadings, procedure, the courtroom. If it becomes litigation, this is who you want. Good ones bring valuation people in.</p>
-        </div>
-        <div class="role us">
-          <span class="tag">National ROW</span>
-          <h3>Argues the number</h3>
-          <p>What's being taken, what it does to what's left, and where their appraisal fell short. Many owners start here and never need more.</p>
-        </div>
-      </div>
-    </div>
-    <div class="disclosure">
-      <p>National ROW does not practice law, does not give legal advice, and does not represent anyone in court. Nothing here is legal advice, and contacting us does not create an attorney-client relationship. That does <em>not</em> mean you face this alone — see how the team comes together below.</p>
-    </div>
-  </div>
-</section>
-
 
 <section id="results">
   <div class="wrap">
@@ -639,21 +617,26 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="hgroup">
         <span class="tag">First</span>
         <h3>We read what they sent</h3>
-        <ul><li>The notice and full offer package</li><li>Their appraisal — and what it left out</li><li>Whether it is a fee taking, a permanent easement or a temporary one</li></ul>
+        <ul><li>The notice and full offer package</li><li>Their appraisal — and what it left out</li><li>Fee, permanent easement, or temporary</li></ul>
       </div>
       <div class="hgroup">
         <span class="tag">Then</span>
         <h3>We build the real number</h3>
-        <ul><li>Remainder and severance damages, usually the bigger number</li><li>Highest and best use, which is often nothing like current use</li><li>Access, frontage, drainage and fencing</li><li>Improvements, irrigation, crop and timber loss</li><li>Cost to cure the remaining property</li></ul>
+        <ul><li>Remainder and severance damages — often the larger loss</li><li>Highest and best use, not just current use</li><li>Access, frontage, drainage and fencing</li><li>Improvements, irrigation, crop and timber loss</li><li>Cost to cure the remaining property</li></ul>
       </div>
       <div class="hgroup">
         <span class="tag">Meanwhile</span>
-        <h3>We handle the agency</h3>
-        <ul><li>We negotiate with their agents so you never have to</li><li>One point of contact from the first call to the last</li></ul>
+        <h3>We deal with them, not you</h3>
+        <ul><li>We negotiate with the agency's agents directly</li><li>One point of contact, start to finish</li><li>All correspondence in one place</li></ul>
+      </div>
+      <div class="hgroup">
+        <span class="tag">Your team</span>
+        <h3>You're never alone at the table</h3>
+        <ul><li>Owner-side condemnation attorneys — you pick from our options</li><li>MAI-certified appraisers — you pick from our options</li><li>Engineers, land planners, surveyors as needed</li><li>You hire each directly. We coordinate all of it.</li></ul>
       </div>
     </div>
     <div class="disclosure">
-      <p>If your matter needs an attorney or an independent appraiser, we will say so and put names in front of you. You engage them directly, on their own paper. We are not a law firm, and we take no share of anyone else's fee.</p>
+      <p><strong>How the team works:</strong> we don't employ attorneys or appraisers and we don't hire them for you. After forty years we know who's good in your county and on your kind of project. We give you options, you choose, and <strong>you engage them directly on their own paper — so they answer to you, not to us.</strong> Your attorney's independent judgment belongs to you alone, which is exactly right when your land is on the table.</p>
     </div>
   </div>
 </section>
@@ -675,7 +658,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="track">
         <span class="tag">Notice only</span>
         <h3>An agent has been in touch, but no offer yet</h3>
-        <p>You have more time than you think and more leverage than you will ever have again. Ten minutes on the phone tells you what is coming, what to photograph before a crew changes it, and when the number starts to matter. There is nothing to send us yet. Call anyway &mdash; that is the whole point of calling early.</p>
+        <p>You have more time than you think and more leverage than you will ever have again. Ten minutes on the phone now tells you what is coming, what to photograph before a crew changes it, and when the number actually matters. Nothing to send us yet &mdash; that is the point of calling early.</p>
         <!-- No download here on purpose. At this traffic volume a free PDF
              mostly converts people who would otherwise have phoned, and a call
              is worth far more than a download. The consultant sends the guide
@@ -693,12 +676,16 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <h2>What owners ask first</h2>
     </div>
     <div class="faq-item">
+      <h3>Do I need a lawyer, or do I need you?</h3>
+      <p>If the agency's right to take is genuinely in question, that's a legal fight and you want an attorney. If the dispute is over how much they should pay — which is most cases — that's a valuation fight, and that's us. Plenty of owners never need a lawyer at all &mdash; and the ones who do don't have to go find one. We bring you the names.</p>
+    </div>
+    <div class="faq-item">
       <h3>If I need an attorney, do I have to go find one myself?</h3>
       <p>No. We give you options — owner-side condemnation attorneys matched to your county and project. You choose and engage them directly, so they work for you. You just don't start from a search engine with a deadline running.</p>
     </div>
     <div class="faq-item">
       <h3>What does it cost?</h3>
-      <p>The review costs nothing and there is no obligation attached to it. If we take the case on we work on contingency, so you pay us only out of an increase we obtain &mdash; if the number never moves, you owe us nothing. Any attorney or appraiser you choose to engage sets their own fee with you directly.</p>
+      <p>The review costs nothing. If we take the case on, we work on contingency — paid from the increase we obtain, not out of your pocket. Any attorney or appraiser you engage sets their own fee with you directly.</p>
     </div>
     <div class="faq-item">
       <h3>Will fighting this make them take more of my land?</h3>
@@ -746,19 +733,38 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 
 <script>
 (function(){
-  /* Situation picker. Both groups are always visible — selecting one just
-     marks it, it does not reveal anything. Nothing on this form is hidden. */
+  /* two-step form */
   var hid=document.getElementById('offer_status'),
-      pickNote=document.getElementById('pickOne'),
+      card=document.getElementById('review'),
       opts=document.querySelectorAll('.opt');
+
+  /* Q1 - nothing hides; the chosen card just gets marked. */
   opts.forEach(function(b){
-    b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){
-      opts.forEach(function(o){o.classList.remove('sel');o.setAttribute('aria-pressed','false');});
+      opts.forEach(function(x){x.classList.remove('sel');x.setAttribute('aria-pressed','false');});
       b.classList.add('sel'); b.setAttribute('aria-pressed','true');
       hid.value=b.getAttribute('data-v');
-      pickNote.classList.remove('show');
-      gtag('event','form_situation',{campaign:'offer_review_lp',answer:hid.value});
+      gtag('event','form_q1',{campaign:'offer_review_lp',answer:hid.value});
+    });
+  });
+
+  /* Every non-phone CTA pulls the form up, pulses it once and puts the cursor
+     on the first thing still unanswered, so it reads as something to fill in. */
+  function openForm(){
+    card.scrollIntoView({behavior:'smooth',block:'start'});
+    card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash');
+    setTimeout(function(){
+      if(!hid.value){ var o=card.querySelector('.opt'); if(o){o.focus({preventScroll:true});} return; }
+      var n=document.getElementById('name');
+      if(n && !n.value){ n.focus({preventScroll:true}); }
+    },520);
+  }
+  document.querySelectorAll('a[href="#review"]').forEach(function(a){
+    if(a.id==='checkToForm') return;          /* has its own handler below */
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      gtag('event','cta_to_form',{campaign:'offer_review_lp',label:(a.textContent||'').trim().slice(0,40)});
+      openForm();
     });
   });
   /* ---- form submit → FormSubmit.co → thank-you page ---- */
@@ -768,11 +774,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    if(!hid.value){                       // no situation picked yet
-      pickNote.classList.add('show');
-      document.querySelector('.opts').scrollIntoView({block:'center',behavior:'smooth'});
-      return;
-    }
     var btn=form.querySelector('button.submit');
     btn.disabled=true; btn.textContent='Sending…'; errBox.style.display='none';
 
@@ -832,6 +833,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
     document.getElementById('selfcheck_answers').value=keys.sort().map(function(k){
       return QTEXT[k]+': '+LABEL[answers[k]];
     }).join(' | ');
+    syncAttached();
 
     verdict.classList.add('show');
     if(keys.length<total){
@@ -850,6 +852,39 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       vhead.textContent=gaps+' of 5 are worth a closer look.';
       vbody.textContent='Every one of those is a place where offers commonly come up short. We are not going to tell you what your land is worth from a web page — but this is exactly the kind of file we would want to read.';
     }
+  }
+
+  /* ---- one-tap qualifier (step 2) ---- */
+  var appr=document.getElementById('written_appraisal'),
+      apprBtns=document.querySelectorAll('#apprTap button');
+  apprBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      apprBtns.forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');
+      appr.value=b.getAttribute('data-v');
+      gtag('event','form_appraisal_q',{campaign:'offer_review_lp',answer:appr.value});
+    });
+  });
+
+  /* ---- show that the self-check answers travel with the request ---- */
+  function syncAttached(){
+    var box=document.getElementById('attached'), n=Object.keys(answers).length;
+    if(!n){ box.hidden=true; return; }
+    box.hidden=false;
+    box.innerHTML='<b>&#10003;</b><span>Your sixty-second check answers ('+n+' of '+total+
+      ') will be sent with this request.</span>';
+  }
+
+  /* "Send these answers with my request" — previously a bare #review anchor,
+     so it scrolled but told the visitor nothing. */
+  var toForm=document.getElementById('checkToForm');
+  if(toForm){
+    toForm.addEventListener('click',function(e){
+      e.preventDefault();
+      syncAttached();
+      gtag('event','selfcheck_to_form',{campaign:'offer_review_lp',answered:Object.keys(answers).length});
+      openForm();
+    });
   }
 })();
 </script>
