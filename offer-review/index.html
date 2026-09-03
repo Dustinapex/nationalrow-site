@@ -235,6 +235,13 @@ section{padding:52px 0}
 .qlabel{font-family:var(--disp);font-weight:700;font-size:1.04rem;margin-bottom:11px;display:flex;align-items:baseline;gap:9px;color:var(--ink)}
 .qlabel i{font-family:var(--mono);font-style:normal;font-size:.7rem;font-weight:600;color:#fff;background:var(--navy);width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
 .fieldgroup{margin-top:22px}
+/* Arriving from a CTA: mark the first thing still to answer, so nobody
+   lands on the form and has to work out where to begin. */
+@keyframes aimpulse{0%,100%{box-shadow:0 0 0 0 rgba(196,154,61,0)}35%{box-shadow:0 0 0 7px rgba(196,154,61,.30)}}
+.aim{outline:2px solid var(--gold);outline-offset:8px;animation:aimpulse 1.15s ease-out 2}
+.aim > .qlabel i{background:var(--gold);color:#1a1204}
+.aim > .qlabel::after{content:'Start here';font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1a1204;background:var(--gold);padding:3px 7px;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.aim{animation:none}}
 .reqnote{display:none;font-size:.86rem;color:#A3341F;margin-top:8px;font-weight:600}
 .reqnote.show{display:block}
 .opts{display:flex;flex-direction:column;gap:8px}
@@ -388,7 +395,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
         <div class="cta-row hero-cta">
           <!-- TODO: tracked number -->
           <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'hero'})">Call or Text (469) 484-7960</a>
-          <a class="btn btn-gold" href="#review">Send us the offer</a>
+          <a class="btn btn-gold" href="#review">Free consultation</a>
         </div>
         <p class="texthook"><strong>Fastest way:</strong> take a photo of the letter and text it to <a href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'texthook'})">(469) 484-7960</a>, or email it to <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request&amp;body=I%20received%20an%20offer%20on%20my%20property.%20The%20letter%20is%20attached.%0A%0AProperty%20county%20and%20state%3A%0AProject%20or%20agency%2C%20if%20known%3A%0ABest%20number%20to%20reach%20me%3A" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'texthook'})">info@nationalrow.com</a>. A consultant reads it before you ever speak to anyone. Then take thirty seconds on the <a href="#review">short form</a> so we have your number and your permission to get back to you.</p>
         <p class="texthook" style="margin-top:12px"><strong>There is a date on that letter.</strong> What it does depends on your state, the agency, and which document you are holding. Tell us what it says and we will tell you what we are looking at.</p>
@@ -468,7 +475,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
             <input type="hidden" name="consent_language_shown" id="consentText" />
             <input type="hidden" name="consent_timestamp" id="consentTime" />
             <input type="hidden" name="consent_page" id="consentPage" />
-            <button type="submit" class="submit">Send us the offer</button>
+            <button type="submit" class="submit">Get my free consultation</button>
             <p class="form-fine">Sending this asks National ROW to review your offer and to get back to you about it. If you leave the box above unchecked we'll still respond &mdash; a person will simply call or email you rather than anything automated.</p>
             <p class="form-fine" id="formErr" style="display:none;color:#A3341F">Couldn't send just now — please call <a href="tel:4694847960">(469) 484-7960</a> and we'll take your details.</p>
             <p class="form-fine">Prefer to send the document itself? Email it to <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'form'})">info@nationalrow.com</a>.</p>
@@ -536,7 +543,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="cta-row">
         <!-- TODO: tracked number -->
         <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'selfcheck'})">Call or Text (469) 484-7960</a>
-        <a class="btn btn-gold" href="#review" id="checkToForm">Send us the offer</a>
+        <a class="btn btn-gold" href="#review" id="checkToForm">Free consultation</a>
       </div>
     </div>
   </div>
@@ -643,7 +650,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="cta-row">
         <!-- TODO: tracked number -->
         <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'strip_results'})">Call or Text (469) 484-7960</a>
-        <a class="btn btn-gold" href="#review">Send us the offer</a>
+        <a class="btn btn-gold" href="#review">Free consultation</a>
       </div>
     </div>
   </div>
@@ -737,7 +744,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
     <div class="cta-row">
       <!-- TODO: tracked number -->
       <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'final'})">Call or Text (469) 484-7960</a>
-      <a class="btn btn-gold" href="#review">Send us the offer</a>
+      <a class="btn btn-gold" href="#review">Free consultation</a>
     </div>
   </div>
 </div>
@@ -771,7 +778,32 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
      marks it, it does not reveal anything. Nothing on this form is hidden. */
   var hid=document.getElementById('offer_status'),
       pickNote=document.getElementById('pickOne'),
-      opts=document.querySelectorAll('.opt');
+      opts=document.querySelectorAll('.opt'),
+      card=document.getElementById('review'),
+      s1=document.getElementById('step1'),
+      s2=document.getElementById('step2'),
+      aimTimer=null;
+
+  function clearAim(){ s1.classList.remove('aim'); s2.classList.remove('aim'); }
+  function aimAt(group,sel){
+    clearAim(); group.classList.add('aim');
+    clearTimeout(aimTimer); aimTimer=setTimeout(clearAim,9000);
+    setTimeout(function(){
+      var f=group.querySelector(sel);
+      if(f){ try{ f.focus({preventScroll:true}); }catch(e){ f.focus(); } }
+    },560);
+  }
+  function openForm(label){
+    card.scrollIntoView({behavior:'smooth',block:'start'});
+    if(!hid.value){ aimAt(s1,'.opt'); } else { aimAt(s2,'input'); }
+    gtag('event','cta_to_form',{campaign:'offer_review_lp',label:label||''});
+  }
+  document.querySelectorAll('a[href="#review"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      openForm((a.textContent||'').trim().slice(0,40));
+    });
+  });
   opts.forEach(function(b){
     b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){
@@ -779,6 +811,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       b.classList.add('sel'); b.setAttribute('aria-pressed','true');
       hid.value=b.getAttribute('data-v');
       pickNote.classList.remove('show');
+      if(s1.classList.contains('aim')){ aimAt(s2,'input'); }
       gtag('event','form_situation',{campaign:'offer_review_lp',answer:hid.value});
     });
   });
@@ -794,7 +827,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       document.querySelector('.opts').scrollIntoView({block:'center',behavior:'smooth'});
       return;
     }
-    var btn=form.querySelector('button.submit');
+    var btn=form.querySelector('button.submit'), btnLabel=btn.textContent;
     btn.disabled=true; btn.textContent='Sending…'; errBox.style.display='none';
 
     /* --- TCPA consent record ------------------------------------------
@@ -820,7 +853,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       if(!r.ok) throw new Error('bad response');
       window.location.href='/offer-review/thank-you/';
     }).catch(function(){
-      btn.disabled=false; btn.textContent='Tell me if the offer is fair';
+      btn.disabled=false; btn.textContent=btnLabel;
       errBox.style.display='block';
     });
   });
