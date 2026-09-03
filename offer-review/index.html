@@ -91,6 +91,21 @@ a{color:var(--navy)}
 .btn-outline:hover{border-color:var(--navy)}
 .texthook{margin-top:13px;font-size:1rem;color:rgba(255,255,255,.88);padding-bottom:4px;max-width:56ch}
 .texthook a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.offerbox{border:1px solid var(--line-2);border-top:3px solid var(--gold);background:var(--paper);padding:16px 18px;margin:0 0 18px}
+.offerbox .ob-k{display:block;font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:#8a6a20;font-weight:600;margin-bottom:9px}
+.offerbox ol{list-style:none;counter-reset:ob;margin:0}
+.offerbox li{counter-increment:ob;position:relative;padding-left:26px;margin-bottom:8px;font-size:.92rem;line-height:1.45;color:var(--ink);font-weight:450}
+.offerbox li:before{content:counter(ob);position:absolute;left:0;top:1px;width:18px;height:18px;background:var(--navy);color:#fff;font-family:var(--mono);font-size:.62rem;display:flex;align-items:center;justify-content:center;font-weight:600}
+.offerbox li:last-child{margin-bottom:0;font-weight:600;color:var(--navy)}
+.whois{margin-top:12px;font-family:var(--mono);font-size:.68rem;line-height:1.65;letter-spacing:.03em;color:rgba(255,255,255,.62)}
+.whois b{color:rgba(255,255,255,.9);font-weight:600}
+.dontlist{background:var(--navy-deep);color:#fff;padding:26px 28px}
+.dontlist h3{color:#fff;font-size:1.3rem;margin-bottom:6px}
+.dontlist .sub{color:rgba(255,255,255,.72);font-size:.95rem;margin-bottom:14px;max-width:60ch}
+.dontlist ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 26px}
+@media(max-width:760px){.dontlist ul{grid-template-columns:1fr}.dontlist{padding:20px 18px}}
+.dontlist li{position:relative;padding-left:20px;font-size:.95rem;line-height:1.45;color:rgba(255,255,255,.9)}
+.dontlist li:before{content:"\00d7";position:absolute;left:0;top:-1px;color:var(--gold-2);font-weight:700;font-size:1.05rem}
 .consent-note{margin-top:10px;font-size:.87rem;line-height:1.5;color:rgba(255,255,255,.6);max-width:56ch}
 .consent-note strong{color:rgba(255,255,255,.88)}
 
@@ -356,20 +371,34 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
         <div class="cta-row hero-cta">
           <!-- TODO: tracked number -->
           <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'hero'})">Call or Text (469) 484-7960</a>
-          <a class="btn btn-ghost" href="#review">Have us review the offer</a>
+          <a class="btn btn-ghost" href="#review">Send us the offer</a>
         </div>
         <p class="texthook"><strong>Fastest way:</strong> take a photo of the letter and text it to <a href="sms:+14694847960?&amp;body=Here%20is%20the%20offer%20letter%20I%20received.%20My%20county%20and%20state%3A" onclick="gtag('event','sms_click',{campaign:'offer_review_lp',location:'texthook'})">(469) 484-7960</a>, or email it to <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request&amp;body=I%20received%20an%20offer%20on%20my%20property.%20The%20letter%20is%20attached.%0A%0AProperty%20county%20and%20state%3A%0AProject%20or%20agency%2C%20if%20known%3A%0ABest%20number%20to%20reach%20me%3A" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'texthook'})">info@nationalrow.com</a>. A consultant reads it before you ever speak to anyone. Then take thirty seconds on the <a href="#review">short form</a> so we have your number and your permission to get back to you.</p>
+        <p class="texthook" style="margin-top:12px"><strong>There is a date on that letter.</strong> What it does depends on your state, the agency, and which document you are holding. Tell us what it says and we will tell you what we are looking at.</p>
         <p class="consent-note">We reply to the message you send us and nothing more. Nobody gets added to any automated list unless you say so &mdash; on the form, or by replying <strong>YES</strong> to our first text.</p>
         <!-- The "not a law firm" line is required — it is what keeps this on the
              right side of unauthorised-practice rules. Do not delete it. The
              sentences after it exist so the disclosure doesn't read as "go hire
              a lawyer." Keep that balance if you reword. -->
+        <p class="whois"><b>Dustin Boese</b>, Principal (Texas) &nbsp;&middot;&nbsp; <b>Chris Wilson</b>, Principal (Arizona) &nbsp;&middot;&nbsp; HQ Texas</p>
         <div class="not-law">A right-of-way consulting firm &mdash; not a law firm. Many of these never need a lawyer at all. If yours does, we already know who to bring in. You won't go looking.</div>
       </div>
 
       <div class="card" id="review">
         <h3>Is the offer fair?</h3>
         <p class="card-sub">Two questions. A consultant reads every one of these.</p>
+        <!-- TODO: confirm the callback window and business hours below are ones
+             you keep every time. Same promise appears on the thank-you page. -->
+        <div class="offerbox">
+          <span class="ob-k">What you actually get</span>
+          <ol>
+            <li>Send the offer letter and their appraisal if they gave you one. A photo is enough.</li>
+            <li>A consultant reads it and calls you <strong>within the hour, 8am&ndash;6pm Central, Monday to Friday</strong>. Outside those hours, first thing the next morning.</li>
+            <li>You get three things: what we think their number left out, what we would argue for, and whether it is worth pursuing at all.</li>
+            <li>It costs nothing and commits you to nothing.</li>
+            <li>If we do not think we can move the number, we tell you on that call.</li>
+          </ol>
+        </div>
         <div class="progress"><i class="on"></i><i id="p2"></i></div>
         <!-- Posts to FormSubmit.co, same service your homepage form uses. -->
         <!-- NOTE: the First 10 Days guide is deliberately NOT offered here.
@@ -422,7 +451,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
             <input type="hidden" name="consent_language_shown" id="consentText" />
             <input type="hidden" name="consent_timestamp" id="consentTime" />
             <input type="hidden" name="consent_page" id="consentPage" />
-            <button type="submit" class="submit">Tell me if the offer is fair</button>
+            <button type="submit" class="submit">Send us the offer</button>
             <p class="form-fine">Sending this asks National ROW to review your offer and to get back to you about it. If you leave the box above unchecked we'll still respond &mdash; a person will simply call or email you rather than anything automated.</p>
             <p class="form-fine" id="formErr" style="display:none;color:#A3341F">Couldn't send just now — please call <a href="tel:4694847960">(469) 484-7960</a> and we'll take your details.</p>
             <p class="form-fine">Prefer to send the document itself? Email it to <a href="mailto:info@nationalrow.com?subject=Offer%20review%20request" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'form'})">info@nationalrow.com</a>.</p>
@@ -469,42 +498,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
   </div>
 </div>
 
-<section>
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <div class="sec-head">
-          <div class="eyebrow">Who you call matters</div>
-          <h2>Your family attorney is excellent at wills.</h2>
-          <p class="standfirst">He has also, in all likelihood, never valued a partial take in his life. That's not a shot at him — it's a different job. Same reason you wouldn't ask us to write your will. We don't. We're not lawyers.</p>
-        </div>
-        <div class="punch"><p>Almost every condemnation case is a fight about a number, not about the law.</p></div>
-        <p>The agency's right to take is usually not in question. What they owe you for it is. That's an appraisal argument — and appraisal is the whole job here.</p>
-      </div>
-      <div class="roles">
-        <div class="role">
-          <span class="tag">Your general-practice attorney</span>
-          <h3>Knows you, not this</h3>
-          <p>Wills, closings, contracts. A partial take with remainder damages is something most general practices see once a decade, if ever.</p>
-        </div>
-        <div class="role">
-          <span class="tag">An eminent domain attorney</span>
-          <h3>Handles the law</h3>
-          <p>Pleadings, procedure, the courtroom. If it becomes litigation, this is who you want. Good ones bring valuation people in.</p>
-        </div>
-        <div class="role us">
-          <span class="tag">National ROW</span>
-          <h3>Handles the number</h3>
-          <p>What's being taken, what it does to what's left, and where their appraisal fell short. Many owners start here and never need more.</p>
-        </div>
-      </div>
-    </div>
-    <div class="disclosure">
-      <p>National ROW does not practice law, does not give legal advice, and does not represent anyone in court. Nothing here is legal advice, and contacting us does not create an attorney-client relationship. That does <em>not</em> mean you face this alone — see how the team comes together below.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ===== SELF-CHECK: diagnostic only. Deliberately makes NO estimate of
      value and NO claim that the user is owed more. Asks about the agency's
      process, then invites a conversation. ===== -->
@@ -526,11 +519,64 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="cta-row">
         <!-- TODO: tracked number -->
         <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'selfcheck'})">Call or Text (469) 484-7960</a>
-        <a class="btn btn-ghost" href="#review" id="checkToForm">Send these answers with my request</a>
+        <a class="btn btn-ghost" href="#review" id="checkToForm">Send us the offer</a>
       </div>
     </div>
   </div>
 </div>
+
+<div class="check-band" style="padding-top:0">
+  <div class="wrap">
+    <div class="dontlist">
+      <h3>Five things not to do this week</h3>
+      <p class="sub">None of this is legal advice. It is all about your own property and your own paperwork, and every one of them gets harder the longer you wait.</p>
+      <ul>
+        <li>Don't sign anything yet, including a form that only lets them come survey.</li>
+        <li>Don't let their appraiser walk the property without you there.</li>
+        <li>Don't clear, mow, or move a fence until it is photographed.</li>
+        <li>Don't talk to the right-of-way agent without writing down afterwards who said what.</li>
+        <li>Don't throw away the envelope. The postmark is sometimes the only date on the whole thing.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="sec-head">
+          <div class="eyebrow">Who you call matters</div>
+          <h2>Your family attorney is excellent at wills.</h2>
+          <p class="standfirst">He has probably never valued a partial take in his life. That's not a shot at him — it's a different job. Same reason you wouldn't ask us to write your will. We don't. We're not lawyers.</p>
+        </div>
+        <div class="punch"><p>Almost every condemnation case is a fight about a number, not about the law.</p></div>
+        <p>The agency's right to take is usually not in question. What they owe you for it is. That's an appraisal argument — and appraisal is the whole job here.</p>
+      </div>
+      <div class="roles">
+        <div class="role">
+          <span class="tag">Your general-practice attorney</span>
+          <h3>Knows you. Has never done this.</h3>
+          <p>Wills, closings, contracts. A partial take with remainder damages is something most general practices see once a decade, if ever.</p>
+        </div>
+        <div class="role">
+          <span class="tag">An eminent domain attorney</span>
+          <h3>Handles the law</h3>
+          <p>Pleadings, procedure, the courtroom. If it becomes litigation, this is who you want. Good ones bring valuation people in.</p>
+        </div>
+        <div class="role us">
+          <span class="tag">National ROW</span>
+          <h3>Argues the number</h3>
+          <p>What's being taken, what it does to what's left, and where their appraisal fell short. Many owners start here and never need more.</p>
+        </div>
+      </div>
+    </div>
+    <div class="disclosure">
+      <p>National ROW does not practice law, does not give legal advice, and does not represent anyone in court. Nothing here is legal advice, and contacting us does not create an attorney-client relationship. That does <em>not</em> mean you face this alone — see how the team comes together below.</p>
+    </div>
+  </div>
+</section>
+
 
 <section id="results">
   <div class="wrap">
@@ -590,26 +636,21 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="hgroup">
         <span class="tag">First</span>
         <h3>We read what they sent</h3>
-        <ul><li>The notice and full offer package</li><li>Their appraisal — and what it left out</li><li>Fee, permanent easement, or temporary</li></ul>
+        <ul><li>The notice and full offer package</li><li>Their appraisal — and what it left out</li><li>Whether it is a fee taking, a permanent easement or a temporary one</li></ul>
       </div>
       <div class="hgroup">
         <span class="tag">Then</span>
         <h3>We build the real number</h3>
-        <ul><li>Remainder and severance damages — often the larger loss</li><li>Highest and best use, not just current use</li><li>Access, frontage, drainage and fencing</li><li>Improvements, irrigation, crop and timber loss</li><li>Cost to cure the remaining property</li></ul>
+        <ul><li>Remainder and severance damages, usually the bigger number</li><li>Highest and best use, which is often nothing like current use</li><li>Access, frontage, drainage and fencing</li><li>Improvements, irrigation, crop and timber loss</li><li>Cost to cure the remaining property</li></ul>
       </div>
       <div class="hgroup">
         <span class="tag">Meanwhile</span>
-        <h3>We deal with them, not you</h3>
-        <ul><li>We negotiate with the agency's agents directly</li><li>One point of contact, start to finish</li><li>All correspondence in one place</li></ul>
-      </div>
-      <div class="hgroup">
-        <span class="tag">Your team</span>
-        <h3>You're never alone at the table</h3>
-        <ul><li>Owner-side condemnation attorneys — you pick from our options</li><li>MAI-certified appraisers — you pick from our options</li><li>Engineers, land planners, surveyors as needed</li><li>You hire each directly. We coordinate all of it.</li></ul>
+        <h3>We handle the agency</h3>
+        <ul><li>We negotiate with their agents so you never have to</li><li>One point of contact from the first call to the last</li></ul>
       </div>
     </div>
     <div class="disclosure">
-      <p><strong>How the team works:</strong> we don't employ attorneys or appraisers and we don't hire them for you. After forty years we know who's good in your county and on your kind of project. We give you options, you choose, and <strong>you engage them directly on their own paper — so they answer to you, not to us.</strong> Your attorney's independent judgment belongs to you alone, which is exactly right when your land is on the table.</p>
+      <p>If your matter needs an attorney or an independent appraiser, we will say so and put names in front of you. You engage them directly, on their own paper. We are not a law firm, and we take no share of anyone else's fee.</p>
     </div>
   </div>
 </section>
@@ -631,7 +672,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="track">
         <span class="tag">Notice only</span>
         <h3>An agent has been in touch, but no offer yet</h3>
-        <p>You have more time than you think and more leverage than you will ever have again. Ten minutes on the phone now tells you what is coming, what to photograph before a crew changes it, and when the number actually matters. Nothing to send us yet &mdash; that is the point of calling early.</p>
+        <p>You have more time than you think and more leverage than you will ever have again. Ten minutes on the phone tells you what is coming, what to photograph before a crew changes it, and when the number starts to matter. There is nothing to send us yet. Call anyway &mdash; that is the whole point of calling early.</p>
         <!-- No download here on purpose. At this traffic volume a free PDF
              mostly converts people who would otherwise have phoned, and a call
              is worth far more than a download. The consultant sends the guide
@@ -649,16 +690,12 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <h2>What owners ask first</h2>
     </div>
     <div class="faq-item">
-      <h3>Do I need a lawyer, or do I need you?</h3>
-      <p>If the agency's right to take is genuinely in question, that's a legal fight and you want an attorney. If the dispute is over how much they should pay — which is most cases — that's a valuation fight, and that's us. Plenty of owners never need a lawyer at all &mdash; and the ones who do don't have to go find one. We bring you the names.</p>
-    </div>
-    <div class="faq-item">
       <h3>If I need an attorney, do I have to go find one myself?</h3>
       <p>No. We give you options — owner-side condemnation attorneys matched to your county and project. You choose and engage them directly, so they work for you. You just don't start from a search engine with a deadline running.</p>
     </div>
     <div class="faq-item">
       <h3>What does it cost?</h3>
-      <p>The review costs nothing. If we take the case on, we work on contingency — paid from the increase we obtain, not out of your pocket. Any attorney or appraiser you engage sets their own fee with you directly.</p>
+      <p>The review costs nothing and there is no obligation attached to it. If we take the case on we work on contingency, so you pay us only out of an increase we obtain &mdash; if the number never moves, you owe us nothing. Any attorney or appraiser you choose to engage sets their own fee with you directly.</p>
     </div>
     <div class="faq-item">
       <h3>Will fighting this make them take more of my land?</h3>
