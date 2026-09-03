@@ -201,8 +201,10 @@ section{padding:52px 0}
 .ctastrip .cta-row{gap:10px}
 .ctastrip .btn{font-size:1rem;padding:13px 22px}
 
-.handles{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
-.hgroup{background:var(--paper-2);padding:23px 21px}
+.handles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.handles{grid-template-columns:1fr}}
+.hgroup{background:var(--paper-2);border:1px solid var(--line-2);padding:23px 21px}
+.hgroup p{font-size:.99rem;line-height:1.45;font-weight:500;color:var(--ink);max-width:none}
 .hgroup .tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:9px}
 .hgroup h3{color:var(--navy);margin-bottom:11px;font-size:1.08rem}
 .hgroup ul{list-style:none}
@@ -658,17 +660,17 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
       <div class="hgroup">
         <span class="tag">First</span>
         <h3>We read what they sent</h3>
-        <ul><li>The notice and full offer package</li><li>Their appraisal — and what it left out</li><li>Whether it is a fee taking, a permanent easement or a temporary one</li></ul>
+        <p>The notice, the full offer package and their appraisal — including whether this is a fee taking, a permanent easement or a temporary one.</p>
       </div>
       <div class="hgroup">
         <span class="tag">Then</span>
         <h3>We build the real number</h3>
-        <ul><li>Remainder and severance damages, usually the bigger number</li><li>Highest and best use, which is often nothing like current use</li><li>Access, frontage, drainage and fencing</li><li>Improvements, irrigation, crop and timber loss</li><li>Cost to cure the remaining property</li></ul>
+        <p>Remainder and severance damages, highest and best use, access and frontage, drainage and fencing, improvements, crop and timber loss, cost to cure.</p>
       </div>
       <div class="hgroup">
         <span class="tag">Meanwhile</span>
         <h3>We handle the agency</h3>
-        <ul><li>We negotiate with their agents so you never have to</li><li>One point of contact from the first call to the last</li></ul>
+        <p>We negotiate with their agents so you never have to. One point of contact from the first call to the last.</p>
       </div>
     </div>
     <div class="disclosure">
