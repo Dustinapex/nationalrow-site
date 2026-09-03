@@ -133,6 +133,11 @@ section{padding:52px 0}
 .check-band h2{margin-bottom:12px}
 .check-band .standfirst{color:rgba(255,255,255,.88);margin-bottom:26px;font-size:1.08rem}
 .qlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+/* 5 cards in a 3- or 2-column grid leave one cell empty, which exposed the
+   container's hairline colour as a grey block. This filler paints it navy.
+   Below 636px the grid is a single column with no empty cell, so it is dropped. */
+.qlist::after{content:"";background:var(--navy-deep);margin:-1px 0 0 -1px}
+@media(max-width:636px){.qlist::after{display:none}}
 .q{background:var(--navy-deep);padding:17px 19px;display:flex;flex-direction:column;gap:11px}
 .q p{font-size:1.03rem;color:#fff;max-width:none;line-height:1.42}
 .q .ans{display:flex;gap:7px}
