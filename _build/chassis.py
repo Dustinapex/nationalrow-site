@@ -181,6 +181,16 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .handoff h2{color:#fff;}
 .handoff p{color:rgba(255,255,255,.85);font-size:17px;max-width:640px;margin:0 auto 26px;line-height:1.7;}
 
+/* INLINE CTA BAND */
+.cta-band{background:#fbf7ec;border-top:3px solid var(--gold);border-bottom:1px solid #e6dcc2;padding:38px 24px;}
+.cta-band .inner{max-width:760px;margin:0 auto;text-align:center;}
+.cta-band h3{font-size:clamp(19px,2.4vw,25px);color:var(--navy);margin:0 0 12px;line-height:1.3;}
+.cta-band p{font-size:16px;line-height:1.7;color:#3d4a5c;margin:0 auto 22px;max-width:620px;}
+.cta-band .btn-gold{font-size:16px;}
+.cta-band .alt{margin-top:16px;font-size:15px;color:#5a6674;}
+.cta-band .alt a{color:#1d4ed8;font-weight:700;text-decoration:none;}
+.cta-band .alt a:hover{text-decoration:underline;}
+
 /* CONTACT + FORM */
 .contact-strip{background:var(--navy);color:var(--white);padding:32px 24px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08);}
 .contact-strip .phones{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:22px;font-weight:900;}
@@ -265,13 +275,14 @@ def form_section(project_source, heading="Get Your Free Case Review"):
   <div class="container">
     <div class="form-header">
       <h2>%s</h2>
-      <p>Tell us about your property. A National ROW consultant will contact you within one business day.</p>
+      <p>Tell us about your property. A senior consultant reads every one of these and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
     </div>
     <div class="form-body">
       <div id="the-form">
         <form id="leadForm" novalidate>
           <input type="hidden" name="_subject" value="New case review — %s">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
           <input type="hidden" name="project_source" id="projectSource" value="%s">
           <input type="hidden" name="referrer_url" id="referrerUrl" value="">
@@ -295,7 +306,7 @@ def form_section(project_source, heading="Get Your Free Case Review"):
       </div>
       <div class="form-success" id="formSuccess">
         <h3>We've got it from here.</h3>
-        <p>Your case is in review. One of our consultants will look at everything you shared and reach out — usually the same business day.</p>
+        <p>Your case is in review. A senior consultant reads everything you shared and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
         <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
         <div class="phones">Need to talk now? &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp; <a href="tel:+19563634144">(956) 363-4144</a></div>
       </div>

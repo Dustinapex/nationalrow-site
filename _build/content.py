@@ -179,6 +179,21 @@ HOW = """
 """
 
 
+def cta_band(headline, body, label, href, show_phone=True):
+    phone = ('\n    <p class="alt">Or call or text '
+             '<a href="tel:+14694847960">(469) 484-7960</a> '
+             '&mdash; a senior consultant answers owners the same day.</p>') if show_phone else ""
+    return """
+<section class="cta-band">
+  <div class="inner">
+    <h3>%s</h3>
+    <p>%s</p>
+    <a class="btn-gold" href="%s">%s</a>%s
+  </div>
+</section>
+""" % (headline, body, href, label, phone)
+
+
 def handoff(project_param, headline, sub):
     return """
 <section class="handoff">
