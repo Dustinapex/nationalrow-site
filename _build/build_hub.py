@@ -149,25 +149,25 @@ def build():
         "Want to know what your acreage is actually worth on this route?",
         "A senior consultant will walk your numbers with you &mdash; the easement acreage, what it does to the remainder, "
         "and the value the first offer tends to leave on the table. No cost and no obligation.",
-        "Get my free senior review &rarr;", "#contact"))
+        "Free review by a senior consultant &rarr;", "#contact"))
     b.append(C.OFFER_ANATOMY)
     b.append(C.cta_band(
         "Not contacted yet? This is the best time to call.",
         "A senior consultant reads every one of these. Knowing what the first offer will look like <em>before</em> it "
         "lands is worth far more than anything you can do after you have signed something.",
-        "Talk to a senior consultant &rarr;", "#contact"))
+        "Free review by a senior consultant &rarr;", "#contact"))
     b.append(C.DAMAGES)
     b.append(C.cta_band(
         "Already holding an offer letter?",
         "Send it over with their appraisal if they gave you one &mdash; a photo of the pages is enough. A senior consultant "
         "reads it and tells you what their number left out, what we would argue for, and whether it can be moved.",
-        "Get my free senior review &rarr;", "/offer-review/?project=%s" % "Texas%20765kV"))
+        "Free review by a senior consultant &rarr;", "/offer-review/?project=%s" % "Texas%20765kV"))
     b.append(C.HOW)
     b.append(C.cta_band(
         "Nothing out of pocket. Ever.",
         "A senior consultant reads every case that comes in and calls you back. If we look at your situation and do not "
         "think we can move the number, we tell you that too.",
-        "Start my free senior review &rarr;", "#contact"))
+        "Free review by a senior consultant &rarr;", "#contact"))
 
     faq_html = "".join('<div class="faq-item"><h4>%s</h4><p>%s</p></div>' % (q, a) for q, a in FAQ)
     b.append('<section><div class="container container-narrow"><h2>Frequently asked questions</h2>%s</div></section>' % faq_html)

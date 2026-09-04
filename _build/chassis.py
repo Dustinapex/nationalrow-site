@@ -33,7 +33,7 @@ img{max-width:100%;}
 
 /* NAV */
 .sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:70px;}
-.brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) left center/contain no-repeat;background-color:#fff;border-radius:10px;padding:6px 10px;box-sizing:content-box}
+.brand-logo,.footer-brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:10px;padding:6px 10px;box-sizing:content-box;}
 .nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:700;padding:11px 24px;border-radius:4px;font-size:15px;letter-spacing:.3px;transition:background .2s;}
 .nav-cta:hover{background:var(--gold-light);}
 .nav-links{display:flex;gap:24px;align-items:center;}
@@ -220,7 +220,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 
 /* FOOTER */
 footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;text-align:center;}
-.footer-brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;margin:0 auto 16px;}
+.footer-brand-logo{margin:0 auto 16px;}
 .footer-tagline{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;}
 .footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:0 0 20px;font-size:13px;}
 .footer-links a{color:rgba(255,255,255,.55);}
@@ -299,7 +299,7 @@ def form_section(project_source, heading="Get Your Free Case Review"):
             <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
           </div>
           <div class="tcpa-text">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy" style="color:var(--gold)">Privacy Policy</a>.</div>
-          <button class="submit-btn" type="submit">Get My Free Case Review →</button>
+          <button class="submit-btn" type="submit">Get my free senior review →</button>
           <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
           <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
         </form>
@@ -363,7 +363,7 @@ FORM_SCRIPT = """
         if(window.gtag) gtag('event','generate_lead',{project: (document.getElementById('projectSource')||{}).value || ''});
       } else { throw new Error('bad status'); }
     }catch(err){
-      btn.disabled=false; btn.textContent='Get My Free Case Review →';
+      btn.disabled=false; btn.textContent='Get my free senior review →';
       alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
     }
   });
