@@ -139,7 +139,16 @@ def map_section(project_ids, title, blurb, oncor_viewer_url, constraints_pdf_url
   // ---- carry what we learned into the lead form ----
   function set(id, val){
     var el = document.getElementById(id);
-    if(el && val && !el.value) el.value = val;
+    if(!el || !val) return;
+    if(!el.__nrWired){
+      el.__nrWired = true;
+      el.addEventListener('input', function(){ el.dataset.nrAuto = ''; });
+    }
+    // Fill when empty, or overwrite a value we put there ourselves on an earlier check.
+    if(!el.value || el.dataset.nrAuto === '1'){
+      el.value = val;
+      el.dataset.nrAuto = '1';
+    }
   }
   function setHidden(name, val){
     var f = document.getElementById('leadForm');
