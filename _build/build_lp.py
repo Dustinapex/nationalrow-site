@@ -44,10 +44,6 @@ PAGES = [
         "map_center": [31.6, -100.4],
         "map_zoom": 7,
 
-        "proof_note": ("Our largest increase on file is <b>+1,825%</b> &mdash; an I&#8209;35 expansion taking in "
-                       "McLennan County that went from $20,000 to $385,000. That was a highway condemnation rather "
-                       "than a utility easement, but the number moved for the same reason."),
-
         "cta_1": ("You do not have to wait for the letter.",
                   "Right-of-way agents are working these two routes now. The best time to understand what your land "
                   "is worth is before the first offer is in front of you with a signature line under it."),
