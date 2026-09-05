@@ -7,9 +7,15 @@ call render(cfg). Everything you leave out falls back to DEFAULTS below.
 
 Section order is fixed and deliberate, and mirrors /offer-review/:
 
-    header  ->  hero  ->  PROOF BAND  ->  address checker + map
+    header  ->  hero  ->  PROOF BAND  ->  compact route map
             ->  what you get  ->  CTA  ->  what a first offer leaves out
             ->  CTA  ->  form  ->  footer
+
+There is deliberately NO address checker on a landing page. Paid traffic is
+paid for on the click; a checker that answers "your address is not on the
+route" throws that money away - and because the filed corridor is not the
+final surveyed alignment, that answer would not even be reliable. The
+interactive checker lives on the /projects/* information pages instead.
 
 Proof sits directly under the hero, above every ask. Credibility comes before
 you make the visitor do work.
@@ -26,7 +32,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from chassis import head, FORM_SCRIPT, form_section, SITE_HEADER
-from mapmod import MAP_HEAD, map_section
+from mapmod import MAP_HEAD, map_compact
 import content as C
 from build import VIEWER, ROOT
 
@@ -49,7 +55,7 @@ DEFAULTS = {
     "h1": None,                         # REQUIRED, white line
     "h1_gold": "",                      # gold second line, omit to hide
     "sub": None,                        # REQUIRED, paragraph under the H1
-    "hero_cta": "Check my address &rarr;",
+    "hero_cta": CTA,                    # primary gold button -> the form
     "trust": ("On the property owner's side since the 1980s &nbsp;&middot;&nbsp; "
               "<b>We never represent the condemning agency</b> &nbsp;&middot;&nbsp; No upfront cost"),
 
@@ -59,19 +65,17 @@ DEFAULTS = {
     "proof_fine": None,                 # None -> content.PROOF_FINE
     "proof_note": "",                   # optional extra line under the band
 
-    # --- map / address checker ------------------------------------------
+    # --- compact route map (proof, NOT a qualifier - see module docstring)
     "project_ids": None,                # REQUIRED, Oncor CCN project_id list
-    "map_heading": "Is your property on the approved route?",
-    "map_blurb": ("The gold line is the centerline the PUCT approved. Dashed grey lines are routes that were "
-                  "studied and not selected. Enter an address and we will tell you how far your property sits "
-                  "from the approved line."),
-    "map_center": [31.6, -100.4],
-    "map_zoom": 7,
+    "map_heading": "The approved route",
+    "map_blurb": ("Gold is the centerline the PUCT approved. Dashed grey is what was studied and not selected."),
+    "map_detail_url": "/projects/ercot-765kv/",
+    "map_detail_label": "See the full route, docket filings and an address checker &rarr;",
 
     # --- body -----------------------------------------------------------
     "get_heading": "What you actually get",
     "get_cards": [
-        ("A senior consultant, not a call centre",
+        ("A senior consultant, not a call center",
          "A senior consultant reads every one of these and calls you back within the hour, 8am&ndash;6pm Central, "
          "Monday to Friday. Outside those hours, first thing the next morning."),
         ("What their number left out",
@@ -97,7 +101,7 @@ DEFAULTS = {
          "folded in for free."),
         ("The easement language itself",
          "Width, height, vegetation control, future additional circuits, assignment to third parties. The document "
-         "outlives the cheque by decades."),
+         "outlives the check by decades."),
     ],
     "cta_2": ("Already have an offer letter in hand?",
               "Send it over with their appraisal if they gave you one &mdash; a photo of the pages is enough. "
@@ -122,6 +126,15 @@ LP_CSS = """
 .lp-trust{background:#0d2340;color:rgba(255,255,255,.8);font-size:14px;padding:13px 22px;text-align:center;
   border-top:1px solid rgba(255,255,255,.08);line-height:1.7;}
 .lp-trust b{color:var(--gold);}
+.lp-map{padding:38px 22px 34px;background:#f4f7fa;}
+.lp-map .container{max-width:900px;}
+.lp-map h2{text-align:center;font-size:clamp(21px,2.6vw,27px);margin:0 0 6px;}
+.lp-map-sub{text-align:center;color:#5b6a7d;font-size:14.5px;line-height:1.6;margin:0 auto 18px;max-width:620px;}
+.lp-map #routeMapC{height:300px;width:100%;background:#eef2f6;position:relative;}
+.lp-map .map-legend{padding:9px 16px;font-size:12.5px;gap:14px;}
+.lp-map .map-note{font-size:11.5px;padding:10px 16px;}
+.lp-map-more{text-align:center;margin:14px 0 0;font-size:14px;}
+.lp-map-more a{color:var(--navy);font-weight:700;}
 .lp-get{padding:52px 22px;background:#fff;}
 .lp-get .grid{max-width:1000px;margin:26px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:22px;}
 .lp-get .card{border:1px solid #e2e8f0;border-left:4px solid var(--gold);border-radius:5px;padding:22px 20px;background:#fbfcfd;}
@@ -139,6 +152,8 @@ LP_CSS = """
   .lp-hero{padding:34px 18px 32px;}
   .lp-hero .acts .btn-gold,.lp-hero .acts .btn-outline{width:100%;text-align:center;}
   .lp-get,.miss{padding:38px 18px;}
+  .lp-map{padding:28px 16px 26px;}
+  .lp-map #routeMapC{height:210px;}
 }
 """
 
@@ -182,22 +197,21 @@ def render(user_cfg, write=True):
     %s<h1>%s%s</h1>
     <p class="sub">%s</p>
     <div class="acts">
-      <a class="btn-gold" href="#corridor-check">%s</a>
-      <a class="btn-outline" href="#contact">%s</a>
+      <a class="btn-gold" href="#contact">%s</a>
+      <a class="btn-outline" href="tel:%s">Call or text %s</a>
     </div>
   </div>
 </section>
 <div class="lp-trust">%s</div>
-""" % (SITE_HEADER, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], CTA, c["trust"]))
+""" % (SITE_HEADER, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], PHONE, PHONE_H, c["trust"]))
 
     # PROOF BAND — directly under the hero, above every ask.
     b.append(C.proof_band(results=c["results"], headline=c["proof_headline"], fine=c["proof_fine"]))
     if c["proof_note"]:
         b.append('<div class="lp-trust">%s</div>' % c["proof_note"])
 
-    b.append('<div id="corridor-check"></div>')
-    b.append(map_section(c["project_ids"], c["map_heading"], c["map_blurb"],
-                         VIEWER, None, c["map_center"], c["map_zoom"]))
+    b.append(map_compact(c["project_ids"], c["map_heading"], c["map_blurb"],
+                         VIEWER, c["map_detail_url"], c["map_detail_label"]))
 
     cards = "\n      ".join(
         '<div class="card"><h3>%s</h3>\n        <p>%s</p></div>' % (h, p) for h, p in c["get_cards"])

@@ -30,19 +30,18 @@ PAGES = [
         "schema_name": "765 kV Transmission Easement Review for Texas Landowners",
 
         "eyebrow": "424 miles approved &middot; August 28, 2026",
-        "h1": "Oncor's 765 kV line is coming through 21 Texas counties.",
-        "h1_gold": "Find out if it crosses your land.",
-        "sub": ("Type your address below and we will measure it against the approved centerline &mdash; the actual "
-                "route the PUCT signed off on, not an estimate. Then a senior consultant will tell you what the "
-                "easement is worth before you are asked to sign anything."),
+        "h1": "Oncor is running 765,000 volts across Texas.",
+        "h1_gold": "Your land may be on the route.",
+        "sub": ("They have a team &mdash; appraisers, right-of-way agents and lawyers who do this every day. If the "
+                "line crosses your property you will find out by letter, and their number will already be written. "
+                "Find out what your side of it is worth first."),
 
         "project_ids": [1015, 1019],
-        "map_heading": "Is your property on an approved 765 kV route?",
-        "map_blurb": ("The gold line is the centerline the PUCT approved. Dashed grey lines are routes that were "
-                      "studied and not selected. Enter an address and we will tell you how far your property sits "
-                      "from the approved line, and which docket it falls under."),
-        "map_center": [31.6, -100.4],
-        "map_zoom": 7,
+        "map_heading": "The two approved 765 kV routes",
+        "map_blurb": ("Gold is the centerline the PUCT approved on August 28, 2026. Dashed grey is what was studied "
+                      "and not selected. The easement corridor runs roughly 200 feet wide along the gold line."),
+        "map_detail_url": "/projects/ercot-765kv/",
+        "map_detail_label": "See the full route, both dockets and an address checker &rarr;",
 
         "cta_1": ("You do not have to wait for the letter.",
                   "Right-of-way agents are working these two routes now. The best time to understand what your land "
@@ -59,7 +58,7 @@ PAGES = [
              "frequently folded in for free."),
             ("The easement language itself",
              "Width, height, vegetation control, future additional circuits, assignment to third parties. The "
-             "document outlives the cheque by decades."),
+             "document outlives the check by decades."),
         ],
 
         "form_source": "765kv_lp",

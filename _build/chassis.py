@@ -33,7 +33,8 @@ BASE_CSS = r"""
   --logo:url("/national-row-logo.png");
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+body{font-family:'Barlow','Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+h1,h2,h3,h4,h5,h6,.btn-gold,.btn-outline{font-family:'Barlow Semi Condensed','Barlow','Arial Narrow',Arial,sans-serif;}
 a{color:var(--gold);text-decoration:none;}
 img{max-width:100%;}
 
@@ -70,7 +71,7 @@ img{max-width:100%;}
 .topbar a:hover{color:#fff;}
 
 /* NAV */
-.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:70px;}
+.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:60px;}
 .brand-logo,.footer-brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:10px;padding:6px 10px;box-sizing:content-box;}
 .nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:700;padding:11px 24px;border-radius:4px;font-size:15px;letter-spacing:.3px;transition:background .2s;}
 .nav-cta:hover{background:var(--gold-light);}
@@ -330,9 +331,6 @@ SITE_HEADER = """
 
 TOPBAR_NAV = SITE_HEADER + """
 <nav class="sitenav">
-  <a href="https://nationalrow.com" aria-label="National ROW home">
-    <span class="brand-logo" role="img" aria-label="National ROW — On the owner's side of the right-of-way"></span>
-  </a>
   <div class="nav-links">
     <a href="https://nationalrow.com/#how">How it works</a>
     <a href="/services/">What we handle</a>
@@ -487,7 +485,7 @@ def head(title, description, canonical, schema_json, extra_head=""):
 <link rel="apple-touch-icon" href="https://nationalrow.com/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
 <script type="application/ld+json">
 %s
 </script>

@@ -240,3 +240,93 @@ def map_section(project_ids, title, blurb, oncor_viewer_url, constraints_pdf_url
 </script>
 """ % (title, blurb, oncor_viewer_url, constraints_pdf_url, ids,
        default_center, default_zoom, oncor_viewer_url, oncor_viewer_url)
+
+
+def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_label):
+    """Compact, non-qualifying route map for PAID-TRAFFIC LANDING PAGES.
+
+    Deliberately has NO address checker. On a paid landing page a checker can
+    tell a visitor they are not affected and kill a lead we already paid for -
+    and the filed corridor is not the final surveyed alignment anyway, so a
+    'no match' answer would not even be reliable. Here the map is proof that
+    we know the project, not a qualifier. It auto-fits to the approved route
+    so it reads at a glance on a phone.
+    """
+    ids = ",".join(str(p) for p in project_ids)
+    return """
+<section class="lp-map" id="route">
+  <div class="container">
+    <h2>%s</h2>
+    <p class="lp-map-sub">%s</p>
+    <div class="map-wrap">
+      <div id="routeMapC"></div>
+      <div class="map-legend">
+        <span><i class="swatch" style="background:#c9a227"></i> Approved route</span>
+        <span><i class="swatch" style="background:#94a3b8"></i> Studied, not selected</span>
+      </div>
+      <div class="map-note">
+        Loaded live from Oncor&rsquo;s public project mapping service. The gold line is the approved
+        <em>centerline</em>; the easement is a corridor roughly 200 feet wide centered on it, and the final
+        surveyed alignment can still shift within the approved corridor. <strong>Not a survey and not legal
+        advice.</strong> Confirm against <a href="%s" target="_blank" rel="noopener">Oncor&rsquo;s official map viewer</a>.
+      </div>
+    </div>
+    <p class="lp-map-more"><a href="%s">%s</a></p>
+  </div>
+</section>
+
+<script>
+(function(){
+  var SVC='https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/2/query';
+  var PIDS='%s';
+  var map;
+
+  function q(where, cb){
+    var url = SVC + '?f=geojson&outSR=4326&resultRecordCount=2000&maxAllowableOffset=0.0004'
+            + '&outFields=link_id,Status,project_id&where=' + encodeURIComponent(where);
+    fetch(url).then(function(r){ return r.json(); }).then(cb).catch(function(){ cb(null); });
+  }
+
+  function fail(){
+    var el = document.getElementById('routeMapC');
+    if(!el) return;
+    el.insertAdjacentHTML('beforeend',
+      '<div style="position:absolute;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;'
+      + 'background:rgba(255,255,255,.94);padding:20px;text-align:center;font-size:14px;line-height:1.7;color:#334155">'
+      + "Route map couldn't load. View it on <a href='%s' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>."
+      + '</div>');
+  }
+
+  function init(){
+    // Touch devices: dragging off so the map never traps the page scroll.
+    map = L.map('routeMapC', {
+      scrollWheelZoom:false,
+      dragging: !L.Browser.mobile,
+      tap: false,
+      zoomControl: true
+    }).setView([31.6,-100.4], 6);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
+      maxZoom:19,
+      attribution:'Tiles &copy; Esri | Route data: Oncor Electric Delivery (public CCN viewer)'
+    }).addTo(map);
+
+    q("project_id IN (" + PIDS + ") AND Status<>'Approved'", function(g){
+      if(g && g.features && g.features.length){
+        L.geoJSON(g, {style:{color:'#94a3b8', weight:2, opacity:.6, dashArray:'4,5'}}).addTo(map);
+      }
+    });
+    q("project_id IN (" + PIDS + ") AND Status='Approved'", function(g){
+      if(!g || !g.features || !g.features.length){ fail(); return; }
+      var layer = L.geoJSON(g, {style:{color:'#c9a227', weight:5, opacity:.95}}).addTo(map);
+      try{
+        map.fitBounds(layer.getBounds(), {padding:[18,18]});
+      }catch(e){}
+      setTimeout(function(){ map.invalidateSize(); }, 200);
+    });
+  }
+
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
+})();
+</script>
+""" % (title, blurb, oncor_viewer_url, detail_url, detail_label, ids, oncor_viewer_url)
