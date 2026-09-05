@@ -334,7 +334,10 @@ SITE_HEADER = """
 # or the phone, not by clicking the logo through to the homepage.
 SITE_HEADER_NOLINK = SITE_HEADER.replace(
     '<a class="brand" href="https://nationalrow.com" aria-label="National ROW home"><img src="/national-row-logo.png" alt="National ROW"></a>',
-    '<span class="brand"><img src="/national-row-logo.png" alt="National ROW"></span>')
+    '<span class="brand"><img src="/national-row-logo.png" alt="National ROW"></span>'
+).replace(
+    '<span class="hc-line"><small>Email</small><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></span>',
+    '<a class="hc-cta" href="#contact">Free review by a senior consultant &rarr;</a>')
 
 TOPBAR_NAV = SITE_HEADER + """
 <nav class="sitenav">
