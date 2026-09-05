@@ -158,6 +158,9 @@ def build_segment(slug, s):
 </section>""" % (s["docket"], s["route_no"], s["short"], s["miles"], s["from_pt"], s["to_pt"],
                  ncty, s["miles"], ncty, "{:,}".format(ac)))
 
+    # PROOF BAND — documented results, high on the page (mirrors /offer-review/)
+    body.append(C.proof_band())
+
     # STATUS
     meetings = "<br>".join("%s — %s" % (d, p) for d, p in s["meetings"])
     body.append("""

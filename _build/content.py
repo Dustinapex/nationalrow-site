@@ -179,6 +179,78 @@ HOW = """
 """
 
 
+# ---------------------------------------------------------------- PROOF BAND
+# Documented results, rendered high on the page (directly under the hero),
+# mirroring the placement /offer-review/ uses. Every field is data, not prose:
+# swap RESULTS / edit the caller's args and the band re-renders.
+#
+# Each result is a dict:
+#   where : where and what kind of taking it was
+#   frm   : first offer
+#   to    : final
+#   pct   : percentage increase
+#   why   : OPTIONAL one line on why the number moved. Leave it out and the
+#           "why the price increased" sub-block is omitted entirely — do not
+#           invent one, these are advertised claims that need substantiation.
+
+RESULTS_UTILITY = [
+    {"where": "Utility easement &middot; Houston, TX", "frm": "$16,000", "to": "$138,000", "pct": "+762%"},
+    {"where": "Utility easement &middot; Irving, TX",  "frm": "$12,000", "to": "$50,000",  "pct": "+317%"},
+]
+
+PROOF_HEADLINE = ("Almost every condemnation case is a fight about a number, "
+                  "not about the law.")
+
+PROOF_FINE = ("Individual documented matters, each traced from the original offer letter through to final settlement. "
+              "They are not an average and not a prediction &mdash; every take is different, and when we look at yours "
+              "and think the number is close to right, we tell you so. National ROW is a right-of-way consulting firm, "
+              "not a law firm; nothing here is legal advice.")
+
+
+def proof_band(results=None, headline=None, fine=None, act=None, heading="Our documented results"):
+    """Gold results band. `act` is the third column: (h3, paragraph, link_html)."""
+    results = RESULTS_UTILITY if results is None else results
+    headline = PROOF_HEADLINE if headline is None else headline
+    fine = PROOF_FINE if fine is None else fine
+    if act is None:
+        act = ("Text us the letter",
+               "A photo of the offer is enough. A senior consultant reads it and tells you what we see.",
+               '<a href="sms:+14694847960">Text (469) 484-7960 &rarr;</a>')
+
+    cols = []
+    for r in results:
+        why = ""
+        if r.get("why"):
+            why = ('\n        <div class="why">Why the price increased</div>'
+                   '\n        <div class="whytxt">%s</div>' % r["why"])
+        cols.append("""      <div class="col">
+        <div class="where">%s</div>
+        <div class="nums">%s<span class="ar">&rarr;</span>%s</div>
+        <div class="pct">%s</div>%s
+      </div>""" % (r["where"], r["frm"], r["to"], r["pct"], why))
+
+    cols.append("""      <div class="col act">
+        <div class="why" style="margin-top:0">Free, no obligation</div>
+        <h3>%s</h3>
+        <p>%s</p>
+        %s
+      </div>""" % act)
+
+    return """
+<section class="proofband">
+  <div class="inner">
+    <p class="hl">%s</p>
+    <div class="rule"></div>
+    <h2>%s</h2>
+    <div class="cols">
+%s
+    </div>
+    <p class="fine">%s</p>
+  </div>
+</section>
+""" % (headline, heading, "\n".join(cols), fine)
+
+
 def cta_band(headline, body, label, href, show_phone=True):
     phone = ('\n    <p class="alt">Or call or text '
              '<a href="tel:+14694847960">(469) 484-7960</a> '

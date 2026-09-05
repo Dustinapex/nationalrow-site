@@ -134,6 +134,13 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .num-table tr:nth-child(even) td{background:#f9fafb;}
 .num-table td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
 .num-table tfoot td{font-weight:800;color:var(--navy);border-top:2px solid var(--navy);background:#fff!important;}
+/* Wide data tables must scroll inside themselves on a phone, never the page. */
+@media(max-width:620px){
+  .num-table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:14px;}
+  .num-table th,.num-table td{padding:10px 10px;}
+  .project-table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .project-table td:first-child{width:auto;min-width:118px;}
+}
 
 /* DAMAGES */
 .damages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:26px;}
@@ -181,6 +188,33 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .handoff h2{color:#fff;}
 .handoff p{color:rgba(255,255,255,.85);font-size:17px;max-width:640px;margin:0 auto 26px;line-height:1.7;}
 
+/* PROOF BAND — documented results, sits high on the page */
+.proofband{background:var(--gold);padding:46px 22px;}
+.proofband .inner{max-width:1080px;margin:0 auto;}
+.proofband .hl{color:var(--navy);font-size:clamp(20px,2.6vw,28px);font-weight:900;line-height:1.28;margin:0 0 6px;max-width:620px;}
+.proofband .rule{width:52px;height:3px;background:rgba(11,31,58,.42);margin:16px 0 22px;}
+.proofband h2{color:var(--navy);font-size:clamp(18px,2.1vw,22px);margin:0 0 20px;}
+.proofband .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(236px,1fr));gap:0;}
+.proofband .col{padding:0 26px;border-left:1px solid rgba(11,31,58,.2);}
+.proofband .col:first-child{padding-left:0;border-left:none;}
+.proofband .where{color:rgba(11,31,58,.72);font-size:12.5px;letter-spacing:.9px;text-transform:uppercase;font-weight:700;line-height:1.5;margin-bottom:9px;}
+.proofband .nums{color:var(--navy);font-size:clamp(24px,3.1vw,31px);font-weight:900;letter-spacing:-.6px;line-height:1.1;}
+.proofband .nums .ar{margin:0 8px;font-weight:700;}
+.proofband .pct{color:var(--navy);font-weight:800;font-size:15px;margin-top:8px;}
+.proofband .why{color:rgba(11,31,58,.66);font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;font-weight:700;margin-top:15px;}
+.proofband .whytxt{color:var(--navy);font-size:14.5px;line-height:1.6;font-weight:600;margin-top:4px;}
+.proofband .act h3{color:var(--navy);font-size:20px;margin:0 0 8px;}
+.proofband .act p{color:rgba(11,31,58,.78);font-size:14.5px;line-height:1.65;margin:0 0 12px;}
+.proofband .act a{color:var(--navy);font-weight:800;font-size:15px;text-decoration:none;border-bottom:2px solid rgba(11,31,58,.45);padding-bottom:2px;}
+.proofband .act a:hover{border-bottom-color:var(--navy);}
+.proofband .fine{color:rgba(11,31,58,.66);font-size:12.5px;line-height:1.65;margin:26px 0 0;border-top:1px solid rgba(11,31,58,.18);padding-top:16px;}
+@media(max-width:720px){
+  .proofband{padding:34px 20px;}
+  .proofband .cols{gap:24px;}
+  .proofband .col{padding:0;border-left:none;border-top:1px solid rgba(11,31,58,.22);padding-top:22px;}
+  .proofband .col:first-child{border-top:none;padding-top:0;}
+}
+
 /* INLINE CTA BAND */
 .cta-band{background:#fbf7ec;border-top:3px solid var(--gold);border-bottom:1px solid #e6dcc2;padding:38px 24px;}
 .cta-band .inner{max-width:760px;margin:0 auto;text-align:center;}
@@ -204,12 +238,13 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 @media(max-width:580px){.form-grid{grid-template-columns:1fr;}}
 .form-group{display:flex;flex-direction:column;gap:6px;}
 .form-group.full{grid-column:1/-1;}
-label{font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;}
-input,select,textarea{border:1.5px solid #d1d5db;border-radius:5px;padding:11px 14px;font-size:15px;font-family:inherit;width:100%;background:#fff;}
+label{font-size:12.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;}
+input,select,textarea{border:1.5px solid #d1d5db;border-radius:5px;padding:13px 14px;font-size:16px;font-family:inherit;width:100%;background:#fff;min-height:46px;box-sizing:border-box;}
+textarea{min-height:104px;}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.15);}
 .tcpa-text{font-size:11px;color:#6b7280;line-height:1.65;margin:18px 0 4px;padding:12px;background:#f9fafb;border-radius:5px;border:1px solid #e5e7eb;}
-.form-disclaimer{font-size:11px;color:#9ca3af;margin-top:12px;line-height:1.55;}
-.submit-btn{background:var(--gold);color:var(--navy);font-weight:700;font-size:17px;padding:15px 32px;border:none;border-radius:5px;cursor:pointer;width:100%;margin-top:14px;}
+.form-disclaimer{font-size:12px;color:#8b93a1;margin-top:12px;line-height:1.6;}
+.submit-btn{background:var(--gold);color:var(--navy);font-weight:700;font-size:17px;padding:16px 28px;border:none;border-radius:5px;cursor:pointer;width:100%;margin-top:14px;min-height:52px;line-height:1.25;}
 .submit-btn:hover{background:var(--gold-light);}
 .form-subtext{text-align:center;font-size:13px;color:#6b7280;margin-top:12px;}
 .form-success{display:none;text-align:center;padding:40px 20px;}

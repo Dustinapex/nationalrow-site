@@ -101,6 +101,9 @@ def build():
 </section>""" % (seg_card("dinosaur-longshore-765kv", SEG["dinosaur-longshore-765kv"]),
                  seg_card("longshore-drill-hole-765kv", SEG["longshore-drill-hole-765kv"])))
 
+    # PROOF BAND — documented results, high on the page (mirrors /offer-review/)
+    b.append(C.proof_band())
+
     b.append(map_section([1015, 1019],
         "Both approved routes on one map",
         "Gold is what the PUCT approved. Dashed grey is what was studied and not selected. Enter an address to see roughly how far your property sits from the approved centerline. For the detail on a single project — timeline, offer anatomy, sources — open its own page above.",
