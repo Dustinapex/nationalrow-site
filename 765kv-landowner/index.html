@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="https://nationalrow.com/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,6 +56,15 @@
 .lp-trust{background:#0d2340;color:rgba(255,255,255,.8);font-size:14px;padding:13px 22px;text-align:center;
   border-top:1px solid rgba(255,255,255,.08);line-height:1.7;}
 .lp-trust b{color:var(--gold);}
+.lp-map{padding:38px 22px 34px;background:#f4f7fa;}
+.lp-map .container{max-width:900px;}
+.lp-map h2{text-align:center;font-size:clamp(21px,2.6vw,27px);margin:0 0 6px;}
+.lp-map-sub{text-align:center;color:#5b6a7d;font-size:14.5px;line-height:1.6;margin:0 auto 18px;max-width:620px;}
+.lp-map #routeMapC{height:300px;width:100%;background:#eef2f6;position:relative;}
+.lp-map .map-legend{padding:9px 16px;font-size:12.5px;gap:14px;}
+.lp-map .map-note{font-size:11.5px;padding:10px 16px;}
+.lp-map-more{text-align:center;margin:14px 0 0;font-size:14px;}
+.lp-map-more a{color:var(--navy);font-weight:700;}
 .lp-get{padding:52px 22px;background:#fff;}
 .lp-get .grid{max-width:1000px;margin:26px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:22px;}
 .lp-get .card{border:1px solid #e2e8f0;border-left:4px solid var(--gold);border-radius:5px;padding:22px 20px;background:#fbfcfd;}
@@ -73,6 +82,8 @@
   .lp-hero{padding:34px 18px 32px;}
   .lp-hero .acts .btn-gold,.lp-hero .acts .btn-outline{width:100%;text-align:center;}
   .lp-get,.miss{padding:38px 18px;}
+  .lp-map{padding:28px 16px 26px;}
+  .lp-map #routeMapC{height:210px;}
 }
 </style>
 <style>
@@ -86,7 +97,8 @@
   --logo:url("/national-row-logo.png");
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+body{font-family:'Barlow','Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+h1,h2,h3,h4,h5,h6,.btn-gold,.btn-outline{font-family:'Barlow Semi Condensed','Barlow','Arial Narrow',Arial,sans-serif;}
 a{color:var(--gold);text-decoration:none;}
 img{max-width:100%;}
 
@@ -123,7 +135,7 @@ img{max-width:100%;}
 .topbar a:hover{color:#fff;}
 
 /* NAV */
-.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:70px;}
+.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:60px;}
 .brand-logo,.footer-brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:10px;padding:6px 10px;box-sizing:content-box;}
 .nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:700;padding:11px 24px;border-radius:4px;font-size:15px;letter-spacing:.3px;transition:background .2s;}
 .nav-cta:hover{background:var(--gold-light);}
@@ -386,11 +398,11 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 <section class="lp-hero">
   <div class="container">
     <span class="eyebrow">424 miles approved &middot; August 28, 2026</span>
-    <h1>Oncor's 765 kV line is coming through 21 Texas counties.<br><span class="gold">Find out if it crosses your land.</span></h1>
-    <p class="sub">Type your address below and we will measure it against the approved centerline &mdash; the actual route the PUCT signed off on, not an estimate. Then a senior consultant will tell you what the easement is worth before you are asked to sign anything.</p>
+    <h1>Oncor is running 765,000 volts across Texas.<br><span class="gold">Your land may be on the route.</span></h1>
+    <p class="sub">They have a team &mdash; appraisers, right-of-way agents and lawyers who do this every day. If the line crosses your property you will find out by letter, and their number will already be written. Find out what your side of it is worth first.</p>
     <div class="acts">
-      <a class="btn-gold" href="#corridor-check">Check my address &rarr;</a>
-      <a class="btn-outline" href="#contact">Free review by a senior consultant &rarr;</a>
+      <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+      <a class="btn-outline" href="tel:+14694847960">Call or text (469) 484-7960</a>
     </div>
   </div>
 </section>
@@ -434,31 +446,25 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </div>
 </section>
 
-<div id="corridor-check"></div>
 
-<section class="section-alt" id="map">
+<section class="lp-map" id="route">
   <div class="container">
-    <h2>Is your property on an approved 765 kV route?</h2>
-    <p class="section-sub">The gold line is the centerline the PUCT approved. Dashed grey lines are routes that were studied and not selected. Enter an address and we will tell you how far your property sits from the approved line, and which docket it falls under.</p>
-
+    <h2>The two approved 765 kV routes</h2>
+    <p class="lp-map-sub">Gold is the centerline the PUCT approved on August 28, 2026. Dashed grey is what was studied and not selected. The easement corridor runs roughly 200 feet wide along the gold line.</p>
     <div class="map-wrap">
-      <div class="map-bar">
-        <input id="addrInput" type="text" placeholder="Enter your property address, or the nearest crossroads" autocomplete="off">
-        <button id="addrBtn" type="button">Check my location</button>
-      </div>
-      <div id="routeMap"></div>
+      <div id="routeMapC"></div>
       <div class="map-legend">
-        <span><i class="swatch" style="background:#c9a227"></i> PUCT-approved route</span>
-        <span><i class="swatch" style="background:#94a3b8"></i> Other routes studied (not approved)</span>
-        <span><i class="swatch" style="background:#b91c1c;height:10px;width:10px;border-radius:50%"></i> Your location</span>
+        <span><i class="swatch" style="background:#c9a227"></i> Approved route</span>
+        <span><i class="swatch" style="background:#94a3b8"></i> Studied, not selected</span>
       </div>
-      <div class="map-result" id="mapResult"></div>
       <div class="map-note">
-        Route data is loaded live from Oncor's public project mapping service, the same data behind Oncor's own landowner map viewer. The line shown is the approved <em>centerline</em>; the easement is a corridor roughly 200 feet wide centered on it, and the final surveyed alignment can shift within the approved corridor. <strong>This tool is an approximation, not a survey and not legal advice.</strong> Distances are straight-line estimates. Addresses you type are sent to the U.S. Census Bureau's public geocoder to find coordinates. If we find a match, we drop the address and county into the review form lower down so you do not have to retype them — nothing reaches National ROW unless you actually submit that form. Confirm your status against
-        <a href="https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7" target="_blank" rel="noopener">Oncor's official interactive map</a> and the
-        <a href="None" target="_blank" rel="noopener">filed constraints map</a>.
+        Loaded live from Oncor&rsquo;s public project mapping service. The gold line is the approved
+        <em>centerline</em>; the easement is a corridor roughly 200 feet wide centered on it, and the final
+        surveyed alignment can still shift within the approved corridor. <strong>Not a survey and not legal
+        advice.</strong> Confirm against <a href="https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7" target="_blank" rel="noopener">Oncor&rsquo;s official map viewer</a>.
       </div>
     </div>
+    <p class="lp-map-more"><a href="/projects/ercot-765kv/">See the full route, both dockets and an address checker &rarr;</a></p>
   </div>
 </section>
 
@@ -466,17 +472,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 (function(){
   var SVC='https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/2/query';
   var PIDS='1015,1019';
-  var map, approvedLayer=null, marker=null, approvedCoords=[];
-
-  function initMap(){
-    map = L.map('routeMap', {scrollWheelZoom:false}).setView([31.6, -100.4], 7);
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
-      maxZoom:19,
-      attribution:'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, USGS | Route data: Oncor Electric Delivery (public CCN viewer)'
-    }).addTo(map);
-    map.on('click', function(){ map.scrollWheelZoom.enable(); });
-    loadRoutes();
-  }
+  var map;
 
   function q(where, cb){
     var url = SVC + '?f=geojson&outSR=4326&resultRecordCount=2000&maxAllowableOffset=0.0004'
@@ -484,177 +480,46 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     fetch(url).then(function(r){ return r.json(); }).then(cb).catch(function(){ cb(null); });
   }
 
-  function loadRoutes(){
-    // Other studied routes first, so the approved route draws on top.
+  function fail(){
+    var el = document.getElementById('routeMapC');
+    if(!el) return;
+    el.insertAdjacentHTML('beforeend',
+      '<div style="position:absolute;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;'
+      + 'background:rgba(255,255,255,.94);padding:20px;text-align:center;font-size:14px;line-height:1.7;color:#334155">'
+      + "Route map couldn't load. View it on <a href='https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>."
+      + '</div>');
+  }
+
+  function init(){
+    // Touch devices: dragging off so the map never traps the page scroll.
+    map = L.map('routeMapC', {
+      scrollWheelZoom:false,
+      dragging: !L.Browser.mobile,
+      tap: false,
+      zoomControl: true
+    }).setView([31.6,-100.4], 6);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
+      maxZoom:19,
+      attribution:'Tiles &copy; Esri | Route data: Oncor Electric Delivery (public CCN viewer)'
+    }).addTo(map);
+
     q("project_id IN (" + PIDS + ") AND Status<>'Approved'", function(g){
       if(g && g.features && g.features.length){
-        L.geoJSON(g, {style:{color:'#94a3b8', weight:2, opacity:.65, dashArray:'4,5'}}).addTo(map);
+        L.geoJSON(g, {style:{color:'#94a3b8', weight:2, opacity:.6, dashArray:'4,5'}}).addTo(map);
       }
     });
     q("project_id IN (" + PIDS + ") AND Status='Approved'", function(g){
-      if(!g || !g.features || !g.features.length){
-        document.getElementById('routeMap').insertAdjacentHTML('beforeend',
-          '<div style="position:absolute;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.94);padding:24px;text-align:center;font-size:15px;line-height:1.7;color:#334155">'
-          + "The live route map couldn't load right now. View the approved route on <a href='https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>."
-          + '</div>');
-        return;
-      }
-      approvedLayer = L.geoJSON(g, {style:{color:'#c9a227', weight:5, opacity:.95}}).addTo(map);
-      g.features.forEach(function(f){
-        var c = f.geometry && f.geometry.coordinates;
-        if(!c) return;
-        if(typeof c[0][0] === 'number'){ approvedCoords.push(c); }
-        else { c.forEach(function(part){ approvedCoords.push(part); }); }
-      });
-      try{ map.fitBounds(approvedLayer.getBounds(), {padding:[24,24]}); }catch(e){}
+      if(!g || !g.features || !g.features.length){ fail(); return; }
+      var layer = L.geoJSON(g, {style:{color:'#c9a227', weight:5, opacity:.95}}).addTo(map);
+      try{
+        map.fitBounds(layer.getBounds(), {padding:[18,18]});
+      }catch(e){}
+      setTimeout(function(){ map.invalidateSize(); }, 200);
     });
   }
 
-  // ---- geometry helpers (equirectangular, fine at these distances) ----
-  function projPt(lon, lat, lat0){
-    var R=6371000, r=Math.PI/180;
-    return [R*lon*r*Math.cos(lat0*r), R*lat*r];
-  }
-  function segDist(p, a, b){
-    var dx=b[0]-a[0], dy=b[1]-a[1];
-    var L2=dx*dx+dy*dy;
-    var t = L2 ? ((p[0]-a[0])*dx + (p[1]-a[1])*dy)/L2 : 0;
-    t = Math.max(0, Math.min(1, t));
-    var cx=a[0]+t*dx, cy=a[1]+t*dy;
-    return Math.hypot(p[0]-cx, p[1]-cy);
-  }
-  function distanceToRouteMeters(lat, lon){
-    if(!approvedCoords.length) return null;
-    var best = Infinity, p = projPt(lon, lat, lat);
-    for(var i=0;i<approvedCoords.length;i++){
-      var line = approvedCoords[i];
-      for(var j=1;j<line.length;j++){
-        var a = projPt(line[j-1][0], line[j-1][1], lat);
-        var b = projPt(line[j][0], line[j][1], lat);
-        var d = segDist(p, a, b);
-        if(d < best) best = d;
-      }
-    }
-    return best;
-  }
-
-  // ---- address lookup via Census geocoder (JSONP) ----
-  // 'geographies' rather than 'locations' so we get the county back too — it fills
-  // the form's county field and tells us which docket the owner belongs to.
-  function geocode(addr, cb){
-    var cbName = 'nrGeo' + Date.now();
-    var s = document.createElement('script');
-    var to = setTimeout(function(){ cleanup(); cb(null); }, 12000);
-    function cleanup(){ clearTimeout(to); try{ delete window[cbName]; }catch(e){ window[cbName]=undefined; } if(s.parentNode) s.parentNode.removeChild(s); }
-    window[cbName] = function(data){ cleanup(); cb(data); };
-    s.src = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address='
-          + encodeURIComponent(addr)
-          + '&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties'
-          + '&format=jsonp&callback=' + cbName;
-    s.onerror = function(){ cleanup(); cb(null); };
-    document.body.appendChild(s);
-  }
-
-  // ---- carry what we learned into the lead form ----
-  function set(id, val){
-    var el = document.getElementById(id);
-    if(!el || !val) return;
-    if(!el.__nrWired){
-      el.__nrWired = true;
-      el.addEventListener('input', function(){ el.dataset.nrAuto = ''; });
-    }
-    // Fill when empty, or overwrite a value we put there ourselves on an earlier check.
-    if(!el.value || el.dataset.nrAuto === '1'){
-      el.value = val;
-      el.dataset.nrAuto = '1';
-    }
-  }
-  function setHidden(name, val){
-    var f = document.getElementById('leadForm');
-    if(!f) return;
-    var el = f.querySelector('[name="' + name + '"]');
-    if(!el){
-      el = document.createElement('input');
-      el.type = 'hidden'; el.name = name;
-      f.appendChild(el);
-    }
-    el.value = val;
-  }
-  function carryToForm(match, lat, lon, miles){
-    var county = '';
-    try{
-      var c = match.geographies && match.geographies.Counties && match.geographies.Counties[0];
-      if(c && c.BASENAME) county = c.BASENAME + ', TX';
-    }catch(e){}
-    set('propAddress', match.matchedAddress || '');
-    set('countyState', county);
-    setHidden('checked_address', match.matchedAddress || '');
-    setHidden('checked_county', county);
-    setHidden('route_distance_miles', miles.toFixed(2));
-    setHidden('property_latlon', lat.toFixed(6) + ',' + lon.toFixed(6));
-    setHidden('checked_project', PIDS === '1015' ? 'Dinosaur-Longshore (Docket 59315)'
-                              : PIDS === '1019' ? 'Longshore-Drill Hole (Docket 59029)'
-                              : 'Texas 765kV corridor');
-  }
-
-  function show(cls, html){
-    var el = document.getElementById('mapResult');
-    el.className = 'map-result ' + cls;
-    el.innerHTML = html;
-    el.style.display = 'block';
-  }
-
-  function run(){
-    var addr = document.getElementById('addrInput').value.trim();
-    if(!addr){ return; }
-    if(!approvedCoords.length){
-      show('err','<strong>Route data is still loading.</strong>Give it a moment and try again, or call or text us at (469) 484-7960 and we will check it for you.');
-      return;
-    }
-    var btn = document.getElementById('addrBtn');
-    btn.disabled = true; btn.textContent = 'Checking…';
-    geocode(addr, function(data){
-      btn.disabled = false; btn.textContent = 'Check my location';
-      var m = data && data.result && data.result.addressMatches && data.result.addressMatches[0];
-      if(!m){
-        show('err','<strong>We could not place that address.</strong>Rural addresses often are not in the public geocoder. Try the nearest crossroads or town, or just <a href="#contact" style="color:inherit;text-decoration:underline">send us your parcel number</a> and we will look it up by hand.');
-        return;
-      }
-      var lat = m.coordinates.y, lon = m.coordinates.x;
-      if(marker) map.removeLayer(marker);
-      marker = L.circleMarker([lat,lon], {radius:8, color:'#fff', weight:2, fillColor:'#b91c1c', fillOpacity:1}).addTo(map);
-      map.setView([lat,lon], 11);
-      var d = distanceToRouteMeters(lat, lon);
-      var mi = d/1609.34;
-      var pretty = mi < 0.5 ? (Math.round(d*3.28084/10)*10).toLocaleString() + ' feet' : mi.toFixed(1) + ' miles';
-      carryToForm(m, lat, lon, mi);
-      if(window.gtag) gtag('event','route_proximity_check',{distance_miles: Math.round(mi*10)/10});
-      if(mi < 0.5){
-        show('near','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
-          + 'Property this close is very likely inside or adjacent to the 200-foot easement corridor. If you have not been contacted yet, you probably will be. Do not sign a survey permission form or an easement before someone independent reviews it. <a href="#contact" style="color:inherit;text-decoration:underline"><strong>Get a free review →</strong></a> — we have already filled your address and county into the form.');
-      } else if(mi < 3){
-        show('near','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
-          + 'You are close to the corridor but likely outside the easement itself. The final alignment can still shift, and nearby lines can affect value. Worth a free look. <a href="#contact" style="color:inherit;text-decoration:underline"><strong>Have us check it →</strong></a> — your address and county are already filled in below.');
-      } else {
-        show('far','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
-          + 'It is probably not on this route. Oncor has several other 765 kV and 345 kV projects moving through the same region — if you received a letter, <a href="#contact" style="color:inherit;text-decoration:underline">tell us what it says</a> and we will identify which project it belongs to.');
-      }
-    });
-  }
-
-  function boot(){
-    if(typeof L === 'undefined'){
-      document.getElementById('routeMap').innerHTML =
-        "<div style='padding:28px;text-align:center;font-size:15px;line-height:1.7;color:#334155'>The map could not load. View the approved route on <a href='https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>.</div>";
-      return;
-    }
-    initMap();
-    document.getElementById('addrBtn').addEventListener('click', run);
-    document.getElementById('addrInput').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); run(); } });
-  }
-
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
-  else boot();
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
 })();
 </script>
 
@@ -663,7 +528,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   <div class="container">
     <h2 style="text-align:center;">What you actually get</h2>
     <div class="grid">
-      <div class="card"><h3>A senior consultant, not a call centre</h3>
+      <div class="card"><h3>A senior consultant, not a call center</h3>
         <p>A senior consultant reads every one of these and calls you back within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p></div>
       <div class="card"><h3>What their number left out</h3>
         <p>Easement acreage, damage to the remainder, access, temporary workspace, and the things agency appraisals routinely undercount. We tell you where the value is.</p></div>
@@ -691,7 +556,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       <li><b>Damage to the remainder</b>A 200-foot corridor does not just take the acres under it. It splits fields, strands corners, moves your building envelope and follows you into every future appraisal of the whole tract.</li>
       <li><b>Access and crossings</b>Where they can enter, how often, which roads they build, who maintains them, and whether you can still cross your own easement with equipment.</li>
       <li><b>Temporary construction easement</b>Work space outside the permanent corridor is a separate taking with its own value, and it is frequently folded in for free.</li>
-      <li><b>The easement language itself</b>Width, height, vegetation control, future additional circuits, assignment to third parties. The document outlives the cheque by decades.</li>
+      <li><b>The easement language itself</b>Width, height, vegetation control, future additional circuits, assignment to third parties. The document outlives the check by decades.</li>
     </ul>
   </div>
 </section>
