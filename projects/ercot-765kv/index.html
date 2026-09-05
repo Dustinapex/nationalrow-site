@@ -14,6 +14,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="https://nationalrow.com/favicon.ico">
 <link rel="apple-touch-icon" href="https://nationalrow.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500&display=swap">
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "Article", "headline": "Texas 765 kV Transmission Buildout — Approved Routes, Counties & Landowner Rights", "description": "Texas is getting its first 765 kV transmission lines. The PUCT approved 424 miles of Oncor 765 kV line on August 28, 2026. See the approved routes, the 21 counties affected, and what the easement offer will look like.", "url": "https://nationalrow.com/projects/ercot-765kv/", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "author": {"@type": "Organization", "name": "National ROW", "url": "https://nationalrow.com/"}, "publisher": {"@type": "Organization", "name": "National ROW", "url": "https://nationalrow.com/", "logo": {"@type": "ImageObject", "url": "https://nationalrow.com/national-row-logo.png"}}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a 765 kV line and why is Texas building them now?", "acceptedAnswer": {"@type": "Answer", "text": "765 kilovolts is the highest transmission voltage in common use in North America. Texas has run its grid backbone at 345 kV since the 1960s. The move to 765 kV is driven by load growth in West Texas — oil and gas electrification in the Permian Basin plus data centers and cryptocurrency mining — and by the fact that one 765 kV line moves roughly the power of three double-circuit 345 kV lines in a corridor about 200 feet wide instead of roughly 480 feet."}}, {"@type": "Question", "name": "Which 765 kV projects have actually been approved?", "acceptedAnswer": {"@type": "Answer", "text": "As of September 2026, the Public Utility Commission of Texas has approved two Oncor 765 kV projects, both on August 28, 2026: Dinosaur Switch to Longshore Switch (Docket 59315, Route 559, 242.6 miles) and Longshore Switch to Drill Hole Switch (Docket 59029, Route 476, 181.6 miles). Together that is 424 miles across 21 counties. Additional 765 kV segments, including Big Hill to Sand Lake, have been filed but not yet decided."}}, {"@type": "Question", "name": "How much land does a 765 kV line take?", "acceptedAnswer": {"@type": "Answer", "text": "Oncor specifies a 200-foot permanent right-of-way for its 765 kV lines, which is about 24.2 acres per mile. Across the 424 approved miles that is roughly 10,300 acres of private Texas land placed under permanent easement."}}, {"@type": "Question", "name": "How do I find out if my property is on a route?", "acceptedAnswer": {"@type": "Answer", "text": "Use the map on this page or on the individual project page, and confirm against Oncor's official interactive viewer and the filed constraints maps, which we link in the sources. If you have already received a letter, the project name is on it. If you are not sure which project a letter belongs to, send it to us and we will identify it."}}, {"@type": "Question", "name": "Can I stop the line from crossing my property?", "acceptedAnswer": {"@type": "Answer", "text": "Realistically, no. Once the PUCT has approved a route, the utility holds the power of eminent domain and the line will be built. Route selection is the phase where landowner input changes outcomes, and that phase is over for these two projects. What is still open — and it is worth real money — is what you are paid and what the easement document actually says."}}, {"@type": "Question", "name": "Is National ROW a law firm?", "acceptedAnswer": {"@type": "Answer", "text": "No. National ROW is a right-of-way and condemnation consulting firm representing property owners only. We do not provide legal advice and no attorney-client relationship is created by contacting us. When a case needs a lawyer, we say so and coordinate with condemnation counsel."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Projects", "item": "https://nationalrow.com/projects/"}, {"@type": "ListItem", "position": 2, "name": "Texas 765 kV Transmission", "item": "https://nationalrow.com/projects/ercot-765kv/"}]}]
 </script>
@@ -42,6 +45,33 @@ a{color:var(--gold);text-decoration:none;}
 img{max-width:100%;}
 
 /* TOP BAR */
+/* SITE HEADER - same lockup as /offer-review/ */
+.site-head{background:#fff;border-bottom:1px solid rgba(3,52,114,.26);padding:11px 0;}
+.site-head .shwrap{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.site-head .brandlock{display:flex;align-items:center;gap:14px;}
+.site-head .brand{display:flex;align-items:center;}
+.site-head .brand img{display:block;height:42px;width:auto;}
+.site-head .tagline{color:#033472;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:15.5px;font-weight:700;line-height:1.22;max-width:236px;}
+.site-head .head-call{display:flex;align-items:center;justify-content:flex-end;gap:8px 26px;flex-wrap:wrap;}
+.site-head .hc-line{display:flex;align-items:baseline;gap:9px;}
+.site-head .hc-line small{color:#79828a;font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px;font-weight:500;letter-spacing:1.16px;text-transform:uppercase;white-space:nowrap;}
+.site-head .hc-line a{color:#033472;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:20px;font-weight:700;text-decoration:none;white-space:nowrap;}
+.site-head .hc-line a:hover{color:var(--gold);}
+@media(max-width:820px){
+  .site-head .shwrap{justify-content:center;text-align:center;}
+  .site-head .head-call{justify-content:center;width:100%;gap:6px 20px;}
+  .site-head .tagline{max-width:none;font-size:14px;}
+}
+@media(max-width:420px){
+  .site-head .brandlock{flex-direction:column;gap:7px;}
+  .site-head .hc-line{gap:7px;}
+  .site-head .hc-line a{font-size:18px;}
+}
+
 .topbar{background:var(--navy);color:rgba(255,255,255,.85);text-align:center;padding:8px 20px;font-size:13px;letter-spacing:.3px;}
 .topbar a{color:var(--gold-light);font-weight:600;}
 .topbar a:hover{color:#fff;}
@@ -292,12 +322,18 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </head>
 <body>
 
-<div class="topbar">
-  Nationwide Service &nbsp;·&nbsp; HQ in Texas &nbsp;&nbsp;|&nbsp;&nbsp;
-  Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a>
-  &nbsp;&nbsp;
-  <a href="mailto:info@nationalrow.com">info@nationalrow.com</a>
-</div>
+<header class="site-head">
+  <div class="shwrap">
+    <div class="brandlock">
+      <a class="brand" href="https://nationalrow.com" aria-label="National ROW home"><img src="/national-row-logo.png" alt="National ROW"></a>
+      <span class="tagline">Right of Way &middot; Eminent Domain &amp;<br>Condemnation Consulting Firm</span>
+    </div>
+    <div class="head-call">
+      <span class="hc-line"><small>Call or text</small><a href="tel:+14694847960">(469) 484-7960</a></span>
+      <span class="hc-line"><small>Email</small><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></span>
+    </div>
+  </div>
+</header>
 
 <nav class="sitenav">
   <a href="https://nationalrow.com" aria-label="National ROW home">
