@@ -253,6 +253,9 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
     so it reads at a glance on a phone.
     """
     ids = ",".join(str(p) for p in project_ids)
+    # A landing page normally has NO exit link - paid traffic should leave by
+    # the form or the phone, not by wandering into the information pages.
+    more = ('<p class="lp-map-more"><a href="%s">%s</a></p>' % (detail_url, detail_label)) if (detail_url and detail_label) else ""
     return """
 <section class="lp-map" id="route">
   <div class="container">
@@ -271,7 +274,7 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
         advice.</strong> Confirm against <a href="%s" target="_blank" rel="noopener">Oncor&rsquo;s official map viewer</a>.
       </div>
     </div>
-    <p class="lp-map-more"><a href="%s">%s</a></p>
+    %s
   </div>
 </section>
 
@@ -329,4 +332,4 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
   else { init(); }
 })();
 </script>
-""" % (title, blurb, oncor_viewer_url, detail_url, detail_label, ids, oncor_viewer_url)
+""" % (title, blurb, oncor_viewer_url, more, ids, oncor_viewer_url)

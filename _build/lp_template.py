@@ -69,8 +69,8 @@ DEFAULTS = {
     "project_ids": None,                # REQUIRED, Oncor CCN project_id list
     "map_heading": "The approved route",
     "map_blurb": ("Gold is the centerline the PUCT approved. Dashed grey is what was studied and not selected."),
-    "map_detail_url": "/projects/ercot-765kv/",
-    "map_detail_label": "See the full route, docket filings and an address checker &rarr;",
+    "map_detail_url": "",               # set both to "" for no exit link (default)
+    "map_detail_label": "",
 
     # --- body -----------------------------------------------------------
     "get_heading": "What you actually get",

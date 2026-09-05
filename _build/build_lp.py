@@ -40,8 +40,8 @@ PAGES = [
         "map_heading": "The two approved 765 kV routes",
         "map_blurb": ("Gold is the centerline the PUCT approved on August 28, 2026. Dashed grey is what was studied "
                       "and not selected. The easement corridor runs roughly 200 feet wide along the gold line."),
-        "map_detail_url": "/projects/ercot-765kv/",
-        "map_detail_label": "See the full route, both dockets and an address checker &rarr;",
+        "map_detail_url": "",   # no exit link on a paid landing page
+        "map_detail_label": "",
 
         "cta_1": ("You do not have to wait for the letter.",
                   "Right-of-way agents are working these two routes now. The best time to understand what your land "
