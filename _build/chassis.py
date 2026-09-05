@@ -329,6 +329,13 @@ SITE_HEADER = """
 </header>
 """
 
+# Landing-page variant: identical lockup, but the logo is NOT a link.
+# A paid-traffic landing page has no exits - the visitor leaves by the form
+# or the phone, not by clicking the logo through to the homepage.
+SITE_HEADER_NOLINK = SITE_HEADER.replace(
+    '<a class="brand" href="https://nationalrow.com" aria-label="National ROW home"><img src="/national-row-logo.png" alt="National ROW"></a>',
+    '<span class="brand"><img src="/national-row-logo.png" alt="National ROW"></span>')
+
 TOPBAR_NAV = SITE_HEADER + """
 <nav class="sitenav">
   <div class="nav-links">

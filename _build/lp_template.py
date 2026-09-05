@@ -31,7 +31,7 @@ MINIMUM CONFIG for a new page:
 import json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from chassis import head, FORM_SCRIPT, form_section, SITE_HEADER
+from chassis import head, FORM_SCRIPT, form_section, SITE_HEADER_NOLINK
 from mapmod import MAP_HEAD, map_compact
 import content as C
 from build import VIEWER, ROOT
@@ -203,7 +203,7 @@ def render(user_cfg, write=True):
   </div>
 </section>
 <div class="lp-trust">%s</div>
-""" % (SITE_HEADER, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], PHONE, PHONE_H, c["trust"]))
+""" % (SITE_HEADER_NOLINK, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], PHONE, PHONE_H, c["trust"]))
 
     # PROOF BAND — directly under the hero, above every ask.
     b.append(C.proof_band(results=c["results"], headline=c["proof_headline"], fine=c["proof_fine"]))
