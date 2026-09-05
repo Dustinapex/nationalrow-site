@@ -189,7 +189,7 @@ def render(user_cfg, write=True):
 <header class="lp-head">
   <a href="/" aria-label="National ROW"><span class="brand-logo"></span></a>
   <div class="r">
-    <a class="ph" href="tel:%s">%s<small>SPEAK TO A SENIOR CONSULTANT</small></a>
+    <a class="ph" href="tel:%s">%s<small>CALL OR TEXT A SENIOR CONSULTANT</small></a>
     <a class="btn-gold" href="#contact">%s</a>
   </div>
 </header>
@@ -200,12 +200,12 @@ def render(user_cfg, write=True):
     <p class="sub">%s</p>
     <div class="acts">
       <a class="btn-gold" href="#corridor-check">%s</a>
-      <a class="btn-outline" href="tel:%s">Or call %s</a>
+      <a class="btn-outline" href="#contact">%s</a>
     </div>
   </div>
 </section>
 <div class="lp-trust">%s</div>
-""" % (PHONE, PHONE_H, CTA, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], PHONE, PHONE_H, c["trust"]))
+""" % (PHONE, PHONE_H, CTA, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], CTA, c["trust"]))
 
     # PROOF BAND — directly under the hero, above every ask.
     b.append(C.proof_band(results=c["results"], headline=c["proof_headline"], fine=c["proof_fine"]))
@@ -255,7 +255,7 @@ def render(user_cfg, write=True):
 <footer class="lp-foot">
   <div class="container">
     <p><b style="color:rgba(255,255,255,.8)">National ROW</b> &middot; Nationwide service, HQ in Texas<br>
-      <a href="tel:%s">%s</a> &nbsp;&middot;&nbsp;
+      Call or text <a href="tel:%s">%s</a> &nbsp;&middot;&nbsp;
       <a href="tel:%s">%s</a> &nbsp;&middot;&nbsp;
       <a href="mailto:info@nationalrow.com">info@nationalrow.com</a></p>
     <p class="nl">National ROW is a right-of-way and condemnation consulting firm representing property owners. We are not

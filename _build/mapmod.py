@@ -189,7 +189,7 @@ def map_section(project_ids, title, blurb, oncor_viewer_url, constraints_pdf_url
     var addr = document.getElementById('addrInput').value.trim();
     if(!addr){ return; }
     if(!approvedCoords.length){
-      show('err','<strong>Route data is still loading.</strong>Give it a moment and try again, or call us at (469) 484-7960 and we will check it for you.');
+      show('err','<strong>Route data is still loading.</strong>Give it a moment and try again, or call or text us at (469) 484-7960 and we will check it for you.');
       return;
     }
     var btn = document.getElementById('addrBtn');

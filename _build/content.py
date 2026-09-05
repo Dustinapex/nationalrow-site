@@ -282,7 +282,7 @@ def handoff(project_param, headline, sub):
     <h2>%s</h2>
     <p>%s</p>
     <a class="btn-gold" href="/offer-review/?project=%s">Free review by a senior consultant →</a>
-    <p style="margin-top:22px;font-size:15px;opacity:.7;">Or call <a href="tel:+14694847960" style="color:#e8bf4a;font-weight:700;">(469) 484-7960</a> — we answer owners the same day.</p>
+    <p style="margin-top:22px;font-size:15px;opacity:.7;">Or call or text <a href="tel:+14694847960" style="color:#e8bf4a;font-weight:700;">(469) 484-7960</a> — we answer owners the same day.</p>
   </div>
 </section>
 """ % (headline, sub, project_param)

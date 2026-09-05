@@ -278,7 +278,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 TOPBAR_NAV = """
 <div class="topbar">
   Nationwide Service &nbsp;·&nbsp; HQ in Texas &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="tel:+14694847960">(469) 484-7960</a>
+  Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a>
   &nbsp;&nbsp;
   <a href="tel:+19563634144">(956) 363-4144</a>
   &nbsp;&nbsp;
@@ -351,7 +351,7 @@ def form_section(project_source, heading="Get Your Free Case Review"):
         <h3>We've got it from here.</h3>
         <p>Your case is in review. A senior consultant reads everything you shared and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
         <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
-        <div class="phones">Need to talk now? &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp; <a href="tel:+19563634144">(956) 363-4144</a></div>
+        <div class="phones">Need to talk now? Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp; <a href="tel:+19563634144">(956) 363-4144</a></div>
       </div>
     </div>
   </div>
@@ -375,7 +375,7 @@ FOOTER = """
     <a href="https://nationalrow.com/privacy-policy">Privacy Policy</a>
   </div>
   <div class="footer-phones">
-    <a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp;
+    Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp;
     <a href="tel:+19563634144">(956) 363-4144</a>
   </div>
   <div class="footer-email"><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></div>
@@ -407,7 +407,7 @@ FORM_SCRIPT = """
       } else { throw new Error('bad status'); }
     }catch(err){
       btn.disabled=false; btn.textContent='Free review by a senior consultant →';
-      alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
+      alert("Couldn't send just now — please call or text (469) 484-7960 or (956) 363-4144 and we'll take your details.");
     }
   });
 })();
