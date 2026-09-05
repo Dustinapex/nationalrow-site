@@ -8,8 +8,19 @@ acquisition timeline, cited sources.
 GA_ID = "G-MX6ZT35QT3"
 PHONE1 = "+14694847960"
 PHONE1_D = "(469) 484-7960"
-PHONE2 = "+19563634144"
-PHONE2_D = "(956) 363-4144"
+# ---------------------------------------------------------------- GOOGLE ADS
+# Paste the Google Ads conversion ID here and every generated page loads the
+# Ads tag. That tag is what writes the _gcl_aw cookie from the gclid on an ad
+# click; without it on the LANDING page, the conversion on the thank-you page
+# has nothing to attribute to. Leave it empty and no Ads tag is emitted.
+#
+#   Google Ads > Goals > Conversions > Summary > New conversion action
+#   > Website > nationalrow.com > set it up manually
+#   The snippet it hands you contains the AW- id and the send_to label.
+GADS_ID = ""          # e.g. "AW-123456789"
+
+# Where a completed form lands. This page must carry the conversion snippet.
+THANKYOU_URL = "/offer-review/thank-you/"
 
 BASE_CSS = r"""
 :root{
@@ -280,8 +291,6 @@ TOPBAR_NAV = """
   Nationwide Service &nbsp;·&nbsp; HQ in Texas &nbsp;&nbsp;|&nbsp;&nbsp;
   Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a>
   &nbsp;&nbsp;
-  <a href="tel:+19563634144">(956) 363-4144</a>
-  &nbsp;&nbsp;
   <a href="mailto:info@nationalrow.com">info@nationalrow.com</a>
 </div>
 
@@ -309,7 +318,6 @@ def form_section(project_source, heading="Get Your Free Case Review"):
   <p style="font-size:16px;font-weight:700;">Call or text us directly — we answer owners same day.</p>
   <div class="phones">
     <a href="tel:+14694847960">(469) 484-7960</a>
-    <a href="tel:+19563634144">(956) 363-4144</a>
   </div>
   <p><a href="mailto:info@nationalrow.com" style="color:rgba(255,255,255,.7)">info@nationalrow.com</a></p>
 </div>
@@ -351,7 +359,7 @@ def form_section(project_source, heading="Get Your Free Case Review"):
         <h3>We've got it from here.</h3>
         <p>Your case is in review. A senior consultant reads everything you shared and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
         <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
-        <div class="phones">Need to talk now? Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp; <a href="tel:+19563634144">(956) 363-4144</a></div>
+        <div class="phones">Need to talk now? Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a></div>
       </div>
     </div>
   </div>
@@ -375,8 +383,7 @@ FOOTER = """
     <a href="https://nationalrow.com/privacy-policy">Privacy Policy</a>
   </div>
   <div class="footer-phones">
-    Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp;
-    <a href="tel:+19563634144">(956) 363-4144</a>
+    Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a>
   </div>
   <div class="footer-email"><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></div>
   <div class="footer-copy">© National ROW. Maximizing compensation for property owners since the 1980s.</div>
@@ -391,6 +398,7 @@ FORM_SCRIPT = """
   if(!f) return;
   var ru = document.getElementById('referrerUrl');
   if(ru) ru.value = location.href;
+  var THANKYOU = '%%THANKYOU%%';
   f.addEventListener('submit', async function(e){
     e.preventDefault();
     var btn = this.querySelector('.submit-btn');
@@ -401,18 +409,28 @@ FORM_SCRIPT = """
         method:'POST', headers:{'Accept':'application/json'}, body:data
       });
       if(res.ok){
+        var src = (document.getElementById('projectSource')||{}).value || '';
+        if(window.gtag) gtag('event','generate_lead',{project: src});
+        // Send them to the thank-you page. That page load is what fires the
+        // Google Ads conversion - an inline panel gives Ads nothing to count.
+        try{
+          window.location.href = THANKYOU + (src ? '?src=' + encodeURIComponent(src) : '');
+          return;
+        }catch(e){}
         document.getElementById('the-form').style.display='none';
         document.getElementById('formSuccess').style.display='block';
-        if(window.gtag) gtag('event','generate_lead',{project: (document.getElementById('projectSource')||{}).value || ''});
       } else { throw new Error('bad status'); }
     }catch(err){
       btn.disabled=false; btn.textContent='Free review by a senior consultant →';
-      alert("Couldn't send just now — please call or text (469) 484-7960 or (956) 363-4144 and we'll take your details.");
+      alert("Couldn't send just now — please call or text (469) 484-7960 and we'll take your details.");
     }
   });
 })();
 </script>
 """
+
+# Bake the redirect target into the form script.
+FORM_SCRIPT = FORM_SCRIPT.replace("%%THANKYOU%%", THANKYOU_URL)
 
 
 def head(title, description, canonical, schema_json, extra_head=""):
@@ -440,10 +458,12 @@ def head(title, description, canonical, schema_json, extra_head=""):
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '%s');
+  gtag('config', '%s');%s
 </script>
 %s
 <style>%s</style>
 </head>
 <body>
-""" % (title, description, canonical, title, description, canonical, schema_json, GA_ID, GA_ID, extra_head, BASE_CSS)
+""" % (title, description, canonical, title, description, canonical, schema_json, GA_ID, GA_ID,
+       ("\n  gtag('config', '%s');" % GADS_ID) if GADS_ID else "",
+       extra_head, BASE_CSS)

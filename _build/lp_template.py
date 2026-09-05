@@ -256,7 +256,6 @@ def render(user_cfg, write=True):
   <div class="container">
     <p><b style="color:rgba(255,255,255,.8)">National ROW</b> &middot; Nationwide service, HQ in Texas<br>
       Call or text <a href="tel:%s">%s</a> &nbsp;&middot;&nbsp;
-      <a href="tel:%s">%s</a> &nbsp;&middot;&nbsp;
       <a href="mailto:info@nationalrow.com">info@nationalrow.com</a></p>
     <p class="nl">National ROW is a right-of-way and condemnation consulting firm representing property owners. We are not
       a law firm, we do not provide legal advice, and contacting us does not create an attorney-client relationship.
@@ -264,7 +263,7 @@ def render(user_cfg, write=True):
       %s &nbsp;<a href="/privacy-policy/">Privacy</a></p>
   </div>
 </footer>
-""" % (PHONE, PHONE_H, PHONE2, PHONE2_H, c["footer_note"]))
+""" % (PHONE, PHONE_H, c["footer_note"]))
 
     b.append(FORM_SCRIPT)
     b.append("</body>\n</html>")
