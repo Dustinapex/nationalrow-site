@@ -6,8 +6,8 @@ from mapmod import MAP_HEAD, map_section
 import content as C
 from build import SEG, UPDATED, UPDATED_H, VIEWER, ROOT
 
-SLUG = "ercot-765kv"
-URL = "https://nationalrow.com/projects/ercot-765kv/"
+SLUG = "oncor-765kv"
+URL = "https://nationalrow.com/projects/oncor-765kv/"
 TITLE = "Texas 765 kV Transmission Buildout — Approved Routes, Counties & Landowner Rights"
 DESC = ("Texas is getting its first 765 kV transmission lines. The PUCT approved 424 miles of Oncor 765 kV line "
         "on August 28, 2026. See the approved routes, the 21 counties affected, and what the easement offer will look like.")
@@ -79,7 +79,8 @@ def build():
     <div class="hero-accent"></div>
     <p class="hero-sub">On August 28, 2026 the Public Utility Commission of Texas approved two Oncor 765-kilovolt transmission projects running from Somervell County to the Culberson–Reeves county line. This page tracks what has been approved, which counties are affected, and what landowners in the corridor should expect next. We update it as the dockets move.</p>
     <div class="hero-btns">
-      <a class="btn-gold" href="#segments">See the approved projects</a>
+      <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+      <a class="btn-outline" href="#segments">See the approved projects</a>
       <a class="btn-outline" href="#map">Check my property</a>
     </div>
     <div class="stats-row">
@@ -91,6 +92,13 @@ def build():
   </div>
 </section>""" % (UPDATED_H, "{:,}".format(total_ac)))
 
+    # PROOF BAND — documented results, high on the page (mirrors /offer-review/)
+    b.append(C.proof_band())
+
+    # REVIEW FORM — high on the page, above the project detail. Every CTA on
+    # the page points back up here at #contact.
+    b.append(form_section("Texas 765kV", "Free review — Texas 765 kV corridor"))
+
     b.append("""
 <section id="segments">
   <div class="container">
@@ -101,13 +109,24 @@ def build():
 </section>""" % (seg_card("dinosaur-longshore-765kv", SEG["dinosaur-longshore-765kv"]),
                  seg_card("longshore-drill-hole-765kv", SEG["longshore-drill-hole-765kv"])))
 
-    # PROOF BAND — documented results, high on the page (mirrors /offer-review/)
-    b.append(C.proof_band())
+    b.append(C.cta_band(
+        "Found your project on this list?",
+        "Knowing which docket you are in is the easy part. What the easement is worth on your particular tract &mdash; "
+        "the strip, the remainder, the cure &mdash; is where the money is. A senior consultant will walk it with you, "
+        "at no cost.",
+        "Free review by a senior consultant &rarr;", "#contact"))
 
     b.append(map_section([1015, 1019],
         "Both approved routes on one map",
         "Gold is what the PUCT approved. Dashed grey is what was studied and not selected. Enter an address to see roughly how far your property sits from the approved centerline. For the detail on a single project — timeline, offer anatomy, sources — open its own page above.",
         VIEWER, SEG["dinosaur-longshore-765kv"]["constraints"], "[32.05, -101.0]", 7))
+
+    b.append(C.cta_band(
+        "Close to the line &mdash; or not sure?",
+        "The map is an approximation, not a survey, and the final alignment can still move inside the approved corridor. "
+        "Send us your address or parcel number and a senior consultant will tell you exactly where you sit and what to "
+        "expect next.",
+        "Free review by a senior consultant &rarr;", "#contact"))
 
     b.append("""
 <section>
@@ -146,6 +165,12 @@ def build():
     <p>We track the dockets either way. If you tell us where your property is, we will tell you which of these you are in.</p>
   </div>
 </section>""")
+
+    b.append(C.cta_band(
+        "Approved route or study area &mdash; we will tell you which one you are in.",
+        "Two situations, two completely different plays. Tell us where your property is and a senior consultant will "
+        "tell you whether you are fighting over the route or over the number.",
+        "Free review by a senior consultant &rarr;", "#contact"))
 
     b.append(C.EASEMENT_COST)
     b.append(C.cta_band(
@@ -189,7 +214,6 @@ def build():
       'Texas Landowner’s Bill of Rights — <a href="https://www2.texasattorneygeneral.gov/agency/landowners-bill-of-rights" target="_blank" rel="noopener">Office of the Texas Attorney General</a>.',
     ]))
 
-    b.append(form_section("Texas 765kV", "Free review — Texas 765 kV corridor"))
     b.append(FOOTER)
     b.append(FORM_SCRIPT)
     b.append("</body>\n</html>")
