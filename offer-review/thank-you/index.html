@@ -99,6 +99,29 @@ main{padding:48px 0 64px}
 footer{background:var(--navy-deep);color:rgba(255,255,255,.62);padding:30px 0;font-size:.85rem}
 footer p{max-width:none}
 </style>
+<style>
+.faq{margin:34px 0 0;}
+.faq h3{color:#033472;font-size:22px;margin:4px 0 6px;}
+.faq .faq-note{color:#5a6674;font-size:14.5px;line-height:1.65;margin:0 0 16px;max-width:640px;}
+.faq details{background:#fff;border:1px solid #e3e8ef;border-radius:6px;margin-bottom:9px;overflow:hidden;}
+.faq details[open]{border-color:#C49A3D;}
+.faq summary{cursor:pointer;list-style:none;padding:15px 44px 15px 18px;font-weight:700;font-size:16px;color:#033472;position:relative;line-height:1.45;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";position:absolute;right:17px;top:50%;transform:translateY(-50%);font-size:21px;font-weight:700;color:#C49A3D;line-height:1;}
+.faq details[open] summary::after{content:"\2212";}
+.faq summary:hover{background:#fafbfc;}
+.faq details > div{padding:0 18px 16px;}
+.faq details p{color:#3d4a5c;font-size:15.5px;line-height:1.7;margin:0 0 10px;}
+.faq details p:last-child{margin-bottom:0;}
+.faq details ul{margin:0;padding-left:20px;}
+.faq details li{color:#3d4a5c;font-size:15.5px;line-height:1.7;margin-bottom:7px;}
+.faq details li:last-child{margin-bottom:0;}
+@media(max-width:560px){
+  .faq summary{font-size:15.5px;padding:14px 40px 14px 15px;}
+  .faq details > div{padding:0 15px 14px;}
+  .faq details p,.faq details li{font-size:15px;}
+}
+</style>
 </head>
 <body>
 
@@ -162,6 +185,62 @@ footer p{max-width:none}
       <!-- TODO: tracked campaign number -->
       <a class="btn btn-gold" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'ty_urgent'})">Call (469) 484-7960 now</a>
     </div>
+
+    <section class="faq">
+      <div class="eyebrow">Common questions</div>
+      <h3>What owners ask us on this call</h3>
+      <p class="faq-note">Short answers so you are not sitting on them until we speak. The procedure below is Texas &mdash; Georgia and Oklahoma work differently, so ask the consultant if your property is there.</p>
+
+      <details>
+        <summary>Do I have to let their survey crew onto my land?</summary>
+        <div><p>Not on their terms. If the company holds eminent domain authority you generally cannot refuse a survey outright, but you can negotiate how and when &mdash; where they enter, what they may do, how they restore it, and what they pay for the access. In Texas they have to give you written notice and time to respond, and if you do not agree they have to ask a court for a right of entry. <strong>Do not sign a blanket permission form before we talk.</strong></p></div>
+      </details>
+
+      <details>
+        <summary>Can I just say no to the line?</summary>
+        <div><p>Whether the project gets built is usually not the fight. Their right to take is rarely in question. What they owe you for it is &mdash; and that is where nearly every one of these is won or lost.</p></div>
+      </details>
+
+      <details>
+        <summary>Do I still own the land under the line?</summary>
+        <div><p>Yes. An easement is a right to use your land, not a sale of it. You keep title. What changes is what you are allowed to do inside the corridor.</p></div>
+      </details>
+
+      <details>
+        <summary>What can I still do in the easement area?</summary>
+        <div><p>Grazing and most farming normally continue. Permanent structures, height and vegetation are where the restrictions land &mdash; the utility usually gets the right to clear and to keep clearance under the conductors. The specifics come from the easement document itself, which is why its wording matters as much as the number on the check.</p></div>
+      </details>
+
+      <details>
+        <summary>What am I actually supposed to be paid for?</summary>
+        <div><p>Three separate things, and a first offer often only covers the first one:</p>
+        <ul>
+          <li>The corridor itself &mdash; the acreage placed under easement.</li>
+          <li><strong>Damage to the rest of the tract.</strong> The land you keep can lose value because a high-voltage line crosses it. This is usually the largest number nobody put in the offer.</li>
+          <li>Surface damage and any temporary work space they use while building.</li>
+        </ul></div>
+      </details>
+
+      <details>
+        <summary>They sent an appraisal with the offer. Isn&rsquo;t that the number?</summary>
+        <div><p>That is their appraiser&rsquo;s opinion, commissioned by the party who has to pay you. Texas law requires them to make a bona fide offer and to support the final offer with a certified written appraisal. It does not require that appraisal to be right. Treat it as a floor, not a ceiling.</p></div>
+      </details>
+
+      <details>
+        <summary>What is the Landowner&rsquo;s Bill of Rights, and should I have one?</summary>
+        <div><p>It is a statement the State of Texas requires an entity to give you before &mdash; or at the same time as &mdash; it first tells you it has eminent domain authority, and again at least seven days before its final offer. If you never received one, say so on the call.</p></div>
+      </details>
+
+      <details>
+        <summary>What happens if we cannot agree on a number?</summary>
+        <div><p>In Texas the matter goes to three special commissioners, who hold a hearing where both sides put on evidence and then file an award. Either side can object to that award and take it to a trial in front of a judge or a jury. Most matters settle long before that.</p></div>
+      </details>
+
+      <details>
+        <summary>Do I need a lawyer &mdash; and what does this cost me?</summary>
+        <div><p>National ROW is a right-of-way and condemnation consulting firm, not a law firm, and nothing here is legal advice. Some matters need condemnation counsel; when yours does we say so and coordinate with an independent licensed attorney. Our own work is paid out of the increase &mdash; nothing out of pocket, and if we do not believe we can move your number we tell you that instead.</p></div>
+      </details>
+    </section>
 
     <div class="readnext">
       <div class="eyebrow">While you're waiting</div>
