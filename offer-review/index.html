@@ -70,6 +70,7 @@ a{color:var(--navy)}
 @media(max-width:1000px){.tagline{font-size:.86rem;max-width:24ch}}
 @media(max-width:700px){.brandlock{gap:11px}.tagline{font-size:.8rem;max-width:22ch}}
 @media(max-width:380px){.tagline{font-size:.74rem}}
+@media(max-width:380px){.head-call a.cta{font-size:.8rem;padding:7px 11px}}
 .brand{display:flex;align-items:center;text-decoration:none}
 .brand img{height:42px;width:auto;display:block}
 .wordmark{font-family:var(--disp);font-weight:800;font-size:1.3rem;color:var(--navy);letter-spacing:.02em}
@@ -80,6 +81,8 @@ a{color:var(--navy)}
 .head-call a{color:var(--navy);text-decoration:none}
 .head-call a.tel{font-family:var(--disp);font-weight:700;font-size:1.26rem}
 .head-call a.mail{font-size:.97rem;color:var(--gray)}
+.head-call a.cta{display:inline-block;font-family:var(--disp);font-weight:700;font-size:.95rem;line-height:1;padding:9px 16px;border:1.5px solid var(--navy);border-radius:999px;color:var(--navy);white-space:nowrap}
+.head-call a.cta:hover{background:var(--navy);color:#fff}
 .head-call a:hover{color:#8a6a20}
 
 /* hero */
@@ -328,6 +331,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
   .head-call small{font-size:.6rem}
   .head-call a.tel{font-size:1.12rem}
   .head-call a.mail{font-size:.88rem}
+  .head-call a.cta{font-size:.85rem;padding:8px 13px;white-space:normal;text-align:center}
   .brand img{height:32px}
   .hero{padding:26px 0 0}
   .hero h1{margin-bottom:13px}
@@ -403,7 +407,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
     <div class="head-call">
       <!-- TODO: tracked number (must be SMS-enabled) -->
       <span class="hc-line"><small>Call or text</small><a class="tel" href="tel:4694847960" onclick="gtag('event','phone_click',{campaign:'offer_review_lp',location:'header'})">(469) 484-7960</a></span>
-      <span class="hc-line"><small>Email</small><a class="mail" href="mailto:info@nationalrow.com?subject=Offer%20review%20request" onclick="gtag('event','email_click',{campaign:'offer_review_lp',location:'header'})">info@nationalrow.com</a></span>
+      <a class="cta" href="#review" onclick="gtag('event','cta_click',{campaign:'offer_review_lp',location:'header'})">Free review by a senior consultant</a>
     </div>
   </div>
 </header>
