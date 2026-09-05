@@ -796,6 +796,13 @@
     .states-note strong{color:var(--navy);}
     .states-note a{color:var(--navy);font-weight:700;text-decoration:none;border-bottom:2px solid rgba(3,52,114,.35);}
     .states-note a:hover{border-bottom-color:var(--navy);}
+
+    /* HUB LINKS — every section ends with a door */
+    .hub-link{margin-top:30px;margin-bottom:0;}
+    .hub-link a{font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:.01em;color:var(--navy);text-decoration:none;border-bottom:2px solid rgba(3,52,114,.35);padding-bottom:2px;}
+    .hub-link a:hover{border-bottom-color:var(--navy);}
+    .section--navy .hub-link a{color:var(--gold-2);border-bottom-color:rgba(216,180,90,.45);}
+    .section--navy .hub-link a:hover{border-bottom-color:var(--gold-2);}
 </style>
 
 </head>
@@ -847,8 +854,6 @@
   </div>
 </section>
 
-
-
 <!-- TRUST STRIP (EDIT to claims you can stand behind) -->
 <section class="trust">
   <div class="wrap trust-grid">
@@ -859,24 +864,31 @@
   </div>
 </section>
 
-<section class="section section--navy" id="how">
+<section class="section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="kicker mono">// How it works</span>
-      <h2>We do whatever it takes. You only pay if we win.</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:10px 0 0;line-height:1.35">No &mdash; you don&rsquo;t have to accept their first offer.</p>
-    </div>
-    <div class="flow-steps reveal" id="howFlow">
-      <div class="flow-track"><div class="flow-fill" id="howFill"></div></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h6"/></svg></div><div class="num">01 &mdash; REVIEW</div><h3>Send us the notice</h3><p>Share the letter, offer, or easement they sent. A senior consultant reviews it and comes back with a straight read on where you stand.</p></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="num">02 &mdash; THE TEAM</div><h3>We build your team</h3><p>We bring in the appraisers, engineers, and land planners &mdash; and an eminent domain attorney when your case needs one. You brief no one.</p></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6a1 1 0 0 1 1 1v2H8V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg></div><div class="num">03 &mdash; THE CASE</div><h3>We make the case</h3><p>We document everything their offer left out and take over the agency from there. You never face their ROW agent alone again.</p></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><div class="num">04 &mdash; YOU RECOVER</div><h3>You get paid more</h3><p>You get paid for the land taken and the damage to what you keep. If we don&#8217;t beat their first offer, you pay nothing.</p></div>
+      <span class="kicker mono">// The situation</span>
+      <h2>A condemnation notice is overwhelming by design.</h2>
+      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:0 0 12px;line-height:1.35">Property condemnation can be confusing &mdash; and the notice is built to rush you. You don&rsquo;t have to be rushed, and you don&rsquo;t have to accept their first offer.</p>
+</div>
+    <div class="problem reveal">
+      <ul>
+        <li><b>01</b><span>A highway department, utility, or pipeline company is taking part of your land or putting an easement across it.</span></li>
+        <li><b>02</b><span>Their offer arrives with an appraisal you didn't choose &mdash; and no easy way to know if it's fair.</span></li>
+        <li><b>03</b><span>Only a strip is taken, but it damages your access, your frontage, or the use of everything that's left.</span></li>
+        <li><b>04</b><span>The paperwork and deadlines feel designed to make you sign quickly and move on.</span></li>
+      </ul>
+      <div>
+        <p style="color:var(--ink);margin:0 0 10px 0">You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case.</p>
+        <p style="font-size:19px;color:var(--navy);font-weight:600">You have a right to fair and just compensation &mdash; and you don't have to face the agency alone.</p>
+        <p style="color:var(--ink)">You may not be able to stop the project &mdash; but you can make sure you're paid in full for it. National ROW takes the burden completely off your shoulders, builds the case for what your property is truly worth, and stands in your corner from the first call to the final number.</p>
+        <a class="btn btn--navy" href="#lead">Start a case review &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
 
-    <!-- DOCUMENTED RESULTS BAND -->
+<!-- DOCUMENTED RESULTS BAND -->
     <section class="nrp" aria-labelledby="nrp-title">
       <div class="wrap nrp-inner">
         <div class="nrp-top">
@@ -913,6 +925,23 @@
         <p class="nrp-fine">Four documented matters, each traced from the original offer letter to final settlement &mdash; two utility easements and two highway condemnations, labelled on each. Not an average and not a prediction; when we look at yours and think the number is close to right, we tell you so. National ROW is a right-of-way consulting firm, not a law firm, and nothing here is legal advice.</p>
       </div>
     </section>
+
+<section class="section section--navy" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker mono">// How it works</span>
+      <h2>We do whatever it takes. You only pay if we win.</h2>
+      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:10px 0 0;line-height:1.35">No &mdash; you don&rsquo;t have to accept their first offer.</p>
+    </div>
+    <div class="flow-steps reveal" id="howFlow">
+      <div class="flow-track"><div class="flow-fill" id="howFill"></div></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h6"/></svg></div><div class="num">01 &mdash; REVIEW</div><h3>Send us the notice</h3><p>Share the letter, offer, or easement they sent. A senior consultant reviews it and comes back with a straight read on where you stand.</p></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="num">02 &mdash; THE TEAM</div><h3>We build your team</h3><p>We bring in the appraisers, engineers, and land planners &mdash; and an eminent domain attorney when your case needs one. You brief no one.</p></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6a1 1 0 0 1 1 1v2H8V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg></div><div class="num">03 &mdash; THE CASE</div><h3>We make the case</h3><p>We document everything their offer left out and take over the agency from there. You never face their ROW agent alone again.</p></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><div class="num">04 &mdash; YOU RECOVER</div><h3>You get paid more</h3><p>You get paid for the land taken and the damage to what you keep. If we don&#8217;t beat their first offer, you pay nothing.</p></div>
+    </div>
+  </div>
+</section>
 
 <section class="section value-compare-section" id="value">
   <div class="wrap">
@@ -978,34 +1007,6 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker mono">// The situation</span>
-      <h2>A condemnation notice is overwhelming by design.</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:0 0 12px;line-height:1.35">Property condemnation can be confusing &mdash; and the notice is built to rush you. You don&rsquo;t have to be rushed, and you don&rsquo;t have to accept their first offer.</p>
-</div>
-    <div class="problem reveal">
-      <ul>
-        <li><b>01</b><span>A highway department, utility, or pipeline company is taking part of your land or putting an easement across it.</span></li>
-        <li><b>02</b><span>Their offer arrives with an appraisal you didn't choose &mdash; and no easy way to know if it's fair.</span></li>
-        <li><b>03</b><span>Only a strip is taken, but it damages your access, your frontage, or the use of everything that's left.</span></li>
-        <li><b>04</b><span>The paperwork and deadlines feel designed to make you sign quickly and move on.</span></li>
-      </ul>
-      <div>
-        <p style="color:var(--ink);margin:0 0 10px 0">You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case.</p>
-        <p style="font-size:19px;color:var(--navy);font-weight:600">You have a right to fair and just compensation &mdash; and you don't have to face the agency alone.</p>
-        <p style="color:var(--ink)">You may not be able to stop the project &mdash; but you can make sure you're paid in full for it. National ROW takes the burden completely off your shoulders, builds the case for what your property is truly worth, and stands in your corner from the first call to the final number.</p>
-        <a class="btn btn--navy" href="#lead">Start a case review &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
 <section class="section" id="help">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1028,9 +1029,10 @@
       <div class="card"><span class="tag">YOUR TEAM</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <h3>The full expert team</h3>
-        <p>Appraisers, land planners, relocation specialists, and coordinated counsel &mdash; the right experts assembled around your case. Every property is unique, and we treat it that way. We appraise your property, assess the full impact on your land, and negotiate directly with the condemning authority on your behalf.</p>
+        <p>Appraisers, land planners, relocation specialists, and coordinated counsel &mdash; the right experts assembled around your case. Every property is unique, and we treat it that way. We document the full impact on your land, engage the licensed appraisers who value it, and carry the back-and-forth with the condemning authority so you are not doing it alone.</p>
       </div>
     </div>
+    <p class="hub-link"><a href="/services/">See everything we handle &rarr;</a></p>
   </div>
 </section>
 
@@ -1082,56 +1084,9 @@
       </article>
     </div>
 
+    <p class="hub-link"><a href="/projects/">See all 17 projects &rarr;</a></p>
   </div>
 </section>
-
-<section class="section" id="blog">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker mono">// Resources</span>
-      <h2>Straight answers on eminent domain.</h2>
-      <p>Plain-English guides for property owners. Tap any guide to read the full breakdown &mdash; no sign-up, no jargon.</p>
-    </div>
-    <div class="posts reveal">
-      <button class="post" data-guide="guide1"><span class="mono">GUIDE &middot; 4 MIN</span><h3>Do I have to accept the condemnation offer?</h3><p>No &mdash; the first offer is a starting point. Here's how the valuation works and where owners gain ground.</p><span class="more">Read the guide &rarr;</span></button>
-<a href="/blog/do-i-have-to-accept-condemnation-offer/" class="card-readmore">Read the full guide &rarr;</a>
-      <button class="post" data-guide="guide2"><span class="mono">GUIDE &middot; 5 MIN</span><h3>What are "damages to the remainder"?</h3><p>When a strip is taken, the land you keep can lose value too &mdash; often the largest piece of a fair claim.</p><span class="more">Read the guide &rarr;</span></button>
-<a href="/blog/damages-to-the-remainder/" class="card-readmore">Read the full guide &rarr;</a>
-      <button class="post" data-guide="guide3"><span class="mono">GUIDE &middot; 4 MIN</span><h3>Easement vs. fee taking: what's the difference?</h3><p>An easement lets them use a strip while you keep title &mdash; but the terms can bind your land for decades.</p><span class="more">Read the guide &rarr;</span></button>
-<a href="/blog/easement-vs-fee-taking/" class="card-readmore">Read the full guide &rarr;</a>
-      <button class="post" data-guide="guide4"><span class="mono">GUIDE &middot; 3 MIN</span><h3>What to do the day you get a notice</h3><p>A calm checklist for the first 48 hours &mdash; what to keep, what to avoid, and who to call.</p><span class="more">Read the guide &rarr;</span></button>
-<a href="/blog/what-to-do-when-you-get-condemnation-notice/" class="card-readmore">Read the full guide &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--navy" id="about">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker mono">// About National ROW</span>
-      <h2>On the owner&rsquo;s side since the 1980s.</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:10px 0 0;line-height:1.35">We&rsquo;re not a law firm &mdash; we&rsquo;re a team of condemnation experts who coordinate your response and fight to make sure you&rsquo;re fairly compensated.</p>
-    </div>
-    <div class="cards reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem">
-      <div class="card">
-        <p class="card__label">WHO WE ARE</p>
-        <p>National ROW is a team of eminent domain and right-of-way professionals dedicated exclusively to property owners. We coordinate every step of the condemnation process &mdash; from the first notice to the final number &mdash; so you always know where you stand and what comes next.</p>
-      </div>
-      <div class="card">
-        <p class="card__label">KNOW YOUR RIGHTS</p>
-        <p>Property condemnation can be confusing. You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case. You have a right to fair and just compensation, and we make sure you know it.</p>
-      </div>
-      <div class="card">
-        <p class="card__label">WHY NATIONAL ROW</p>
-        <p>Local attorneys know the law. We know right-of-way. Our team brings decades of experience handling large-scale condemnation cases &mdash; appraising land, assessing project impact, and negotiating with agencies &mdash; so you get every dollar you&rsquo;re owed.</p>
-      </div>
-    </div>
-    <div class="reveal" style="margin-top:3rem;padding:2rem 2.5rem;background:rgba(255,255,255,0.05);border-left:4px solid var(--gold);border-radius:4px">
-      <p style="font-size:1.15rem;line-height:1.6;color:#e8edf5"><strong style="color:#fff">We might not be able to stop progress &mdash; but we can fight to make sure progress pays you fairly.</strong> National ROW represents property owners only. Never the agency, never the developer. Our fee is a percentage of the additional compensation we secure for you &mdash; if we don&rsquo;t increase your offer, you owe us nothing.</p>
-    </div>
-  </div>
-</section>
-
 
 <!-- 765kV TRANSMISSION SPOTLIGHT -->
 <section class="section" id="project-765kv" style="background:var(--navy,#0b2a4a);color:#fff;padding:64px 24px;">
@@ -1164,7 +1119,58 @@
 <section class="section" id="states"><div class="wrap"><div class="section-head reveal"><span class="kicker mono">// STATE PAGES</span><h2>Your state, your rights.</h2><p>Eminent domain law varies by state. Select your state below to learn the specific statutes, procedures, and compensation rules that apply to your property.</p></div><div class="card-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-top:2rem;"><a href="/states/texas/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Texas</a><a href="/states/arizona/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Arizona</a><a href="/states/north-carolina/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">North Carolina</a><a href="/states/florida/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Florida</a><a href="/states/georgia/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Georgia</a><a href="/states/oklahoma/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Oklahoma</a><a href="/states/colorado/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Colorado</a><a href="/states/california/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">California</a><a href="/states/ohio/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Ohio</a><a href="/states/pennsylvania/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Pennsylvania</a><a href="/states/kansas/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Kansas</a><a href="/states/wyoming/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Wyoming</a><a href="/states/louisiana/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Louisiana</a><a href="/states/tennessee/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Tennessee</a>
           <a href="/states/washington-dc/" style="display:block;padding:1rem 1.25rem;background:#0b2a4a;color:#fff;border-radius:6px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-align:center;">Washington DC</a></div>
         <p class="states-note reveal">Don&rsquo;t see your state? It doesn&rsquo;t mean a thing. <strong>We work in all 50 states.</strong> These are simply the state guides we have published so far &mdash; wherever your property sits, we handle the taking the same way. <a href="#lead">Start a free case review &rarr;</a> or call <a href="tel:+14694847960">(469) 484-7960</a>.</p>
-      </div></section><section class="section section--white" id="faq">
+      </div></section>
+
+<section class="section" id="blog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker mono">// Resources</span>
+      <h2>Straight answers on eminent domain.</h2>
+      <p>Plain-English guides for property owners. Tap any guide to read the full breakdown &mdash; no sign-up, no jargon.</p>
+    </div>
+    <div class="posts reveal">
+      <button class="post" data-guide="guide1"><span class="mono">GUIDE &middot; 4 MIN</span><h3>Do I have to accept the condemnation offer?</h3><p>No &mdash; the first offer is a starting point. Here's how the valuation works and where owners gain ground.</p><span class="more">Read the guide &rarr;</span></button>
+<a href="/blog/do-i-have-to-accept-condemnation-offer/" class="card-readmore">Read the full guide &rarr;</a>
+      <button class="post" data-guide="guide2"><span class="mono">GUIDE &middot; 5 MIN</span><h3>What are "damages to the remainder"?</h3><p>When a strip is taken, the land you keep can lose value too &mdash; often the largest piece of a fair claim.</p><span class="more">Read the guide &rarr;</span></button>
+<a href="/blog/damages-to-the-remainder/" class="card-readmore">Read the full guide &rarr;</a>
+      <button class="post" data-guide="guide3"><span class="mono">GUIDE &middot; 4 MIN</span><h3>Easement vs. fee taking: what's the difference?</h3><p>An easement lets them use a strip while you keep title &mdash; but the terms can bind your land for decades.</p><span class="more">Read the guide &rarr;</span></button>
+<a href="/blog/easement-vs-fee-taking/" class="card-readmore">Read the full guide &rarr;</a>
+      <button class="post" data-guide="guide4"><span class="mono">GUIDE &middot; 3 MIN</span><h3>What to do the day you get a notice</h3><p>A calm checklist for the first 48 hours &mdash; what to keep, what to avoid, and who to call.</p><span class="more">Read the guide &rarr;</span></button>
+<a href="/blog/what-to-do-when-you-get-condemnation-notice/" class="card-readmore">Read the full guide &rarr;</a>
+    </div>
+    <p class="hub-link"><a href="/blog/">Read all the guides &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section section--navy" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker mono">// About National ROW</span>
+      <h2>On the owner&rsquo;s side since the 1980s.</h2>
+      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:10px 0 0;line-height:1.35">We&rsquo;re not a law firm &mdash; we&rsquo;re a team of condemnation experts who coordinate your response and fight to make sure you&rsquo;re fairly compensated.</p>
+    </div>
+    <div class="cards reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem">
+      <div class="card">
+        <p class="card__label">WHO WE ARE</p>
+        <p>National ROW is a team of eminent domain and right-of-way professionals dedicated exclusively to property owners. We coordinate every step of the condemnation process &mdash; from the first notice to the final number &mdash; so you always know where you stand and what comes next.</p>
+      </div>
+      <div class="card">
+        <p class="card__label">KNOW YOUR RIGHTS</p>
+        <p>Property condemnation can be confusing. You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case. You have a right to fair and just compensation, and we make sure you know it.</p>
+      </div>
+      <div class="card">
+        <p class="card__label">WHY NATIONAL ROW</p>
+        <p>Local attorneys know the law. We know right-of-way. Our team brings decades of experience handling large-scale condemnation cases &mdash; appraising land, assessing project impact, and negotiating with agencies &mdash; so you get every dollar you&rsquo;re owed.</p>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:3rem;padding:2rem 2.5rem;background:rgba(255,255,255,0.05);border-left:4px solid var(--gold);border-radius:4px">
+      <p style="font-size:1.15rem;line-height:1.6;color:#e8edf5"><strong style="color:#fff">We might not be able to stop progress &mdash; but we can fight to make sure progress pays you fairly.</strong> National ROW represents property owners only. Never the agency, never the developer. Our fee is a percentage of the additional compensation we secure for you &mdash; if we don&rsquo;t increase your offer, you owe us nothing.</p>
+    </div>
+    <p class="hub-link"><a href="/about/">More about National ROW &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section section--white" id="faq">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker mono">// FAQ</span>
@@ -1186,6 +1192,7 @@
       <div class="qa"><button aria-expanded="false"><span>Are there deadlines I should worry about?</span><span class="plus">+</span></button><div class="ans"><p>Often, yes. Offers and steps in the process can carry deadlines, and your options can narrow as they pass. The safest move is to get someone reviewing your situation early instead of waiting.</p></div></div>
       <div class="qa"><button aria-expanded="false"><span>What does the whole process look like?</span><span class="plus">+</span></button><div class="ans"><p>Broadly: you receive a notice and an offer, the value can be reviewed and negotiated, and if it can't be resolved it can move into a formal valuation proceeding. The exact steps and names vary by state.</p></div></div>
     </div>
+    <p class="hub-link"><a href="/faq/">See all 27 questions &rarr;</a></p>
   </div>
 </section>
 
