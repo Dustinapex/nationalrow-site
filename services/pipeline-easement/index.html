@@ -658,6 +658,37 @@
 .faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
 .faq-a.open{max-height:600px;padding:20px 24px}
 .faq-a p{color:var(--ink);line-height:1.7;margin:0}
+    /* DOCUMENTED RESULTS BAND - compact proof strip; the numbers are the point. */
+    .nrp{background:var(--gold);padding:26px 0;}
+    .nrp-top{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;margin-bottom:14px;}
+    .nrp h2{font-family:var(--disp);color:var(--navy);font-size:20px;font-weight:800;margin:0;line-height:1.2;}
+    .nrp .nrp-hl{color:rgba(3,52,114,.78);font-size:14px;font-weight:600;line-height:1.4;margin:0;}
+    .nrp-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+    .nrp-col{padding:0 18px;border-left:1px solid rgba(3,52,114,.24);}
+    .nrp-col:first-child{padding-left:0;border-left:none;}
+    .nrp-where{color:rgba(3,52,114,.72);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;line-height:1.4;margin-bottom:6px;min-height:30px;}
+    .nrp-nums{font-family:var(--disp);color:var(--navy);font-size:clamp(17px,1.75vw,22px);font-weight:900;letter-spacing:-.5px;line-height:1.25;}
+    .nrp-nums .nrp-ar{margin:0 5px;font-weight:700;}
+    .nrp-pct{font-size:13.5px;font-weight:800;white-space:nowrap;letter-spacing:0;display:inline-block;color:rgba(3,52,114,.72);}
+    .nrp-why{color:rgba(3,52,114,.8);font-size:12.5px;line-height:1.45;font-weight:600;margin-top:6px;}
+    .nrp-act{margin-top:16px;border-top:1px solid rgba(3,52,114,.24);padding-top:13px;display:flex;align-items:baseline;gap:4px 14px;flex-wrap:wrap;}
+    .nrp-act h3{font-family:var(--disp);color:var(--navy);font-size:15px;font-weight:800;margin:0;}
+    .nrp-act p{color:rgba(3,52,114,.8);font-size:13.5px;line-height:1.5;margin:0;flex:1 1 220px;}
+    .nrp-act a{color:var(--navy);font-weight:800;font-size:14px;text-decoration:none;border-bottom:2px solid rgba(3,52,114,.45);padding-bottom:1px;white-space:nowrap;}
+    .nrp-act a:hover{border-bottom-color:var(--navy);}
+    .nrp-fine{color:rgba(3,52,114,.66);font-size:11.5px;line-height:1.5;margin:11px 0 0;}
+    @media(max-width:1150px){
+      .nrp-cols{grid-template-columns:1fr 1fr;gap:18px 0;}
+      .nrp-col:nth-child(odd){padding-left:0;border-left:none;}
+    }
+    @media(max-width:560px){
+      .nrp{padding:22px 0;}
+      .nrp-cols{grid-template-columns:1fr;gap:0;}
+      .nrp-col{padding:13px 0;border-left:none;border-top:1px solid rgba(3,52,114,.24);}
+      .nrp-col:first-child{border-top:none;padding-top:0;}
+      .nrp-where{min-height:0;margin-bottom:4px;}
+      .nrp-nums{font-size:21px;}
+    }
 </style>
 </head>
 <body>
@@ -698,6 +729,46 @@
       <div class="hero-cta"><a class="btn btn--gold" href="#lead">Get a free easement review</a></div>
     </div>
   </section>
+
+    <!-- DOCUMENTED RESULTS BAND -->
+    <section class="nrp" aria-labelledby="nrp-title">
+      <div class="wrap nrp-inner">
+        <div class="nrp-top">
+          <h2 id="nrp-title">Our documented results</h2>
+          <p class="nrp-hl">Almost every condemnation case is a fight about a number, not about the law.</p>
+        </div>
+        <div class="nrp-cols">
+          <div class="nrp-col">
+            <div class="nrp-where">Utility easement &middot; Houston, TX</div>
+            <div class="nrp-nums">$16,000<span class="nrp-ar">&rarr;</span>$138,000 <span class="nrp-pct">+762%</span></div>
+            <div class="nrp-why">Damages their team missed.</div>
+          </div>
+          <div class="nrp-col">
+            <div class="nrp-where">Utility easement &middot; Irving, TX</div>
+            <div class="nrp-nums">$12,000<span class="nrp-ar">&rarr;</span>$50,000 <span class="nrp-pct">+317%</span></div>
+            <div class="nrp-why">Damages their team missed.</div>
+          </div>
+          <div class="nrp-col">
+            <div class="nrp-where">Highway &middot; Grand Parkway (SH 99), Chambers County, TX</div>
+            <div class="nrp-nums">$2.5M<span class="nrp-ar">&rarr;</span>$5M <span class="nrp-pct">+100%</span></div>
+            <div class="nrp-why">The agency&rsquo;s appraisal left value out.</div>
+          </div>
+          <div class="nrp-col">
+            <div class="nrp-where">Highway &middot; I&#8209;35 expansion, McLennan County, TX</div>
+            <div class="nrp-nums">$20,000<span class="nrp-ar">&rarr;</span>$385,000 <span class="nrp-pct">+1,825%</span></div>
+            <div class="nrp-why">Their number missed value on the take.</div>
+          </div>
+        </div>
+        <div class="nrp-act">
+          <h3>Text us the letter</h3>
+          <p>A photo of the offer is enough &mdash; a senior consultant reads it and tells you what we see.</p>
+          <a href="tel:+14694847960">Text (469) 484-7960 &rarr;</a>
+        </div>
+        <p class="nrp-fine">Four documented matters, each traced from the original offer letter to final settlement &mdash; two utility easements and two highway condemnations, labelled on each. Not an average and not a prediction; when we look at yours and think the number is close to right, we tell you so. National ROW is a right-of-way consulting firm, not a law firm, and nothing here is legal advice.</p>
+      </div>
+    </section>
+
+
   <section style="padding:64px 0;background:#fff;">
     <div class="wrap" style="max-width:860px;">
       <p class="eyebrow">// PIPELINE EASEMENTS</p>
