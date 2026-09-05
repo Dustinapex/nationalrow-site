@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="https://nationalrow.com/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "Article", "headline": "Texas 765 kV Transmission Buildout — Approved Routes, Counties & Landowner Rights", "description": "Texas is getting its first 765 kV transmission lines. The PUCT approved 424 miles of Oncor 765 kV line on August 28, 2026. See the approved routes, the 21 counties affected, and what the easement offer will look like.", "url": "https://nationalrow.com/projects/ercot-765kv/", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "author": {"@type": "Organization", "name": "National ROW", "url": "https://nationalrow.com/"}, "publisher": {"@type": "Organization", "name": "National ROW", "url": "https://nationalrow.com/", "logo": {"@type": "ImageObject", "url": "https://nationalrow.com/national-row-logo.png"}}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a 765 kV line and why is Texas building them now?", "acceptedAnswer": {"@type": "Answer", "text": "765 kilovolts is the highest transmission voltage in common use in North America. Texas has run its grid backbone at 345 kV since the 1960s. The move to 765 kV is driven by load growth in West Texas — oil and gas electrification in the Permian Basin plus data centers and cryptocurrency mining — and by the fact that one 765 kV line moves roughly the power of three double-circuit 345 kV lines in a corridor about 200 feet wide instead of roughly 480 feet."}}, {"@type": "Question", "name": "Which 765 kV projects have actually been approved?", "acceptedAnswer": {"@type": "Answer", "text": "As of September 2026, the Public Utility Commission of Texas has approved two Oncor 765 kV projects, both on August 28, 2026: Dinosaur Switch to Longshore Switch (Docket 59315, Route 559, 242.6 miles) and Longshore Switch to Drill Hole Switch (Docket 59029, Route 476, 181.6 miles). Together that is 424 miles across 21 counties. Additional 765 kV segments, including Big Hill to Sand Lake, have been filed but not yet decided."}}, {"@type": "Question", "name": "How much land does a 765 kV line take?", "acceptedAnswer": {"@type": "Answer", "text": "Oncor specifies a 200-foot permanent right-of-way for its 765 kV lines, which is about 24.2 acres per mile. Across the 424 approved miles that is roughly 10,300 acres of private Texas land placed under permanent easement."}}, {"@type": "Question", "name": "How do I find out if my property is on a route?", "acceptedAnswer": {"@type": "Answer", "text": "Use the map on this page or on the individual project page, and confirm against Oncor's official interactive viewer and the filed constraints maps, which we link in the sources. If you have already received a letter, the project name is on it. If you are not sure which project a letter belongs to, send it to us and we will identify it."}}, {"@type": "Question", "name": "Can I stop the line from crossing my property?", "acceptedAnswer": {"@type": "Answer", "text": "Realistically, no. Once the PUCT has approved a route, the utility holds the power of eminent domain and the line will be built. Route selection is the phase where landowner input changes outcomes, and that phase is over for these two projects. What is still open — and it is worth real money — is what you are paid and what the easement document actually says."}}, {"@type": "Question", "name": "Is National ROW a law firm?", "acceptedAnswer": {"@type": "Answer", "text": "No. National ROW is a right-of-way and condemnation consulting firm representing property owners only. We do not provide legal advice and no attorney-client relationship is created by contacting us. When a case needs a lawyer, we say so and coordinate with condemnation counsel."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Projects", "item": "https://nationalrow.com/projects/"}, {"@type": "ListItem", "position": 2, "name": "Texas 765 kV Transmission", "item": "https://nationalrow.com/projects/ercot-765kv/"}]}]
 </script>
@@ -40,7 +40,8 @@
   --logo:url("/national-row-logo.png");
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+body{font-family:'Barlow','Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+h1,h2,h3,h4,h5,h6,.btn-gold,.btn-outline{font-family:'Barlow Semi Condensed','Barlow','Arial Narrow',Arial,sans-serif;}
 a{color:var(--gold);text-decoration:none;}
 img{max-width:100%;}
 
@@ -77,7 +78,7 @@ img{max-width:100%;}
 .topbar a:hover{color:#fff;}
 
 /* NAV */
-.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:70px;}
+.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:60px;}
 .brand-logo,.footer-brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:10px;padding:6px 10px;box-sizing:content-box;}
 .nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:700;padding:11px 24px;border-radius:4px;font-size:15px;letter-spacing:.3px;transition:background .2s;}
 .nav-cta:hover{background:var(--gold-light);}
@@ -336,9 +337,6 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </header>
 
 <nav class="sitenav">
-  <a href="https://nationalrow.com" aria-label="National ROW home">
-    <span class="brand-logo" role="img" aria-label="National ROW — On the owner's side of the right-of-way"></span>
-  </a>
   <div class="nav-links">
     <a href="https://nationalrow.com/#how">How it works</a>
     <a href="/services/">What we handle</a>
