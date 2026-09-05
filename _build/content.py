@@ -301,3 +301,76 @@ def sources_block(items):
   </div>
 </section>
 """ % lis
+
+# --------------------------------------------------------------------------
+# "You don't have to choose between valuation and legal protection."
+# Ported from /offer-review/. Two columns: what National ROW does, and what
+# only an attorney can do. The disclosure paragraph is a legal disclaimer -
+# do NOT reword the substance of it (no law practice, no legal advice, no
+# attorney-client relationship) without counsel.
+# --------------------------------------------------------------------------
+VS_US = [
+    ("Read their appraisal and find what it left out", True),
+    ("Build the real number &mdash; remainder damages, access, highest and best use", False),
+    ("Negotiate with the agency&rsquo;s ROW agents so you never have to", False),
+    ("Name the attorney or independent appraiser if your file needs one &mdash; you engage them directly, on their own paper", False),
+    ("Owner-side only &mdash; we never represent the agency, utility or pipeline", False),
+    ("No upfront cost &mdash; contingency only", False),
+]
+
+VS_LEGAL = [
+    "Advise you on your legal rights",
+    "File objections and challenges",
+    "Represent you at a hearing",
+    "Argue your case before a judge or jury",
+    "Handle court filings and legal deadlines",
+]
+
+VS_DISCLOSURE = ("National ROW does not practice law, does not give legal advice, and does not represent anyone "
+                 "in court. Nothing here is legal advice, and contacting us does not create an attorney-client "
+                 "relationship. That does <em>not</em> mean you face this alone &mdash; a senior consultant will "
+                 "tell you what your file needs and who should be on it.")
+
+
+def versus_block(eyebrow="Who you call matters",
+                 heading="You don&rsquo;t have to choose between valuation and legal protection.",
+                 lead="Their right to take the land is usually not in question. <strong>What they owe you for it is.</strong>",
+                 note="Most owners work with one or the other. Our clients get both.",
+                 disclosure=VS_DISCLOSURE):
+    us = "\n          ".join(
+        "<li>%s%s%s</li>" % ("<strong>" if b else "", t, "</strong>" if b else "")
+        for t, b in VS_US)
+    legal = "\n          ".join("<li>%s</li>" % t for t in VS_LEGAL)
+    return """
+<section class="lp-vs">
+  <div class="container">
+    <div class="vc-sechead">
+      <div class="vc-eyebrow">%s</div>
+      <h2>%s</h2>
+    </div>
+    <p class="vc-lead">%s</p>
+    <div class="vc-grid">
+      <div class="vc-col vc-col--us">
+        <div class="vc-head">
+          <h3>Working with National ROW</h3>
+          <span class="vc-sub">Everything else &mdash; from day one</span>
+        </div>
+        <ul class="vc-list vc-list--us">
+          %s
+        </ul>
+      </div>
+      <div class="vc-col">
+        <div class="vc-head">
+          <h3>Legal counsel</h3>
+          <span class="vc-sub">What only an attorney can do</span>
+        </div>
+        <ul class="vc-list">
+          %s
+        </ul>
+      </div>
+    </div>
+    <p class="vc-note">%s</p>
+    <div class="vc-disclosure"><p>%s</p></div>
+  </div>
+</section>
+""" % (eyebrow, heading, lead, us, legal, note, disclosure)

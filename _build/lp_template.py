@@ -72,6 +72,9 @@ DEFAULTS = {
     "map_detail_url": "",               # set both to "" for no exit link (default)
     "map_detail_label": "",
 
+    # --- valuation vs legal counsel (content.versus_block) --------------
+    "show_versus": True,
+
     # --- body -----------------------------------------------------------
     "get_heading": "What you actually get",
     "get_cards": [
@@ -133,6 +136,39 @@ LP_CSS = """
   box-shadow:0 2px 8px rgba(201,162,39,.35);}
 .site-head .hc-cta:hover{background:var(--navy);color:#fff;}
 @media(max-width:420px){.site-head .hc-cta{font-size:15px;padding:9px 14px;white-space:normal;}}
+
+/* --- valuation vs legal counsel (ported from /offer-review/) ------------ */
+.lp-vs{background:#fff;padding:52px 22px;}
+.lp-vs .container{max-width:1100px;}
+.vc-sechead{margin-bottom:22px;}
+.vc-eyebrow{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;letter-spacing:1.9px;
+  text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:10px;}
+.lp-vs h2{font-size:clamp(23px,3.1vw,35px);line-height:1.16;color:var(--text);margin:0;}
+.vc-lead{font-size:17px;line-height:1.55;font-weight:500;color:var(--text);max-width:52ch;margin:0 0 4px;}
+.vc-lead strong{font-weight:800;color:var(--navy);}
+.vc-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:start;margin-top:26px;}
+.vc-col{background:#fff;border:1px solid rgba(13,35,64,.2);border-radius:5px;padding:24px 22px;
+  display:flex;flex-direction:column;gap:16px;}
+.vc-col--us{background:var(--navy);border:2px solid var(--gold);}
+.vc-head{padding-bottom:14px;border-bottom:1px solid rgba(13,35,64,.13);}
+.vc-col--us .vc-head{border-bottom-color:rgba(201,162,39,.35);}
+.vc-head h3{font-size:19px;font-weight:700;color:var(--text);margin:0 0 5px;}
+.vc-col--us .vc-head h3{color:#fff;}
+.vc-sub{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;color:#79828a;display:block;}
+.vc-col--us .vc-sub{color:var(--gold-light);}
+.vc-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;}
+.vc-list li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;line-height:1.45;color:var(--text);}
+.vc-list li::before{content:"";display:block;width:17px;height:17px;min-width:17px;margin-top:3px;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23c9a227' stroke-width='2.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;}
+.vc-list--us li{color:#e8edf5;}
+.vc-list--us li strong{color:#fff;}
+.vc-note{text-align:center;margin:22px 0 0;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-style:italic;font-size:17px;color:#4e565e;}
+.vc-disclosure{background:#f4f6f9;border-left:3px solid var(--gold);padding:18px 22px;margin-top:26px;border-radius:0 4px 4px 0;}
+.vc-disclosure p{font-size:14.5px;line-height:1.65;color:#4e565e;margin:0;max-width:80ch;}
+@media(max-width:820px){.vc-grid{grid-template-columns:1fr;gap:14px;}}
+@media(max-width:640px){.lp-vs{padding:38px 18px;}.vc-col{padding:20px 17px;}}
 .lp-map{padding:38px 22px 34px;background:#f4f7fa;}
 .lp-map .container{max-width:900px;}
 .lp-map h2{text-align:center;font-size:clamp(21px,2.6vw,27px);margin:0 0 6px;}
@@ -219,6 +255,10 @@ def render(user_cfg, write=True):
 
     b.append(map_compact(c["project_ids"], c["map_heading"], c["map_blurb"],
                          VIEWER, c["map_detail_url"], c["map_detail_label"]))
+
+    # valuation vs legal counsel - directly under the map, before the ask
+    if c["show_versus"]:
+        b.append(C.versus_block())
 
     cards = "\n      ".join(
         '<div class="card"><h3>%s</h3>\n        <p>%s</p></div>' % (h, p) for h, p in c["get_cards"])
