@@ -199,9 +199,9 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .proofband .col{padding:0 18px;border-left:1px solid rgba(11,31,58,.22);}
 .proofband .col:first-child{padding-left:0;border-left:none;}
 .proofband .where{color:rgba(11,31,58,.7);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;line-height:1.4;margin-bottom:6px;min-height:30px;}
-.proofband .nums{color:var(--navy);font-size:clamp(18px,2vw,23px);font-weight:900;letter-spacing:-.5px;line-height:1.2;}
+.proofband .nums{color:var(--navy);font-size:clamp(17px,1.75vw,22px);font-weight:900;letter-spacing:-.5px;line-height:1.25;}
 .proofband .nums .ar{margin:0 5px;font-weight:700;}
-.proofband .pct{font-size:13.5px;font-weight:800;white-space:nowrap;margin-left:6px;letter-spacing:0;}
+.proofband .pct{font-size:13.5px;font-weight:800;white-space:nowrap;letter-spacing:0;display:inline-block;}
 .proofband .whytxt{color:rgba(11,31,58,.78);font-size:12.5px;line-height:1.45;font-weight:600;margin-top:6px;}
 .proofband .act{margin-top:16px;border-top:1px solid rgba(11,31,58,.22);padding-top:13px;
   display:flex;align-items:baseline;gap:4px 14px;flex-wrap:wrap;}
@@ -210,7 +210,7 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .proofband .act a{color:var(--navy);font-weight:800;font-size:14px;text-decoration:none;border-bottom:2px solid rgba(11,31,58,.45);padding-bottom:1px;white-space:nowrap;}
 .proofband .act a:hover{border-bottom-color:var(--navy);}
 .proofband .fine{color:rgba(11,31,58,.62);font-size:11.5px;line-height:1.5;margin:11px 0 0;}
-@media(max-width:1000px){
+@media(max-width:1150px){
   .proofband .cols{grid-template-columns:1fr 1fr;gap:18px 0;}
   .proofband .col:nth-child(odd){padding-left:0;border-left:none;}
 }

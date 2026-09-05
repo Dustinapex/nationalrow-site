@@ -236,7 +236,7 @@ def proof_band(results=None, headline=None, fine=None, act=None, heading="Our do
         why = ('\n        <div class="whytxt">%s</div>' % r["why"]) if r.get("why") else ""
         cols.append("""      <div class="col">
         <div class="where">%s</div>
-        <div class="nums">%s<span class="ar">&rarr;</span>%s<span class="pct">%s</span></div>%s
+        <div class="nums">%s<span class="ar">&rarr;</span>%s <span class="pct">%s</span></div>%s
       </div>""" % (r["where"], r["frm"], r["to"], r["pct"], why))
 
     return """
