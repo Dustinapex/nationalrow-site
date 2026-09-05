@@ -819,5 +819,26 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 })();
 </script>
 
+
+<!-- ValueTrack / campaign prefill: /offer-review/?project=...&county=... -->
+<script>
+(function(){
+  try{
+    var p = new URLSearchParams(location.search);
+    function set(param, id){
+      var v = p.get(param);
+      if(!v) return;
+      var el = document.getElementById(id);
+      if(!el) return;
+      el.value = v.replace(/\+/g,' ').slice(0,120);
+      el.setAttribute('data-prefilled','1');
+    }
+    set('project','project');
+    set('county','county');
+    var src = document.querySelector('[name="source"]');
+    if(src && p.get('utm_source')) src.value = (src.value ? src.value + ' | ' : '') + p.get('utm_source');
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
