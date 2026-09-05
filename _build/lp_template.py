@@ -25,7 +25,7 @@ MINIMUM CONFIG for a new page:
 import json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from chassis import head, FORM_SCRIPT, form_section
+from chassis import head, FORM_SCRIPT, form_section, SITE_HEADER
 from mapmod import MAP_HEAD, map_section
 import content as C
 from build import VIEWER, ROOT
@@ -112,12 +112,6 @@ DEFAULTS = {
 }
 
 LP_CSS = """
-.lp-head{position:sticky;top:0;z-index:900;background:var(--navy);border-bottom:2px solid var(--gold);
-  display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;flex-wrap:wrap;}
-.lp-head .brand-logo{display:block;height:38px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:9px;padding:5px 9px;box-sizing:content-box;}
-.lp-head .r{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-.lp-head .ph{color:var(--gold);font-weight:900;font-size:19px;text-decoration:none;white-space:nowrap;}
-.lp-head .ph small{display:block;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.62);letter-spacing:.3px;}
 .lp-hero{background:linear-gradient(135deg,#0a1c33,#1a3a5c);color:#fff;padding:52px 22px 46px;text-align:center;}
 .lp-hero .eyebrow{display:inline-block;background:rgba(201,162,39,.16);border:1px solid rgba(201,162,39,.5);
   color:var(--gold);font-weight:800;font-size:12.5px;letter-spacing:1.1px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:20px;}
@@ -142,10 +136,6 @@ LP_CSS = """
 .lp-foot a{color:rgba(255,255,255,.72);}
 .lp-foot .nl{max-width:820px;margin:14px auto 0;font-size:12.5px;color:rgba(255,255,255,.46);}
 @media(max-width:640px){
-  .lp-head{padding:10px 16px;gap:10px;justify-content:center;}
-  .lp-head .r{width:100%;justify-content:center;gap:12px;}
-  .lp-head .ph{font-size:20px;text-align:center;}
-  .lp-head .btn-gold{width:100%;text-align:center;}
   .lp-hero{padding:34px 18px 32px;}
   .lp-hero .acts .btn-gold,.lp-hero .acts .btn-outline{width:100%;text-align:center;}
   .lp-get,.miss{padding:38px 18px;}
@@ -186,14 +176,7 @@ def render(user_cfg, write=True):
     gold = '<br><span class="gold">%s</span>' % c["h1_gold"] if c["h1_gold"] else ""
 
     b.append("""
-<header class="lp-head">
-  <a href="/" aria-label="National ROW"><span class="brand-logo"></span></a>
-  <div class="r">
-    <a class="ph" href="tel:%s">%s<small>CALL OR TEXT A SENIOR CONSULTANT</small></a>
-    <a class="btn-gold" href="#contact">%s</a>
-  </div>
-</header>
-
+%s
 <section class="lp-hero">
   <div class="container">
     %s<h1>%s%s</h1>
@@ -205,7 +188,7 @@ def render(user_cfg, write=True):
   </div>
 </section>
 <div class="lp-trust">%s</div>
-""" % (PHONE, PHONE_H, CTA, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], CTA, c["trust"]))
+""" % (SITE_HEADER, eyebrow, c["h1"], gold, c["sub"], c["hero_cta"], CTA, c["trust"]))
 
     # PROOF BAND — directly under the hero, above every ask.
     b.append(C.proof_band(results=c["results"], headline=c["proof_headline"], fine=c["proof_fine"]))

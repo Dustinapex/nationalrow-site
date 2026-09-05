@@ -38,6 +38,33 @@ a{color:var(--gold);text-decoration:none;}
 img{max-width:100%;}
 
 /* TOP BAR */
+/* SITE HEADER - same lockup as /offer-review/ */
+.site-head{background:#fff;border-bottom:1px solid rgba(3,52,114,.26);padding:11px 0;}
+.site-head .shwrap{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.site-head .brandlock{display:flex;align-items:center;gap:14px;}
+.site-head .brand{display:flex;align-items:center;}
+.site-head .brand img{display:block;height:42px;width:auto;}
+.site-head .tagline{color:#033472;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:15.5px;font-weight:700;line-height:1.22;max-width:236px;}
+.site-head .head-call{display:flex;align-items:center;justify-content:flex-end;gap:8px 26px;flex-wrap:wrap;}
+.site-head .hc-line{display:flex;align-items:baseline;gap:9px;}
+.site-head .hc-line small{color:#79828a;font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px;font-weight:500;letter-spacing:1.16px;text-transform:uppercase;white-space:nowrap;}
+.site-head .hc-line a{color:#033472;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:20px;font-weight:700;text-decoration:none;white-space:nowrap;}
+.site-head .hc-line a:hover{color:var(--gold);}
+@media(max-width:820px){
+  .site-head .shwrap{justify-content:center;text-align:center;}
+  .site-head .head-call{justify-content:center;width:100%;gap:6px 20px;}
+  .site-head .tagline{max-width:none;font-size:14px;}
+}
+@media(max-width:420px){
+  .site-head .brandlock{flex-direction:column;gap:7px;}
+  .site-head .hc-line{gap:7px;}
+  .site-head .hc-line a{font-size:18px;}
+}
+
 .topbar{background:var(--navy);color:rgba(255,255,255,.85);text-align:center;padding:8px 20px;font-size:13px;letter-spacing:.3px;}
 .topbar a{color:var(--gold-light);font-weight:600;}
 .topbar a:hover{color:#fff;}
@@ -286,14 +313,22 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 .footer-disclaimer{font-size:11px;color:rgba(255,255,255,.3);max-width:760px;margin:14px auto 0;line-height:1.65;}
 """
 
-TOPBAR_NAV = """
-<div class="topbar">
-  Nationwide Service &nbsp;·&nbsp; HQ in Texas &nbsp;&nbsp;|&nbsp;&nbsp;
-  Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a>
-  &nbsp;&nbsp;
-  <a href="mailto:info@nationalrow.com">info@nationalrow.com</a>
-</div>
+SITE_HEADER = """
+<header class="site-head">
+  <div class="shwrap">
+    <div class="brandlock">
+      <a class="brand" href="https://nationalrow.com" aria-label="National ROW home"><img src="/national-row-logo.png" alt="National ROW"></a>
+      <span class="tagline">Right of Way &middot; Eminent Domain &amp;<br>Condemnation Consulting Firm</span>
+    </div>
+    <div class="head-call">
+      <span class="hc-line"><small>Call or text</small><a href="tel:+14694847960">(469) 484-7960</a></span>
+      <span class="hc-line"><small>Email</small><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></span>
+    </div>
+  </div>
+</header>
+"""
 
+TOPBAR_NAV = SITE_HEADER + """
 <nav class="sitenav">
   <a href="https://nationalrow.com" aria-label="National ROW home">
     <span class="brand-logo" role="img" aria-label="National ROW — On the owner's side of the right-of-way"></span>
@@ -450,6 +485,9 @@ def head(title, description, canonical, schema_json, extra_head=""):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="https://nationalrow.com/favicon.ico">
 <link rel="apple-touch-icon" href="https://nationalrow.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=IBM+Plex+Mono:wght@500&display=swap">
 <script type="application/ld+json">
 %s
 </script>
