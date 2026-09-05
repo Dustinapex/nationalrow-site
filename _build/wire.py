@@ -26,10 +26,10 @@ def wr(p, s):
 # ---------- 1. projects/index.html ----------
 h = rd("projects/index.html")
 
-anchor = '<a href="/projects/ercot-765kv/" class="state-card"><span class="state-card-name">ERCOT 765kV Transmission</span><span class="state-card-tag">Texas &rsaquo;</span></a>'
+anchor = '<a href="/projects/oncor-765kv/" class="state-card"><span class="state-card-name">ERCOT 765kV Transmission</span><span class="state-card-tag">Texas &rsaquo;</span></a>'
 assert anchor in h, "projects index anchor card not found"
 
-new_anchor = ('<a href="/projects/ercot-765kv/" class="state-card">'
+new_anchor = ('<a href="/projects/oncor-765kv/" class="state-card">'
               '<span class="state-card-name">Texas 765kV Buildout</span>'
               '<span class="state-card-tag">Texas &middot; 424 miles approved &rsaquo;</span></a>')
 cards = "".join(
@@ -60,7 +60,7 @@ print("projects/index.html wired")
 
 # ---------- 2. sitemap.xml ----------
 s = rd("sitemap.xml")
-s = re.sub(r'(<url><loc>https://nationalrow\.com/projects/ercot-765kv/</loc><lastmod>)[0-9-]+(</lastmod>)',
+s = re.sub(r'(<url><loc>https://nationalrow\.com/projects/oncor-765kv/</loc><lastmod>)[0-9-]+(</lastmod>)',
            r'\g<1>%s\g<2>' % TODAY, s)
 add = "".join(
     '<url><loc>https://nationalrow.com/projects/%s/</loc><lastmod>%s</lastmod>'
@@ -78,7 +78,7 @@ block = """
 The Public Utility Commission of Texas approved two Oncor 765-kilovolt transmission projects on August 28, 2026 — Texas's first 765 kV lines. Together they total 424 miles across 21 counties, with a 200-foot permanent easement (about 24.2 acres per mile).
 - Dinosaur Switch to Longshore Switch — PUCT Docket 59315, approved Route 559, 242.6 miles, ~$2.24 billion, target in service 2028. Counties: Brown, Callahan, Coke, Coleman, Comanche, Erath, Glasscock, Hood, Howard, Runnels, Somervell, Sterling, Taylor. Detail: [nationalrow.com/projects/dinosaur-longshore-765kv/](https://nationalrow.com/projects/dinosaur-longshore-765kv/)
 - Longshore Switch to Drill Hole Switch — PUCT Docket 59029, approved Route 476, 181.6 miles, ~$1.70 billion, target in service 2029. Counties: Andrews, Culberson, Ector, Howard, Loving, Martin, Reeves, Winkler. Detail: [nationalrow.com/projects/longshore-drill-hole-765kv/](https://nationalrow.com/projects/longshore-drill-hole-765kv/)
-- Overview of both, with route maps and a property proximity check: [nationalrow.com/projects/ercot-765kv/](https://nationalrow.com/projects/ercot-765kv/)
+- Overview of both, with route maps and a property proximity check: [nationalrow.com/projects/oncor-765kv/](https://nationalrow.com/projects/oncor-765kv/)
 Landowners on these routes should expect survey permission requests, an appraisal, and a written offer. Route selection is final; compensation is not. National ROW represents the landowner in that negotiation and is not a law firm.
 """ % TODAY
 
