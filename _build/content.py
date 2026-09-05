@@ -181,72 +181,71 @@ HOW = """
 
 # ---------------------------------------------------------------- PROOF BAND
 # Every documented matter National ROW can substantiate, rendered high on the
-# page (directly under the hero), mirroring /offer-review/.
+# page in a deliberately compact band. The numbers are the point; everything
+# else is trimmed.
 #
 # Each result is a dict:
 #   where : where it was and what KIND of taking it was - keep the kind honest,
 #           a highway condemnation is not a utility easement
 #   frm   : first offer      to : final settlement      pct : increase
-#   why   : OPTIONAL. Only fill this in where the reason is documented. Never
-#           invent one - these are advertised claims that need substantiation.
+#   why   : one short line on why the number moved. Only state what is
+#           documented - never invent one, these are advertised claims that
+#           need substantiation.
 #
 # To add a matter: append a dict here and it appears on every landing page and
 # project page at once. Nothing else to edit.
 
 RESULTS_ALL = [
     {"where": "Utility easement &middot; Houston, TX",
-     "frm": "$16,000", "to": "$138,000", "pct": "+762%"},
+     "frm": "$16,000", "to": "$138,000", "pct": "+762%",
+     "why": "Damages their team missed."},
     {"where": "Utility easement &middot; Irving, TX",
-     "frm": "$12,000", "to": "$50,000", "pct": "+317%"},
+     "frm": "$12,000", "to": "$50,000", "pct": "+317%",
+     "why": "Damages their team missed."},
     {"where": "Highway &middot; Grand Parkway (SH 99), Chambers County, TX",
      "frm": "$2.5M", "to": "$5M", "pct": "+100%",
-     "why": "The agency&rsquo;s appraisal left value out. We found it and argued it."},
+     "why": "The agency&rsquo;s appraisal left value out."},
     {"where": "Highway &middot; I&#8209;35 expansion, McLennan County, TX",
-     "frm": "$20,000", "to": "$385,000", "pct": "+1,825% &mdash; largest on file",
-     "why": "Same reason. Their team&rsquo;s number missed value on the take."},
+     "frm": "$20,000", "to": "$385,000", "pct": "+1,825%",
+     "why": "Their number missed value on the take."},
 ]
 
 # Kept for callers that want only the utility-easement matters.
 RESULTS_UTILITY = RESULTS_ALL[:2]
 
-PROOF_HEADLINE = ("Almost every condemnation case is a fight about a number, "
-                  "not about the law.")
+PROOF_HEADLINE = ("Almost every condemnation case is a fight about a number, not about the law.")
 
-PROOF_FINE = ("Four individual documented matters, each traced from the original offer letter through to final "
-              "settlement. Two were utility easements and two were highway condemnations &mdash; the kind of taking "
-              "is noted on each. They are not an average and not a prediction: every take is different, and when we "
-              "look at yours and think the number is close to right, we tell you so. National ROW is a right-of-way "
-              "consulting firm, not a law firm; nothing here is legal advice.")
+PROOF_FINE = ("Four documented matters, each traced from the original offer letter to final settlement &mdash; two "
+              "utility easements and two highway condemnations, labelled on each. Not an average and not a "
+              "prediction; when we look at yours and think the number is close to right, we tell you so. National ROW "
+              "is a right-of-way consulting firm, not a law firm, and nothing here is legal advice.")
 
 
 def proof_band(results=None, headline=None, fine=None, act=None, heading="Our documented results"):
-    """Gold results band. `act` is the closing strip: (h3, paragraph, link_html)."""
+    """Compact gold results band. `act` is the closing line: (h3, text, link_html)."""
     results = RESULTS_ALL if results is None else results
     headline = PROOF_HEADLINE if headline is None else headline
     fine = PROOF_FINE if fine is None else fine
     if act is None:
         act = ("Text us the letter",
-               "A photo of the offer is enough. A senior consultant reads it and tells you what we see.",
+               "A photo of the offer is enough &mdash; a senior consultant reads it and tells you what we see.",
                '<a href="sms:+14694847960">Text (469) 484-7960 &rarr;</a>')
 
     cols = []
     for r in results:
-        why = ""
-        if r.get("why"):
-            why = ('\n        <div class="why">Why the price increased</div>'
-                   '\n        <div class="whytxt">%s</div>' % r["why"])
+        why = ('\n        <div class="whytxt">%s</div>' % r["why"]) if r.get("why") else ""
         cols.append("""      <div class="col">
         <div class="where">%s</div>
-        <div class="nums">%s<span class="ar">&rarr;</span>%s</div>
-        <div class="pct">%s</div>%s
+        <div class="nums">%s<span class="ar">&rarr;</span>%s<span class="pct">%s</span></div>%s
       </div>""" % (r["where"], r["frm"], r["to"], r["pct"], why))
 
     return """
 <section class="proofband">
   <div class="inner">
-    <p class="hl">%s</p>
-    <div class="rule"></div>
-    <h2>%s</h2>
+    <div class="top">
+      <h2>%s</h2>
+      <p class="hl">%s</p>
+    </div>
     <div class="cols">
 %s
     </div>
@@ -258,7 +257,7 @@ def proof_band(results=None, headline=None, fine=None, act=None, heading="Our do
     <p class="fine">%s</p>
   </div>
 </section>
-""" % (headline, heading, "\n".join(cols), act[0], act[1], act[2], fine)
+""" % (heading, headline, "\n".join(cols), act[0], act[1], act[2], fine)
 
 
 def cta_band(headline, body, label, href, show_phone=True):
