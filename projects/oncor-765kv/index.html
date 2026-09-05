@@ -1,1 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas 765 kV Transmission Buildout — Approved Routes, Counties & Landowner Rights</title>
+<meta name="description" content="Texas is getting its first 765 kV transmission lines. The PUCT approved 424 miles of Oncor 765 kV line on August 28, 2026. See the approved routes, the 21 counties affected, and what the easement offer will look like.">
+<link rel="canonical" href="https://nationalrow.com/projects/oncor-765kv/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Texas 765 kV Transmission Buildout — Approved Routes, Counties & Landowner Rights">
+<meta property="og:description" content="Texas is getting its first 765 kV transmission lines. The PUCT approved 424 miles of Oncor 765 kV line on August 28, 2026. See the approved routes, the 21 counties affected, and what the easement offer will look like.">
+<meta property="og:image" content="https://nationalrow.com/og-image.png">
+<meta property="og:url" content="https://nationalrow.com/projects/oncor-765kv/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://nationalrow.com/favicon.ico">
+<link rel="apple-touch-icon" href="https://nationalrow.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "Article", "headline": "Texas 765 kV Transmission Buildout — Approved Routes, Counties & Landowner Rights", "description": "Texas is getting its first 765 kV transmission lines. The PUCT approved 424 miles of Oncor 765 kV line on August 28, 2026. See the approved routes, the 21 counties affected, and what the easement offer will look like.", "url": "https://nationalrow.com/projects/oncor-765kv/", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "author": {"@type": "Organization", "name": "National ROW", "url": "https://nationalrow.com/"}, "publisher": {"@type": "Organization", "name": "National ROW", "url": "https://nationalrow.com/", "logo": {"@type": "ImageObject", "url": "https://nationalrow.com/national-row-logo.png"}}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a 765 kV line and why is Texas building them now?", "acceptedAnswer": {"@type": "Answer", "text": "765 kilovolts is the highest transmission voltage in common use in North America. Texas has run its grid backbone at 345 kV since the 1960s. The move to 765 kV is driven by load growth in West Texas — oil and gas electrification in the Permian Basin plus data centers and cryptocurrency mining — and by the fact that one 765 kV line moves roughly the power of three double-circuit 345 kV lines in a corridor about 200 feet wide instead of roughly 480 feet."}}, {"@type": "Question", "name": "Which 765 kV projects have actually been approved?", "acceptedAnswer": {"@type": "Answer", "text": "As of September 2026, the Public Utility Commission of Texas has approved two Oncor 765 kV projects, both on August 28, 2026: Dinosaur Switch to Longshore Switch (Docket 59315, Route 559, 242.6 miles) and Longshore Switch to Drill Hole Switch (Docket 59029, Route 476, 181.6 miles). Together that is 424 miles across 21 counties. Additional 765 kV segments, including Big Hill to Sand Lake, have been filed but not yet decided."}}, {"@type": "Question", "name": "How much land does a 765 kV line take?", "acceptedAnswer": {"@type": "Answer", "text": "Oncor specifies a 200-foot permanent right-of-way for its 765 kV lines, which is about 24.2 acres per mile. Across the 424 approved miles that is roughly 10,300 acres of private Texas land placed under permanent easement."}}, {"@type": "Question", "name": "How do I find out if my property is on a route?", "acceptedAnswer": {"@type": "Answer", "text": "Use the map on this page or on the individual project page, and confirm against Oncor's official interactive viewer and the filed constraints maps, which we link in the sources. If you have already received a letter, the project name is on it. If you are not sure which project a letter belongs to, send it to us and we will identify it."}}, {"@type": "Question", "name": "Can I stop the line from crossing my property?", "acceptedAnswer": {"@type": "Answer", "text": "Realistically, no. Once the PUCT has approved a route, the utility holds the power of eminent domain and the line will be built. Route selection is the phase where landowner input changes outcomes, and that phase is over for these two projects. What is still open — and it is worth real money — is what you are paid and what the easement document actually says."}}, {"@type": "Question", "name": "Is National ROW a law firm?", "acceptedAnswer": {"@type": "Answer", "text": "No. National ROW is a right-of-way and condemnation consulting firm representing property owners only. We do not provide legal advice and no attorney-client relationship is created by contacting us. When a case needs a lawyer, we say so and coordinate with condemnation counsel."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Projects", "item": "https://nationalrow.com/projects/"}, {"@type": "ListItem", "position": 2, "name": "Texas 765 kV Transmission", "item": "https://nationalrow.com/projects/oncor-765kv/"}]}]
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MX6ZT35QT3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MX6ZT35QT3');
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{
+  --navy:#0d2340;
+  --gold:#c9a227;
+  --gold-light:#e8bf4a;
+  --white:#fff;
+  --light:#f5f7fa;
+  --text:#1a1a2e;
+  --logo:url("/national-row-logo.png");
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Barlow','Arial','Helvetica Neue',Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+h1,h2,h3,h4,h5,h6,.btn-gold,.btn-outline{font-family:'Barlow Semi Condensed','Barlow','Arial Narrow',Arial,sans-serif;}
+a{color:var(--gold);text-decoration:none;}
+img{max-width:100%;}
 
+/* TOP BAR */
+/* SITE HEADER - same lockup as /offer-review/ */
+.site-head{background:#fff;border-bottom:1px solid rgba(3,52,114,.26);padding:11px 0;}
+.site-head .shwrap{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.site-head .brandlock{display:flex;align-items:center;gap:14px;}
+.site-head .brand{display:flex;align-items:center;}
+.site-head .brand img{display:block;height:42px;width:auto;}
+.site-head .tagline{color:#033472;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:15.5px;font-weight:700;line-height:1.22;max-width:236px;}
+.site-head .head-call{display:flex;align-items:center;justify-content:flex-end;gap:8px 26px;flex-wrap:wrap;}
+.site-head .hc-line{display:flex;align-items:baseline;gap:9px;}
+.site-head .hc-line small{color:#79828a;font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px;font-weight:500;letter-spacing:1.16px;text-transform:uppercase;white-space:nowrap;}
+.site-head .hc-line a{color:#033472;font-family:'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:20px;font-weight:700;text-decoration:none;white-space:nowrap;}
+.site-head .hc-line a:hover{color:var(--gold);}
+@media(max-width:820px){
+  .site-head .shwrap{justify-content:center;text-align:center;}
+  .site-head .head-call{justify-content:center;width:100%;gap:6px 20px;}
+  .site-head .tagline{max-width:none;font-size:14px;}
+}
+@media(max-width:420px){
+  .site-head .brandlock{flex-direction:column;gap:7px;}
+  .site-head .hc-line{gap:7px;}
+  .site-head .hc-line a{font-size:18px;}
+}
+
+.topbar{background:var(--navy);color:rgba(255,255,255,.85);text-align:center;padding:8px 20px;font-size:13px;letter-spacing:.3px;}
+.topbar a{color:var(--gold-light);font-weight:600;}
+.topbar a:hover{color:#fff;}
+
+/* NAV */
+.sitenav{background:var(--white);border-bottom:3px solid var(--gold);padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.1);height:60px;}
+.brand-logo,.footer-brand-logo{display:block;height:46px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:10px;padding:6px 10px;box-sizing:content-box;}
+.nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:700;padding:11px 24px;border-radius:4px;font-size:15px;letter-spacing:.3px;transition:background .2s;}
+.nav-cta:hover{background:var(--gold-light);}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{color:var(--navy);font-size:14px;font-weight:600;}
+.nav-links a:hover{color:var(--gold);}
+@media(max-width:900px){.nav-links{display:none;}}
+
+.alert-banner{background:#b91c1c;color:#fff;text-align:center;padding:13px 20px;font-size:14px;font-weight:600;letter-spacing:.2px;}
+.alert-banner a{color:#fff;text-decoration:underline;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0a1c33 0%,var(--navy) 55%,#1a3a5c 100%);color:var(--white);padding:72px 24px 56px;text-align:center;}
+.hero-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:2px;padding:5px 18px;border-radius:20px;margin-bottom:22px;text-transform:uppercase;}
+.hero h1{font-size:clamp(26px,4.5vw,50px);font-weight:900;line-height:1.12;margin-bottom:0;}
+.hero h1 .gold{color:var(--gold);}
+.hero-accent{width:56px;height:4px;background:var(--gold);margin:18px auto;border-radius:2px;}
+.hero-sub{font-size:17px;opacity:.9;max-width:720px;margin:0 auto 32px;line-height:1.7;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:700;padding:14px 32px;border-radius:4px;font-size:16px;border:none;cursor:pointer;transition:background .2s;display:inline-block;}
+.btn-gold:hover{background:var(--gold-light);}
+.btn-outline{border:2px solid rgba(255,255,255,.7);color:var(--white);font-weight:700;padding:12px 28px;border-radius:4px;font-size:15px;transition:border-color .2s;}
+.btn-outline:hover{border-color:#fff;}
+.stats-row{display:flex;justify-content:center;flex-wrap:wrap;margin-top:48px;border-top:1px solid rgba(255,255,255,.15);padding-top:36px;}
+.stat{flex:1;min-width:130px;padding:0 18px;border-right:1px solid rgba(255,255,255,.15);text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-num{font-size:32px;font-weight:900;color:var(--gold);line-height:1;}
+.stat-label{font-size:12px;opacity:.75;margin-top:6px;line-height:1.4;}
+
+/* SECTIONS */
+section{padding:64px 24px;}
+.container{max-width:1080px;margin:0 auto;}
+.container-narrow{max-width:820px;margin:0 auto;}
+h2{font-size:clamp(22px,3.2vw,34px);font-weight:900;color:var(--navy);margin-bottom:14px;line-height:1.2;}
+h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-height:1.35;}
+.section-sub{font-size:17px;color:#555;margin-bottom:30px;line-height:1.7;}
+.section-alt{background:var(--light);}
+.prose p{font-size:16px;line-height:1.8;color:#3d4351;margin-bottom:16px;}
+.prose ul{margin:0 0 18px 22px;}
+.prose li{font-size:16px;line-height:1.75;color:#3d4351;margin-bottom:8px;}
+.prose strong{color:var(--navy);}
+
+/* STATUS BLOCK */
+.status-block{background:var(--navy);color:var(--white);border-radius:10px;padding:28px 30px;margin:0 0 34px;border-top:5px solid var(--gold);}
+.status-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+.status-head h3{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1.6px;margin:0;}
+.status-date{font-size:12px;color:rgba(255,255,255,.55);}
+.status-pill{display:inline-block;background:#166534;color:#dcfce7;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:5px 13px;border-radius:20px;margin-bottom:16px;}
+.status-pill.pending{background:#854d0e;color:#fef3c7;}
+.project-table{width:100%;border-collapse:collapse;}
+.project-table td{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.09);font-size:15px;vertical-align:top;}
+.project-table tr:last-child td{border-bottom:none;}
+.project-table td:first-child{color:var(--gold-light);font-weight:700;width:38%;font-size:12px;text-transform:uppercase;letter-spacing:.6px;padding-right:16px;}
+.project-table a{color:var(--gold-light);text-decoration:underline;}
+
+/* MAP */
+.map-wrap{border:1px solid #d8dee7;border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.08);background:#fff;}
+#routeMap{height:520px;width:100%;background:#eef2f6;}
+@media(max-width:640px){#routeMap{height:400px;}}
+.map-bar{background:var(--navy);color:#fff;padding:14px 18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.map-bar input{flex:1;min-width:220px;border:none;border-radius:5px;padding:11px 14px;font-size:15px;font-family:inherit;}
+.map-bar button{background:var(--gold);color:var(--navy);border:none;border-radius:5px;padding:11px 22px;font-weight:800;font-size:15px;cursor:pointer;}
+.map-bar button:disabled{opacity:.6;cursor:wait;}
+.map-note{font-size:12px;color:#6b7280;padding:12px 18px;background:#f9fafb;line-height:1.6;border-top:1px solid #e5e7eb;}
+.map-result{padding:16px 18px;font-size:15px;line-height:1.6;border-top:1px solid #e5e7eb;display:none;}
+.map-result.near{background:#fef2f2;color:#7f1d1d;}
+.map-result.far{background:#f0fdf4;color:#14532d;}
+.map-result.err{background:#fffbeb;color:#78350f;}
+.map-result strong{display:block;font-size:17px;margin-bottom:4px;}
+.map-legend{display:flex;gap:18px;flex-wrap:wrap;padding:12px 18px;font-size:13px;color:#4b5563;background:#fff;border-top:1px solid #e5e7eb;}
+.map-legend span{display:flex;align-items:center;gap:7px;}
+.swatch{width:22px;height:4px;border-radius:2px;display:inline-block;}
+
+/* COUNTY GRID */
+.county-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:22px;}
+.county-chip{background:#fff;border:1px solid #dbe1ea;border-left:4px solid var(--gold);border-radius:5px;padding:12px 14px;font-size:15px;font-weight:700;color:var(--navy);}
+.county-chip small{display:block;font-weight:400;color:#6b7280;font-size:12px;margin-top:2px;}
+
+/* TIMELINE */
+.timeline{margin-top:26px;border-left:3px solid #e2e8f0;padding-left:0;list-style:none;}
+.timeline li{position:relative;padding:0 0 30px 30px;}
+.timeline li:last-child{padding-bottom:0;}
+.timeline li::before{content:"";position:absolute;left:-9px;top:4px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--gold);}
+.timeline li.done::before{background:var(--gold);}
+.timeline h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.timeline .when{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;}
+.timeline p{font-size:15px;color:#4b5563;line-height:1.7;}
+
+/* CALLOUTS */
+.urgency-box{background:#fffbeb;border-left:5px solid var(--gold);border-radius:4px;padding:18px 24px;margin:26px 0;font-size:15px;line-height:1.75;}
+.urgency-box strong{color:#92400e;}
+.note-box{background:#f1f5f9;border-left:5px solid #64748b;border-radius:4px;padding:18px 24px;margin:26px 0;font-size:14px;line-height:1.75;color:#475569;}
+.note-box strong{color:#334155;}
+
+/* NUMBER TABLE */
+.num-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;}
+.num-table th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-size:12px;text-transform:uppercase;letter-spacing:.8px;}
+.num-table td{padding:12px 14px;border-bottom:1px solid #e5e7eb;}
+.num-table tr:nth-child(even) td{background:#f9fafb;}
+.num-table td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.num-table tfoot td{font-weight:800;color:var(--navy);border-top:2px solid var(--navy);background:#fff!important;}
+/* Wide data tables must scroll inside themselves on a phone, never the page. */
+@media(max-width:620px){
+  .num-table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:14px;}
+  .num-table th,.num-table td{padding:10px 10px;}
+  .project-table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .project-table td:first-child{width:auto;min-width:118px;}
+}
+
+/* DAMAGES */
+.damages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:26px;}
+.damage-card{background:var(--white);border-radius:8px;border-top:4px solid var(--gold);padding:24px;box-shadow:0 2px 14px rgba(0,0,0,.07);}
+.damage-card h4{color:var(--navy);font-size:16px;margin-bottom:10px;font-weight:700;}
+.damage-card p{font-size:14px;color:#555;line-height:1.65;}
+
+/* HOW IT WORKS */
+.how-section{background:var(--navy);}
+.how-section h2{color:var(--white);}
+.how-section .section-sub{color:rgba(255,255,255,.75);}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:32px;}
+.step{background:rgba(255,255,255,.06);border-radius:8px;padding:28px;border:1px solid rgba(255,255,255,.08);}
+.step-num{font-size:42px;font-weight:900;color:var(--gold);opacity:.7;line-height:1;margin-bottom:10px;}
+.step h4{color:var(--white);font-size:16px;margin-bottom:8px;font-weight:700;}
+.step p{color:rgba(255,255,255,.7);font-size:14px;line-height:1.65;}
+
+/* SEGMENT CARDS (hub) */
+.seg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:30px;}
+.seg-card{background:#fff;border:1px solid #dbe1ea;border-top:5px solid var(--gold);border-radius:10px;padding:28px;box-shadow:0 3px 16px rgba(0,0,0,.06);display:flex;flex-direction:column;}
+.seg-card h3{margin-top:0;font-size:21px;}
+.seg-card .docket{font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#6b7280;margin-bottom:10px;}
+.seg-card ul{list-style:none;margin:16px 0 20px;}
+.seg-card li{font-size:14px;padding:7px 0;border-bottom:1px solid #eef1f5;color:#4b5563;display:flex;justify-content:space-between;gap:12px;}
+.seg-card li:last-child{border-bottom:none;}
+.seg-card li b{color:var(--navy);text-align:right;}
+.seg-card .grow{flex:1;}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid #e8edf3;padding:22px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-item h4{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.4;}
+.faq-item p{font-size:15px;color:#555;line-height:1.75;}
+.faq-item p + p{margin-top:10px;}
+
+/* SOURCES */
+.sources{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:24px 28px;}
+.sources h3{margin-top:0;font-size:14px;text-transform:uppercase;letter-spacing:1.4px;color:#64748b;}
+.sources ol{margin:14px 0 0 20px;}
+.sources li{font-size:14px;line-height:1.75;color:#475569;margin-bottom:10px;}
+.sources a{color:#1d4ed8;text-decoration:underline;word-break:break-word;}
+
+/* HANDOFF */
+.handoff{background:linear-gradient(135deg,#0a1c33,#1a3a5c);color:#fff;padding:56px 24px;text-align:center;}
+.handoff h2{color:#fff;}
+.handoff p{color:rgba(255,255,255,.85);font-size:17px;max-width:640px;margin:0 auto 26px;line-height:1.7;}
+
+/* PROOF BAND - documented results. Deliberately compact: the numbers are the
+   point, everything else is trimmed to the smallest thing that still reads. */
+.proofband{background:var(--gold);padding:24px 22px;}
+.proofband .inner{max-width:1160px;margin:0 auto;}
+.proofband .top{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;margin-bottom:14px;}
+.proofband h2{color:var(--navy);font-size:20px;margin:0;line-height:1.2;}
+.proofband .hl{color:rgba(11,31,58,.72);font-size:14px;font-weight:600;line-height:1.4;margin:0;}
+.proofband .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.proofband .col{padding:0 18px;border-left:1px solid rgba(11,31,58,.22);}
+.proofband .col:first-child{padding-left:0;border-left:none;}
+.proofband .where{color:rgba(11,31,58,.7);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;line-height:1.4;margin-bottom:6px;min-height:30px;}
+.proofband .nums{color:var(--navy);font-size:clamp(17px,1.75vw,22px);font-weight:900;letter-spacing:-.5px;line-height:1.25;}
+.proofband .nums .ar{margin:0 5px;font-weight:700;}
+.proofband .pct{font-size:13.5px;font-weight:800;white-space:nowrap;letter-spacing:0;display:inline-block;}
+.proofband .whytxt{color:rgba(11,31,58,.78);font-size:12.5px;line-height:1.45;font-weight:600;margin-top:6px;}
+.proofband .act{margin-top:16px;border-top:1px solid rgba(11,31,58,.22);padding-top:13px;
+  display:flex;align-items:baseline;gap:4px 14px;flex-wrap:wrap;}
+.proofband .act h3{color:var(--navy);font-size:15px;margin:0;}
+.proofband .act p{color:rgba(11,31,58,.78);font-size:13.5px;line-height:1.5;margin:0;flex:1 1 220px;}
+.proofband .act a{color:var(--navy);font-weight:800;font-size:14px;text-decoration:none;border-bottom:2px solid rgba(11,31,58,.45);padding-bottom:1px;white-space:nowrap;}
+.proofband .act a:hover{border-bottom-color:var(--navy);}
+.proofband .fine{color:rgba(11,31,58,.62);font-size:11.5px;line-height:1.5;margin:11px 0 0;}
+@media(max-width:1150px){
+  .proofband .cols{grid-template-columns:1fr 1fr;gap:18px 0;}
+  .proofband .col:nth-child(odd){padding-left:0;border-left:none;}
+}
+@media(max-width:560px){
+  .proofband{padding:22px 20px;}
+  .proofband .cols{grid-template-columns:1fr;gap:0;}
+  .proofband .col{padding:13px 0;border-left:none;border-top:1px solid rgba(11,31,58,.22);}
+  .proofband .col:first-child{border-top:none;padding-top:0;}
+  .proofband .where{min-height:0;margin-bottom:4px;}
+  .proofband .nums{font-size:21px;}
+}
+
+/* INLINE CTA BAND */
+.cta-band{background:#fbf7ec;border-top:3px solid var(--gold);border-bottom:1px solid #e6dcc2;padding:38px 24px;}
+.cta-band .inner{max-width:760px;margin:0 auto;text-align:center;}
+.cta-band h3{font-size:clamp(19px,2.4vw,25px);color:var(--navy);margin:0 0 12px;line-height:1.3;}
+.cta-band p{font-size:16px;line-height:1.7;color:#3d4a5c;margin:0 auto 22px;max-width:620px;}
+.cta-band .btn-gold{font-size:16px;}
+.cta-band .alt{margin-top:16px;font-size:15px;color:#5a6674;}
+.cta-band .alt a{color:#1d4ed8;font-weight:700;text-decoration:none;}
+.cta-band .alt a:hover{text-decoration:underline;}
+
+/* CONTACT + FORM */
+.contact-strip{background:var(--navy);color:var(--white);padding:32px 24px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08);}
+.contact-strip .phones{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:22px;font-weight:900;}
+.contact-strip .phones a{color:var(--gold);}
+.form-section{background:var(--navy);padding:64px 24px;}
+.form-header{text-align:center;color:var(--white);margin-bottom:32px;}
+.form-header h2{color:var(--white);font-size:clamp(22px,3vw,32px);}
+.form-header p{color:rgba(255,255,255,.78);margin-top:10px;font-size:16px;}
+.form-body{background:var(--white);border-radius:10px;padding:36px;max-width:720px;margin:0 auto;box-shadow:0 8px 40px rgba(0,0,0,.25);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:580px){.form-grid{grid-template-columns:1fr;}}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+label{font-size:12.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;}
+input,select,textarea{border:1.5px solid #d1d5db;border-radius:5px;padding:13px 14px;font-size:16px;font-family:inherit;width:100%;background:#fff;min-height:46px;box-sizing:border-box;}
+textarea{min-height:104px;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.15);}
+.tcpa-text{font-size:11px;color:#6b7280;line-height:1.65;margin:18px 0 4px;padding:12px;background:#f9fafb;border-radius:5px;border:1px solid #e5e7eb;}
+.form-disclaimer{font-size:12px;color:#8b93a1;margin-top:12px;line-height:1.6;}
+.submit-btn{background:var(--gold);color:var(--navy);font-weight:700;font-size:17px;padding:16px 28px;border:none;border-radius:5px;cursor:pointer;width:100%;margin-top:14px;min-height:52px;line-height:1.25;}
+.submit-btn:hover{background:var(--gold-light);}
+.form-subtext{text-align:center;font-size:13px;color:#6b7280;margin-top:12px;}
+.form-success{display:none;text-align:center;padding:40px 20px;}
+.form-success h3{color:var(--navy);font-size:24px;margin-bottom:12px;}
+.form-success p{color:#555;font-size:16px;line-height:1.7;}
+.form-success .phones{margin-top:20px;font-size:18px;font-weight:700;}
+.form-success .phones a{color:var(--gold);}
+
+/* FOOTER */
+footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;text-align:center;}
+.footer-brand-logo{margin:0 auto 16px;}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;}
+.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:0 0 20px;font-size:13px;}
+.footer-links a{color:rgba(255,255,255,.55);}
+.footer-links a:hover{color:var(--gold);}
+.footer-phones{font-size:14px;margin-bottom:6px;}
+.footer-phones a{color:var(--gold-light);font-weight:600;}
+.footer-email a{color:rgba(255,255,255,.55);}
+.footer-copy{font-size:12px;margin-top:20px;color:rgba(255,255,255,.35);}
+.footer-disclaimer{font-size:11px;color:rgba(255,255,255,.3);max-width:760px;margin:14px auto 0;line-height:1.65;}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="shwrap">
+    <div class="brandlock">
+      <a class="brand" href="https://nationalrow.com" aria-label="National ROW home"><img src="/national-row-logo.png" alt="National ROW"></a>
+      <span class="tagline">Right of Way &middot; Eminent Domain &amp;<br>Condemnation Consulting Firm</span>
+    </div>
+    <div class="head-call">
+      <span class="hc-line"><small>Call or text</small><a href="tel:+14694847960">(469) 484-7960</a></span>
+      <span class="hc-line"><small>Email</small><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></span>
+    </div>
+  </div>
+</header>
+
+<nav class="sitenav">
+  <div class="nav-links">
+    <a href="https://nationalrow.com/#how">How it works</a>
+    <a href="/services/">What we handle</a>
+    <a href="/projects/">Projects</a>
+    <a href="https://nationalrow.com/blog/">Blog</a>
+    <a href="https://nationalrow.com/about/">About</a>
+    <a href="/faq/">FAQ</a>
+    <a href="https://nationalrow.com/states/texas/">Texas</a>
+  </div>
+  <a class="nav-cta" href="#contact">Free Case Review</a>
+</nav>
+
+<div class="alert-banner">⚡ 424 miles of Texas 765 kV line approved August 28, 2026 — right-of-way acquisition is beginning across 21 counties.</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Texas 765 kV Buildout · Updated September 4, 2026</div>
+    <h1>Texas Is Building Its First 765 kV Lines.<br><span class="gold">424 Miles Are Approved. Acquisition Starts Now.</span></h1>
+    <div class="hero-accent"></div>
+    <p class="hero-sub">On August 28, 2026 the Public Utility Commission of Texas approved two Oncor 765-kilovolt transmission projects running from Somervell County to the Culberson–Reeves county line. This page tracks what has been approved, which counties are affected, and what landowners in the corridor should expect next. We update it as the dockets move.</p>
+    <div class="hero-btns">
+      <a class="btn-gold" href="#segments">See the approved projects</a>
+      <a class="btn-outline" href="#map">Check my property</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">424</div><div class="stat-label">Miles approved</div></div>
+      <div class="stat"><div class="stat-num">21</div><div class="stat-label">Texas counties</div></div>
+      <div class="stat"><div class="stat-num">~10,284</div><div class="stat-label">Acres under permanent easement</div></div>
+      <div class="stat"><div class="stat-num">$3.9B</div><div class="stat-label">Combined estimated cost</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="segments">
+  <div class="container">
+    <h2>The two approved projects</h2>
+    <p class="section-sub">Both were approved on the same day, by the same order date, and they connect end to end at Longshore Switch in Howard County. If you own land anywhere along this corridor, one of these is yours.</p>
+    <div class="seg-grid">
+<div class="seg-card">
+  <div class="docket">PUCT Docket 59315 · Approved Aug 28, 2026</div>
+  <h3>Dinosaur–Longshore 765 kV</h3>
+  <p style="font-size:15px;color:#4b5563;line-height:1.7;">Dinosaur Switch, about 3 miles north of Glen Rose in Somervell County to Longshore Switch, about 4.5 miles west of Forsan in Howard County.</p>
+  <ul class="grow">
+    <li>Approved route <b>Route 559</b></li>
+    <li>Length <b>242.6 miles</b></li>
+    <li>Counties crossed <b>13</b></li>
+    <li>Land under easement <b>~5,881 acres</b></li>
+    <li>Estimated cost <b>$2.24 billion</b></li>
+    <li>Target in service <b>2028</b></li>
+  </ul>
+  <p style="font-size:13px;color:#64748b;line-height:1.6;margin-bottom:16px;"><strong style="color:#0d2340">Counties:</strong> Brown, Callahan, Coke, Coleman, Comanche, Erath, Glasscock, Hood, Howard, Runnels, Somervell, Sterling, Taylor</p>
+  <a class="btn-gold" href="/projects/dinosaur-longshore-765kv/" style="text-align:center;">Full project page &amp; route map →</a>
+</div>
+<div class="seg-card">
+  <div class="docket">PUCT Docket 59029 · Approved Aug 28, 2026</div>
+  <h3>Longshore–Drill Hole 765 kV</h3>
+  <p style="font-size:15px;color:#4b5563;line-height:1.7;">Longshore Switch, about 4.5 miles west of Forsan in Howard County to Drill Hole Switch, about 6 miles west of US 285 near the Culberson–Reeves county line.</p>
+  <ul class="grow">
+    <li>Approved route <b>Route 476</b></li>
+    <li>Length <b>181.6 miles</b></li>
+    <li>Counties crossed <b>8</b></li>
+    <li>Land under easement <b>~4,402 acres</b></li>
+    <li>Estimated cost <b>$1.70 billion</b></li>
+    <li>Target in service <b>2029</b></li>
+  </ul>
+  <p style="font-size:13px;color:#64748b;line-height:1.6;margin-bottom:16px;"><strong style="color:#0d2340">Counties:</strong> Andrews, Culberson, Ector, Howard, Loving, Martin, Reeves, Winkler</p>
+  <a class="btn-gold" href="/projects/longshore-drill-hole-765kv/" style="text-align:center;">Full project page &amp; route map →</a>
+</div></div>
+  </div>
+</section>
+
+<section class="proofband">
+  <div class="inner">
+    <div class="top">
+      <h2>Our documented results</h2>
+      <p class="hl">Almost every condemnation case is a fight about a number, not about the law.</p>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <div class="where">Utility easement &middot; Houston, TX</div>
+        <div class="nums">$16,000<span class="ar">&rarr;</span>$138,000 <span class="pct">+762%</span></div>
+        <div class="whytxt">Damages their team missed.</div>
+      </div>
+      <div class="col">
+        <div class="where">Utility easement &middot; Irving, TX</div>
+        <div class="nums">$12,000<span class="ar">&rarr;</span>$50,000 <span class="pct">+317%</span></div>
+        <div class="whytxt">Damages their team missed.</div>
+      </div>
+      <div class="col">
+        <div class="where">Highway &middot; Grand Parkway (SH 99), Chambers County, TX</div>
+        <div class="nums">$2.5M<span class="ar">&rarr;</span>$5M <span class="pct">+100%</span></div>
+        <div class="whytxt">The agency&rsquo;s appraisal left value out.</div>
+      </div>
+      <div class="col">
+        <div class="where">Highway &middot; I&#8209;35 expansion, McLennan County, TX</div>
+        <div class="nums">$20,000<span class="ar">&rarr;</span>$385,000 <span class="pct">+1,825%</span></div>
+        <div class="whytxt">Their number missed value on the take.</div>
+      </div>
+    </div>
+    <div class="act">
+      <h3>Text us the letter</h3>
+      <p>A photo of the offer is enough &mdash; a senior consultant reads it and tells you what we see.</p>
+      <a href="sms:+14694847960">Text (469) 484-7960 &rarr;</a>
+    </div>
+    <p class="fine">Four documented matters, each traced from the original offer letter to final settlement &mdash; two utility easements and two highway condemnations, labelled on each. Not an average and not a prediction; when we look at yours and think the number is close to right, we tell you so. National ROW is a right-of-way consulting firm, not a law firm, and nothing here is legal advice.</p>
+  </div>
+</section>
+
+
+<section class="section-alt" id="map">
+  <div class="container">
+    <h2>Both approved routes on one map</h2>
+    <p class="section-sub">Gold is what the PUCT approved. Dashed grey is what was studied and not selected. Enter an address to see roughly how far your property sits from the approved centerline. For the detail on a single project — timeline, offer anatomy, sources — open its own page above.</p>
+
+    <div class="map-wrap">
+      <div class="map-bar">
+        <input id="addrInput" type="text" placeholder="Enter your property address, or the nearest crossroads" autocomplete="off">
+        <button id="addrBtn" type="button">Check my location</button>
+      </div>
+      <div id="routeMap"></div>
+      <div class="map-legend">
+        <span><i class="swatch" style="background:#c9a227"></i> PUCT-approved route</span>
+        <span><i class="swatch" style="background:#94a3b8"></i> Other routes studied (not approved)</span>
+        <span><i class="swatch" style="background:#b91c1c;height:10px;width:10px;border-radius:50%"></i> Your location</span>
+      </div>
+      <div class="map-result" id="mapResult"></div>
+      <div class="map-note">
+        Route data is loaded live from Oncor's public project mapping service, the same data behind Oncor's own landowner map viewer. The line shown is the approved <em>centerline</em>; the easement is a corridor roughly 200 feet wide centered on it, and the final surveyed alignment can shift within the approved corridor. <strong>This tool is an approximation, not a survey and not legal advice.</strong> Distances are straight-line estimates. Addresses you type are sent to the U.S. Census Bureau's public geocoder to find coordinates. If we find a match, we drop the address and county into the review form lower down so you do not have to retype them — nothing reaches National ROW unless you actually submit that form. Confirm your status against
+        <a href="https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7" target="_blank" rel="noopener">Oncor's official interactive map</a> and the
+        <a href="https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/dinosaur-%E2%80%93-longshore-765-kv-transmission-line-project/updated-maps/Dinosaur%20-%20Longshore%20Filing%20Constraint%20Map%202.11.2026.pdf" target="_blank" rel="noopener">filed constraints map</a>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var SVC='https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/2/query';
+  var PIDS='1015,1019';
+  var map, approvedLayer=null, marker=null, approvedCoords=[];
+
+  function initMap(){
+    map = L.map('routeMap', {scrollWheelZoom:false}).setView([32.05, -101.0], 7);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
+      maxZoom:19,
+      attribution:'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, USGS | Route data: Oncor Electric Delivery (public CCN viewer)'
+    }).addTo(map);
+    map.on('click', function(){ map.scrollWheelZoom.enable(); });
+    loadRoutes();
+  }
+
+  function q(where, cb){
+    var url = SVC + '?f=geojson&outSR=4326&resultRecordCount=2000&maxAllowableOffset=0.0004'
+            + '&outFields=link_id,Status,project_id&where=' + encodeURIComponent(where);
+    fetch(url).then(function(r){ return r.json(); }).then(cb).catch(function(){ cb(null); });
+  }
+
+  function loadRoutes(){
+    // Other studied routes first, so the approved route draws on top.
+    q("project_id IN (" + PIDS + ") AND Status<>'Approved'", function(g){
+      if(g && g.features && g.features.length){
+        L.geoJSON(g, {style:{color:'#94a3b8', weight:2, opacity:.65, dashArray:'4,5'}}).addTo(map);
+      }
+    });
+    q("project_id IN (" + PIDS + ") AND Status='Approved'", function(g){
+      if(!g || !g.features || !g.features.length){
+        document.getElementById('routeMap').insertAdjacentHTML('beforeend',
+          '<div style="position:absolute;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.94);padding:24px;text-align:center;font-size:15px;line-height:1.7;color:#334155">'
+          + "The live route map couldn't load right now. View the approved route on <a href='https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>."
+          + '</div>');
+        return;
+      }
+      approvedLayer = L.geoJSON(g, {style:{color:'#c9a227', weight:5, opacity:.95}}).addTo(map);
+      g.features.forEach(function(f){
+        var c = f.geometry && f.geometry.coordinates;
+        if(!c) return;
+        if(typeof c[0][0] === 'number'){ approvedCoords.push(c); }
+        else { c.forEach(function(part){ approvedCoords.push(part); }); }
+      });
+      try{ map.fitBounds(approvedLayer.getBounds(), {padding:[24,24]}); }catch(e){}
+    });
+  }
+
+  // ---- geometry helpers (equirectangular, fine at these distances) ----
+  function projPt(lon, lat, lat0){
+    var R=6371000, r=Math.PI/180;
+    return [R*lon*r*Math.cos(lat0*r), R*lat*r];
+  }
+  function segDist(p, a, b){
+    var dx=b[0]-a[0], dy=b[1]-a[1];
+    var L2=dx*dx+dy*dy;
+    var t = L2 ? ((p[0]-a[0])*dx + (p[1]-a[1])*dy)/L2 : 0;
+    t = Math.max(0, Math.min(1, t));
+    var cx=a[0]+t*dx, cy=a[1]+t*dy;
+    return Math.hypot(p[0]-cx, p[1]-cy);
+  }
+  function distanceToRouteMeters(lat, lon){
+    if(!approvedCoords.length) return null;
+    var best = Infinity, p = projPt(lon, lat, lat);
+    for(var i=0;i<approvedCoords.length;i++){
+      var line = approvedCoords[i];
+      for(var j=1;j<line.length;j++){
+        var a = projPt(line[j-1][0], line[j-1][1], lat);
+        var b = projPt(line[j][0], line[j][1], lat);
+        var d = segDist(p, a, b);
+        if(d < best) best = d;
+      }
+    }
+    return best;
+  }
+
+  // ---- address lookup via Census geocoder (JSONP) ----
+  // 'geographies' rather than 'locations' so we get the county back too — it fills
+  // the form's county field and tells us which docket the owner belongs to.
+  function geocode(addr, cb){
+    var cbName = 'nrGeo' + Date.now();
+    var s = document.createElement('script');
+    var to = setTimeout(function(){ cleanup(); cb(null); }, 12000);
+    function cleanup(){ clearTimeout(to); try{ delete window[cbName]; }catch(e){ window[cbName]=undefined; } if(s.parentNode) s.parentNode.removeChild(s); }
+    window[cbName] = function(data){ cleanup(); cb(data); };
+    s.src = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address='
+          + encodeURIComponent(addr)
+          + '&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties'
+          + '&format=jsonp&callback=' + cbName;
+    s.onerror = function(){ cleanup(); cb(null); };
+    document.body.appendChild(s);
+  }
+
+  // ---- carry what we learned into the lead form ----
+  function set(id, val){
+    var el = document.getElementById(id);
+    if(!el || !val) return;
+    if(!el.__nrWired){
+      el.__nrWired = true;
+      el.addEventListener('input', function(){ el.dataset.nrAuto = ''; });
+    }
+    // Fill when empty, or overwrite a value we put there ourselves on an earlier check.
+    if(!el.value || el.dataset.nrAuto === '1'){
+      el.value = val;
+      el.dataset.nrAuto = '1';
+    }
+  }
+  function setHidden(name, val){
+    var f = document.getElementById('leadForm');
+    if(!f) return;
+    var el = f.querySelector('[name="' + name + '"]');
+    if(!el){
+      el = document.createElement('input');
+      el.type = 'hidden'; el.name = name;
+      f.appendChild(el);
+    }
+    el.value = val;
+  }
+  function carryToForm(match, lat, lon, miles){
+    var county = '';
+    try{
+      var c = match.geographies && match.geographies.Counties && match.geographies.Counties[0];
+      if(c && c.BASENAME) county = c.BASENAME + ', TX';
+    }catch(e){}
+    set('propAddress', match.matchedAddress || '');
+    set('countyState', county);
+    setHidden('checked_address', match.matchedAddress || '');
+    setHidden('checked_county', county);
+    setHidden('route_distance_miles', miles.toFixed(2));
+    setHidden('property_latlon', lat.toFixed(6) + ',' + lon.toFixed(6));
+    setHidden('checked_project', PIDS === '1015' ? 'Dinosaur-Longshore (Docket 59315)'
+                              : PIDS === '1019' ? 'Longshore-Drill Hole (Docket 59029)'
+                              : 'Texas 765kV corridor');
+  }
+
+  function show(cls, html){
+    var el = document.getElementById('mapResult');
+    el.className = 'map-result ' + cls;
+    el.innerHTML = html;
+    el.style.display = 'block';
+  }
+
+  function run(){
+    var addr = document.getElementById('addrInput').value.trim();
+    if(!addr){ return; }
+    if(!approvedCoords.length){
+      show('err','<strong>Route data is still loading.</strong>Give it a moment and try again, or call or text us at (469) 484-7960 and we will check it for you.');
+      return;
+    }
+    var btn = document.getElementById('addrBtn');
+    btn.disabled = true; btn.textContent = 'Checking…';
+    geocode(addr, function(data){
+      btn.disabled = false; btn.textContent = 'Check my location';
+      var m = data && data.result && data.result.addressMatches && data.result.addressMatches[0];
+      if(!m){
+        show('err','<strong>We could not place that address.</strong>Rural addresses often are not in the public geocoder. Try the nearest crossroads or town, or just <a href="#contact" style="color:inherit;text-decoration:underline">send us your parcel number</a> and we will look it up by hand.');
+        return;
+      }
+      var lat = m.coordinates.y, lon = m.coordinates.x;
+      if(marker) map.removeLayer(marker);
+      marker = L.circleMarker([lat,lon], {radius:8, color:'#fff', weight:2, fillColor:'#b91c1c', fillOpacity:1}).addTo(map);
+      map.setView([lat,lon], 11);
+      var d = distanceToRouteMeters(lat, lon);
+      var mi = d/1609.34;
+      var pretty = mi < 0.5 ? (Math.round(d*3.28084/10)*10).toLocaleString() + ' feet' : mi.toFixed(1) + ' miles';
+      carryToForm(m, lat, lon, mi);
+      if(window.gtag) gtag('event','route_proximity_check',{distance_miles: Math.round(mi*10)/10});
+      if(mi < 0.5){
+        show('near','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
+          + 'Property this close is very likely inside or adjacent to the 200-foot easement corridor. If you have not been contacted yet, you probably will be. Do not sign a survey permission form or an easement before someone independent reviews it. <a href="#contact" style="color:inherit;text-decoration:underline"><strong>Get a free review →</strong></a> — we have already filled your address and county into the form.');
+      } else if(mi < 3){
+        show('near','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
+          + 'You are close to the corridor but likely outside the easement itself. The final alignment can still shift, and nearby lines can affect value. Worth a free look. <a href="#contact" style="color:inherit;text-decoration:underline"><strong>Have us check it →</strong></a> — your address and county are already filled in below.');
+      } else {
+        show('far','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
+          + 'It is probably not on this route. Oncor has several other 765 kV and 345 kV projects moving through the same region — if you received a letter, <a href="#contact" style="color:inherit;text-decoration:underline">tell us what it says</a> and we will identify which project it belongs to.');
+      }
+    });
+  }
+
+  function boot(){
+    if(typeof L === 'undefined'){
+      document.getElementById('routeMap').innerHTML =
+        "<div style='padding:28px;text-align:center;font-size:15px;line-height:1.7;color:#334155'>The map could not load. View the approved route on <a href='https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>.</div>";
+      return;
+    }
+    initMap();
+    document.getElementById('addrBtn').addEventListener('click', run);
+    document.getElementById('addrInput').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); run(); } });
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+
+
+<section>
+  <div class="container">
+    <h2>Every county in the corridor</h2>
+    <p class="section-sub">Twenty-one Texas counties, from the Brazos country west of Fort Worth all the way to the Permian Basin.</p>
+    <div class="county-grid"><div class="county-chip">Andrews County<small>County seat: Andrews</small></div><div class="county-chip">Brown County<small>County seat: Brownwood</small></div><div class="county-chip">Callahan County<small>County seat: Baird</small></div><div class="county-chip">Coke County<small>County seat: Robert Lee</small></div><div class="county-chip">Coleman County<small>County seat: Coleman</small></div><div class="county-chip">Comanche County<small>County seat: Comanche</small></div><div class="county-chip">Culberson County<small>County seat: Van Horn</small></div><div class="county-chip">Ector County<small>County seat: Odessa</small></div><div class="county-chip">Erath County<small>County seat: Stephenville</small></div><div class="county-chip">Glasscock County<small>County seat: Garden City</small></div><div class="county-chip">Hood County<small>County seat: Granbury</small></div><div class="county-chip">Howard County<small>County seat: Big Spring</small></div><div class="county-chip">Loving County<small>County seat: Mentone</small></div><div class="county-chip">Martin County<small>County seat: Stanton</small></div><div class="county-chip">Reeves County<small>County seat: Pecos</small></div><div class="county-chip">Runnels County<small>County seat: Ballinger</small></div><div class="county-chip">Somervell County<small>County seat: Glen Rose</small></div><div class="county-chip">Sterling County<small>County seat: Sterling City</small></div><div class="county-chip">Taylor County<small>County seat: Abilene</small></div><div class="county-chip">Winkler County<small>County seat: Kermit</small></div></div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container container-narrow prose">
+    <h2>Why 765 kV, and why now</h2>
+    <p>Texas has run its transmission backbone at 345 kilovolts since the 1960s. Nothing about that changed until the load did. Two things are happening at once in West Texas: the oil and gas industry is electrifying operations that used to run on gas engines, and an entirely separate wave of demand — data centers, cryptocurrency mining, industrial load — has arrived in places that never had it. ERCOT's planning work and the Permian Basin Reliability Plan both concluded the existing network cannot move that much power.</p>
+    <p>The case for 765 kV is a land-use case as much as an engineering one. By Oncor's published figures, one 765 kV line carries the capacity of three double-circuit 345 kV lines. Doing the same job at 345 kV would take roughly 480 feet of corridor; the 765 kV line takes 200. Fewer corridors, fewer landowners affected in total — but each one affected more.</p>
+    <p>This is Texas's first major voltage step in sixty years, and the technology itself is not experimental: there are more than 2,400 miles of 765 kV line already operating in the U.S. and Canada.</p>
+
+    <h3>What this means if you are in the corridor</h3>
+    <p>It means the line is going to be built. Landowners, county governments and conservation groups filed extensive protests in both dockets. The Texas Attorney General filed an amicus brief asking the Commission to hold off pending legislative review. The Commission approved both projects anyway, unanimously.</p>
+    <p>We say that plainly because the alternative — telling you there is a fight left over whether the line crosses your place — would waste the months when you actually have leverage. Route selection is over. <strong>Compensation is not.</strong> That is where the remaining money is, and it is a lot of money: the difference between an offer that prices only the strip and one that properly accounts for severance damages and cost to cure is routinely a multiple, not a percentage.</p>
+    <div class="urgency-box"><strong>The one thing to do right now:</strong> if a land agent has contacted you, do not sign the survey permission form until someone independent has read it. It is a legal document with negotiable terms, and signing the version they hand you gives away things you cannot get back.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow prose">
+    <h2>What is coming after these two</h2>
+    <p>These two projects are not the end of it. Oncor's own public certificate mapping currently tracks twenty transmission projects — about half already filed with the Commission and about half still in the study phase where routes are being drawn. A third 765 kV segment, Big Hill to Sand Lake, has been filed and is awaiting decision.</p>
+    <p>Practically, that means two different situations, and they call for two different responses:</p>
+    <ul>
+      <li><strong>If your land is on an approved route</strong> — Dinosaur–Longshore or Longshore–Drill Hole — your window is the compensation window. Survey permission, appraisal, offer.</li>
+      <li><strong>If your land is in a study area or on a filed but undecided route</strong> — you still have the routing window, and it is genuinely worth using. Landowner comments and protests do move routes, and they moved several in these dockets. It is much cheaper to be routed around than to be paid for.</li>
+    </ul>
+    <p>We track the dockets either way. If you tell us where your property is, we will tell you which of these you are in.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow prose">
+    <h2>What a 765 kV easement actually costs you</h2>
+    <p>An easement is not a sale of your land. You keep title, you keep paying taxes on it, and in most cases you keep grazing or farming it. What you give up is control of a strip — permanently. Understanding exactly what you are giving up is what turns a number on a page into a number you can argue with.</p>
+
+    <h3>The corridor is 200 feet wide</h3>
+    <p>Oncor's published specification for its 765 kV lines is a <strong>200-foot right-of-way</strong>. For comparison, Oncor puts a single double-circuit 345 kV line at 160 feet, and notes that carrying the same power with 345 kV lines would take roughly 480 feet of corridor. So 765 kV is a wider strip than most Texas landowners have dealt with before, and it is the reason a single line can serve so much load.</p>
+    <p>Two hundred feet is <strong>24.2 acres for every mile</strong> the line crosses your property. Half a mile across your place is roughly twelve acres encumbered forever.</p>
+
+    <h3>Steel lattice towers, not wood poles</h3>
+    <p>These lines are built on self-supporting steel lattice towers. Lattice structures sit on four legs with a footprint measured in tens of feet on a side, set in concrete foundations. They are not something you mow around. Where a tower lands on your property matters enormously — for pivot irrigation, for field patterns, for equipment turning room, and for what the place looks like from your house.</p>
+
+    <h3>What you lose inside the strip</h3>
+    <ul>
+      <li><strong>Building rights.</strong> No structures, no barns, no houses, no shops inside the easement.</li>
+      <li><strong>Trees and tall vegetation.</strong> Cleared at the outset and kept cleared for the life of the line.</li>
+      <li><strong>Elevation and equipment height.</strong> Restrictions on how high you can build, stack, or operate under the conductors.</li>
+      <li><strong>Access on your terms.</strong> The utility gets the right to come and go for construction, inspection, and repair — including with heavy equipment, including in wet conditions.</li>
+      <li><strong>Aerial application.</strong> Crop dusting over and near a 765 kV line is a real operational problem, and pilots price it accordingly if they will fly it at all.</li>
+    </ul>
+
+    <h3>What you lose outside the strip — and this is where the money is</h3>
+    <p>The strip itself is the easy part to value. The harder and usually larger question is what happens to the rest of your property: the <strong>remainder</strong>. A line that cuts a ranch into two pieces, that sits in the view from the homesite, that severs a field from its water, or that puts a tower in the middle of a pivot circle damages land the utility is not paying for by the acre.</p>
+    <div class="urgency-box"><strong>The core principle:</strong> in Texas you are entitled to the value of the part taken <em>plus</em> the loss in value to everything you keep. Initial offers routinely price the first and shortchange the second.</div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="inner">
+    <h3>Want to know what your acreage is actually worth on this route?</h3>
+    <p>A senior consultant will walk your numbers with you &mdash; the easement acreage, what it does to the remainder, and the value the first offer tends to leave on the table. No cost and no obligation.</p>
+    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
+  </div>
+</section>
+
+
+<section class="section-alt">
+  <div class="container container-narrow prose">
+    <h2>What the offer will look like — and what it usually leaves out</h2>
+    <p>When the offer arrives it will not say "here is our opening bid." It will arrive as a package: a cover letter, an appraisal or a summary of one, a plat showing the part being acquired, an easement document already drafted, and in most cases a deadline. It is designed to look final. It is not final.</p>
+
+    <h3>The three numbers every offer package contains</h3>
+    <p>Every legitimate offer breaks down into the same three components. Find them, because the way they are weighted tells you where the offer is weak.</p>
+    <table class="num-table">
+      <thead><tr><th>Component</th><th>What it pays for</th><th>Typically</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Value of the part acquired</strong></td><td>The strip itself, priced per acre against comparable sales</td><td>Largest single line</td></tr>
+        <tr><td><strong>Damages to the remainder</strong></td><td>Lost value to everything you keep — severance, access, layout, view, marketability</td><td>Frequently understated</td></tr>
+        <tr><td><strong>Cost to cure</strong></td><td>What it costs to fix what the taking broke — fences, gates, water lines, crossings, re-routed roads</td><td>Frequently omitted</td></tr>
+      </tbody>
+    </table>
+    <p>How much does the back half matter? In one recent Texas offer package our team reviewed, <strong>damages to the remainder made up about 39% of the total offer and cost to cure another 29%</strong> — nearly seven of every ten dollars came from something other than the raw land price. That package was a highway acquisition rather than a transmission easement, so the specifics differ. The structure does not. If your offer is almost entirely a per-acre land number with little or nothing for damages and cure, that is not because your property has none. It is because nobody quantified them.</p>
+
+    <div class="note-box"><strong>How to read your own package in ten minutes.</strong> Find the total. Find the per-acre figure and the acreage it is applied to. Multiply. Whatever is left over is what they are paying for damages and cure. If that leftover is small or zero, you have found your issue.</div>
+
+    <h3>Things that are compensable and almost never volunteered</h3>
+    <ul>
+      <li>Temporary construction easements and the workspace outside the permanent strip</li>
+      <li>Access roads built across your land to reach tower sites</li>
+      <li>Damage to terraces, drainage, and soil compaction from construction</li>
+      <li>Loss of a pivot circle or the cost to reconfigure irrigation</li>
+      <li>Fence rebuilds, cattle guards, gates, and the labor to manage livestock during construction</li>
+      <li>Timber and improved pasture actually destroyed, valued as what it was, not as raw acreage</li>
+      <li>The effect on a homesite, hunting lease income, or a planned subdivision</li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="inner">
+    <h3>Not contacted yet? This is the best time to call.</h3>
+    <p>A senior consultant reads every one of these. Knowing what the first offer will look like <em>before</em> it lands is worth far more than anything you can do after you have signed something.</p>
+    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
+  </div>
+</section>
+
+
+<section class="section-alt">
+  <div class="container">
+    <h2>What their offer may miss</h2>
+    <p class="section-sub">The utility's appraiser works for the utility. That does not make them dishonest — it makes them narrow. These are the categories that routinely go unquantified.</p>
+    <div class="damages-grid">
+      <div class="damage-card"><h4>Diminution in Land Value</h4><p>A 200-foot high-voltage corridor can reduce the market value of your whole tract, not just the strip. Buyers price the line in.</p></div>
+      <div class="damage-card"><h4>Severance Damages</h4><p>If the corridor cuts your property into pieces, the pieces are worth less than the whole. That loss is compensable and is often the largest single item.</p></div>
+      <div class="damage-card"><h4>Cost to Cure</h4><p>Fences, gates, cattle guards, water lines, field roads, and crossings that have to be rebuilt because of the taking.</p></div>
+      <div class="damage-card"><h4>Crop &amp; Grazing Losses</h4><p>Construction access and permanent restrictions take acres out of production during and after the build.</p></div>
+      <div class="damage-card"><h4>Irrigation &amp; Equipment Interference</h4><p>Towers in a pivot circle, restricted equipment height, and lost turning room have real, calculable cost.</p></div>
+      <div class="damage-card"><h4>Timber &amp; Vegetation Removal</h4><p>Trees cleared for the corridor have value as timber and as shade, screening, and habitat — not as bare dirt.</p></div>
+      <div class="damage-card"><h4>Proximity to Improvements</h4><p>Distance from your home, barns, or a planned homesite affects both livability and what the place sells for.</p></div>
+      <div class="damage-card"><h4>Temporary Construction Easements</h4><p>Workspace outside the permanent strip is separately compensable and is easy to under-price or leave out entirely.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="inner">
+    <h3>Already holding an offer letter?</h3>
+    <p>Send it over with their appraisal if they gave you one &mdash; a photo of the pages is enough. A senior consultant reads it and tells you what their number left out, what we would argue for, and whether it can be moved.</p>
+    <a class="btn-gold" href="/offer-review/?project=Texas%20765kV">Free review by a senior consultant &rarr;</a>
+    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
+  </div>
+</section>
+
+
+<section class="how-section">
+  <div class="container">
+    <h2>How we work — no upfront cost</h2>
+    <p class="section-sub">We are on the owner's side of the right-of-way. We are paid out of the increase, which means we do not get paid unless you do better.</p>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">01</div><h4>Free case review</h4><p>Send us whatever they sent you — a survey permission form, a letter, an appraisal, an offer. We read it and tell you plainly where it is weak. No charge, no obligation.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>Independent appraisal</h4><p>We bring in independent, certified appraisers to value the part acquired and, critically, to document damages to the remainder and cost to cure.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>We negotiate</h4><p>We deal with the land agents and their appraisers directly, with documentation behind every number, so you are not negotiating alone against people who do this full time.</p></div>
+      <div class="step"><div class="step-num">04</div><h4>You get paid more</h4><p>Our fee is a percentage of the increase above the original offer. If we do not improve it, you owe us nothing.</p></div>
+    </div>
+    <div class="note-box" style="background:rgba(255,255,255,.07);border-left-color:#c9a227;color:rgba(255,255,255,.8);margin-top:32px;">
+      <strong style="color:#e8bf4a;">To be clear about what we are:</strong> National ROW is a right-of-way consulting firm. We are not a law firm and we do not give legal advice. Much of what a landowner needs in this process is valuation and negotiation work rather than litigation — that is what we do. When a case needs a lawyer, we say so and we coordinate with condemnation counsel.
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="inner">
+    <h3>Nothing out of pocket. Ever.</h3>
+    <p>A senior consultant reads every case that comes in and calls you back. If we look at your situation and do not think we can move the number, we tell you that too.</p>
+    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
+  </div>
+</section>
+
+<section><div class="container container-narrow"><h2>Frequently asked questions</h2><div class="faq-item"><h4>What is a 765 kV line and why is Texas building them now?</h4><p>765 kilovolts is the highest transmission voltage in common use in North America. Texas has run its grid backbone at 345 kV since the 1960s. The move to 765 kV is driven by load growth in West Texas — oil and gas electrification in the Permian Basin plus data centers and cryptocurrency mining — and by the fact that one 765 kV line moves roughly the power of three double-circuit 345 kV lines in a corridor about 200 feet wide instead of roughly 480 feet.</p></div><div class="faq-item"><h4>Which 765 kV projects have actually been approved?</h4><p>As of September 2026, the Public Utility Commission of Texas has approved two Oncor 765 kV projects, both on August 28, 2026: Dinosaur Switch to Longshore Switch (Docket 59315, Route 559, 242.6 miles) and Longshore Switch to Drill Hole Switch (Docket 59029, Route 476, 181.6 miles). Together that is 424 miles across 21 counties. Additional 765 kV segments, including Big Hill to Sand Lake, have been filed but not yet decided.</p></div><div class="faq-item"><h4>How much land does a 765 kV line take?</h4><p>Oncor specifies a 200-foot permanent right-of-way for its 765 kV lines, which is about 24.2 acres per mile. Across the 424 approved miles that is roughly 10,300 acres of private Texas land placed under permanent easement.</p></div><div class="faq-item"><h4>How do I find out if my property is on a route?</h4><p>Use the map on this page or on the individual project page, and confirm against Oncor's official interactive viewer and the filed constraints maps, which we link in the sources. If you have already received a letter, the project name is on it. If you are not sure which project a letter belongs to, send it to us and we will identify it.</p></div><div class="faq-item"><h4>Can I stop the line from crossing my property?</h4><p>Realistically, no. Once the PUCT has approved a route, the utility holds the power of eminent domain and the line will be built. Route selection is the phase where landowner input changes outcomes, and that phase is over for these two projects. What is still open — and it is worth real money — is what you are paid and what the easement document actually says.</p></div><div class="faq-item"><h4>Is National ROW a law firm?</h4><p>No. National ROW is a right-of-way and condemnation consulting firm representing property owners only. We do not provide legal advice and no attorney-client relationship is created by contacting us. When a case needs a lawyer, we say so and coordinate with condemnation counsel.</p></div></div></section>
+
+<section class="handoff">
+  <div class="container">
+    <h2>Not sure which project your letter is about?</h2>
+    <p>Send it to us. We will tell you which docket it belongs to, where you sit on the route, and whether what they are offering is in the range it should be. Free, no obligation.</p>
+    <a class="btn-gold" href="/offer-review/?project=Texas%20765kV">Free review by a senior consultant →</a>
+    <p style="margin-top:22px;font-size:15px;opacity:.7;">Or call or text <a href="tel:+14694847960" style="color:#e8bf4a;font-weight:700;">(469) 484-7960</a> — we answer owners the same day.</p>
+  </div>
+</section>
+
+
+<section>
+  <div class="container container-narrow">
+    <div class="sources">
+      <h3>Sources</h3>
+      <ol><li>Public Utility Commission of Texas, Docket No. 59315 — <a href="https://interchange.puc.texas.gov/Documents/59315_5819_1678289.PDF" target="_blank" rel="noopener">order approving Oncor's Dinosaur–Longshore application (PDF)</a>, August 28, 2026.</li><li>Public Utility Commission of Texas, Docket No. 59029 — <a href="https://interchange.puc.texas.gov/Documents/59029_503_1678287.PDF" target="_blank" rel="noopener">order approving Oncor's Longshore–Drill Hole application (PDF)</a>, August 28, 2026.</li><li>Oncor Electric Delivery — <a href="https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html" target="_blank" rel="noopener">Dinosaur–Longshore project page</a> and <a href="https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/longshore-switch---drill-hole-switch-765-kv-transmission-line-pr.html" target="_blank" rel="noopener">Longshore–Drill Hole project page</a>.</li><li>Oncor Electric Delivery — <a href="https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7" target="_blank" rel="noopener">public certificate-of-convenience-and-necessity map viewer</a> (approved and studied route geometry, project tract mapping).</li><li>Oncor Electric Delivery — 765 kV overview, June 2026: <a href="https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/updated-step-one-pager/Oncor%20765kV%20One-Pager_June2026.pdf" target="_blank" rel="noopener">right-of-way width, capacity comparison, and existing 765 kV mileage in North America (PDF)</a>.</li><li>The Dallas Express — <a href="https://dallasexpress.com/business-markets/texas-regulators-approve-424-miles-of-power-lines-despite-calls-to-wait/" target="_blank" rel="noopener">"Texas Regulators Approve 424 Miles Of Power Lines Despite Calls To Wait"</a>, August 30, 2026 (mileage, cost, and the Attorney General's amicus filing).</li><li>Texas Landowner’s Bill of Rights — <a href="https://www2.texasattorneygeneral.gov/agency/landowners-bill-of-rights" target="_blank" rel="noopener">Office of the Texas Attorney General</a>.</li></ol>
+      <p style="font-size:13px;color:#64748b;margin-top:16px;line-height:1.7;">County lists and tract counts on this page were derived by measuring Oncor's own published approved-route geometry against public county boundaries and Oncor's public tract layer. They are close, not surveyed. Verify your specific parcel against the official filings before relying on anything here.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="contact-strip" id="contact">
+  <p style="font-size:16px;font-weight:700;">Call or text us directly — we answer owners same day.</p>
+  <div class="phones">
+    <a href="tel:+14694847960">(469) 484-7960</a>
+  </div>
+  <p><a href="mailto:info@nationalrow.com" style="color:rgba(255,255,255,.7)">info@nationalrow.com</a></p>
+</div>
+
+<section class="form-section">
+  <div class="container">
+    <div class="form-header">
+      <h2>Free review — Texas 765 kV corridor</h2>
+      <p>Tell us about your property. A senior consultant reads every one of these and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
+    </div>
+    <div class="form-body">
+      <div id="the-form">
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="_subject" value="New case review — Texas 765kV">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
+          <input type="hidden" name="project_source" id="projectSource" value="Texas 765kV">
+          <input type="hidden" name="referrer_url" id="referrerUrl" value="">
+          <div class="form-grid">
+            <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
+            <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="(___) ___-____"></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+            <div class="form-group"><label>County &amp; State</label><input type="text" name="county_state" id="countyState" placeholder="e.g. Coke, TX"></div>
+            <div class="form-group"><label>Approx. Acreage</label><input type="text" name="acreage" placeholder="e.g. 42"></div>
+            <div class="form-group"><label>Property Type</label><select name="property_type"><option value="">Select…</option><option>Agricultural / Ranch</option><option>Residential</option><option>Commercial</option><option>Vacant Land</option><option>Other</option></select></div>
+            <div class="form-group"><label>Where are you in the process?</label><select name="stage"><option value="">Select…</option><option>Nothing yet — I just heard about the project</option><option>They asked permission to survey</option><option>An appraiser has been out</option><option>I have a written offer</option><option>I&#39;ve been sued / served with condemnation papers</option></select></div>
+            <div class="form-group full"><label>Affected property address</label><input type="text" name="address" id="propAddress" placeholder="Street address, parcel/APN, or legal description"></div>
+            <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
+          </div>
+          <div class="tcpa-text">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy" style="color:var(--gold)">Privacy Policy</a>.</div>
+          <button class="submit-btn" type="submit">Free review by a senior consultant →</button>
+          <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
+          <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
+        </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <h3>We've got it from here.</h3>
+        <p>Your case is in review. A senior consultant reads everything you shared and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
+        <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
+        <div class="phones">Need to talk now? Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <a href="https://nationalrow.com" aria-label="National ROW home">
+    <span class="footer-brand-logo" role="img" aria-label="National ROW"></span>
+  </a>
+  <p class="footer-tagline">Eminent domain and condemnation consulting for property owners — highway, utility, pipeline, and every type of right-of-way.</p>
+  <div class="footer-links">
+    <a href="https://nationalrow.com">Home</a>
+    <a href="https://nationalrow.com/#how">How it works</a>
+    <a href="/projects/">Projects</a>
+    <a href="https://nationalrow.com/blog/">Blog</a>
+    <a href="https://nationalrow.com/about/">About</a>
+    <a href="https://nationalrow.com/states/texas/">Texas</a>
+    <a href="https://nationalrow.com/privacy-policy">Privacy Policy</a>
+  </div>
+  <div class="footer-phones">
+    Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a>
+  </div>
+  <div class="footer-email"><a href="mailto:info@nationalrow.com">info@nationalrow.com</a></div>
+  <div class="footer-copy">© National ROW. Maximizing compensation for property owners since the 1980s.</div>
+  <div class="footer-disclaimer">National ROW is a right-of-way and condemnation consulting firm. We are not a law firm and do not provide legal advice. No attorney-client relationship is formed by visiting this site or submitting a contact form. Information on this page is compiled from public records and is provided for general information only; it is not legal advice and may not reflect the most recent filings. Verify project details with the Public Utility Commission of Texas or the utility before acting. Results vary by case. Prior results do not guarantee similar outcomes.</div>
+</footer>
+
+
+<script>
+(function(){
+  var f = document.getElementById('leadForm');
+  if(!f) return;
+  var ru = document.getElementById('referrerUrl');
+  if(ru) ru.value = location.href;
+  var THANKYOU = '/offer-review/thank-you/';
+  f.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = this.querySelector('.submit-btn');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var data = new FormData(this);
+    try{
+      var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+        method:'POST', headers:{'Accept':'application/json'}, body:data
+      });
+      if(res.ok){
+        var src = (document.getElementById('projectSource')||{}).value || '';
+        if(window.gtag) gtag('event','generate_lead',{project: src});
+        // Send them to the thank-you page. That page load is what fires the
+        // Google Ads conversion - an inline panel gives Ads nothing to count.
+        try{
+          window.location.href = THANKYOU + (src ? '?src=' + encodeURIComponent(src) : '');
+          return;
+        }catch(e){}
+        document.getElementById('the-form').style.display='none';
+        document.getElementById('formSuccess').style.display='block';
+      } else { throw new Error('bad status'); }
+    }catch(err){
+      btn.disabled=false; btn.textContent='Free review by a senior consultant →';
+      alert("Couldn't send just now — please call or text (469) 484-7960 and we'll take your details.");
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
