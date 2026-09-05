@@ -145,8 +145,8 @@ def build_segment(slug, s):
     <div class="hero-accent"></div>
     <p class="hero-sub">On August 28, 2026 the Public Utility Commission of Texas approved Oncor's %s-mile, 765-kilovolt transmission line from %s to %s. The route is set. Right-of-way acquisition across %d counties starts now. This page explains the project, shows you the approved route, and tells you plainly what the offer will look like when it arrives.</p>
     <div class="hero-btns">
-      <a class="btn-gold" href="#map">See the approved route</a>
-      <a class="btn-outline" href="#contact">Have us review your offer</a>
+      <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+      <a class="btn-outline" href="#map">See the approved route</a>
     </div>
     <div class="stats-row">
       <div class="stat"><div class="stat-num">%s</div><div class="stat-label">Miles of new 765 kV line</div></div>
@@ -160,6 +160,10 @@ def build_segment(slug, s):
 
     # PROOF BAND — documented results, high on the page (mirrors /offer-review/)
     body.append(C.proof_band())
+
+    # REVIEW FORM — high on the page, above the project detail. Every CTA on
+    # the page points back up here at #contact.
+    body.append(form_section(s["param_plain"], "Free review — %s" % s["short"]))
 
     # STATUS
     meetings = "<br>".join("%s — %s" % (d, p) for d, p in s["meetings"])
@@ -196,12 +200,24 @@ def build_segment(slug, s):
                  s["route_no"], s["miles"], s["from_pt"], s["to_pt"], s["cost"], s["in_service"],
                  s["oncor_phone"], meetings, s["aliases"]))
 
+    body.append(C.cta_band(
+        "Docket %s is settled. Your number is not." % s["docket"],
+        "The route is approved and the line is going to be built. What you are paid for it is still open, and it is the "
+        "part almost nobody negotiates properly. A senior consultant will read your file at no cost.",
+        "Free review by a senior consultant &rarr;", "#contact"))
+
     # MAP
     body.append(map_section(
         [s["pid"]],
         "Is your property on the approved route?",
         "The gold line is the route the PUCT approved. The dashed grey lines are the alternative routes that were studied and not selected — useful if you were notified during the docket but are no longer on the chosen route. Enter an address to see roughly how far you are from the centerline.",
         s["viewer"], s["constraints"], s["center"], s["zoom"]))
+
+    body.append(C.cta_band(
+        "Anywhere near that gold line?",
+        "The map is an approximation, not a survey, and the alignment can still shift inside the approved corridor. Send "
+        "us your address or parcel number and a senior consultant will tell you exactly where you sit.",
+        "Free review by a senior consultant &rarr;", "#contact"))
 
     # COUNTIES
     body.append("""
@@ -227,6 +243,11 @@ def build_segment(slug, s):
 </section>""")
 
     body.append(C.TIMELINE)
+    body.append(C.cta_band(
+        "Your leverage is between the survey form and the written offer.",
+        "That window is short and it does not come back. Before you sign a survey permission form or respond to an "
+        "offer, have a senior consultant read it. No cost, no obligation.",
+        "Free review by a senior consultant &rarr;", "#contact"))
     body.append(C.EASEMENT_COST)
     body.append(C.cta_band(
         "Want to know what your acreage is actually worth on this route?",
@@ -277,7 +298,7 @@ def build_segment(slug, s):
     ]))
 
     body.append('<section class="section-alt"><div class="container container-narrow prose"><h2>Related</h2><ul>'
-        '<li><a href="/projects/ercot-765kv/">The Texas 765 kV buildout — both approved Oncor segments and what is coming next</a></li>'
+        '<li><a href="/projects/oncor-765kv/">The Texas 765 kV buildout — both approved Oncor segments and what is coming next</a></li>'
         '<li><a href="/blog/damages-to-the-remainder/">What are damages to the remainder?</a></li>'
         '<li><a href="/blog/easement-vs-fee-taking/">Easement vs. fee taking — what is the difference?</a></li>'
         '<li><a href="/blog/transmission-line-easement-valuation-negotiation/">How transmission line easements are valued and negotiated</a></li>'
@@ -285,7 +306,6 @@ def build_segment(slug, s):
         '<li><a href="/states/texas/">Texas eminent domain — landowner overview</a></li>'
         '</ul></div></section>')
 
-    body.append(form_section(s["param_plain"], "Free review — %s" % s["short"]))
     body.append(FOOTER)
     body.append(FORM_SCRIPT)
     body.append("</body>\n</html>")
