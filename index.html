@@ -739,6 +739,37 @@
   color:var(--gray);
 }
 
+    /* DOCUMENTED RESULTS BAND - compact proof strip; the numbers are the point. */
+    .nrp{background:var(--gold);padding:26px 0;}
+    .nrp-top{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;margin-bottom:14px;}
+    .nrp h2{font-family:var(--disp);color:var(--navy);font-size:20px;font-weight:800;margin:0;line-height:1.2;}
+    .nrp .nrp-hl{color:rgba(3,52,114,.78);font-size:14px;font-weight:600;line-height:1.4;margin:0;}
+    .nrp-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+    .nrp-col{padding:0 18px;border-left:1px solid rgba(3,52,114,.24);}
+    .nrp-col:first-child{padding-left:0;border-left:none;}
+    .nrp-where{color:rgba(3,52,114,.72);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;line-height:1.4;margin-bottom:6px;min-height:30px;}
+    .nrp-nums{font-family:var(--disp);color:var(--navy);font-size:clamp(17px,1.75vw,22px);font-weight:900;letter-spacing:-.5px;line-height:1.25;}
+    .nrp-nums .nrp-ar{margin:0 5px;font-weight:700;}
+    .nrp-pct{font-size:13.5px;font-weight:800;white-space:nowrap;letter-spacing:0;display:inline-block;color:rgba(3,52,114,.72);}
+    .nrp-why{color:rgba(3,52,114,.8);font-size:12.5px;line-height:1.45;font-weight:600;margin-top:6px;}
+    .nrp-act{margin-top:16px;border-top:1px solid rgba(3,52,114,.24);padding-top:13px;display:flex;align-items:baseline;gap:4px 14px;flex-wrap:wrap;}
+    .nrp-act h3{font-family:var(--disp);color:var(--navy);font-size:15px;font-weight:800;margin:0;}
+    .nrp-act p{color:rgba(3,52,114,.8);font-size:13.5px;line-height:1.5;margin:0;flex:1 1 220px;}
+    .nrp-act a{color:var(--navy);font-weight:800;font-size:14px;text-decoration:none;border-bottom:2px solid rgba(3,52,114,.45);padding-bottom:1px;white-space:nowrap;}
+    .nrp-act a:hover{border-bottom-color:var(--navy);}
+    .nrp-fine{color:rgba(3,52,114,.66);font-size:11.5px;line-height:1.5;margin:11px 0 0;}
+    @media(max-width:1150px){
+      .nrp-cols{grid-template-columns:1fr 1fr;gap:18px 0;}
+      .nrp-col:nth-child(odd){padding-left:0;border-left:none;}
+    }
+    @media(max-width:560px){
+      .nrp{padding:22px 0;}
+      .nrp-cols{grid-template-columns:1fr;gap:0;}
+      .nrp-col{padding:13px 0;border-left:none;border-top:1px solid rgba(3,52,114,.24);}
+      .nrp-col:first-child{border-top:none;padding-top:0;}
+      .nrp-where{min-height:0;margin-bottom:4px;}
+      .nrp-nums{font-size:21px;}
+    }
 </style>
 
 </head>
@@ -803,56 +834,43 @@
   </div>
 </section>
 
-<!-- TRUST STRIP (EDIT to claims you can stand behind) -->
-<section class="trust">
-  <div class="wrap trust-grid">
-    <div><span class="n">Since the '80s</span><span class="l">Maximizing your compensation</span></div>
-    <div><span class="n">Nationwide</span><span class="l">Every jurisdiction</span></div>
-    <div><span class="n">Any easement</span><span class="l">Hwy &middot; Utility &middot; Pipeline</span></div>
-    <div><span class="n">Owners only</span><span class="l">Never the agency</span></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker mono">// The situation</span>
-      <h2>A condemnation notice is overwhelming by design.</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:0 0 12px;line-height:1.35">Property condemnation can be confusing &mdash; and the notice is built to rush you. You don&rsquo;t have to be rushed, and you don&rsquo;t have to accept their first offer.</p>
-</div>
-    <div class="problem reveal">
-      <ul>
-        <li><b>01</b><span>A highway department, utility, or pipeline company is taking part of your land or putting an easement across it.</span></li>
-        <li><b>02</b><span>Their offer arrives with an appraisal you didn't choose &mdash; and no easy way to know if it's fair.</span></li>
-        <li><b>03</b><span>Only a strip is taken, but it damages your access, your frontage, or the use of everything that's left.</span></li>
-        <li><b>04</b><span>The paperwork and deadlines feel designed to make you sign quickly and move on.</span></li>
-      </ul>
-      <div>
-        <p style="color:var(--ink);margin:0 0 10px 0">You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case.</p>
-        <p style="font-size:19px;color:var(--navy);font-weight:600">You have a right to fair and just compensation &mdash; and you don't have to face the agency alone.</p>
-        <p style="color:var(--ink)">You may not be able to stop the project &mdash; but you can make sure you're paid in full for it. National ROW takes the burden completely off your shoulders, builds the case for what your property is truly worth, and stands in your corner from the first call to the final number.</p>
-        <a class="btn btn--navy" href="#lead">Start a case review &rarr;</a>
+    <!-- DOCUMENTED RESULTS BAND -->
+    <section class="nrp" aria-labelledby="nrp-title">
+      <div class="wrap nrp-inner">
+        <div class="nrp-top">
+          <h2 id="nrp-title">Our documented results</h2>
+          <p class="nrp-hl">Almost every condemnation case is a fight about a number, not about the law.</p>
+        </div>
+        <div class="nrp-cols">
+          <div class="nrp-col">
+            <div class="nrp-where">Utility easement &middot; Houston, TX</div>
+            <div class="nrp-nums">$16,000<span class="nrp-ar">&rarr;</span>$138,000 <span class="nrp-pct">+762%</span></div>
+            <div class="nrp-why">Damages their team missed.</div>
+          </div>
+          <div class="nrp-col">
+            <div class="nrp-where">Utility easement &middot; Irving, TX</div>
+            <div class="nrp-nums">$12,000<span class="nrp-ar">&rarr;</span>$50,000 <span class="nrp-pct">+317%</span></div>
+            <div class="nrp-why">Damages their team missed.</div>
+          </div>
+          <div class="nrp-col">
+            <div class="nrp-where">Highway &middot; Grand Parkway (SH 99), Chambers County, TX</div>
+            <div class="nrp-nums">$2.5M<span class="nrp-ar">&rarr;</span>$5M <span class="nrp-pct">+100%</span></div>
+            <div class="nrp-why">The agency&rsquo;s appraisal left value out.</div>
+          </div>
+          <div class="nrp-col">
+            <div class="nrp-where">Highway &middot; I&#8209;35 expansion, McLennan County, TX</div>
+            <div class="nrp-nums">$20,000<span class="nrp-ar">&rarr;</span>$385,000 <span class="nrp-pct">+1,825%</span></div>
+            <div class="nrp-why">Their number missed value on the take.</div>
+          </div>
+        </div>
+        <div class="nrp-act">
+          <h3>Text us the letter</h3>
+          <p>A photo of the offer is enough &mdash; a senior consultant reads it and tells you what we see.</p>
+          <a href="tel:+14694847960">Text (469) 484-7960 &rarr;</a>
+        </div>
+        <p class="nrp-fine">Four documented matters, each traced from the original offer letter to final settlement &mdash; two utility easements and two highway condemnations, labelled on each. Not an average and not a prediction; when we look at yours and think the number is close to right, we tell you so. National ROW is a right-of-way consulting firm, not a law firm, and nothing here is legal advice.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--navy" id="how">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker mono">// How it works</span>
-      <h2>We do whatever it takes. You only pay if we win.</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:10px 0 0;line-height:1.35">No &mdash; you don&rsquo;t have to accept their first offer.</p>
-    </div>
-    <div class="flow-steps reveal" id="howFlow">
-      <div class="flow-track"><div class="flow-fill" id="howFill"></div></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h6"/></svg></div><div class="num">01 &mdash; REVIEW</div><h3>Send us the notice</h3><p>Share the letter, offer, or easement they sent. We take it from there. One of our consultants will review everything you&#8217;ve shared and reach out shortly &#8212; with a straight answer on where you stand and what we believe your property is actually worth.</p></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="num">02 &mdash; THE TEAM</div><h3>We build your team</h3><p>We bring in the right people for your case &mdash; independent appraisers, land planners, engineers, and when legal representation is needed, an experienced eminent domain attorney who already knows your file. You don&#8217;t find them. You don&#8217;t brief them. We do all of it.</p></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6a1 1 0 0 1 1 1v2H8V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg></div><div class="num">03 &mdash; THE CASE</div><h3>We make the case</h3><p>We document everything the agency&#8217;s offer left out &mdash; the full value of what&#8217;s taken, the damage to what you keep, lost access, development impact, and every legitimate claim the law allows. We manage the agency, handle the back-and-forth, and keep you informed at every step. You don&#8217;t have to talk to their ROW agent alone again.</p></div>
-      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><div class="num">04 &mdash; YOU RECOVER</div><h3>You get paid more</h3><p>You receive the full compensation you&#8217;re owed &mdash; for the land taken, the damage to everything you keep, and every other impact we&#8217;ve documented. If we don&#8217;t recover more than their first offer, you pay nothing. That&#8217;s not a guarantee we take lightly.</p></div>
-    </div>
-  </div>
-</section>
+    </section>
 
 <section class="section value-compare-section" id="value">
   <div class="wrap">
@@ -917,6 +935,60 @@
     <p class="vc-footer-note reveal">Most owners work with one or the other. Our clients get both &mdash; fully coordinated, from day one.</p>
   </div>
 </section>
+
+
+<!-- TRUST STRIP (EDIT to claims you can stand behind) -->
+<section class="trust">
+  <div class="wrap trust-grid">
+    <div><span class="n">Since the '80s</span><span class="l">Maximizing your compensation</span></div>
+    <div><span class="n">Nationwide</span><span class="l">Every jurisdiction</span></div>
+    <div><span class="n">Any easement</span><span class="l">Hwy &middot; Utility &middot; Pipeline</span></div>
+    <div><span class="n">Owners only</span><span class="l">Never the agency</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker mono">// The situation</span>
+      <h2>A condemnation notice is overwhelming by design.</h2>
+      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:0 0 12px;line-height:1.35">Property condemnation can be confusing &mdash; and the notice is built to rush you. You don&rsquo;t have to be rushed, and you don&rsquo;t have to accept their first offer.</p>
+</div>
+    <div class="problem reveal">
+      <ul>
+        <li><b>01</b><span>A highway department, utility, or pipeline company is taking part of your land or putting an easement across it.</span></li>
+        <li><b>02</b><span>Their offer arrives with an appraisal you didn't choose &mdash; and no easy way to know if it's fair.</span></li>
+        <li><b>03</b><span>Only a strip is taken, but it damages your access, your frontage, or the use of everything that's left.</span></li>
+        <li><b>04</b><span>The paperwork and deadlines feel designed to make you sign quickly and move on.</span></li>
+      </ul>
+      <div>
+        <p style="color:var(--ink);margin:0 0 10px 0">You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case.</p>
+        <p style="font-size:19px;color:var(--navy);font-weight:600">You have a right to fair and just compensation &mdash; and you don't have to face the agency alone.</p>
+        <p style="color:var(--ink)">You may not be able to stop the project &mdash; but you can make sure you're paid in full for it. National ROW takes the burden completely off your shoulders, builds the case for what your property is truly worth, and stands in your corner from the first call to the final number.</p>
+        <a class="btn btn--navy" href="#lead">Start a case review &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker mono">// How it works</span>
+      <h2>We do whatever it takes. You only pay if we win.</h2>
+      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:10px 0 0;line-height:1.35">No &mdash; you don&rsquo;t have to accept their first offer.</p>
+    </div>
+    <div class="flow-steps reveal" id="howFlow">
+      <div class="flow-track"><div class="flow-fill" id="howFill"></div></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h6"/></svg></div><div class="num">01 &mdash; REVIEW</div><h3>Send us the notice</h3><p>Share the letter, offer, or easement they sent. We take it from there. One of our consultants will review everything you&#8217;ve shared and reach out shortly &#8212; with a straight answer on where you stand and what we believe your property is actually worth.</p></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="num">02 &mdash; THE TEAM</div><h3>We build your team</h3><p>We bring in the right people for your case &mdash; independent appraisers, land planners, engineers, and when legal representation is needed, an experienced eminent domain attorney who already knows your file. You don&#8217;t find them. You don&#8217;t brief them. We do all of it.</p></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6a1 1 0 0 1 1 1v2H8V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg></div><div class="num">03 &mdash; THE CASE</div><h3>We make the case</h3><p>We document everything the agency&#8217;s offer left out &mdash; the full value of what&#8217;s taken, the damage to what you keep, lost access, development impact, and every legitimate claim the law allows. We manage the agency, handle the back-and-forth, and keep you informed at every step. You don&#8217;t have to talk to their ROW agent alone again.</p></div>
+      <div class="fstep"><div class="fcircle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><div class="num">04 &mdash; YOU RECOVER</div><h3>You get paid more</h3><p>You receive the full compensation you&#8217;re owed &mdash; for the land taken, the damage to everything you keep, and every other impact we&#8217;ve documented. If we don&#8217;t recover more than their first offer, you pay nothing. That&#8217;s not a guarantee we take lightly.</p></div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
