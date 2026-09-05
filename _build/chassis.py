@@ -299,7 +299,7 @@ def form_section(project_source, heading="Get Your Free Case Review"):
             <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
           </div>
           <div class="tcpa-text">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy" style="color:var(--gold)">Privacy Policy</a>.</div>
-          <button class="submit-btn" type="submit">Get my free senior review →</button>
+          <button class="submit-btn" type="submit">Free review by a senior consultant →</button>
           <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
           <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
         </form>
@@ -363,7 +363,7 @@ FORM_SCRIPT = """
         if(window.gtag) gtag('event','generate_lead',{project: (document.getElementById('projectSource')||{}).value || ''});
       } else { throw new Error('bad status'); }
     }catch(err){
-      btn.disabled=false; btn.textContent='Get my free senior review →';
+      btn.disabled=false; btn.textContent='Free review by a senior consultant →';
       alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
     }
   });
