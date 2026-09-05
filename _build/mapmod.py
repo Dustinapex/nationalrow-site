@@ -271,7 +271,7 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
         Loaded live from Oncor&rsquo;s public project mapping service. The gold line is the approved
         <em>centerline</em>; the easement is a corridor roughly 200 feet wide centered on it, and the final
         surveyed alignment can still shift within the approved corridor. <strong>Not a survey and not legal
-        advice.</strong> Confirm against <a href="%s" target="_blank" rel="noopener">Oncor&rsquo;s official map viewer</a>.
+        advice.</strong> Confirm your status against Oncor&rsquo;s official project map and the filed route documents.
       </div>
     </div>
     %s
@@ -296,7 +296,7 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
     el.insertAdjacentHTML('beforeend',
       '<div style="position:absolute;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;'
       + 'background:rgba(255,255,255,.94);padding:20px;text-align:center;font-size:14px;line-height:1.7;color:#334155">'
-      + "Route map couldn't load. View it on <a href='%s' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>."
+      + "The route map couldn't load right now. A senior consultant can tell you whether the line affects your property &mdash; use the form below or call or text (469) 484-7960."
       + '</div>');
   }
 
@@ -308,6 +308,8 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
       tap: false,
       zoomControl: true
     }).setView([31.6,-100.4], 6);
+    // No clickable Leaflet credit - a paid landing page should have no exits.
+    if(map.attributionControl) map.attributionControl.setPrefix(false);
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
       maxZoom:19,
       attribution:'Tiles &copy; Esri | Route data: Oncor Electric Delivery (public CCN viewer)'
@@ -332,4 +334,4 @@ def map_compact(project_ids, title, blurb, oncor_viewer_url, detail_url, detail_
   else { init(); }
 })();
 </script>
-""" % (title, blurb, oncor_viewer_url, more, ids, oncor_viewer_url)
+""" % (title, blurb, more, ids)
