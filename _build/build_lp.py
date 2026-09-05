@@ -22,7 +22,7 @@ DESC = ("Texas approved 424 miles of Oncor 765 kV line on August 28, 2026. Check
 LP_CSS = """
 .lp-head{position:sticky;top:0;z-index:900;background:var(--navy);border-bottom:2px solid var(--gold);
   display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;flex-wrap:wrap;}
-.lp-head .brand-logo{display:block;width:132px;height:40px;background:url('/national-row-logo.png') left center/contain no-repeat;}
+.lp-head .brand-logo{display:block;height:38px;aspect-ratio:760/420;background:var(--logo) center/contain no-repeat;background-color:#fff;border-radius:9px;padding:5px 9px;box-sizing:content-box;}
 .lp-head .r{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 .lp-head .ph{color:var(--gold);font-weight:900;font-size:19px;text-decoration:none;white-space:nowrap;}
 .lp-head .ph small{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.62);letter-spacing:.3px;}
@@ -95,7 +95,7 @@ def results_block():
       firm, not a law firm; nothing here is legal advice.</p>
   </div>
 </section>
-"""
+""" % rows
 
 
 def build():
@@ -119,7 +119,7 @@ def build():
   <a href="/" aria-label="National ROW"><span class="brand-logo"></span></a>
   <div class="r">
     <a class="ph" href="tel:+14694847960">(469) 484-7960<small>SPEAK TO A SENIOR CONSULTANT</small></a>
-    <a class="btn-gold" href="#contact">Free senior review &rarr;</a>
+    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
   </div>
 </header>
 
@@ -172,7 +172,7 @@ def build():
         "You do not have to wait for the letter.",
         "Right-of-way agents are working these two routes now. The best time to understand what your land is worth is "
         "before the first offer is in front of you with a signature line under it.",
-        "Get my free senior review &rarr;", "#contact"))
+        "Free review by a senior consultant &rarr;", "#contact"))
 
     b.append(results_block())
 
@@ -198,9 +198,9 @@ def build():
         "Already have an offer letter in hand?",
         "Send it over with their appraisal if they gave you one &mdash; a photo of the pages is enough. A senior "
         "consultant reads it and tells you what their number left out and whether it can be moved.",
-        "Have a senior consultant read it &rarr;", "#contact"))
+        "Free review by a senior consultant &rarr;", "#contact"))
 
-    fs = form_section("765 kV Landing Page", "Free senior review &mdash; Oncor 765 kV")
+    fs = form_section("765 kV Landing Page", "Free review by a senior consultant &mdash; Oncor 765 kV")
     fs = fs.replace('<input type="hidden" name="_template" value="table">',
                     '<input type="hidden" name="_template" value="table">\n'
                     '          <input type="hidden" name="source" value="765kv_lp">')
