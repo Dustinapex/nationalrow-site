@@ -44,7 +44,13 @@
     footer.site a { color:var(--c-muted); }
     footer.site a:hover { color:var(--c-brand); }
     .foot-bottom { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; align-items:center; }
-  </style>
+  
+    @media(max-width:640px){
+      nav.site{flex-wrap:wrap;justify-content:center;gap:.6rem 1.1rem;height:auto;padding:.7rem 1rem;}
+      nav.site .logo{flex-basis:100%;text-align:center;}
+      nav.site a{font-size:.9rem;}
+    }
+</style>
 </head>
 <body>
 <nav class="site">
