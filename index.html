@@ -743,7 +743,6 @@
     .nrp{background:var(--gold);padding:26px 0;}
     .nrp-top{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;margin-bottom:14px;}
     .nrp h2{font-family:var(--disp);color:var(--navy);font-size:20px;font-weight:800;margin:0;line-height:1.2;}
-    .nrp .nrp-hl{color:rgba(3,52,114,.78);font-size:14px;font-weight:600;line-height:1.4;margin:0;}
     .nrp-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
     .nrp-col{padding:0 18px;border-left:1px solid rgba(3,52,114,.24);}
     .nrp-col:first-child{padding-left:0;border-left:none;}
@@ -837,6 +836,26 @@
       .lineitems{grid-template-columns:1fr;gap:1.6rem;}
       .li-ours{padding-left:0;border-left:none;border-top:1px solid var(--line-2);padding-top:1.6rem;}
     }
+
+    /* NUMBER CALLOUT - the line that used to sit inside the gold band */
+    .numcall{background:var(--paper);padding:34px 0 28px;}
+    .numcall-box{
+      margin:0 auto;max-width:900px;
+      background:var(--navy);color:#FFFFFF;
+      font-family:var(--disp);font-weight:800;
+      font-size:clamp(20px,2.6vw,30px);line-height:1.28;
+      letter-spacing:.005em;text-align:center;
+      padding:24px 30px;border-radius:8px;
+      box-shadow:0 0 0 0 rgba(3,52,114,.5);
+      animation:numpulse 2.5s ease-in-out infinite;
+      will-change:transform,box-shadow;
+    }
+    @keyframes numpulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(3,52,114,.5);transform:scale(1);}
+      50%{box-shadow:0 0 0 15px rgba(3,52,114,0);transform:scale(1.015);}
+    }
+    @media(prefers-reduced-motion:reduce){ .numcall-box{animation:none;} }
+    @media(max-width:640px){ .numcall{padding:24px 0 20px;} .numcall-box{padding:18px 20px;border-radius:6px;} }
 </style>
 
 </head>
@@ -916,18 +935,24 @@
         <p style="color:var(--ink);margin:0 0 10px 0">You might feel like you have to take the first offer you receive &mdash; but that&rsquo;s not the case.</p>
         <p style="font-size:19px;color:var(--navy);font-weight:600">You have a right to fair and just compensation &mdash; and you don't have to face the agency alone.</p>
         <p style="color:var(--ink)">You may not be able to stop the project &mdash; but you can make sure you're paid in full for it. National ROW takes the burden completely off your shoulders, builds the case for what your property is truly worth, and stands in your corner from the first call to the final number.</p>
-        <a class="btn btn--navy" href="#lead">Free review by a senior consultant &rarr;</a>
+        <a class="btn btn--gold" href="#lead">Free review by a senior consultant &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DOCUMENTED RESULTS BAND -->
+<!-- NUMBER CALLOUT -->
+    <div class="numcall">
+      <div class="wrap">
+        <p class="numcall-box">Almost every condemnation case is a fight about a number, not about the law.</p>
+      </div>
+    </div>
+
+    <!-- DOCUMENTED RESULTS BAND -->
     <section class="nrp" aria-labelledby="nrp-title">
       <div class="wrap nrp-inner">
         <div class="nrp-top">
           <h2 id="nrp-title">Our documented results</h2>
-          <p class="nrp-hl">Almost every condemnation case is a fight about a number, not about the law.</p>
         </div>
         <div class="nrp-cols">
           <div class="nrp-col">
@@ -1007,7 +1032,7 @@
         </ul>
       </div>
     </div>
-    <p class="li-anchor reveal">On the Houston utility easement in our documented results above, the offer was <strong>$16,000</strong> and the settlement was <strong>$138,000</strong>. The difference was not a better argument about the strip. It was the second column.</p>
+    <p class="li-anchor reveal">On the I-35 expansion in McLennan County in our documented results above, the offer was <strong>$20,000</strong> and the settlement was <strong>$385,000</strong> &mdash; an increase of <strong>+1,825%</strong>. The difference was not a better argument about the land they took. It was the second column.</p>
     <h3 class="vc-lead reveal">Everything your case needs, on one file.</h3>
     <div class="value-compare-grid reveal">
 
