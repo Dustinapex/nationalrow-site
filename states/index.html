@@ -115,6 +115,24 @@ img,svg{max-width:100%}
       .nav .links{gap:13px;margin-left:14px;}
       .nav-cta{font-size:14px;padding:10px 15px;}
     }
+
+    /* NAV: no hamburger - every item stays visible at every width */
+    .menu-btn,#menuBtn{display:none!important;}
+    #mobileLinks,#mobileMenu,.mobile-links,.mobile-menu{display:none!important;}
+    @media(max-width:1100px){
+      .nav,.site-nav,.site-nav .nav,.nav-inner,*:has(> #navLinks),*:has(> .nav-links),*:has(> .links){flex-wrap:wrap!important;}
+      .nav .links,.site-nav .nav-links,.nav-links,#navLinks{
+        display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;
+        width:100%!important;flex-basis:100%!important;order:3!important;margin-left:0!important;margin-right:0!important;
+        gap:2px 16px!important;border-top:1px solid rgba(3,52,114,.13)!important;padding-top:6px!important;
+      }
+      .nav .links a,.site-nav .nav-links a,.nav-links a,#navLinks a{padding:8px 3px!important;font-size:15px!important;white-space:nowrap!important;}
+      .nav-cta{display:inline-flex!important;align-items:center!important;white-space:nowrap!important;}
+    }
+    @media(max-width:560px){
+      .nav .links a,.site-nav .nav-links a,.nav-links a,#navLinks a{font-size:13.5px!important;padding:7px 2px!important;}
+      .nav .links,.site-nav .nav-links,.nav-links,#navLinks{gap:0 13px!important;}
+    }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "State Eminent Domain Guides | National ROW", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Texas", "url": "https://nationalrow.com/states/texas/"}, {"@type": "ListItem", "position": 2, "name": "Arizona", "url": "https://nationalrow.com/states/arizona/"}, {"@type": "ListItem", "position": 3, "name": "North Carolina", "url": "https://nationalrow.com/states/north-carolina/"}, {"@type": "ListItem", "position": 4, "name": "Florida", "url": "https://nationalrow.com/states/florida/"}, {"@type": "ListItem", "position": 5, "name": "Georgia", "url": "https://nationalrow.com/states/georgia/"}, {"@type": "ListItem", "position": 6, "name": "Oklahoma", "url": "https://nationalrow.com/states/oklahoma/"}, {"@type": "ListItem", "position": 7, "name": "Colorado", "url": "https://nationalrow.com/states/colorado/"}, {"@type": "ListItem", "position": 8, "name": "California", "url": "https://nationalrow.com/states/california/"}, {"@type": "ListItem", "position": 9, "name": "Ohio", "url": "https://nationalrow.com/states/ohio/"}, {"@type": "ListItem", "position": 10, "name": "Pennsylvania", "url": "https://nationalrow.com/states/pennsylvania/"}, {"@type": "ListItem", "position": 11, "name": "Kansas", "url": "https://nationalrow.com/states/kansas/"}, {"@type": "ListItem", "position": 12, "name": "Wyoming", "url": "https://nationalrow.com/states/wyoming/"}, {"@type": "ListItem", "position": 13, "name": "Louisiana", "url": "https://nationalrow.com/states/louisiana/"}, {"@type": "ListItem", "position": 14, "name": "Tennessee", "url": "https://nationalrow.com/states/tennessee/"}, {"@type": "ListItem", "position": 15, "name": "Washington DC", "url": "https://nationalrow.com/states/washington-dc/"}, {"@type": "ListItem", "position": 16, "name": "Iowa", "url": "https://nationalrow.com/states/iowa/"}, {"@type": "ListItem", "position": 17, "name": "Indiana", "url": "https://nationalrow.com/states/indiana/"}, {"@type": "ListItem", "position": 18, "name": "Virginia", "url": "https://nationalrow.com/states/virginia/"}, {"@type": "ListItem", "position": 19, "name": "New Mexico", "url": "https://nationalrow.com/states/new-mexico/"}, {"@type": "ListItem", "position": 20, "name": "Montana", "url": "https://nationalrow.com/states/montana/"}, {"@type": "ListItem", "position": 21, "name": "Idaho", "url": "https://nationalrow.com/states/idaho/"}, {"@type": "ListItem", "position": 22, "name": "Minnesota", "url": "https://nationalrow.com/states/minnesota/"}, {"@type": "ListItem", "position": 23, "name": "Michigan", "url": "https://nationalrow.com/states/michigan/"}, {"@type": "ListItem", "position": 24, "name": "Nebraska", "url": "https://nationalrow.com/states/nebraska/"}]}</script>
 </head>

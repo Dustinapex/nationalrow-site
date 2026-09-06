@@ -837,25 +837,24 @@
       .li-ours{padding-left:0;border-left:none;border-top:1px solid var(--line-2);padding-top:1.6rem;}
     }
 
-    /* NUMBER CALLOUT - the line that used to sit inside the gold band */
-    .numcall{background:var(--paper);padding:34px 0 28px;}
+    /* NUMBER CALLOUT - gold-outlined statement above the results band */
+    .numcall{background:#F4F6F9;padding:34px 20px 28px;}
     .numcall-box{
-      margin:0 auto;max-width:900px;
-      background:var(--navy);color:#FFFFFF;
-      font-family:var(--disp);font-weight:800;
-      font-size:clamp(20px,2.6vw,30px);line-height:1.28;
-      letter-spacing:.005em;text-align:center;
-      padding:24px 30px;border-radius:8px;
-      box-shadow:0 0 0 0 rgba(3,52,114,.5);
+      margin:0 auto;max-width:900px;box-sizing:border-box;
+      background:#033472;color:#FFFFFF;
+      font-family:"Barlow Semi Condensed","Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+      font-weight:800;font-size:clamp(20px,2.6vw,30px);line-height:1.28;letter-spacing:.005em;
+      text-align:center;padding:24px 30px;border-radius:8px;
+      border:3px solid #C49A3D;
+      box-shadow:0 0 0 0 rgba(196,154,61,.75);
       animation:numpulse 2.5s ease-in-out infinite;
-      will-change:transform,box-shadow;
     }
     @keyframes numpulse{
-      0%,100%{box-shadow:0 0 0 0 rgba(3,52,114,.5);transform:scale(1);}
-      50%{box-shadow:0 0 0 15px rgba(3,52,114,0);transform:scale(1.015);}
+      0%,100%{box-shadow:0 0 0 0 rgba(196,154,61,.75);}
+      50%{box-shadow:0 0 0 12px rgba(196,154,61,0);}
     }
     @media(prefers-reduced-motion:reduce){ .numcall-box{animation:none;} }
-    @media(max-width:640px){ .numcall{padding:24px 0 20px;} .numcall-box{padding:18px 20px;border-radius:6px;} }
+    @media(max-width:640px){ .numcall{padding:24px 16px 20px;} .numcall-box{padding:18px 18px;border-radius:6px;border-width:2px;} }
 </style>
 
 </head>
@@ -922,7 +921,7 @@
     <div class="section-head reveal">
       <span class="kicker mono">// The situation</span>
       <h2>A condemnation notice is overwhelming by design.</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:0 0 12px;line-height:1.35">The notice is built to rush you. You don&rsquo;t have to be rushed, you don&rsquo;t have to accept their first offer, and you don&rsquo;t have to decide today whether you need an eminent domain lawyer &mdash; you need to know what&rsquo;s on the table first.</p>
+      <p style="font-family:var(--disp);font-style:italic;font-weight:600;font-size:21px;color:var(--gold);margin:0 0 12px;line-height:1.35">An eminent domain notice is built to rush you. You don&rsquo;t have to be rushed, you don&rsquo;t have to accept their first offer, and you don&rsquo;t have to sign anything today. What you need first is a straight read on the condemnation offer in front of you &mdash; and on the just compensation the agency&rsquo;s appraisal never counted.</p>
 </div>
     <div class="problem reveal">
       <ul>
@@ -943,9 +942,7 @@
 
 <!-- NUMBER CALLOUT -->
     <div class="numcall">
-      <div class="wrap">
-        <p class="numcall-box">Almost every condemnation case is a fight about a number, not about the law.</p>
-      </div>
+      <p class="numcall-box">Almost every condemnation case is a fight about a number, not about the law.</p>
     </div>
 
     <!-- DOCUMENTED RESULTS BAND -->

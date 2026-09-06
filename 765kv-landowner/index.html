@@ -416,6 +416,25 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 .footer-email a{color:rgba(255,255,255,.55);}
 .footer-copy{font-size:12px;margin-top:20px;color:rgba(255,255,255,.35);}
 .footer-disclaimer{font-size:11px;color:rgba(255,255,255,.3);max-width:760px;margin:14px auto 0;line-height:1.65;}
+
+    /* NUMBER CALLOUT - gold-outlined statement above the results band */
+    .numcall{background:#F4F6F9;padding:34px 20px 28px;}
+    .numcall-box{
+      margin:0 auto;max-width:900px;box-sizing:border-box;
+      background:#033472;color:#FFFFFF;
+      font-family:"Barlow Semi Condensed","Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+      font-weight:800;font-size:clamp(20px,2.6vw,30px);line-height:1.28;letter-spacing:.005em;
+      text-align:center;padding:24px 30px;border-radius:8px;
+      border:3px solid #C49A3D;
+      box-shadow:0 0 0 0 rgba(196,154,61,.75);
+      animation:numpulse 2.5s ease-in-out infinite;
+    }
+    @keyframes numpulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(196,154,61,.75);}
+      50%{box-shadow:0 0 0 12px rgba(196,154,61,0);}
+    }
+    @media(prefers-reduced-motion:reduce){ .numcall-box{animation:none;} }
+    @media(max-width:640px){ .numcall{padding:24px 16px 20px;} .numcall-box{padding:18px 18px;border-radius:6px;border-width:2px;} }
 </style>
 </head>
 <body>
@@ -446,6 +465,12 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     </div>
   </div>
 </section>
+
+<!-- NUMBER CALLOUT -->
+<div class="numcall">
+  <p class="numcall-box">Almost every condemnation case is a fight about a number, not about the law.</p>
+</div>
+
 <div class="lp-trust">On the property owner's side since the 1980s &nbsp;&middot;&nbsp; <b>We never represent the condemning agency</b> &nbsp;&middot;&nbsp; No upfront cost</div>
 
 
