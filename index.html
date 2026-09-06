@@ -815,6 +815,28 @@
       .nav .links{gap:13px;margin-left:14px;}
       .nav-cta{font-size:14px;padding:10px 15px;}
     }
+
+    /* WHAT THEIR APPRAISAL LEFT OUT */
+    .lineitems{display:grid;grid-template-columns:0.85fr 1.3fr;gap:2.4rem;margin-top:2.6rem;align-items:start;text-align:left;}
+    .li-col{position:relative;}
+    .li-ours{padding-left:2.4rem;border-left:1px solid var(--line-2);}
+    .li-tag{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+    .li-theirs .li-tag{color:var(--gray);}
+    .li-ours .li-tag{color:var(--gold);}
+    .lineitems ul{list-style:none;margin:0;padding:0;}
+    .lineitems li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15.5px;line-height:1.55;color:var(--ink);}
+    .li-theirs li{color:var(--gray);}
+    .li-theirs li::before{content:"";position:absolute;left:0;top:.62em;width:11px;height:1px;background:var(--line-2);}
+    .li-ours li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--gold);font-weight:700;font-size:14px;}
+    .li-ours li strong{color:var(--navy);font-weight:700;}
+    .li-note{margin-top:14px;font-size:13.5px;line-height:1.55;color:var(--gray);font-style:italic;}
+    .li-anchor{max-width:74ch;margin:2.4rem auto 0;text-align:left;font-size:16.5px;line-height:1.65;color:var(--ink);padding-top:20px;border-top:1px solid var(--line);}
+    .li-anchor strong{font-family:var(--disp);font-weight:800;color:var(--navy);font-size:1.08em;}
+    .vc-lead{font-family:var(--disp);font-weight:700;font-size:22px;color:var(--navy);margin:2.8rem 0 0;text-align:left;}
+    @media(max-width:780px){
+      .lineitems{grid-template-columns:1fr;gap:1.6rem;}
+      .li-ours{padding-left:0;border-left:none;border-top:1px solid var(--line-2);padding-top:1.6rem;}
+    }
 </style>
 
 </head>
@@ -958,11 +980,35 @@
 <section class="section value-compare-section" id="value">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="kicker mono">// Attorney, consultant, or both</span>
-      <h2>Do you need an eminent domain attorney?</h2>
-      <p style="font-family:var(--disp);font-style:italic;font-size:1.15rem;color:var(--gray);max-width:640px;margin:0 auto;">Sometimes. You always need someone who knows what the land is worth &mdash; and with National ROW you don&rsquo;t have to choose between the two.</p>
-      <p class="vc-intro">Condemnation cases turn on valuation, not on law. An <strong>eminent domain attorney</strong> protects your legal rights, files objections, and argues your case before a judge or special commissioners &mdash; work only a licensed attorney can do. What an attorney does not typically do is build the valuation record: measure the damage to the remainder, price the lost access, engage the appraisers, and document every element the agency&rsquo;s appraisal left out. National ROW is a right-of-way and condemnation consulting firm, not a law firm, and we do not give legal advice. We build the valuation case and coordinate the licensed appraisers and attorneys who present it.</p>
+      <span class="kicker mono">// Why the number moves</span>
+      <h2>What their appraisal left out.</h2>
+      <p style="font-family:var(--disp);font-style:italic;font-size:1.15rem;color:var(--gray);max-width:640px;margin:0 auto;">The agency&rsquo;s offer is built from the agency&rsquo;s appraisal. Almost every dollar we recover is something that appraisal never counted.</p>
     </div>
+    
+    <div class="lineitems reveal">
+      <div class="li-col li-theirs">
+        <span class="li-tag">Their appraisal counted</span>
+        <ul>
+          <li>The land or easement area taken</li>
+          <li>Improvements standing inside the take</li>
+        </ul>
+        <p class="li-note">Two lines. Prepared on their timeline, by an appraiser you did not choose.</p>
+      </div>
+      <div class="li-col li-ours">
+        <span class="li-tag">What the full claim also includes</span>
+        <ul>
+          <li><strong>Severance damage to the remainder</strong> &mdash; the part you keep, worth less than it was</li>
+          <li><strong>Cost to cure</strong> &mdash; fencing, gates, drainage, re-routing what the take broke</li>
+          <li><strong>Access, frontage and driveway changes</strong></li>
+          <li><strong>Temporary construction easement rent</strong>, for the term they actually need it</li>
+          <li><strong>Crops, timber, irrigation and improvements</strong> outside the take</li>
+          <li><strong>Business and operations impact</strong> during and after construction</li>
+          <li><strong>Highest and best use of what is left</strong>, not only what is there today</li>
+        </ul>
+      </div>
+    </div>
+    <p class="li-anchor reveal">On the Houston utility easement in our documented results above, the offer was <strong>$16,000</strong> and the settlement was <strong>$138,000</strong>. The difference was not a better argument about the strip. It was the second column.</p>
+    <h3 class="vc-lead reveal">Everything your case needs, on one file.</h3>
     <div class="value-compare-grid reveal">
 
       <!-- Column 1: National ROW (navy) — high-impact first -->
