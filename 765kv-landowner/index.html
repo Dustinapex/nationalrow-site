@@ -435,6 +435,24 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     }
     @media(prefers-reduced-motion:reduce){ .numcall-box{animation:none;} }
     @media(max-width:640px){ .numcall{padding:24px 16px 20px;} .numcall-box{padding:18px 18px;border-radius:6px;border-width:2px;} }
+
+    /* NAV: no hamburger - every item stays visible at every width */
+    .menu-btn,#menuBtn{display:none!important;}
+    #mobileLinks,#mobileMenu,.mobile-links,.mobile-menu{display:none!important;}
+    @media(max-width:1100px){
+      .nav,.site-nav,.site-nav .nav,.nav-inner,*:has(> #navLinks),*:has(> .nav-links),*:has(> .links){flex-wrap:wrap!important;}
+      .nav .links,.site-nav .nav-links,.nav-links,#navLinks,.site-header nav{
+        display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;
+        width:100%!important;flex-basis:100%!important;order:3!important;margin-left:0!important;margin-right:0!important;
+        gap:2px 16px!important;border-top:1px solid rgba(3,52,114,.13)!important;padding-top:6px!important;
+      }
+      .nav .links a,.site-nav .nav-links a,.nav-links a,#navLinks a,.site-header nav a{padding:8px 3px!important;font-size:15px!important;white-space:nowrap!important;margin-left:0!important;}
+      .nav-cta{display:inline-flex!important;align-items:center!important;white-space:nowrap!important;}
+    }
+    @media(max-width:560px){
+      .nav .links a,.site-nav .nav-links a,.nav-links a,#navLinks a,.site-header nav a{font-size:13.5px!important;padding:7px 2px!important;margin-left:0!important;}
+      .nav .links,.site-nav .nav-links,.nav-links,#navLinks,.site-header nav{gap:0 13px!important;}
+    }
 </style>
 </head>
 <body>
