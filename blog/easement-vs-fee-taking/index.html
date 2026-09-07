@@ -484,6 +484,13 @@
       .nav .links a,.site-nav .nav-links a,.nav-links a,#navLinks a{font-size:13.5px!important;padding:7px 2px!important;}
       .nav .links,.site-nav .nav-links,.nav-links,#navLinks{gap:0 13px!important;}
     }
+
+    /* NAV: containers must grow when the links wrap. A fixed nav height let
+       the wrapped links row spill out and paint over the banner below it. */
+    @media(max-width:1100px){
+      .nav,.site-nav,.sitenav,.site-header,.nav-inner,.nav-in,
+      *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
+    }
 </style>
 </head>
 <body>

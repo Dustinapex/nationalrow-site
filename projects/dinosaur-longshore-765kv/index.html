@@ -371,6 +371,13 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     .cty-detail h3 span{font-weight:400;color:#6E7378;font-size:15px;}
     .cty-detail p{margin:0;font-size:15.5px;line-height:1.68;color:#1B2735;}
     @media(max-width:640px){ .cty-detail{padding-left:14px;} .cty-detail h3{font-size:17px;} }
+
+    /* NAV: containers must grow when the links wrap. A fixed nav height let
+       the wrapped links row spill out and paint over the banner below it. */
+    @media(max-width:1100px){
+      .nav,.site-nav,.sitenav,.site-header,.nav-inner,.nav-in,
+      *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
+    }
 </style>
 </head>
 <body>
