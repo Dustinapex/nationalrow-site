@@ -461,22 +461,25 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
     }
 
-    /* NOTICE BLOCK */
-    .lp-notice{background:#F4F6F9;padding:56px 20px 52px;}
-    .lp-notice h2{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:800;color:#033472;font-size:clamp(26px,3.6vw,40px);line-height:1.14;margin:0 0 16px;letter-spacing:-.01em;}
-    .lp-notice-lead{font-size:clamp(16.5px,1.5vw,18.5px);line-height:1.62;color:#1B2735;max-width:920px;margin:0 0 34px;}
-    .lp-notice-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 34px;}
-    .lp-notice-item{border-left:3px solid #C49A3D;padding-left:18px;}
-    .lp-notice-item h3{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:700;color:#033472;font-size:19px;line-height:1.24;margin:0 0 7px;}
-    .lp-notice-item p{font-size:16px;line-height:1.58;color:#1B2735;margin:0;}
-    .lp-notice-close{margin:32px 0 0;font-size:clamp(17px,1.6vw,19.5px);line-height:1.5;font-weight:600;color:#033472;max-width:880px;}
+    /* NOTICE BLOCK - condensed to bullets, staggered reveal on scroll */
+    .lp-notice{background:#F4F6F9;padding:52px 20px 46px;}
+    .lp-notice h2{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:800;color:#033472;font-size:clamp(25px,3.4vw,38px);line-height:1.14;margin:0 0 14px;letter-spacing:-.01em;}
+    .lp-notice-lead{font-size:clamp(16px,1.45vw,18px);line-height:1.6;color:#1B2735;max-width:900px;margin:0 0 26px;}
+    .lp-notice-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;}
+    .lp-notice-item{border-left:3px solid #C49A3D;padding:2px 0 2px 16px;font-size:16px;line-height:1.55;color:#1B2735;}
+    .lp-notice-item b{color:#033472;font-weight:700;display:block;margin-bottom:3px;}
+    .lp-notice-close{margin:26px 0 0;font-size:clamp(16.5px,1.5vw,19px);line-height:1.5;font-weight:600;color:#033472;max-width:880px;}
+    .lp-notice-grid.anim .lp-notice-item{opacity:.28;transform:translateY(7px);border-left-color:rgba(196,154,61,.28);
+      transition:opacity .55s ease,transform .55s ease,border-left-color .55s ease;}
+    .lp-notice-grid.anim .lp-notice-item.in{opacity:1;transform:none;border-left-color:#C49A3D;}
     @media(max-width:760px){
-      .lp-notice{padding:40px 16px 38px;}
-      .lp-notice-grid{grid-template-columns:1fr;gap:22px;}
-      .lp-notice-lead{margin-bottom:26px;}
-      .lp-notice-close{margin-top:26px;}
+      .lp-notice{padding:38px 16px 34px;}
+      .lp-notice-grid{grid-template-columns:1fr;gap:13px;}
     }
-  
+    @media(prefers-reduced-motion:reduce){
+      .lp-notice-grid.anim .lp-notice-item{opacity:1;transform:none;border-left-color:#C49A3D;transition:none;}
+    }
+
     /* LP: fuse the gold-outlined number tile onto the documented-results band */
     .numcall{background:#FBF7EC;padding:8px 20px 30px;}
     @media(max-width:640px){ .numcall{padding:4px 16px 24px;} }
@@ -513,29 +516,18 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 <div class="lp-trust">On the property owner's side since the 1980s &nbsp;&middot;&nbsp; <b>We never represent the condemning agency</b> &nbsp;&middot;&nbsp; No upfront cost</div>
 
 <!-- NUMBER CALLOUT -->
+<!-- NOTICE / EMOTIONAL FRAME -->
 <section class="lp-notice">
   <div class="container">
     <h2>You got the letter. A condemnation notice is overwhelming by design.</h2>
-    <p class="lp-notice-lead">It arrives thick. Legal language, a plat you cannot read, an appraisal you did not order, a number already filled in, and a date near the bottom that makes it feel like the decision has already been made. It is built so that signing feels like the reasonable thing to do.</p>
-    <div class="lp-notice-grid">
-      <div class="lp-notice-item">
-        <h3>&ldquo;They want to walk my place.&rdquo;</h3>
-        <p>The survey permission form is usually the first thing they hand you, and it is one of the few things in the packet that is negotiable. What it says about access, timing and conduct on your land is worth reading before you sign it.</p>
-      </div>
-      <div class="lp-notice-item">
-        <h3>&ldquo;Can they actually do this?&rdquo;</h3>
-        <p>Once the PUCT grants a certificate, the utility has the power of eminent domain for that route. That part is generally not the fight. What they pay you for the easement and for what it does to the rest of your property is.</p>
-      </div>
-      <div class="lp-notice-item">
-        <h3>&ldquo;I think the number is low and I have no way to know.&rdquo;</h3>
-        <p>The appraisal in front of you was ordered and paid for by the party buying your land, from an appraiser you did not choose. It is one opinion of value. It is not the ceiling, and it is not a verdict.</p>
-      </div>
-      <div class="lp-notice-item">
-        <h3>&ldquo;This place has been in the family a long time.&rdquo;</h3>
-        <p>A corridor does not just take the strip under the towers. It changes access, fencing, irrigation, spraying, where you can build, and how the rest of it reads to a future buyer. Those are compensable questions, and they are the ones most often left out.</p>
-      </div>
-    </div>
-    <p class="lp-notice-close">None of this means you are stuck. It means the next few decisions are worth getting right, and you do not have to make them cold.</p>
+    <p class="lp-notice-lead">It arrives thick. Legal language, a plat you cannot read, an appraisal you did not order, a number already filled in, and a date near the bottom that makes it feel decided. It is built so that signing feels like the reasonable thing to do.</p>
+    <ul class="lp-notice-grid">
+      <li class="lp-notice-item"><b>&ldquo;They want to walk my place.&rdquo;</b> The survey permission form is one of the few things in that packet you can still negotiate. Most people sign it first.</li>
+      <li class="lp-notice-item"><b>&ldquo;Can they actually do this?&rdquo;</b> Once the PUCT grants the certificate, usually yes. What they pay you is the part still open.</li>
+      <li class="lp-notice-item"><b>&ldquo;The number feels low and I have no way to know.&rdquo;</b> It came from an appraiser they hired. That is one opinion of value, not a verdict.</li>
+      <li class="lp-notice-item"><b>&ldquo;This place has been in the family a long time.&rdquo;</b> A corridor changes access, fencing, spraying, where you can build, and what the rest of it is worth.</li>
+    </ul>
+    <p class="lp-notice-close">You are not stuck. The next few decisions just need to be made with better information than the envelope gave you.</p>
   </div>
 </section>
 
@@ -766,5 +758,22 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 })();
 </script>
 
+<script>
+(function(){
+  var g=document.querySelector('.lp-notice-grid');
+  if(!g||!('IntersectionObserver' in window))return;
+  g.classList.add('anim');
+  var items=g.querySelectorAll('.lp-notice-item');
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var i=[].indexOf.call(items,e.target);
+      setTimeout(function(){e.target.classList.add('in');}, i*130);
+      io.unobserve(e.target);
+    });
+  },{threshold:.25});
+  [].forEach.call(items,function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>
