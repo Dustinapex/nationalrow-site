@@ -43,8 +43,8 @@
   gtag('js', new Date());
   gtag('config', 'G-MX6ZT35QT3');
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><meta name="robots" content="noindex,follow">
+
+<meta name="robots" content="noindex,follow">
 <style>
 .lp-hero{background:linear-gradient(135deg,#0a1c33,#1a3a5c);color:#fff;padding:52px 22px 46px;text-align:center;}
 .lp-hero .eyebrow{display:inline-block;background:rgba(201,162,39,.16);border:1px solid rgba(201,162,39,.5);
@@ -476,6 +476,10 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       .lp-notice-lead{margin-bottom:26px;}
       .lp-notice-close{margin-top:26px;}
     }
+  
+    /* LP: fuse the gold-outlined number tile onto the documented-results band */
+    .numcall{background:#FBF7EC;padding:8px 20px 30px;}
+    @media(max-width:640px){ .numcall{padding:4px 16px 24px;} }
   </style>
 </head>
 <body>
@@ -509,13 +513,6 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 <div class="lp-trust">On the property owner's side since the 1980s &nbsp;&middot;&nbsp; <b>We never represent the condemning agency</b> &nbsp;&middot;&nbsp; No upfront cost</div>
 
 <!-- NUMBER CALLOUT -->
-<div class="numcall">
-  <p class="numcall-box">Almost every condemnation case is a fight about a number, not about the law.</p>
-</div>
-
-
-
-<!-- NOTICE / EMOTIONAL FRAME -->
 <section class="lp-notice">
   <div class="container">
     <h2>You got the letter. A condemnation notice is overwhelming by design.</h2>
@@ -542,32 +539,26 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </div>
 </section>
 
-<section class="lp-map" id="route">
+<section class="miss">
   <div class="container">
-    <h2>The two approved 765 kV routes</h2>
-    <p class="lp-map-sub">Gold is the centerline the PUCT approved on August 28, 2026. Dashed grey is what was studied and not selected. The easement corridor runs roughly 200 feet wide along the gold line.</p>
-    <div class="map-wrap">
-      <div id="routeMapC"></div>
-      <div class="map-legend">
-        <span><i class="swatch" style="background:#c9a227"></i> Approved route</span>
-        <span><i class="swatch" style="background:#94a3b8"></i> Studied, not selected</span>
-      </div>
-      <div class="map-note">
-        Loaded live from Oncor&rsquo;s public project mapping service. The gold line is the approved
-        <em>centerline</em>; the easement is a corridor roughly 200 feet wide centered on it, and the final
-        surveyed alignment can still shift within the approved corridor. <strong>Not a survey and not legal
-        advice.</strong> Confirm your status against Oncor&rsquo;s official project map and the filed route documents.
-      </div>
-    </div>
-    
+    <h2 style="text-align:center;">What a first offer usually leaves out</h2>
+    <ul>
+      <li><b>Damage to the remainder</b>A 200-foot corridor does not just take the acres under it. It splits fields, strands corners, moves your building envelope and follows you into every future appraisal of the whole tract.</li>
+      <li><b>Access and crossings</b>Where they can enter, how often, which roads they build, who maintains them, and whether you can still cross your own easement with equipment.</li>
+      <li><b>Temporary construction easement</b>Work space outside the permanent corridor is a separate taking with its own value, and it is frequently folded in for free.</li>
+      <li><b>The easement language itself</b>Width, height, vegetation control, future additional circuits, assignment to third parties. The document outlives the check by decades.</li>
+    </ul>
   </div>
 </section>
 
+<div class="numcall">
+  <p class="numcall-box">Almost every condemnation case is a fight about a number, not about the law.</p>
+</div>
 <section class="proofband">
   <div class="inner">
     <div class="top">
       <h2>Our documented results</h2>
-      <p class="hl">Almost every condemnation case is a fight about a number, not about the law.</p>
+      <p class="hl">Four first offers that moved once somebody read the appraisal.</p>
     </div>
     <div class="cols">
       <div class="col">
@@ -600,63 +591,26 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </div>
 </section>
 
-<script>
-(function(){
-  var SVC='https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/2/query';
-  var PIDS='1015,1019';
-  var map;
+<section class="cta-band">
+  <div class="inner">
+    <h3>Already have an offer letter in hand?</h3>
+    <p>Send it over with their appraisal if they gave you one &mdash; a photo of the pages is enough. A senior consultant reads it and tells you what their number left out and whether it can be moved.</p>
+    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
+    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
+  </div>
+</section>
 
-  function q(where, cb){
-    var url = SVC + '?f=geojson&outSR=4326&resultRecordCount=2000&maxAllowableOffset=0.0004'
-            + '&outFields=link_id,Status,project_id&where=' + encodeURIComponent(where);
-    fetch(url).then(function(r){ return r.json(); }).then(cb).catch(function(){ cb(null); });
-  }
-
-  function fail(){
-    var el = document.getElementById('routeMapC');
-    if(!el) return;
-    el.insertAdjacentHTML('beforeend',
-      '<div style="position:absolute;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;'
-      + 'background:rgba(255,255,255,.94);padding:20px;text-align:center;font-size:14px;line-height:1.7;color:#334155">'
-      + "The route map couldn't load right now. A senior consultant can tell you whether the line affects your property &mdash; use the form below or call or text (469) 484-7960."
-      + '</div>');
-  }
-
-  function init(){
-    // Touch devices: dragging off so the map never traps the page scroll.
-    map = L.map('routeMapC', {
-      scrollWheelZoom:false,
-      dragging: !L.Browser.mobile,
-      tap: false,
-      zoomControl: true
-    }).setView([31.6,-100.4], 6);
-    // No clickable Leaflet credit - a paid landing page should have no exits.
-    if(map.attributionControl) map.attributionControl.setPrefix(false);
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{
-      maxZoom:19,
-      attribution:'Tiles &copy; Esri | Route data: Oncor Electric Delivery (public CCN viewer)'
-    }).addTo(map);
-
-    q("project_id IN (" + PIDS + ") AND Status<>'Approved'", function(g){
-      if(g && g.features && g.features.length){
-        L.geoJSON(g, {style:{color:'#94a3b8', weight:2, opacity:.6, dashArray:'4,5'}}).addTo(map);
-      }
-    });
-    q("project_id IN (" + PIDS + ") AND Status='Approved'", function(g){
-      if(!g || !g.features || !g.features.length){ fail(); return; }
-      var layer = L.geoJSON(g, {style:{color:'#c9a227', weight:5, opacity:.95}}).addTo(map);
-      try{
-        map.fitBounds(layer.getBounds(), {padding:[18,18]});
-      }catch(e){}
-      setTimeout(function(){ map.invalidateSize(); }, 200);
-    });
-  }
-
-  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
-  else { init(); }
-})();
-</script>
-
+<section class="lp-get">
+  <div class="container">
+    <h2 style="text-align:center;">What you actually get</h2>
+    <div class="grid">
+      <div class="card"><h3>A senior consultant, not a call center</h3>
+        <p>A senior consultant reads every one of these and calls you back within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p></div>
+      <div class="card"><h3>Nothing out of pocket</h3>
+        <p>We are paid out of the increase. If we look at your situation and do not believe we can move the number, we tell you that too &mdash; and you owe nothing either way.</p></div>
+    </div>
+  </div>
+</section>
 
 <section class="lp-vs">
   <div class="container">
@@ -699,22 +653,6 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </div>
 </section>
 
-
-<section class="lp-get">
-  <div class="container">
-    <h2 style="text-align:center;">What you actually get</h2>
-    <div class="grid">
-      <div class="card"><h3>A senior consultant, not a call center</h3>
-        <p>A senior consultant reads every one of these and calls you back within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p></div>
-      <div class="card"><h3>What their number left out</h3>
-        <p>Easement acreage, damage to the remainder, access, temporary workspace, and the things agency appraisals routinely undercount. We tell you what their appraisal left out.</p></div>
-      <div class="card"><h3>Nothing out of pocket</h3>
-        <p>We are paid out of the increase. If we look at your situation and do not believe we can move the number, we tell you that too &mdash; and you owe nothing either way.</p></div>
-    </div>
-  </div>
-</section>
-
-
 <section class="cta-band">
   <div class="inner">
     <h3>You do not have to wait for the letter.</h3>
@@ -724,28 +662,6 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </div>
 </section>
 
-
-<section class="miss">
-  <div class="container">
-    <h2 style="text-align:center;">What a first offer usually leaves out</h2>
-    <ul>
-      <li><b>Damage to the remainder</b>A 200-foot corridor does not just take the acres under it. It splits fields, strands corners, moves your building envelope and follows you into every future appraisal of the whole tract.</li>
-      <li><b>Access and crossings</b>Where they can enter, how often, which roads they build, who maintains them, and whether you can still cross your own easement with equipment.</li>
-      <li><b>Temporary construction easement</b>Work space outside the permanent corridor is a separate taking with its own value, and it is frequently folded in for free.</li>
-      <li><b>The easement language itself</b>Width, height, vegetation control, future additional circuits, assignment to third parties. The document outlives the check by decades.</li>
-    </ul>
-  </div>
-</section>
-
-
-<section class="cta-band">
-  <div class="inner">
-    <h3>Already have an offer letter in hand?</h3>
-    <p>Send it over with their appraisal if they gave you one &mdash; a photo of the pages is enough. A senior consultant reads it and tells you what their number left out and whether it can be moved.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
 
 
 <div class="contact-strip" id="contact">
