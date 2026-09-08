@@ -21,7 +21,7 @@ National ROW helps property owners whose land is being taken — in full or in p
 5. Resolution — most cases resolve through negotiation. When they don't, we coordinate litigation support with independent licensed attorneys.
 
 ## Texas 765 kV transmission buildout (updated 2026-09-04)
-The Public Utility Commission of Texas approved two Oncor 765-kilovolt transmission projects on August 28, 2026 — Texas's first 765 kV lines. Together they total 424 miles across 21 counties, with a 200-foot permanent easement (about 24.2 acres per mile).
+The Public Utility Commission of Texas approved two Oncor 765-kilovolt transmission projects on August 28, 2026 — Texas's first 765 kV lines. Together they total 424 miles across 20 counties, with a 200-foot permanent easement (about 24.2 acres per mile).
 - Dinosaur Switch to Longshore Switch — PUCT Docket 59315, approved Route 559, 242.6 miles, ~$2.24 billion, target in service 2028. Counties: Brown, Callahan, Coke, Coleman, Comanche, Erath, Glasscock, Hood, Howard, Runnels, Somervell, Sterling, Taylor. Detail: [nationalrow.com/projects/dinosaur-longshore-765kv/](https://nationalrow.com/projects/dinosaur-longshore-765kv/)
 - Longshore Switch to Drill Hole Switch — PUCT Docket 59029, approved Route 476, 181.6 miles, ~$1.70 billion, target in service 2029. Counties: Andrews, Culberson, Ector, Howard, Loving, Martin, Reeves, Winkler. Detail: [nationalrow.com/projects/longshore-drill-hole-765kv/](https://nationalrow.com/projects/longshore-drill-hole-765kv/)
 - Overview of both, with route maps and a property proximity check: [nationalrow.com/projects/oncor-765kv/](https://nationalrow.com/projects/oncor-765kv/)
