@@ -148,7 +148,7 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .map-result.far{background:#f0fdf4;color:#14532d;}
 .map-result.err{background:#fffbeb;color:#78350f;}
 .map-result strong{display:block;font-size:17px;margin-bottom:4px;}
-.map-legend{display:flex;gap:18px;flex-wrap:wrap;padding:12px 18px;font-size:13px;color:#4b5563;background:#fff;border-top:1px solid #e5e7eb;}
+.map-wrap.map-collapsed #routeMap,.map-wrap.map-collapsed .map-legend{display:none}.map-toggle{padding:14px 18px;background:#fff;border-top:1px solid #e5e7eb}.map-toggle button{background:#fff;border:1px solid #c9a227;color:#0b1f3a;font-weight:700;font-size:14px;padding:10px 16px;border-radius:6px;cursor:pointer}.map-toggle button:hover{background:#fdf8ec}.map-legend{display:flex;gap:18px;flex-wrap:wrap;padding:12px 18px;font-size:13px;color:#4b5563;background:#fff;border-top:1px solid #e5e7eb;}
 .map-legend span{display:flex;align-items:center;gap:7px;}
 .swatch{width:22px;height:4px;border-radius:2px;display:inline-block;}
 
@@ -503,17 +503,29 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </div>
 </section>
 
+<section id="route-map-download">
+  <div class="container">
+    <h2>Download the approved route map</h2>
+    <p class="section-sub">A one-page map of the approved centerline with the mileage in each county, drawn from Oncor’s own published route data. Print it, take it to your appraisal district, or send it to whoever is advising you.</p>
+    <figure style="margin:0;border:1px solid #d5d1c8;border-radius:6px;overflow:hidden;background:#fff">
+      <img src="/assets/maps/longshore-drill-hole-765kv-route-map.webp" alt="Approved route map for the Oncor Longshore–Drill Hole 765 kV transmission line, PUCT Docket 59029, Route 476 — 181.6 miles from Longshore Switch near Forsan to Drill Hole Switch on the Culberson–Reeves county line, with miles by county across 8 Permian Basin counties" width="1600" height="1236" loading="lazy" style="display:block;width:100%;height:auto">
+    </figure>
+    <p style="margin-top:16px"><a class="btn-gold" href="/assets/maps/longshore-drill-hole-765kv-route-map.png" download>Download the route map (Route 476)</a></p>
+  </div>
+</section>
+
 <section class="section-alt" id="map">
   <div class="container">
     <h2>Is your property on the approved route?</h2>
-    <p class="section-sub">The gold line is the route the PUCT approved. The dashed grey lines are the alternative routes that were studied and not selected — useful if you were notified during the docket but are no longer on the chosen route. Enter an address to see roughly how far you are from the centerline.</p>
+    <p class="section-sub">Enter an address to see roughly how far it sits from the approved centerline. You can also open the interactive map, which shows the approved route in gold and the alternative routes that were studied and not selected — useful if you were notified during the docket but are no longer on the chosen route.</p>
 
-    <div class="map-wrap">
+    <div class="map-wrap map-collapsed">
       <div class="map-bar">
         <input id="addrInput" type="text" placeholder="Enter your property address, or the nearest crossroads" autocomplete="off">
         <button id="addrBtn" type="button">Check my location</button>
       </div>
-      <div id="routeMap"></div>
+      <div class="map-toggle"><button id="mapToggle" type="button">Show the route on an interactive map</button></div>
+        <div id="routeMap"></div>
       <div class="map-legend">
         <span><i class="swatch" style="background:#c9a227"></i> PUCT-approved route</span>
         <span><i class="swatch" style="background:#94a3b8"></i> Other routes studied (not approved)</span>
@@ -526,17 +538,6 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
         <a href="https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/longshore-switch-%E2%80%93-drill-hole-switch-765-kv-transmission-line-project/update-map/Longshore%20-%20Drill%20Hole%20Filing%20Appendix%20G%20Constraints%20Map%2011.26.25.pdf" target="_blank" rel="noopener">filed constraints map</a>.
       </div>
     </div>
-  </div>
-</section>
-
-<section id="route-map-download">
-  <div class="container">
-    <h2>Download the approved route map</h2>
-    <p class="section-sub">A one-page map of the approved centerline with the mileage in each county, drawn from Oncor’s own published route data. Print it, take it to your appraisal district, or send it to whoever is advising you.</p>
-    <figure style="margin:0;border:1px solid #d5d1c8;border-radius:6px;overflow:hidden;background:#fff">
-      <img src="/assets/maps/longshore-drill-hole-765kv-route-map.webp" alt="Approved route map for the Oncor Longshore–Drill Hole 765 kV transmission line, PUCT Docket 59029, Route 476 — 181.6 miles from Longshore Switch near Forsan to Drill Hole Switch on the Culberson–Reeves county line, with miles by county across 8 Permian Basin counties" width="1600" height="1236" loading="lazy" style="display:block;width:100%;height:auto">
-    </figure>
-    <p style="margin-top:16px"><a class="btn-gold" href="/assets/maps/longshore-drill-hole-765kv-route-map.png" download>Download the route map (Route 476)</a></p>
   </div>
 </section>
 
@@ -699,7 +700,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
         return;
       }
       var lat = m.coordinates.y, lon = m.coordinates.x;
-      if(marker) map.removeLayer(marker);
+      revealMap(); if(marker) map.removeLayer(marker);
       marker = L.circleMarker([lat,lon], {radius:8, color:'#fff', weight:2, fillColor:'#b91c1c', fillOpacity:1}).addTo(map);
       map.setView([lat,lon], 11);
       var d = distanceToRouteMeters(lat, lon);
@@ -720,13 +721,20 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     });
   }
 
+  var mapShown=false;
+  function revealMap(){ if(mapShown) return; mapShown=true;
+    var w=document.querySelector(".map-wrap"); if(w) w.classList.remove("map-collapsed");
+    var t=document.querySelector(".map-toggle"); if(t) t.style.display="none";
+    setTimeout(function(){ try{ map.invalidateSize(); if(approvedLayer) map.fitBounds(approvedLayer.getBounds(),{padding:[24,24]}); }catch(e){} },60);
+  }
+  function wireToggle(){ var b=document.getElementById("mapToggle"); if(b) b.addEventListener("click", revealMap); }
   function boot(){
     if(typeof L === 'undefined'){
       document.getElementById('routeMap').innerHTML =
         "<div style='padding:28px;text-align:center;font-size:15px;line-height:1.7;color:#334155'>The map could not load. View the approved route on <a href='https://experience.arcgis.com/experience/2a2ca9b3206a4bfbbd1ae875e8abb9d7/page/Longshore_DrillHole' target='_blank' rel='noopener' style='color:#1d4ed8;text-decoration:underline'>Oncor's official map viewer</a>.</div>";
       return;
     }
-    initMap();
+    initMap(); wireToggle();
     document.getElementById('addrBtn').addEventListener('click', run);
     document.getElementById('addrInput').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); run(); } });
   }
