@@ -148,7 +148,7 @@ h3{font-size:19px;font-weight:800;color:var(--navy);margin:30px 0 10px;line-heig
 .map-result.far{background:#f0fdf4;color:#14532d;}
 .map-result.err{background:#fffbeb;color:#78350f;}
 .map-result strong{display:block;font-size:17px;margin-bottom:4px;}
-.map-wrap.map-collapsed #routeMap,.map-wrap.map-collapsed .map-legend{display:none}.map-toggle{padding:14px 18px;background:#fff;border-top:1px solid #e5e7eb}.map-toggle button{background:#fff;border:1px solid #c9a227;color:#0b1f3a;font-weight:700;font-size:14px;padding:10px 16px;border-radius:6px;cursor:pointer}.map-toggle button:hover{background:#fdf8ec}.map-legend{display:flex;gap:18px;flex-wrap:wrap;padding:12px 18px;font-size:13px;color:#4b5563;background:#fff;border-top:1px solid #e5e7eb;}
+.map-wrap.map-collapsed #routeMap,.map-wrap.map-collapsed .map-legend{display:none}.jumpbar{background:#f6f4ef;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;padding:14px 0}.jumpbar .jb-in{display:flex;gap:10px 20px;flex-wrap:wrap;align-items:center}.jumpbar .jb-lab{font-size:12px;font-weight:700;color:#6b7280;letter-spacing:.05em;text-transform:uppercase}.jumpbar a{font-size:15px;font-weight:700;color:#033472;text-decoration:none;border-bottom:2px solid #C49A3D;padding-bottom:2px}.jumpbar a:hover{color:#8a6d20}.jumpbar a.jb-cta{background:#C49A3D;color:#0b1f3a;border-bottom:0;border-radius:6px;padding:9px 16px}.jumpbar a.jb-cta:hover{background:#b8912a;color:#0b1f3a}@media(max-width:640px){.jumpbar a{font-size:14px}}.map-toggle{padding:14px 18px;background:#fff;border-top:1px solid #e5e7eb}.map-toggle button{background:#fff;border:1px solid #c9a227;color:#0b1f3a;font-weight:700;font-size:14px;padding:10px 16px;border-radius:6px;cursor:pointer}.map-toggle button:hover{background:#fdf8ec}.map-legend{display:flex;gap:18px;flex-wrap:wrap;padding:12px 18px;font-size:13px;color:#4b5563;background:#fff;border-top:1px solid #e5e7eb;}
 .map-legend span{display:flex;align-items:center;gap:7px;}
 .swatch{width:22px;height:4px;border-radius:2px;display:inline-block;}
 
@@ -428,6 +428,8 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     </div>
   </div>
 </section>
+<div class="jumpbar"><div class="container jb-in"><span class="jb-lab">On this page</span><a href="#route-map-download">Approved route map</a><a href="#map">Check your address</a><a class="jb-cta" href="#contact">Free review by a senior consultant</a></div></div>
+
 
 <!-- NUMBER CALLOUT -->
 <div class="numcall">
@@ -744,6 +746,60 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 })();
 </script>
 
+<div class="contact-strip" id="contact">
+  <p style="font-size:16px;font-weight:700;">Call or text us directly — we answer owners same day.</p>
+  <div class="phones">
+    <a href="tel:+14694847960">(469) 484-7960</a>
+  </div>
+  <p><a href="mailto:info@nationalrow.com" style="color:rgba(255,255,255,.7)">info@nationalrow.com</a></p>
+</div>
+
+<section class="form-section">
+  <div class="container">
+    <div class="form-header">
+      <h2>Free review — Dinosaur–Longshore 765 kV</h2>
+      <p>Tell us about your property. A senior consultant reads every one of these and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
+    </div>
+    <div class="form-body">
+      <div id="the-form">
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="_subject" value="New case review — Dinosaur-Longshore 765kV">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
+          <input type="hidden" name="project_source" id="projectSource" value="Dinosaur-Longshore 765kV">
+          <input type="hidden" name="referrer_url" id="referrerUrl" value="">
+          <div class="form-grid">
+            <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
+            <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="(___) ___-____"></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+            <div class="form-group"><label>County &amp; State</label><input type="text" name="county_state" id="countyState" placeholder="e.g. Coke, TX"></div>
+            <div class="form-group"><label>Approx. Acreage</label><input type="text" name="acreage" placeholder="e.g. 42"></div>
+            <div class="form-group"><label>Property Type</label><select name="property_type"><option value="">Select…</option><option>Agricultural / Ranch</option><option>Residential</option><option>Commercial</option><option>Vacant Land</option><option>Other</option></select></div>
+            <div class="form-group"><label>Where are you in the process?</label><select name="stage"><option value="">Select…</option><option>Nothing yet — I just heard about the project</option><option>They asked permission to survey</option><option>An appraiser has been out</option><option>I have a written offer</option><option>I&#39;ve been sued / served with condemnation papers</option></select></div>
+            <div class="form-group full"><label>Affected property address</label><input type="text" name="address" id="propAddress" placeholder="Street address, parcel/APN, or legal description"></div>
+            <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
+          </div>
+          <div class="tcpa-text">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy" style="color:var(--gold)">Privacy Policy</a>.</div>
+          <button class="submit-btn" type="submit">Free review by a senior consultant →</button>
+          <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
+          <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
+        </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <h3>We've got it from here.</h3>
+        <p>Your case is in review. A senior consultant reads everything you shared and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
+        <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
+        <div class="phones">Need to talk now? Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 <section>
   <div class="container">
@@ -973,58 +1029,6 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </section>
 
 <section class="section-alt"><div class="container container-narrow prose"><h2>Related</h2><ul><li><a href="/projects/oncor-765kv/">The Texas 765 kV buildout — both approved Oncor segments and what is coming next</a></li><li><a href="/blog/damages-to-the-remainder/">What are damages to the remainder?</a></li><li><a href="/blog/easement-vs-fee-taking/">Easement vs. fee taking — what is the difference?</a></li><li><a href="/blog/transmission-line-easement-valuation-negotiation/">How transmission line easements are valued and negotiated</a></li><li><a href="/blog/what-to-do-when-you-get-condemnation-notice/">What to do the day you get a condemnation notice</a></li><li><a href="/states/texas/">Texas eminent domain — landowner overview</a></li></ul></div></section>
-
-<div class="contact-strip" id="contact">
-  <p style="font-size:16px;font-weight:700;">Call or text us directly — we answer owners same day.</p>
-  <div class="phones">
-    <a href="tel:+14694847960">(469) 484-7960</a>
-  </div>
-  <p><a href="mailto:info@nationalrow.com" style="color:rgba(255,255,255,.7)">info@nationalrow.com</a></p>
-</div>
-
-<section class="form-section">
-  <div class="container">
-    <div class="form-header">
-      <h2>Free review — Dinosaur–Longshore 765 kV</h2>
-      <p>Tell us about your property. A senior consultant reads every one of these and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
-    </div>
-    <div class="form-body">
-      <div id="the-form">
-        <form id="leadForm" novalidate>
-          <input type="hidden" name="_subject" value="New case review — Dinosaur-Longshore 765kV">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
-          <input type="hidden" name="project_source" id="projectSource" value="Dinosaur-Longshore 765kV">
-          <input type="hidden" name="referrer_url" id="referrerUrl" value="">
-          <div class="form-grid">
-            <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
-            <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
-            <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="(___) ___-____"></div>
-            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
-            <div class="form-group"><label>County &amp; State</label><input type="text" name="county_state" id="countyState" placeholder="e.g. Coke, TX"></div>
-            <div class="form-group"><label>Approx. Acreage</label><input type="text" name="acreage" placeholder="e.g. 42"></div>
-            <div class="form-group"><label>Property Type</label><select name="property_type"><option value="">Select…</option><option>Agricultural / Ranch</option><option>Residential</option><option>Commercial</option><option>Vacant Land</option><option>Other</option></select></div>
-            <div class="form-group"><label>Where are you in the process?</label><select name="stage"><option value="">Select…</option><option>Nothing yet — I just heard about the project</option><option>They asked permission to survey</option><option>An appraiser has been out</option><option>I have a written offer</option><option>I&#39;ve been sued / served with condemnation papers</option></select></div>
-            <div class="form-group full"><label>Affected property address</label><input type="text" name="address" id="propAddress" placeholder="Street address, parcel/APN, or legal description"></div>
-            <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
-          </div>
-          <div class="tcpa-text">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy" style="color:var(--gold)">Privacy Policy</a>.</div>
-          <button class="submit-btn" type="submit">Free review by a senior consultant →</button>
-          <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
-          <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
-        </form>
-      </div>
-      <div class="form-success" id="formSuccess">
-        <h3>We've got it from here.</h3>
-        <p>Your case is in review. A senior consultant reads everything you shared and calls you within the hour, 8am&ndash;6pm Central, Monday to Friday. Outside those hours, first thing the next morning.</p>
-        <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
-        <div class="phones">Need to talk now? Call or text &nbsp;<a href="tel:+14694847960">(469) 484-7960</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <footer>
   <a href="https://nationalrow.com" aria-label="National ROW home">
