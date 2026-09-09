@@ -513,6 +513,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       <img src="/assets/maps/dinosaur-longshore-765kv-route-map.webp" alt="Approved route map for the Oncor Dinosaur–Longshore 765 kV transmission line, PUCT Docket 59315, Route 559 — 242.6 miles from Dinosaur Switch near Glen Rose to Longshore Switch near Forsan, with miles by county across 13 Texas counties" width="1600" height="1236" loading="lazy" style="display:block;width:100%;height:auto">
     </figure>
     <p style="margin-top:16px"><a class="btn-gold" href="/assets/maps/dinosaur-longshore-765kv-route-map.png" download>Download the route map (Route 559)</a></p>
+      <p style="margin-top:10px;font-size:15px;color:#4a4438">This is the eastern half of Oncor’s 424-mile 765 kV build. The other half is <a href="/projects/longshore-drill-hole-765kv/" style="color:#8a6d1f"><strong>Longshore–Drill Hole — Docket 59029</strong></a>, running to the Permian Basin. Howard County is crossed by both.</p>
   </div>
 </section>
 
@@ -678,7 +679,9 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
                               : 'Texas 765kV corridor');
   }
 
-  function show(cls, html){
+  function nrOtherMiles(la,lo){var S=NR_OTHER_GEO,k=Math.cos(la*Math.PI/180),best=1e12;for(var i=0;i<S.length;i++){var g=S[i];for(var j=0;j<g.length-1;j++){var ax=(g[j][0]-lo)*k,ay=g[j][1]-la,bx=(g[j+1][0]-lo)*k,by=g[j+1][1]-la,dx=bx-ax,dy=by-ay,t=0;if(dx||dy){t=-(ax*dx+ay*dy)/(dx*dx+dy*dy);t=t<0?0:(t>1?1:t);}var px=ax+t*dx,py=ay+t*dy,dd=px*px+py*py;if(dd<best)best=dd;}}return Math.sqrt(best)*69.05;}
+      var NR_OTHER_GEO=[[[-104.1078,31.9347],[-104.1061,31.8626]],[[-103.4967,31.9619],[-103.4837,31.9621],[-103.4637,31.951],[-103.4319,31.957],[-103.403,31.9682],[-103.3116,31.993],[-103.2146,31.9948],[-103.1797,31.9771],[-103.1223,31.9927],[-103.0938,31.9952]],[[-104.1061,31.8626],[-104.0666,31.8629]],[[-102.8126,32.0612],[-102.7366,32.0795],[-102.7352,32.0755],[-102.6837,32.0863],[-102.5867,32.1092],[-102.5891,32.1167],[-102.4918,32.1406],[-102.461,32.153],[-102.3865,32.1698],[-102.3514,32.1696],[-102.3386,32.1279]],[[-104.1175,31.9416],[-104.1175,31.9386],[-104.1079,31.9385]],[[-103.7806,31.9485],[-103.7679,31.9432],[-103.6979,31.9481],[-103.6827,31.9624],[-103.4967,31.9619]],[[-104.0666,31.8629],[-104.0121,31.865],[-103.9968,31.8599]],[[-101.588,32.1261],[-101.5131,32.1418],[-101.4989,32.1346],[-101.4926,32.1195]],[[-102.3386,32.1279],[-102.0636,32.1917]],[[-104.1079,31.9385],[-104.1078,31.9347]],[[-102.0636,32.1917],[-101.9308,32.2272],[-101.9212,32.2238],[-101.8959,32.2284],[-101.8918,32.226],[-101.8385,32.2383],[-101.8345,32.2258],[-101.8035,32.2323],[-101.7946,32.2288],[-101.7408,32.2407],[-101.7168,32.1632],[-101.7061,32.1392],[-101.6332,32.1559],[-101.5964,32.1519],[-101.588,32.1261]],[[-101.4653,32.1003],[-101.4637,32.1007]],[[-103.0938,31.9952],[-103.0536,31.9988],[-103.0425,32.006],[-102.9182,32.0428],[-102.9089,32.0387],[-102.8126,32.0612]],[[-101.4658,32.1019],[-101.4653,32.1003]],[[-101.4899,32.1131],[-101.4706,32.1169],[-101.4658,32.1019]],[[-101.4926,32.1195],[-101.4899,32.1131]],[[-103.9968,31.8599],[-103.9514,31.8619],[-103.9107,31.8837],[-103.898,31.884],[-103.8747,31.9036],[-103.8382,31.9034],[-103.8239,31.9149],[-103.8056,31.9214],[-103.7806,31.9485]]];
+      function show(cls, html){
     var el = document.getElementById('mapResult');
     el.className = 'map-result ' + cls;
     el.innerHTML = html;
@@ -710,7 +713,11 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       var pretty = mi < 0.5 ? (Math.round(d*3.28084/10)*10).toLocaleString() + ' feet' : mi.toFixed(1) + ' miles';
       carryToForm(m, lat, lon, mi);
       if(window.gtag) gtag('event','route_proximity_check',{distance_miles: Math.round(mi*10)/10});
-      if(mi < 0.5){
+      var __om = nrOtherMiles(lat, lon);
+      if(mi >= 3 && __om < 3){
+        if(window.gtag) gtag('event','route_cross_segment',{other_miles: Math.round(__om*10)/10});
+        show('near','<strong>That location is about ' + (__om<0.5 ? (Math.round(__om*528)*10).toLocaleString()+' feet' : __om.toFixed(1)+' miles') + ' from the Longshore–Drill Hole 765 kV route.</strong> That is the western half of the same Oncor project \u2014 PUCT Docket 59029, Route 476 \u2014 so this page covers the wrong segment for your tract. <a href="/projects/longshore-drill-hole-765kv/" style="color:inherit;text-decoration:underline"><strong>Open the Longshore–Drill Hole page</strong></a>, or <a href="#contact" style="color:inherit;text-decoration:underline"><strong>get a free review by a senior consultant</strong></a> \u2014 your address and county are already filled in below.');
+      } else if(mi < 0.5){
         show('near','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
           + 'Property this close is very likely inside or adjacent to the 200-foot easement corridor. If you have not been contacted yet, you probably will be. Do not sign a survey permission form or an easement before someone independent reviews it. <a href="#contact" style="color:inherit;text-decoration:underline"><strong>Get a free review →</strong></a> — we have already filled your address and county into the form.');
       } else if(mi < 3){
