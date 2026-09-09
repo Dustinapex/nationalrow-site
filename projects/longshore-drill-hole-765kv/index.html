@@ -513,6 +513,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       <img src="/assets/maps/longshore-drill-hole-765kv-route-map.webp" alt="Approved route map for the Oncor Longshore–Drill Hole 765 kV transmission line, PUCT Docket 59029, Route 476 — 181.6 miles from Longshore Switch near Forsan to Drill Hole Switch on the Culberson–Reeves county line, with miles by county across 8 Permian Basin counties" width="1600" height="1236" loading="lazy" style="display:block;width:100%;height:auto">
     </figure>
     <p style="margin-top:16px"><a class="btn-gold" href="/assets/maps/longshore-drill-hole-765kv-route-map.png" download>Download the route map (Route 476)</a></p>
+      <p style="margin-top:10px;font-size:15px;color:#4a4438">This is the western half of Oncor’s 424-mile 765 kV build. The other half is <a href="/projects/dinosaur-longshore-765kv/" style="color:#8a6d1f"><strong>Dinosaur–Longshore — Docket 59315</strong></a>, running to Glen Rose. Howard County is crossed by both.</p>
   </div>
 </section>
 
@@ -678,7 +679,9 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
                               : 'Texas 765kV corridor');
   }
 
-  function show(cls, html){
+  function nrOtherMiles(la,lo){var S=NR_OTHER_GEO,k=Math.cos(la*Math.PI/180),best=1e12;for(var i=0;i<S.length;i++){var g=S[i];for(var j=0;j<g.length-1;j++){var ax=(g[j][0]-lo)*k,ay=g[j][1]-la,bx=(g[j+1][0]-lo)*k,by=g[j+1][1]-la,dx=bx-ax,dy=by-ay,t=0;if(dx||dy){t=-(ax*dx+ay*dy)/(dx*dx+dy*dy);t=t<0?0:(t>1?1:t);}var px=ax+t*dx,py=ay+t*dy,dd=px*px+py*py;if(dd<best)best=dd;}}return Math.sqrt(best)*69.05;}
+      var NR_OTHER_GEO=[[[-97.8046,32.2746],[-97.8277,32.3026]],[[-101.4434,32.11],[-101.4588,32.1071],[-101.4572,32.1015],[-101.4602,32.1008]],[[-101.2051,32.0425],[-101.2332,32.072]],[[-101.43,32.0794],[-101.4379,32.0917],[-101.4434,32.11]],[[-101.2332,32.072],[-101.2374,32.0765],[-101.2696,32.0777],[-101.2748,32.0736],[-101.3418,32.076],[-101.377,32.0818],[-101.383,32.0776],[-101.43,32.0794]],[[-99.9311,32.043],[-99.9444,32.0476],[-100.0584,32.0475],[-100.1204,32.0531]],[[-99.8999,32.075],[-99.9311,32.043]],[[-100.2627,31.9785],[-100.5107,31.9821],[-100.551,31.9895],[-100.5509,31.9972],[-100.5971,31.9982]],[[-100.5971,31.9982],[-100.6608,31.9984],[-100.6763,31.9939],[-100.7323,31.9943],[-100.7357,31.991],[-100.7448,31.9944],[-100.9324,32.0015],[-100.9508,31.9935],[-101.09,31.9979],[-101.1167,32.0065],[-101.1261,32.0364],[-101.2051,32.0425]],[[-100.1204,32.0531],[-100.2625,31.9892],[-100.2627,31.9785]],[[-97.8277,32.3026],[-97.8413,32.2965],[-97.8838,32.2945],[-97.9092,32.2899],[-98.0553,32.2899],[-98.1563,32.241],[-98.1698,32.2456],[-98.1734,32.2438],[-98.2034,32.2494],[-98.2062,32.2529],[-98.2266,32.2413],[-98.2519,32.2416],[-98.2806,32.2359],[-98.3316,32.2482],[-98.3355,32.2463],[-98.3431,32.2516],[-98.3515,32.2529],[-98.397,32.2495],[-98.4149,32.2547]],[[-97.7953,32.2775],[-97.8046,32.2746]],[[-99.4237,32.0818],[-99.6533,32.0844],[-99.6908,32.0715],[-99.7574,32.0722],[-99.7575,32.0788],[-99.8958,32.0792]],[[-98.9575,32.0624],[-99.0261,32.064],[-99.035,32.0614],[-99.1424,32.0656],[-99.1513,32.0699],[-99.1827,32.0719],[-99.1991,32.0783],[-99.4237,32.0818]],[[-98.4691,32.2614],[-98.4827,32.229],[-98.4888,32.224],[-98.4965,32.206],[-98.4947,32.1833],[-98.5043,32.159],[-98.5133,32.1617],[-98.5176,32.1511]],[[-98.4149,32.2547],[-98.4179,32.2487],[-98.4269,32.2495],[-98.4691,32.2614]],[[-98.6615,32.1761],[-98.6628,32.1557],[-98.6688,32.1339],[-98.6682,32.0972],[-98.7193,32.0961],[-98.7196,32.0662],[-98.8422,32.0663],[-98.8452,32.0629],[-98.9501,32.0604]],[[-98.5176,32.1511],[-98.5959,32.1721],[-98.6615,32.1761]],[[-99.8958,32.0792],[-99.8999,32.075]],[[-98.9501,32.0604],[-98.9575,32.0624]]];
+      function show(cls, html){
     var el = document.getElementById('mapResult');
     el.className = 'map-result ' + cls;
     el.innerHTML = html;
@@ -710,7 +713,11 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       var pretty = mi < 0.5 ? (Math.round(d*3.28084/10)*10).toLocaleString() + ' feet' : mi.toFixed(1) + ' miles';
       carryToForm(m, lat, lon, mi);
       if(window.gtag) gtag('event','route_proximity_check',{distance_miles: Math.round(mi*10)/10});
-      if(mi < 0.5){
+      var __om = nrOtherMiles(lat, lon);
+      if(mi >= 3 && __om < 3){
+        if(window.gtag) gtag('event','route_cross_segment',{other_miles: Math.round(__om*10)/10});
+        show('near','<strong>That location is about ' + (__om<0.5 ? (Math.round(__om*528)*10).toLocaleString()+' feet' : __om.toFixed(1)+' miles') + ' from the Dinosaur–Longshore 765 kV route.</strong> That is the eastern half of the same Oncor project \u2014 PUCT Docket 59315, Route 559 \u2014 so this page covers the wrong segment for your tract. <a href="/projects/dinosaur-longshore-765kv/" style="color:inherit;text-decoration:underline"><strong>Open the Dinosaur–Longshore page</strong></a>, or <a href="#contact" style="color:inherit;text-decoration:underline"><strong>get a free review by a senior consultant</strong></a> \u2014 your address and county are already filled in below.');
+      } else if(mi < 0.5){
         show('near','<strong>That location is about ' + pretty + ' from the approved centerline.</strong>'
           + 'Property this close is very likely inside or adjacent to the 200-foot easement corridor. If you have not been contacted yet, you probably will be. Do not sign a survey permission form or an easement before someone independent reviews it. <a href="#contact" style="color:inherit;text-decoration:underline"><strong>Get a free review →</strong></a> — we have already filled your address and county into the form.');
       } else if(mi < 3){
