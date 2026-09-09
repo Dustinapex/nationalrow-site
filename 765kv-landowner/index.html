@@ -775,6 +775,43 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   if(!f) return;
   var ru = document.getElementById('referrerUrl');
   if(ru) ru.value = location.href;
+
+  /* Campaign prefill — reads ValueTrack / UTM parameters off the ad click.
+     ?project=Big+Hill-Sand+Lake&docket=59182&county=Ward+County
+     plus utm_* and gclid. Fails silently if nothing is present. */
+  try {
+    var qp = new URLSearchParams(location.search);
+    var qv = function(k){ var v = qp.get(k); return v ? v.replace(/\+/g,' ').trim().slice(0,120) : ''; };
+    var qProject = qv('project'), qDocket = qv('docket'), qCounty = qv('county');
+
+    if (qCounty) {
+      var cs = f.querySelector('[name="county_state"]');
+      if (cs && !cs.value) { cs.value = qCounty; cs.setAttribute('data-prefilled','1'); }
+    }
+
+    var label = qProject ? (qProject + (qDocket ? ' (Docket ' + qDocket + ')' : '')) : '';
+    if (label) {
+      var ps = f.querySelector('[name="project_source"]');
+      if (ps) ps.value = label;
+      var sub = f.querySelector('[name="_subject"]');
+      if (sub) sub.value = 'New case review \u2014 ' + label;
+    }
+
+    var bits = [];
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid','matchtype','device','placement']
+      .forEach(function(k){ var v = qv(k); if (v) bits.push(k + '=' + v); });
+    if (bits.length) {
+      var camp = f.querySelector('[name="campaign"]');
+      if (!camp) { camp = document.createElement('input'); camp.type = 'hidden'; camp.name = 'campaign'; f.appendChild(camp); }
+      camp.value = bits.join(' | ').slice(0, 400);
+    }
+
+    var us = qv('utm_source');
+    if (us) {
+      var src = f.querySelector('[name="source"]');
+      if (src) src.value = (src.value ? src.value + ' | ' : '') + us;
+    }
+  } catch (err) { /* never block the form */ }
   var THANKYOU = '/765kv-landowner/thank-you/';
   f.addEventListener('submit', async function(e){
     e.preventDefault();
