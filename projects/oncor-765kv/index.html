@@ -371,6 +371,16 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       .nav,.site-nav,.sitenav,.site-header,.nav-inner,.nav-in,
       *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
     }
+
+details.cty-detail>summary,details.faq-item>summary,details.damage-card>summary,details.tl-item>summary{cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:12px;}
+details.cty-detail>summary::-webkit-details-marker,details.faq-item>summary::-webkit-details-marker,details.damage-card>summary::-webkit-details-marker,details.tl-item>summary::-webkit-details-marker{display:none;}
+details.cty-detail>summary::after,details.faq-item>summary::after,details.damage-card>summary::after,details.tl-item>summary::after{content:'+';margin-left:auto;flex:0 0 auto;font-weight:700;color:#C49A3D;font-size:22px;line-height:1.15;}
+details.cty-detail[open]>summary::after,details.faq-item[open]>summary::after,details.damage-card[open]>summary::after,details.tl-item[open]>summary::after{content:'\2013';}
+details.cty-detail>summary h3,details.faq-item>summary h4,details.damage-card>summary h4,details.tl-item>summary h4{margin:0;}
+details.cty-detail>summary:focus-visible,details.faq-item>summary:focus-visible,details.damage-card>summary:focus-visible,details.tl-item>summary:focus-visible{outline:2px solid #C49A3D;outline-offset:3px;}
+details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>ul,details.damage-card>p,details.tl-item>p{margin-top:10px;}
+.tap-hint{font-size:15px;color:#6b7a8d;margin:0 0 20px;font-weight:600;}
+[id^='nr-']{scroll-margin-top:24px;}
 </style>
 </head>
 <body>
@@ -421,7 +431,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     </div>
   </div>
 </section>
-<div class="jumpbar"><div class="container jb-in"><span class="jb-lab">On this page</span><a href="#route-map-download">Approved route map</a><a href="#map">Check your address</a><a class="jb-cta" href="#contact">Free review by a senior consultant</a></div></div>
+<div class="jumpbar"><div class="container jb-in"><span class="jb-lab">On this page</span><a href="#route-map-download">Approved route map</a><a href="#map">Check your address</a><a href="#nr-costs">What it costs</a><a href="#nr-offer">The offer</a><a href="#nr-faq">FAQ</a><a class="jb-cta" href="#contact">Free review by a senior consultant</a></div></div>
 
 
 <!-- NUMBER CALLOUT -->
@@ -851,17 +861,10 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     <p>We track the dockets either way. If you tell us where your property is, we will tell you which of these you are in.</p>
   <p style="margin-top:18px"><strong><a href="/projects/texas-765kv/">See all five dockets, county by county, on one page &rarr;</a></strong> — status, filed-corridor counts, and which of the 51 affected counties sit in more than one case.</p></div>
 </section>
-<section class="cta-band">
-  <div class="inner">
-    <h3>The first offer is a starting point, not the number.</h3>
-    <p>Before you sign a survey permission form or an easement, have somebody independent read it. Looking costs nothing, and there is no obligation after we do.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
 
 
-<section>
+
+<section id="nr-costs">
   <div class="container container-narrow prose">
     <h2>What a 765 kV easement actually costs you</h2>
     <p>An easement is not a sale of your land. You keep title, you keep paying taxes on it, and in most cases you keep grazing or farming it. What you give up is control of a strip — permanently. Understanding exactly what you are giving up is what turns a number on a page into a number you can argue with.</p>
@@ -899,7 +902,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </section>
 
 
-<section class="section-alt">
+<section class="section-alt" id="nr-offer">
   <div class="container container-narrow prose">
     <h2>What the offer will look like — and what it usually leaves out</h2>
     <p>When the offer arrives it will not say "here is our opening bid." It will arrive as a package: a cover letter, an appraisal or a summary of one, a plat showing the part being acquired, an easement document already drafted, and in most cases a deadline. It is designed to look final. It is not final.</p>
@@ -932,29 +935,22 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </section>
 
 
-<section class="cta-band">
-  <div class="inner">
-    <h3>Not contacted yet? This is the best time to call.</h3>
-    <p>A senior consultant reads every one of these. Knowing what the first offer will look like <em>before</em> it lands is worth far more than anything you can do after you have signed something.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
+
 
 
 <section class="section-alt">
   <div class="container">
     <h2>What their offer may miss</h2>
     <p class="section-sub">The utility's appraiser works for the utility. That does not make them dishonest — it makes them narrow. These are the categories that routinely go unquantified.</p>
-    <div class="damages-grid">
-      <div class="damage-card"><h4>Diminution in Land Value</h4><p>A 200-foot high-voltage corridor can reduce the market value of your whole tract, not just the strip. Buyers price the line in.</p></div>
-      <div class="damage-card"><h4>Severance Damages</h4><p>If the corridor cuts your property into pieces, the pieces are worth less than the whole. That loss is compensable and is often the largest single item.</p></div>
-      <div class="damage-card"><h4>Cost to Cure</h4><p>Fences, gates, cattle guards, water lines, field roads, and crossings that have to be rebuilt because of the taking.</p></div>
-      <div class="damage-card"><h4>Crop &amp; Grazing Losses</h4><p>Construction access and permanent restrictions take acres out of production during and after the build.</p></div>
-      <div class="damage-card"><h4>Irrigation &amp; Equipment Interference</h4><p>Towers in a pivot circle, restricted equipment height, and lost turning room have real, calculable cost.</p></div>
-      <div class="damage-card"><h4>Timber &amp; Vegetation Removal</h4><p>Trees cleared for the corridor have value as timber and as shade, screening, and habitat — not as bare dirt.</p></div>
-      <div class="damage-card"><h4>Proximity to Improvements</h4><p>Distance from your home, barns, or a planned homesite affects both livability and what the place sells for.</p></div>
-      <div class="damage-card"><h4>Temporary Construction Easements</h4><p>Workspace outside the permanent strip is separately compensable and is easy to under-price or leave out entirely.</p></div>
+    <p class="tap-hint">Tap each one to see what it means on your tract.</p><div class="damages-grid">
+      <details class="damage-card"><summary><h4>Diminution in Land Value</h4></summary><p>A 200-foot high-voltage corridor can reduce the market value of your whole tract, not just the strip. Buyers price the line in.</p></details>
+      <details class="damage-card"><summary><h4>Severance Damages</h4></summary><p>If the corridor cuts your property into pieces, the pieces are worth less than the whole. That loss is compensable and is often the largest single item.</p></details>
+      <details class="damage-card"><summary><h4>Cost to Cure</h4></summary><p>Fences, gates, cattle guards, water lines, field roads, and crossings that have to be rebuilt because of the taking.</p></details>
+      <details class="damage-card"><summary><h4>Crop &amp; Grazing Losses</h4></summary><p>Construction access and permanent restrictions take acres out of production during and after the build.</p></details>
+      <details class="damage-card"><summary><h4>Irrigation &amp; Equipment Interference</h4></summary><p>Towers in a pivot circle, restricted equipment height, and lost turning room have real, calculable cost.</p></details>
+      <details class="damage-card"><summary><h4>Timber &amp; Vegetation Removal</h4></summary><p>Trees cleared for the corridor have value as timber and as shade, screening, and habitat — not as bare dirt.</p></details>
+      <details class="damage-card"><summary><h4>Proximity to Improvements</h4></summary><p>Distance from your home, barns, or a planned homesite affects both livability and what the place sells for.</p></details>
+      <details class="damage-card"><summary><h4>Temporary Construction Easements</h4></summary><p>Workspace outside the permanent strip is separately compensable and is easy to under-price or leave out entirely.</p></details>
     </div>
   </div>
 </section>
@@ -987,16 +983,9 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </section>
 
 
-<section class="cta-band">
-  <div class="inner">
-    <h3>Nothing out of pocket. Ever.</h3>
-    <p>A senior consultant reads every case that comes in and calls you back. If we look at your situation and do not think we can move the number, we tell you that too.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
 
-<section><div class="container container-narrow"><h2>Frequently asked questions</h2><div class="faq-item"><h4>What is a 765 kV line and why is Texas building them now?</h4><p>765 kilovolts is the highest transmission voltage in common use in North America. Texas has run its grid backbone at 345 kV since the 1960s. The move to 765 kV is driven by load growth in West Texas — oil and gas electrification in the Permian Basin plus data centers and cryptocurrency mining — and by the fact that one 765 kV line moves roughly the power of three double-circuit 345 kV lines in a corridor about 200 feet wide instead of roughly 480 feet.</p></div><div class="faq-item"><h4>Which 765 kV projects have actually been approved?</h4><p>As of September 2026, the Public Utility Commission of Texas has approved two Oncor 765 kV projects, both on August 28, 2026: Dinosaur Switch to Longshore Switch (Docket 59315, Route 559, 242.6 miles) and Longshore Switch to Drill Hole Switch (Docket 59029, Route 476, 181.6 miles). Together that is 424 miles across 20 counties. Additional 765 kV segments, including Big Hill to Sand Lake, have been filed but not yet decided.</p></div><div class="faq-item"><h4>How much land does a 765 kV line take?</h4><p>Oncor specifies a 200-foot permanent right-of-way for its 765 kV lines, which is about 24.2 acres per mile. Across the 424 approved miles that is roughly 10,300 acres of private Texas land placed under permanent easement.</p></div><div class="faq-item"><h4>How do I find out if my property is on a route?</h4><p>Use the map on this page or on the individual project page, and confirm against Oncor's official interactive viewer and the filed constraints maps, which we link in the sources. If you have already received a letter, the project name is on it. If you are not sure which project a letter belongs to, send it to us and we will identify it.</p></div><div class="faq-item"><h4>Can I stop the line from crossing my property?</h4><p>Realistically, no. Once the PUCT has approved a route, the utility holds the power of eminent domain and the line will be built. Route selection is the phase where landowner input changes outcomes, and that phase is over for these two projects. What is still open — and it is worth real money — is what you are paid and what the easement document actually says.</p></div><div class="faq-item"><h4>Is National ROW a law firm?</h4><p>No. National ROW is a right-of-way and condemnation consulting firm representing property owners only. We do not provide legal advice and no attorney-client relationship is created by contacting us. When a case needs a lawyer, we say so and coordinate with condemnation counsel.</p></div></div></section>
+
+<section id="nr-faq"><div class="container container-narrow"><h2>Frequently asked questions</h2><p class="tap-hint">Tap any question to see the answer.</p><details class="faq-item" open><summary><h4>What is a 765 kV line and why is Texas building them now?</h4></summary><p>765 kilovolts is the highest transmission voltage in common use in North America. Texas has run its grid backbone at 345 kV since the 1960s. The move to 765 kV is driven by load growth in West Texas — oil and gas electrification in the Permian Basin plus data centers and cryptocurrency mining — and by the fact that one 765 kV line moves roughly the power of three double-circuit 345 kV lines in a corridor about 200 feet wide instead of roughly 480 feet.</p></details><details class="faq-item"><summary><h4>Which 765 kV projects have actually been approved?</h4></summary><p>As of September 2026, the Public Utility Commission of Texas has approved two Oncor 765 kV projects, both on August 28, 2026: Dinosaur Switch to Longshore Switch (Docket 59315, Route 559, 242.6 miles) and Longshore Switch to Drill Hole Switch (Docket 59029, Route 476, 181.6 miles). Together that is 424 miles across 20 counties. Additional 765 kV segments, including Big Hill to Sand Lake, have been filed but not yet decided.</p></details><details class="faq-item"><summary><h4>How much land does a 765 kV line take?</h4></summary><p>Oncor specifies a 200-foot permanent right-of-way for its 765 kV lines, which is about 24.2 acres per mile. Across the 424 approved miles that is roughly 10,300 acres of private Texas land placed under permanent easement.</p></details><details class="faq-item"><summary><h4>How do I find out if my property is on a route?</h4></summary><p>Use the map on this page or on the individual project page, and confirm against Oncor's official interactive viewer and the filed constraints maps, which we link in the sources. If you have already received a letter, the project name is on it. If you are not sure which project a letter belongs to, send it to us and we will identify it.</p></details><details class="faq-item"><summary><h4>Can I stop the line from crossing my property?</h4></summary><p>Realistically, no. Once the PUCT has approved a route, the utility holds the power of eminent domain and the line will be built. Route selection is the phase where landowner input changes outcomes, and that phase is over for these two projects. What is still open — and it is worth real money — is what you are paid and what the easement document actually says.</p></details><details class="faq-item"><summary><h4>Is National ROW a law firm?</h4></summary><p>No. National ROW is a right-of-way and condemnation consulting firm representing property owners only. We do not provide legal advice and no attorney-client relationship is created by contacting us. When a case needs a lawyer, we say so and coordinate with condemnation counsel.</p></details></div></section>
 
 <section class="handoff">
   <div class="container">
