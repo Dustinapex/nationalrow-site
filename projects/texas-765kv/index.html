@@ -514,6 +514,16 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       .nav,.site-nav,.sitenav,.site-header,.nav-inner,.nav-in,
       *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
     }
+
+details.cty-detail>summary,details.faq-item>summary,details.damage-card>summary,details.tl-item>summary{cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:12px;}
+details.cty-detail>summary::-webkit-details-marker,details.faq-item>summary::-webkit-details-marker,details.damage-card>summary::-webkit-details-marker,details.tl-item>summary::-webkit-details-marker{display:none;}
+details.cty-detail>summary::after,details.faq-item>summary::after,details.damage-card>summary::after,details.tl-item>summary::after{content:'+';margin-left:auto;flex:0 0 auto;font-weight:700;color:#C49A3D;font-size:22px;line-height:1.15;}
+details.cty-detail[open]>summary::after,details.faq-item[open]>summary::after,details.damage-card[open]>summary::after,details.tl-item[open]>summary::after{content:'\2013';}
+details.cty-detail>summary h3,details.faq-item>summary h4,details.damage-card>summary h4,details.tl-item>summary h4{margin:0;}
+details.cty-detail>summary:focus-visible,details.faq-item>summary:focus-visible,details.damage-card>summary:focus-visible,details.tl-item>summary:focus-visible{outline:2px solid #C49A3D;outline-offset:3px;}
+details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>ul,details.damage-card>p,details.tl-item>p{margin-top:10px;}
+.tap-hint{font-size:15px;color:#6b7a8d;margin:0 0 20px;font-weight:600;}
+[id^='nr-']{scroll-margin-top:24px;}
 </style>
 </head>
 <body>
@@ -564,7 +574,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
       </div>
     </div>
   </section>
-<div class="jumpbar"><div class="container jb-in"><span class="jb-lab">On this page</span><a href="#tracker">Docket tracker</a><a href="#route-map-download">Programme map</a><a href="#map">Which project am I in?</a><a class="jb-cta" href="#contact">Free review by a senior consultant</a></div></div>
+<div class="jumpbar"><div class="container jb-in"><span class="jb-lab">On this page</span><a href="#tracker">Docket tracker</a><a href="#route-map-download">Programme map</a><a href="#map">Which project am I in?</a><a href="#nr-costs">What it costs</a><a href="#nr-offer">The offer</a><a href="#nr-faq">FAQ</a><a class="jb-cta" href="#contact">Free review by a senior consultant</a></div></div>
 
 
 <!-- NUMBER CALLOUT -->
@@ -643,11 +653,11 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     <div class="container">
       <h2>Which project are you actually in?</h2>
       <p class="section-sub">This is the question that costs landowners the most, because two dockets can cover the same county and they are at completely different stages. Start with the docket number on whatever you received, then open that project’s page — each of the Oncor pages has an address checker that measures your distance to that project’s corridors.</p>
-      <div class="cty-details">
-        <div class="cty-detail"><h3>Howard County <span>· two dockets</span></h3><p>Crossed by both approved routes — 17.3 miles on Docket 59029 and 3.2 miles on 59315. It is the reason 13 counties plus 8 counties adds up to 20 and not 21.</p></div>
-        <div class="cty-detail"><h3>Ector and Reeves <span>· approved and pending</span></h3><p>On the approved Longshore–Drill Hole route and named in the Big Hill–Sand Lake case style. A letter in Odessa or Pecos is far more likely to be 59029, where acquisition has started.</p></div>
-        <div class="cty-detail"><h3>Schleicher and Tom Green <span>· two pending dockets</span></h3><p>Big Hill Substation is the shared endpoint between 59182 and 59475. Landowners near it sit inside two study areas at once, with two sets of land agents.</p></div>
-        <div class="cty-detail"><h3>Crockett and Pecos <span>· Oncor and AEP</span></h3><p>In the Big Hill–Sand Lake study area and in the AEP Howard–Solstice study area at the same time. Two different utilities, two different cases, the same ground.</p></div>
+      <p class="tap-hint">Find your county below and tap it to open.</p><div class="cty-details">
+        <details class="cty-detail" open><summary><h3>Howard County <span>· two dockets</span></h3></summary><p>Crossed by both approved routes — 17.3 miles on Docket 59029 and 3.2 miles on 59315. It is the reason 13 counties plus 8 counties adds up to 20 and not 21.</p></details>
+        <details class="cty-detail"><summary><h3>Ector and Reeves <span>· approved and pending</span></h3></summary><p>On the approved Longshore–Drill Hole route and named in the Big Hill–Sand Lake case style. A letter in Odessa or Pecos is far more likely to be 59029, where acquisition has started.</p></details>
+        <details class="cty-detail"><summary><h3>Schleicher and Tom Green <span>· two pending dockets</span></h3></summary><p>Big Hill Substation is the shared endpoint between 59182 and 59475. Landowners near it sit inside two study areas at once, with two sets of land agents.</p></details>
+        <details class="cty-detail"><summary><h3>Crockett and Pecos <span>· Oncor and AEP</span></h3></summary><p>In the Big Hill–Sand Lake study area and in the AEP Howard–Solstice study area at the same time. Two different utilities, two different cases, the same ground.</p></details>
       </div>
       <p style="margin-top:22px;color:#4a4438;">If the paperwork is confusing, that is not you. <a href="#contact" style="color:#8a6d1f"><strong>Send us what you received and we will tell you which project it belongs to and what stage it is at.</strong></a></p>
     </div>
@@ -750,31 +760,24 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     <div class="container">
       <h2>How a 765 kV case actually runs</h2>
       <p class="section-sub">Every one of these five dockets follows the same sequence. Knowing where yours sits tells you which fight you are still in.</p>
-      <ul class="timeline">
+      <p class="tap-hint">Tap any step to see what happens.</p><ul class="timeline">
         <li class="done"><span class="when">Stage 1</span><h4>Study area and public meetings</h4><p>The utility maps a study area, holds open houses and develops alternative route links. Landowner comments at this stage genuinely move routes.</p></li>
         <li class="done"><span class="when">Stage 2</span><h4>Application filed, docket opens</h4><p>A certificate of convenience and necessity application goes to the PUCT with every alternative route in it.</p></li>
         <li class="done"><span class="when">Stage 3</span><h4>Intervention deadline</h4><p>The date to become a formal party. Missing it costs you standing in the routing case. It does not cost you the right to just compensation.</p></li>
         <li class="done"><span class="when">Stage 4</span><h4>Contested case at SOAH</h4><p>Evidence, testimony, and a proposal for decision from the administrative law judges.</p></li>
-        <li><span class="when">Stage 5</span><h4>Commission decision and final order</h4><p>One route is chosen. This is the moment a study area becomes a centerline and your tract either is or is not on it. Dockets 59182, 59475 and 59336 are here now.</p></li>
-        <li><span class="when">Stage 6</span><h4>Survey permission</h4><p>Land agents ask for written permission to enter and survey. This is the first document most owners sign, it is negotiable, and it is where leverage is most often given away for nothing.</p></li>
-        <li><span class="when">Stage 7</span><h4>Appraisal and the first written offer</h4><p>The company orders an appraisal and makes a written offer. Texas law requires a bona fide offer — a procedural standard, not a promise the number is right. Dockets 59315 and 59029 are here now.</p></li>
-        <li><span class="when">Stage 8</span><h4>Condemnation and special commissioners</h4><p>If there is no agreement the company files, three special commissioners are appointed, and they hold a hearing on value. Either side can object and take it to court.</p></li>
+        <li class="tl-li"><details class="tl-item" open><summary><span class="when">Stage 5</span><h4>Commission decision and final order</h4></summary><p>One route is chosen. This is the moment a study area becomes a centerline and your tract either is or is not on it. Dockets 59182, 59475 and 59336 are here now.</p></details></li>
+        <li class="tl-li"><details class="tl-item"><summary><span class="when">Stage 6</span><h4>Survey permission</h4></summary><p>Land agents ask for written permission to enter and survey. This is the first document most owners sign, it is negotiable, and it is where leverage is most often given away for nothing.</p></details></li>
+        <li class="tl-li"><details class="tl-item"><summary><span class="when">Stage 7</span><h4>Appraisal and the first written offer</h4></summary><p>The company orders an appraisal and makes a written offer. Texas law requires a bona fide offer — a procedural standard, not a promise the number is right. Dockets 59315 and 59029 are here now.</p></details></li>
+        <li class="tl-li"><details class="tl-item"><summary><span class="when">Stage 8</span><h4>Condemnation and special commissioners</h4></summary><p>If there is no agreement the company files, three special commissioners are appointed, and they hold a hearing on value. Either side can object and take it to court.</p></details></li>
       </ul>
       <div class="urgency-box"><strong>The two windows:</strong> before the order, the fight is about where the line goes. After it, the fight is only ever about the number. Both windows close quietly, and almost nobody is told when.</div>
     </div>
   </section>
-<section class="cta-band">
-  <div class="inner">
-    <h3>The first offer is a starting point, not the number.</h3>
-    <p>Before you sign a survey permission form or an easement, have somebody independent read it. Looking costs nothing, and there is no obligation after we do.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
 
 
 
-<section>
+
+<section id="nr-costs">
     <div class="container">
       <h2>What a 765 kV easement costs you, wherever you are on it</h2>
       <p>A 200-foot permanent easement across a mile of your property is a little over 24 acres inside the strip alone. Across all five of these projects the strip is rarely the expensive part. What differs from one end of the programme to the other is <em>what else</em> the corridor damages.</p>
@@ -799,7 +802,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </section>
 
 
-<section class="section-alt">
+<section class="section-alt" id="nr-offer">
     <div class="container">
       <h2>What the offer will look like — and what it usually leaves out</h2>
       <p>Once the Commission signs an order and your tract is on the chosen route, the sequence is survey, appraisal, written offer. Under Texas Property Code Chapter 21 that first written offer has to be a bona fide offer supported by an appraisal. Bona fide is a procedural test. It does not mean the number is correct, and it does not mean the appraisal looked at everything it should have.</p>
@@ -828,21 +831,14 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   </section>
 
 
-<section class="cta-band">
-  <div class="inner">
-    <h3>Not contacted yet? This is the best time to call.</h3>
-    <p>A senior consultant reads every one of these. Knowing what the first offer will look like <em>before</em> it lands is worth far more than anything you can do after you have signed something.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
+
 
 
 <section class="section-alt">
     <div class="container">
       <h2>What a first offer usually leaves out</h2>
       <p class="section-sub">Eight things that are compensable on any of these five projects and that a per-acre offer does not address.</p>
-      <div class="damages-grid"><div class="damage-card"><h4>Damage to the Remainder</h4><p>A 200-foot high-voltage corridor can reduce the market value of your whole tract, not just the strip. On every one of these five projects that is usually the largest single omission.</p></div><div class="damage-card"><h4>Access and Crossings</h4><p>Where their trucks enter, how often, and what happens to your gates, ranch roads, cattle guards, fences and crossings during and after construction.</p></div><div class="damage-card"><h4>Temporary Construction Easement</h4><p>Extra ground taken during construction — pads, pulling sites and access — negotiated separately from the permanent strip and routinely underpriced.</p></div><div class="damage-card"><h4>Cost to Cure</h4><p>What it costs to fix what the taking broke: fences, gates, cattle guards, crossings, reseeding, drainage. Frequently omitted from a first offer entirely.</p></div><div class="damage-card"><h4>Lease Income You Lose</h4><p>Hunting and grazing leases, and solar or wind options. A corridor across the tract affects the lease, not just the easement acres.</p></div><div class="damage-card"><h4>Development Potential</h4><p>On the Central Texas end the land is priced on what it will become. An agricultural comparable does not show what a corridor takes.</p></div><div class="damage-card"><h4>Restoration After They Leave</h4><p>Ruts, compaction, caliche, drainage and re-seeding — who repairs what, to what standard, for how long. Put it in writing before you sign.</p></div><div class="damage-card"><h4>Your Ag Valuation</h4><p>Texas Tax Code § 23.55(f) provides that rollback tax sanctions do not apply when the change of use results from a sale for right-of-way or from a condemnation. Confirm it with your own appraisal district.</p></div></div>
+      <p class="tap-hint">Tap each one to see what it means on your tract.</p><div class="damages-grid"><details class="damage-card"><summary><h4>Damage to the Remainder</h4></summary><p>A 200-foot high-voltage corridor can reduce the market value of your whole tract, not just the strip. On every one of these five projects that is usually the largest single omission.</p></details><details class="damage-card"><summary><h4>Access and Crossings</h4></summary><p>Where their trucks enter, how often, and what happens to your gates, ranch roads, cattle guards, fences and crossings during and after construction.</p></details><details class="damage-card"><summary><h4>Temporary Construction Easement</h4></summary><p>Extra ground taken during construction — pads, pulling sites and access — negotiated separately from the permanent strip and routinely underpriced.</p></details><details class="damage-card"><summary><h4>Cost to Cure</h4></summary><p>What it costs to fix what the taking broke: fences, gates, cattle guards, crossings, reseeding, drainage. Frequently omitted from a first offer entirely.</p></details><details class="damage-card"><summary><h4>Lease Income You Lose</h4></summary><p>Hunting and grazing leases, and solar or wind options. A corridor across the tract affects the lease, not just the easement acres.</p></details><details class="damage-card"><summary><h4>Development Potential</h4></summary><p>On the Central Texas end the land is priced on what it will become. An agricultural comparable does not show what a corridor takes.</p></details><details class="damage-card"><summary><h4>Restoration After They Leave</h4></summary><p>Ruts, compaction, caliche, drainage and re-seeding — who repairs what, to what standard, for how long. Put it in writing before you sign.</p></details><details class="damage-card"><summary><h4>Your Ag Valuation</h4></summary><p>Texas Tax Code § 23.55(f) provides that rollback tax sanctions do not apply when the change of use results from a sale for right-of-way or from a condemnation. Confirm it with your own appraisal district.</p></details></div>
     </div>
   </section>
 
@@ -874,20 +870,13 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 </section>
 
 
-<section class="cta-band">
-  <div class="inner">
-    <h3>Nothing out of pocket. Ever.</h3>
-    <p>A senior consultant reads every case that comes in and calls you back. If we look at your situation and do not think we can move the number, we tell you that too.</p>
-    <a class="btn-gold" href="#contact">Free review by a senior consultant &rarr;</a>
-    <p class="alt">Or call or text <a href="tel:+14694847960">(469) 484-7960</a> &mdash; a senior consultant answers owners the same day.</p>
-  </div>
-</section>
 
 
-<section>
+
+<section id="nr-faq">
     <div class="container container-narrow">
       <h2>Questions landowners across all five projects are asking</h2>
-      <div class="faq-item"><h4>How many 765 kV projects are there in Texas, and which ones affect me?</h4><p>Five certificate cases at the PUCT: Dockets 59315 and 59029, both approved on 28 August 2026 and now in right-of-way acquisition; and 59182, 59475 and 59336, all still open with no route chosen. Between them they cover 51 Texas counties. The county lists are on this page, and each project has its own page with the detail.</p></div><div class="faq-item"><h4>Two projects seem to cover my county. Which one is mine?</h4><p>Read the docket number on whatever you received — that is the only reliable answer. Seven counties appear in more than one docket: Howard is on both approved routes; Ector and Reeves are on an approved route and in a pending study area; Schleicher and Tom Green are in two pending study areas that share the Big Hill endpoint; Crockett and Pecos are in an Oncor study area and an AEP study area at once.</p></div><div class="faq-item"><h4>Can these projects still be stopped?</h4><p>Realistically, no. The Legislature directed the planning, ERCOT did it, and the Commission chose 765 kV in April 2025. The need has been decided at state level. What is still open in three of the five dockets is which corridor gets chosen — and in all five, what each affected owner is paid.</p></div><div class="faq-item"><h4>I missed the intervention deadline. Does that matter?</h4><p>It costs you party status in the routing case, which is about where the line goes. It does not cost you the right to just compensation. If the chosen route crosses your land, the condemning entity still has to make a bona fide written offer supported by an appraisal, and you can still negotiate it, reject it, and take it to special commissioners.</p></div><div class="faq-item"><h4>How wide is the easement and how tall are the towers?</h4><p>On the Oncor projects the published right-of-way is approximately 200 feet, with self-supporting steel lattice towers typically 155 to 160 feet tall and an estimated maximum just under 200 feet. Confirm the exact figures against the easement document you are actually offered.</p></div><div class="faq-item"><h4>Does it matter which utility is condemning?</h4><p>Not to what you are owed. Oncor, LCRA Transmission Services Corporation, AEP Texas and CPS Energy are all applicants on one docket or another, and the standard for just compensation is the same. None of them is on your side of the table.</p></div><div class="faq-item"><h4>Is the route in the application the route that gets built?</h4><p>Often not. On Longshore–Drill Hole the approved route was 17 of 119 filed links. On Dinosaur–Longshore the approved route came out about 13% longer than the applicants’ own preferred route. Filed preferences move, and landowner participation is a large part of why.</p></div><div class="faq-item"><h4>What does a review by National ROW cost?</h4><p>Nothing up front. We work on contingency — our fee is a percentage of the additional compensation we secure above their first offer. If it does not move, you owe us nothing. We are owner-side only, nationwide, since the 1980s, and we have never worked for a condemning agency or utility. We are not a law firm and not a tax advisor; legal counsel is coordinated when your case requires it.</p></div>
+      <p class="tap-hint">Tap any question to see the answer.</p><details class="faq-item" open><summary><h4>How many 765 kV projects are there in Texas, and which ones affect me?</h4></summary><p>Five certificate cases at the PUCT: Dockets 59315 and 59029, both approved on 28 August 2026 and now in right-of-way acquisition; and 59182, 59475 and 59336, all still open with no route chosen. Between them they cover 51 Texas counties. The county lists are on this page, and each project has its own page with the detail.</p></details><details class="faq-item"><summary><h4>Two projects seem to cover my county. Which one is mine?</h4></summary><p>Read the docket number on whatever you received — that is the only reliable answer. Seven counties appear in more than one docket: Howard is on both approved routes; Ector and Reeves are on an approved route and in a pending study area; Schleicher and Tom Green are in two pending study areas that share the Big Hill endpoint; Crockett and Pecos are in an Oncor study area and an AEP study area at once.</p></details><details class="faq-item"><summary><h4>Can these projects still be stopped?</h4></summary><p>Realistically, no. The Legislature directed the planning, ERCOT did it, and the Commission chose 765 kV in April 2025. The need has been decided at state level. What is still open in three of the five dockets is which corridor gets chosen — and in all five, what each affected owner is paid.</p></details><details class="faq-item"><summary><h4>I missed the intervention deadline. Does that matter?</h4></summary><p>It costs you party status in the routing case, which is about where the line goes. It does not cost you the right to just compensation. If the chosen route crosses your land, the condemning entity still has to make a bona fide written offer supported by an appraisal, and you can still negotiate it, reject it, and take it to special commissioners.</p></details><details class="faq-item"><summary><h4>How wide is the easement and how tall are the towers?</h4></summary><p>On the Oncor projects the published right-of-way is approximately 200 feet, with self-supporting steel lattice towers typically 155 to 160 feet tall and an estimated maximum just under 200 feet. Confirm the exact figures against the easement document you are actually offered.</p></details><details class="faq-item"><summary><h4>Does it matter which utility is condemning?</h4></summary><p>Not to what you are owed. Oncor, LCRA Transmission Services Corporation, AEP Texas and CPS Energy are all applicants on one docket or another, and the standard for just compensation is the same. None of them is on your side of the table.</p></details><details class="faq-item"><summary><h4>Is the route in the application the route that gets built?</h4></summary><p>Often not. On Longshore–Drill Hole the approved route was 17 of 119 filed links. On Dinosaur–Longshore the approved route came out about 13% longer than the applicants’ own preferred route. Filed preferences move, and landowner participation is a large part of why.</p></details><details class="faq-item"><summary><h4>What does a review by National ROW cost?</h4></summary><p>Nothing up front. We work on contingency — our fee is a percentage of the additional compensation we secure above their first offer. If it does not move, you owe us nothing. We are owner-side only, nationwide, since the 1980s, and we have never worked for a condemning agency or utility. We are not a law firm and not a tax advisor; legal counsel is coordinated when your case requires it.</p></details>
     </div>
   </section>
 
