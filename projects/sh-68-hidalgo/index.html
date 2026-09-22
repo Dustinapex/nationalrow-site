@@ -498,12 +498,12 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
       document.getElementById('formSuccess').style.display = 'block';
     } else {
       btn.disabled = false;
-      btn.textContent = 'Get My Free Case Review →';
+      btn.textContent = 'Free Review by a Senior Consultant →';
       alert("Couldn't send just now — please call (956) 363-4144 or (469) 484-7960 and we'll take your details.");
     }
   } catch(err) {
     btn.disabled = false;
-    btn.textContent = 'Get My Free Case Review →';
+    btn.textContent = 'Free Review by a Senior Consultant →';
     alert("Couldn't send just now — please call (956) 363-4144 or (469) 484-7960 and we'll take your details.");
   }
 });
