@@ -175,6 +175,33 @@ img,svg{max-width:100%}
       .nav,.site-nav,.sitenav,.site-header,.nav-inner,.nav-in,
       *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
     }
+/* lead form — ported from the project-page template */
+.contact-strip .nr-form-phones { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 12px; font-size: 22px; font-weight: 900; }
+.contact-strip .nr-form-phones a { color: var(--gold); }
+.form-section { background: var(--navy); padding: 72px 24px; }
+.form-header { text-align: center; color: #fff; margin-bottom: 36px; }
+.form-header h2 { color: #fff; font-size: clamp(22px, 3vw, 34px); }
+.form-header p { color: rgba(255, 255, 255, 0.78); margin-top: 10px; font-size: 16px; }
+.form-body { background: #fff; border-radius: 10px; padding: 40px; max-width: 720px; margin: 0px auto; box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 40px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 580px){
+.form-grid { grid-template-columns: 1fr; }
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-section label { font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.6px; }
+.form-section input, .form-section select, .form-section textarea { border: 1.5px solid rgb(209, 213, 219); border-radius: 5px; padding: 11px 14px; font-size: 15px; font-family: inherit; width: 100%; background: rgb(255, 255, 255); transition: border-color 0.15s; }
+.form-section input:focus, .form-section select:focus, .form-section textarea:focus { outline: none; border-color: var(--gold); box-shadow: rgba(201, 162, 39, 0.15) 0px 0px 0px 3px; }
+.tcpa-text { font-size: 11px; color: rgb(107, 114, 128); line-height: 1.65; margin: 18px 0px 4px; padding: 12px; background: rgb(249, 250, 251); border-radius: 5px; border: 1px solid rgb(229, 231, 235); }
+.form-disclaimer { font-size: 11px; color: rgb(156, 163, 175); margin-top: 12px; line-height: 1.55; }
+.submit-btn { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 17px; padding: 15px 32px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 14px; letter-spacing: 0.3px; transition: background 0.2s; }
+.submit-btn:hover { background: #D8B45A; }
+.form-subtext { text-align: center; font-size: 13px; color: rgb(107, 114, 128); margin-top: 12px; }
+.form-success { display: none; text-align: center; padding: 40px 20px; }
+.form-success h3 { color: var(--navy); font-size: 24px; margin-bottom: 12px; }
+.form-success p { color: rgb(85, 85, 85); font-size: 16px; line-height: 1.7; }
+.form-success .nr-form-phones { margin-top: 20px; font-size: 18px; font-weight: 700; }
+.form-success .nr-form-phones a { color: var(--gold); }
 </style>
 <script type="application/ld+json">
 [{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I have to accept the government's first offer?","acceptedAnswer":{"@type":"Answer","text":"No. The initial offer is a starting point, not a final number. You have the right to challenge the valuation and negotiate for more — for the property taken and for damage to the land you keep. In most states you can request a jury determination of just compensation if negotiations fail. Most initial offers undervalue property because agency appraisers work for the agency. Getting an independent review before responding is always worth it."}},{"@type":"Question","name":"What is \"just compensation\" and how is it calculated?","acceptedAnswer":{"@type":"Answer","text":"Just compensation is the legal standard for what you must be paid when property is taken through eminent domain. It is generally the fair market value of what is taken, plus severance damages to your remaining property. Agencies use their own appraisers to calculate this — but those appraisers work for the agency, not for you. Their valuations often omit: severance damages to the remainder, loss or reduction of access, proximity impacts on structures, agricultural income losses, and timber removal."}},{"@type":"Question","name":"What is the difference between a fee taking and an easement?","acceptedAnswer":{"@type":"Answer","text":"A fee taking means the agency acquires full ownership of your land. This is common for highway projects. An easement grants a right to use a strip of your land for a specific purpose while you retain ownership — common for pipelines, transmission lines, and utilities. Even with an easement, the restrictions on use and the impact on surrounding land value can be significant and permanent. You are still entitled to full compensation."}},{"@type":"Question","name":"Can they take my property even if I refuse to sell?","acceptedAnswer":{"@type":"Answer","text":"Generally, yes. Eminent domain gives government agencies and certain private companies the legal authority to acquire private property for public use, even over your objection — as long as they pay just compensation. However, the amount they pay is negotiable, and in most states you can challenge that amount in court."}},{"@type":"Question","name":"What are severance damages?","acceptedAnswer":{"@type":"Answer","text":"Severance damages compensate you for the reduction in value of the property you keep — not just the land taken. If a highway, pipeline, or transmission line cuts through your property, the portions you retain may be less accessible, less productive, or harder to sell. That loss of value to the remainder is compensable. Agencies frequently undervalue or omit severance damages from initial offers."}},{"@type":"Question","name":"How long do I have to respond or negotiate?","acceptedAnswer":{"@type":"Answer","text":"Timelines vary by state law and project type. Once you receive a formal offer you typically have a limited window to respond. More importantly, once you sign an easement or deed, the terms are usually permanent. You should get an independent review before signing anything."}},{"@type":"Question","name":"What is eminent domain?","acceptedAnswer":{"@type":"Answer","text":"Eminent domain is the legal authority of government agencies, utilities, and certain private companies to take private property for a public use — in exchange for \"just compensation.\" It is guaranteed under the Fifth Amendment to the U.S. Constitution and similar provisions in every state constitution. The most common condemning authorities include state Departments of Transportation (DOTs), pipeline companies, electric utilities, water authorities, and transit agencies."}},{"@type":"Question","name":"What is the difference between a full taking and a partial taking?","acceptedAnswer":{"@type":"Answer","text":"A full taking (fee simple acquisition) means the condemning authority takes ownership of your entire property. A partial taking means only a portion of your property is acquired — such as a strip for a road or an easement for a pipeline. In a partial taking, you may be entitled to compensation for the value of the portion taken AND for any reduction in value to the portion you keep (severance damages). Partial takings are often significantly undercompensated in initial offers."}},{"@type":"Question","name":"How quickly do I need to act?","acceptedAnswer":{"@type":"Answer","text":"As soon as possible. Once you sign an easement agreement or settle a condemnation claim, it is extremely difficult to reopen or modify. If a ROW agent, TxDOT representative, or pipeline company has contacted you, seek an independent review before responding or signing anything. National ROW offers a free case review — typically responded to within one business day."}},{"@type":"Question","name":"Is National ROW a law firm?","acceptedAnswer":{"@type":"Answer","text":"No. National ROW is a right-of-way and condemnation consulting firm. We are not a law firm and do not provide legal advice. We help property owners understand their options, quantify damages, and negotiate compensation. When legal representation is needed, we work alongside attorneys."}},{"@type":"Question","name":"How much does it cost to work with National ROW?","acceptedAnswer":{"@type":"Answer","text":"Nothing upfront. We work on a contingency basis — our fee is a percentage of any increase we secure above the original offer. If we do not improve your outcome, you owe us nothing. We start with a free case review at no obligation."}},{"@type":"Question","name":"Which side does National ROW represent?","acceptedAnswer":{"@type":"Answer","text":"We represent property owners exclusively. We have never represented a government agency, pipeline company, utility, or transmission developer — and we never will. Our interests are completely aligned with yours."}},{"@type":"Question","name":"What states do you work in?","acceptedAnswer":{"@type":"Answer","text":"We handle cases in all 50 states. Every state has different condemnation statutes, compensation rules, and procedural requirements. Our team has experience across the country including Texas, Oklahoma, Kansas, Wyoming, Pennsylvania, Ohio, California, Florida, Georgia, North Carolina, and all others."}},{"@type":"Question","name":"What types of takings does National ROW handle?","acceptedAnswer":{"@type":"Answer","text":"We handle all types of right-of-way and condemnation matters including: highway and road widening condemnation, pipeline easements (natural gas, oil, CO2, hydrogen), electric transmission line easements, solar and wind energy facility easements, water and sewer utility easements, and transit and rail corridor acquisitions."}},{"@type":"Question","name":"What happens during the free case review?","acceptedAnswer":{"@type":"Answer","text":"When you contact National ROW, we review the offer you have received, the property being taken, and the applicable state law. We give you an honest assessment of whether we believe we can recover more for you — and we do this at no charge and no obligation. If we take your case, we begin work immediately."}},{"@type":"Question","name":"What is a pipeline easement and is it permanent?","acceptedAnswer":{"@type":"Answer","text":"A pipeline easement is a legal right granted to a pipeline company to install, operate, maintain, and replace a pipeline on a strip of your land. In most cases these easements are permanent — once signed, they run with the land and transfer to future owners. Getting the value right before you sign is critical."}},{"@type":"Question","name":"How is pipeline easement compensation calculated?","acceptedAnswer":{"@type":"Answer","text":"Compensation typically includes the value of the rights granted (a percentage of land value for the strip), severance damages to the remainder, crop and timber losses, and restoration obligations. Pipeline companies set their offers based on their own standard calculations — not to maximize what you receive. An independent appraisal almost always produces a higher number."}},{"@type":"Question","name":"Do pipeline companies have eminent domain authority?","acceptedAnswer":{"@type":"Answer","text":"It depends on the type of pipeline and the state. Interstate natural gas pipelines regulated by FERC generally have federal eminent domain authority. Intrastate pipelines may have authority under state law. Even if the company has condemnation authority, you are still entitled to just compensation — and the amount is negotiable."}},{"@type":"Question","name":"How much is my pipeline or transmission easement worth?","acceptedAnswer":{"@type":"Answer","text":"There is no fixed answer — it depends on your land's location, size, use, market value, the type of pipeline or transmission line, the width of the easement corridor, and all compensable damages. In high-value agricultural or development areas, the gap between the initial offer and fair compensation can be substantial. National ROW works with MAI-certified independent appraisers to document the full value of your easement, including per-acre value, crop damage, severance damages, remainder impact, and any applicable business losses."}},{"@type":"Question","name":"What is a transmission line easement?","acceptedAnswer":{"@type":"Answer","text":"A transmission line easement grants a utility the right to build, operate, and maintain high-voltage electric transmission lines on a corridor of your land. These are typically permanent and restrict how you can use the easement area. Compensation should account for permanent rights granted, surrounding land value reduction, proximity effects on structures, and construction damage."}},{"@type":"Question","name":"What is the Oncor 765 kV project and how does it affect landowners?","acceptedAnswer":{"@type":"Answer","text":"ERCOT's Long-Range Transmission Plan (LRTP) calls for approximately 2,000+ miles of new 765kV high-voltage lines across Texas — the largest grid expansion in state history. Companies including Oncor and AEP Texas are actively acquiring right-of-way. If your property is in the path, their offer is a starting point. The easement will be permanent — get an independent assessment before signing."}},{"@type":"Question","name":"TxDOT or another DOT has contacted me about my property. What should I do?","acceptedAnswer":{"@type":"Answer","text":"Do not sign anything before getting an independent review. Highway acquisitions can affect not just the strip of land taken but the value, access, and productivity of the property you keep. Severance damages, access changes, and business losses can all be compensable — and are frequently undervalued in initial DOT offers."}},{"@type":"Question","name":"Can I negotiate with TxDOT or a state DOT?","acceptedAnswer":{"@type":"Answer","text":"Yes. You have the right to negotiate compensation, and DOTs are generally required to make good-faith efforts to negotiate before filing condemnation. An independent appraisal and consulting support help you negotiate from facts rather than accepting the agency's number."}},{"@type":"Question","name":"What does TxDOT have to pay me?","acceptedAnswer":{"@type":"Answer","text":"TxDOT is required to pay the market value of the property taken plus severance damages to your remaining property. Compensable items include: fair market value of the land taken, loss of access and frontage, changes in drainage, crop and agricultural damage during construction, and any diminution in value of your remaining tract caused by the project or its use."}},{"@type":"Question","name":"What is a special commissioner hearing in Texas?","acceptedAnswer":{"@type":"Answer","text":"If you and TxDOT (or another condemning authority) cannot agree on compensation, the case goes to a panel of three special commissioners appointed by a county court judge. The commissioners hear evidence from both sides and set a compensation award. Either side can then appeal the commissioner's award to the district court for a full trial, including a jury trial if requested. National ROW prepares landowners and coordinates their support team for every stage of this process."}},{"@type":"Question","name":"A solar or wind company wants an easement on my land. What should I know?","acceptedAnswer":{"@type":"Answer","text":"Solar and wind energy easements typically involve long-term leases (often 30–50 years with renewal options) or permanent easements. Key issues include the annual payment or per-acre rate, escalation clauses, what happens at end of term, surface use restrictions, and who is responsible for decommissioning. Before signing, make sure the compensation reflects what the land and its future options are actually worth."}},{"@type":"Question","name":"Do solar and wind developers have eminent domain authority?","acceptedAnswer":{"@type":"Answer","text":"In most states, solar and wind developers do not have traditional eminent domain authority. However, the regulated utilities that purchase their power or the transmission lines serving their facilities may have such authority. This means most solar and wind acquisitions are voluntary — giving landowners significant negotiating leverage if they have the right representation."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"National ROW","item":"https://nationalrow.com/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://nationalrow.com/faq/"}]}]
@@ -203,7 +230,7 @@ img,svg{max-width:100%}
       <a href="/about/">About</a>
       <a href="/faq/" aria-current="page">FAQ</a>
       <a href="/es/">Espa&ntilde;ol</a>
-      <a href="/offer-review/" class="nav-cta">Free Review by a Senior Consultant</a>
+      <a href="#lead" class="nav-cta">Free Review by a Senior Consultant</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">&#9776; Menu</button>
   </div>
@@ -265,11 +292,60 @@ img,svg{max-width:100%}
     <div class="disclaimer"><strong>General information, not legal advice.</strong> The answers above provide general guidance for property owners and are not legal advice for any specific situation. State laws vary significantly. For advice on your specific case, contact us for a free consultation.</div>
   </div>
 </section>
+<section class="form-section" id="lead">
+  <div class="wrap">
+    <div class="form-header">
+      <h2>Free Review by a Senior Consultant</h2>
+      <p>Tell us about your property. A National ROW consultant will contact you within one business day.</p>
+    </div>
+    <div class="form-body">
+      
+
+      <div id="the-form">
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="_subject" value="New case review — FAQ Page">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
+          <input type="hidden" name="project_source" value="FAQ Page">
+          
+  <div class="lang-form" id="form-en">
+    <div class="form-grid">
+      <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
+      <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
+      <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="(___) ___-____"></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+      <div class="form-group"><label>County &amp; State</label><input type="text" name="county_state" placeholder="e.g. Hidalgo, TX"></div>
+      <div class="form-group"><label>Approx. Acreage</label><input type="text" name="acreage" placeholder="e.g. 42"></div>
+      <div class="form-group"><label>Property Type</label><select name="property_type"><option value="">Select…</option><option>Agricultural / Ranch</option><option>Residential</option><option>Commercial</option><option>Vacant Land</option><option>Other</option></select></div>
+      <div class="form-group"><label>Who contacted you?</label><select name="who_contacted"><option value="">Select…</option><option>Highway / road agency (TxDOT)</option><option>Electric / transmission utility</option><option>Pipeline company</option><option>Not sure — want to find out</option></select></div>
+      <div class="form-group full"><label>Affected property address</label><input type="text" name="address" placeholder="Street address, parcel/APN, or legal description"></div>
+      <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
+    </div>
+  </div>
+          
+          <div class="tcpa-text" id="tcpa-en">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy/" style="color:var(--gold)">Privacy Policy</a>.</div>
+          
+          <button class="submit-btn" type="submit">Free Review by a Senior Consultant →</button>
+          <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
+          <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
+        </form>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <h3>We've got it from here.</h3>
+        <p>Your case is in review. One of our consultants will look at everything you shared and reach out — usually the same business day.</p>
+        <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
+        <div class="nr-form-phones">Need to talk now? &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp; <a href="tel:+19563634144">(956) 363-4144</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-band">
   <div class="wrap">
     <h2>Still Have Questions? Talk to Us.</h2>
     <p>A National ROW consultant will review your situation at no charge. No pressure, no commitment &mdash; just honest answers about your case.</p>
-    <a href="/offer-review/" class="btn-gold">Free review by a senior consultant &rarr;</a>
+    <a href="#lead" class="btn-gold">Free review by a senior consultant &rarr;</a>
   </div>
 </section>
 <footer class="site-footer">
@@ -297,7 +373,7 @@ img,svg{max-width:100%}
     </div>
     <div class="foot-col">
       <h4>Get Started</h4>
-      <a href="/offer-review/">Free Review by a Senior Consultant</a>
+      <a href="#lead">Free Review by a Senior Consultant</a>
       <a href="tel:+14694847960">Call (469) 484-7960</a>
       <a href="tel:+19563634144">Call (956) 363-4144</a>
       <a href="mailto:info@nationalrow.com">Email Us</a>
@@ -327,6 +403,34 @@ document.querySelectorAll('.qa button').forEach(function(btn){
     btn.setAttribute('aria-expanded',open?'true':'false');
   });
 })();
+</script>
+<script>
+document.getElementById('leadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  var data = new FormData(this);
+  try {
+    var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    });
+    if (res.ok) {
+      document.getElementById('the-form').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Free Review by a Senior Consultant →';
+      alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
+    }
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = 'Free Review by a Senior Consultant →';
+    alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
+  }
+});
 </script>
 </body>
 </html>

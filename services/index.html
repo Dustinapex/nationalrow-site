@@ -141,6 +141,33 @@ img,svg{max-width:100%}
       .nav,.site-nav,.sitenav,.site-header,.nav-inner,.nav-in,
       *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
     }
+/* lead form — ported from the project-page template */
+.contact-strip .nr-form-phones { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 12px; font-size: 22px; font-weight: 900; }
+.contact-strip .nr-form-phones a { color: var(--gold); }
+.form-section { background: var(--navy); padding: 72px 24px; }
+.form-header { text-align: center; color: #fff; margin-bottom: 36px; }
+.form-header h2 { color: #fff; font-size: clamp(22px, 3vw, 34px); }
+.form-header p { color: rgba(255, 255, 255, 0.78); margin-top: 10px; font-size: 16px; }
+.form-body { background: #fff; border-radius: 10px; padding: 40px; max-width: 720px; margin: 0px auto; box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 40px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 580px){
+.form-grid { grid-template-columns: 1fr; }
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-section label { font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.6px; }
+.form-section input, .form-section select, .form-section textarea { border: 1.5px solid rgb(209, 213, 219); border-radius: 5px; padding: 11px 14px; font-size: 15px; font-family: inherit; width: 100%; background: rgb(255, 255, 255); transition: border-color 0.15s; }
+.form-section input:focus, .form-section select:focus, .form-section textarea:focus { outline: none; border-color: var(--gold); box-shadow: rgba(201, 162, 39, 0.15) 0px 0px 0px 3px; }
+.tcpa-text { font-size: 11px; color: rgb(107, 114, 128); line-height: 1.65; margin: 18px 0px 4px; padding: 12px; background: rgb(249, 250, 251); border-radius: 5px; border: 1px solid rgb(229, 231, 235); }
+.form-disclaimer { font-size: 11px; color: rgb(156, 163, 175); margin-top: 12px; line-height: 1.55; }
+.submit-btn { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 17px; padding: 15px 32px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 14px; letter-spacing: 0.3px; transition: background 0.2s; }
+.submit-btn:hover { background: #D8B45A; }
+.form-subtext { text-align: center; font-size: 13px; color: rgb(107, 114, 128); margin-top: 12px; }
+.form-success { display: none; text-align: center; padding: 40px 20px; }
+.form-success h3 { color: var(--navy); font-size: 24px; margin-bottom: 12px; }
+.form-success p { color: rgb(85, 85, 85); font-size: 16px; line-height: 1.7; }
+.form-success .nr-form-phones { margin-top: 20px; font-size: 18px; font-weight: 700; }
+.form-success .nr-form-phones a { color: var(--gold); }
 </style>
 </head>
 <body>
@@ -230,7 +257,56 @@ img,svg{max-width:100%}
     <p>We represent property owners and never the acquiring side &mdash; no exceptions, no split loyalties, and nothing in our file that the agency also sees. We review the notice and the offer at no cost, show you what it does and does not account for, and assemble the team to document the difference: independent condemnation appraisers, land planners, relocation specialists, and independent licensed attorneys where a case needs them. We are a consulting firm, not a law firm, and we do not give legal advice. Most owners pay nothing upfront.</p>
   </div>
 </section>
-<section class="cta-section" id="lead">
+<section class="form-section" id="lead">
+  <div class="wrap">
+    <div class="form-header">
+      <h2>Free Review by a Senior Consultant</h2>
+      <p>Tell us about your property. A National ROW consultant will contact you within one business day.</p>
+    </div>
+    <div class="form-body">
+      
+
+      <div id="the-form">
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="_subject" value="New case review — Services Hub">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
+          <input type="hidden" name="project_source" value="Services Hub">
+          
+  <div class="lang-form" id="form-en">
+    <div class="form-grid">
+      <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
+      <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
+      <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="(___) ___-____"></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+      <div class="form-group"><label>County &amp; State</label><input type="text" name="county_state" placeholder="e.g. Hidalgo, TX"></div>
+      <div class="form-group"><label>Approx. Acreage</label><input type="text" name="acreage" placeholder="e.g. 42"></div>
+      <div class="form-group"><label>Property Type</label><select name="property_type"><option value="">Select…</option><option>Agricultural / Ranch</option><option>Residential</option><option>Commercial</option><option>Vacant Land</option><option>Other</option></select></div>
+      <div class="form-group"><label>Who contacted you?</label><select name="who_contacted"><option value="">Select…</option><option>Highway / road agency (TxDOT)</option><option>Electric / transmission utility</option><option>Pipeline company</option><option>Not sure — want to find out</option></select></div>
+      <div class="form-group full"><label>Affected property address</label><input type="text" name="address" placeholder="Street address, parcel/APN, or legal description"></div>
+      <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
+    </div>
+  </div>
+          
+          <div class="tcpa-text" id="tcpa-en">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy/" style="color:var(--gold)">Privacy Policy</a>.</div>
+          
+          <button class="submit-btn" type="submit">Free Review by a Senior Consultant →</button>
+          <div class="form-subtext">No obligation · Zero out of pocket · Private · We'll never sell your info</div>
+          <p class="form-disclaimer">National ROW is a right-of-way consulting firm, not a law firm. No attorney-client relationship is created by submitting this form. Results vary by case. Prior results do not guarantee similar outcomes.</p>
+        </form>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <h3>We've got it from here.</h3>
+        <p>Your case is in review. One of our consultants will look at everything you shared and reach out — usually the same business day.</p>
+        <p style="margin-top:12px;">In the meantime, <strong>don't sign anything</strong> and don't feel pressured to respond to their representatives.</p>
+        <div class="nr-form-phones">Need to talk now? &nbsp;<a href="tel:+14694847960">(469) 484-7960</a> &nbsp;·&nbsp; <a href="tel:+19563634144">(956) 363-4144</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
   <div class="wrap">
     <h2>Not Sure Where to Start?</h2>
     <p>Tell us about your situation. We&rsquo;ll let you know how we can help &mdash; no matter what state you&rsquo;re in.</p>
@@ -278,6 +354,34 @@ const nav=document.getElementById('navLinks');
 btn.addEventListener('click',()=>{
   const open=nav.classList.toggle('open');
   btn.setAttribute('aria-expanded',open);
+});
+</script>
+<script>
+document.getElementById('leadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  var data = new FormData(this);
+  try {
+    var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    });
+    if (res.ok) {
+      document.getElementById('the-form').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Free Review by a Senior Consultant →';
+      alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
+    }
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = 'Free Review by a Senior Consultant →';
+    alert("Couldn't send just now — please call (469) 484-7960 or (956) 363-4144 and we'll take your details.");
+  }
 });
 </script>
 </body>
