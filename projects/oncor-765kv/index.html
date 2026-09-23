@@ -487,6 +487,9 @@ label{font-size:12.5px;font-weight:700;color:var(--navy);text-transform:uppercas
 input,select,textarea{border:1.5px solid #d1d5db;border-radius:5px;padding:13px 14px;font-size:16px;font-family:inherit;width:100%;background:#fff;min-height:46px;box-sizing:border-box;}
 textarea{min-height:104px;}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.15);}
+.consent{display:flex;gap:12px;align-items:flex-start;margin:14px 0 4px;padding:6px 0;min-height:44px}
+.consent input{width:22px;height:22px;min-width:22px;margin-top:1px;flex:0 0 auto;accent-color:var(--gold)}
+.consent label{font-size:12.5px;line-height:1.5;color:#4b5563;margin:0;font-weight:400;text-transform:none;letter-spacing:0}
 .tcpa-text{font-size:11px;color:#6b7280;line-height:1.65;margin:18px 0 4px;padding:12px;background:#f9fafb;border-radius:5px;border:1px solid #e5e7eb;}
 .form-disclaimer{font-size:12px;color:#8b93a1;margin-top:12px;line-height:1.6;}
 .submit-btn{background:var(--gold);color:var(--navy);font-weight:700;font-size:17px;padding:16px 28px;border:none;border-radius:5px;cursor:pointer;width:100%;margin-top:14px;min-height:52px;line-height:1.25;}
@@ -978,17 +981,22 @@ details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>u
           <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
           <input type="hidden" name="project_source" id="projectSource" value="Texas 765kV">
           <input type="hidden" name="referrer_url" id="referrerUrl" value="">
+          <input type="hidden" name="automated_contact_consent" id="consentFlag" value="NO — automated calls/texts NOT authorised">
+          <input type="hidden" name="consent_language_shown" id="consentText">
+          <input type="hidden" name="consent_timestamp" id="consentTime">
+          <input type="hidden" name="consent_page" id="consentPage">
           <div class="form-grid">
             <div class="form-group"><label>First Name *</label><input type="text" name="first_name" required placeholder="First name"></div>
             <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Last name"></div>
             <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="(___) ___-____"></div>
             <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
             <div class="form-group"><label>County &amp; State</label><input type="text" name="county_state" id="countyState" placeholder="e.g. Coke, TX"></div>
-            <div class="form-group"><label>Approx. Acreage</label><input type="text" name="acreage" placeholder="e.g. 42"></div>
-            <div class="form-group"><label>Property Type</label><select name="property_type"><option value="">Select…</option><option>Agricultural / Ranch</option><option>Residential</option><option>Commercial</option><option>Vacant Land</option><option>Other</option></select></div>
             <div class="form-group"><label>Where are you in the process?</label><select name="stage"><option value="">Select…</option><option>Nothing yet — I just heard about the project</option><option>They asked permission to survey</option><option>An appraiser has been out</option><option>I have a written offer</option><option>I&#39;ve been sued / served with condemnation papers</option></select></div>
-            <div class="form-group full"><label>Affected property address</label><input type="text" name="address" id="propAddress" placeholder="Street address, parcel/APN, or legal description"></div>
-            <div class="form-group full"><label>What have they sent so far?</label><textarea name="details" rows="4" placeholder="A letter, an offer, an appraisal, an easement document, a survey crew…"></textarea></div>
+          <input type="hidden" name="address" id="propAddress">
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="consent">
+            <label for="consent" id="consentLabel">I agree that National ROW may call, text and email me about my property, including by automated means. Consent is not a condition of any service. Reply STOP to opt out.</label>
           </div>
           <div class="tcpa-text">By submitting this form, you agree that National ROW may contact you by phone, text message (SMS), and email at the number and address provided — including by automated means — about your inquiry. Consent is not a condition of any service. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out of texts, HELP for help. See our <a href="https://nationalrow.com/privacy-policy" style="color:var(--gold)">Privacy Policy</a>.</div>
           <button class="submit-btn" type="submit">Free review by a senior consultant →</button>
@@ -1235,11 +1243,19 @@ details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>u
   if(!f) return;
   var ru = document.getElementById('referrerUrl');
   if(ru) ru.value = location.href;
-  var THANKYOU = '/offer-review/thank-you/';
+  var THANKYOU = '/765kv-landowner/thank-you/';
   f.addEventListener('submit', async function(e){
     e.preventDefault();
     var btn = this.querySelector('.submit-btn');
     btn.disabled = true; btn.textContent = 'Sending…';
+    var box = document.getElementById('consent');
+    document.getElementById('consentFlag').value = (box && box.checked)
+      ? 'YES \u2014 express written consent given for automated calls/texts'
+      : 'NO \u2014 automated calls/texts NOT authorised';
+    document.getElementById('consentText').value =
+      ((document.querySelector('.tcpa-text')||{}).innerText||'').replace(/\s+/g,' ').trim();
+    document.getElementById('consentTime').value = new Date().toISOString();
+    document.getElementById('consentPage').value = window.location.href;
     var data = new FormData(this);
     try{
       var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
