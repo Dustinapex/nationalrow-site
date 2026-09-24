@@ -559,6 +559,29 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   .dk-badge{margin-left:0;}
   .dk-body{padding:4px 14px 18px;}
 }
+
+/* ROUTE MAP */
+.lp-routemap{background:#fff;padding:54px 22px;border-top:1px solid rgba(10,28,51,.08);}
+.lp-routemap .inner{max-width:980px;margin:0 auto;}
+.lp-routemap .eyebrow{display:inline-block;background:rgba(201,162,39,.14);border:1px solid rgba(201,162,39,.45);
+  color:#7a6320;font-size:12.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  padding:6px 12px;border-radius:3px;margin:0 0 14px;}
+.lp-routemap h2{margin:0 0 12px;font-size:clamp(24px,3.4vw,34px);line-height:1.18;color:var(--navy);}
+.lp-routemap .section-sub{font-size:16.5px;line-height:1.62;color:#33465e;max-width:700px;margin:0 0 26px;}
+.lp-routemap figure{margin:0;border:1px solid #d5d1c8;border-radius:6px;overflow:hidden;background:#fff;}
+.lp-routemap figure img{display:block;width:100%;height:auto;}
+.lp-routemap .map-key{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));}
+.lp-routemap .map-key li{font-size:15px;line-height:1.55;color:#33465e;background:#f7f5f0;
+  border-left:3px solid var(--gold);border-radius:4px;padding:11px 13px;}
+.lp-routemap .map-key b{color:var(--navy);}
+.lp-routemap .map-dl{margin:22px 0 0;}
+.lp-routemap .map-note{margin:16px 0 0;font-size:14px;line-height:1.6;color:#5a6b80;}
+.lp-routemap .map-cta{margin:22px 0 0;}
+@media(max-width:560px){
+  .lp-routemap{padding:40px 16px;}
+  .lp-routemap .map-key li{font-size:14.5px;}
+}
 </style>
 </head>
 <body>
@@ -699,6 +722,26 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     </div>
 
     <p class="dk-foot">Cannot tell which one you are in? Send us what you received and we will tell you which project it belongs to and what stage it is at. Call or text <a href="tel:+14694847960">(469) 484-7960</a>.</p>
+  </div>
+</section>
+
+<section class="lp-routemap" id="route-map">
+  <div class="inner">
+    <div class="eyebrow">All five projects, one page</div>
+    <h2>Where these lines actually run</h2>
+    <p class="section-sub">Two of these routes are decided down to the centerline. Three are not &mdash; and on those, the corridor drawn in grey is a study area, not a route. This one page shows the difference, so you can see at a glance whether the letter you received is about a line that is fixed or a line that is still being argued over.</p>
+    <figure>
+      <img src="/assets/maps/texas-765kv-programme-map.webp" width="1600" height="1236" loading="lazy" decoding="async" alt="Map of the entire Texas 765 kV transmission build: five PUCT dockets across 51 Texas counties. Three approved routes &mdash; Dinosaur to Longshore, Longshore to Drill Hole and Howard to Solstice &mdash; and two remanded to SOAH on 18 September 2026, Big Hill to Sand Lake and Bell County East to Big Hill.">
+    </figure>
+    <ul class="map-key">
+      <li><b>Navy line &mdash; approved centerline.</b> Dockets 59315 and 59029. The alignment is fixed to within a 200-foot corridor and land agents are working it now.</li>
+      <li><b>Grey line &mdash; filed for study, not approved.</b> Dockets 59182 and 59475. Both were remanded to SOAH on 18 September 2026. No route has been chosen and most of what is drawn will never be built.</li>
+      <li><b>Gold county &mdash; on an approved Oncor centerline.</b> Twenty counties. If yours is gold, the line is coming and the open question is the number.</li>
+      <li><b>Cream county &mdash; inside a filed study area.</b> Includes every county in Docket 59336, whose approved route AEP has not published in machine-readable form, so it is shaded rather than drawn.</li>
+    </ul>
+    <p class="map-dl"><a class="btn-gold" href="/assets/maps/texas-765kv-programme-map.png" download onclick="if(window.gtag)gtag('event','route_map_download',{project:'texas-765kv-programme'});">Download the full-size map &rarr;</a></p>
+    <p class="map-note">Corridor geometry read from Oncor&rsquo;s public CCN mapping service on 9 September 2026. Docket status verified against the PUCT Interchange on 24 September 2026. County boundaries from the US Census Bureau. This is an approximation for orientation &mdash; it is not a survey, not an appraisal, and not legal advice.</p>
+    <p class="map-cta"><a class="btn-gold" href="#form">Free review by a senior consultant &rarr;</a></p>
   </div>
 </section>
 
