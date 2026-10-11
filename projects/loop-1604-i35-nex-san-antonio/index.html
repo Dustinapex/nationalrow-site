@@ -240,6 +240,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     <meta property="og:image" content="https://nationalrow.com/og-image.png">
     <meta property="og:url" content="https://nationalrow.com/projects/loop-1604-i35-nex-san-antonio/">
     <meta property="og:type" content="website">
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 
@@ -401,6 +402,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
 
       <div id="the-form">
         <form id="leadForm" novalidate>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0">
           <input type="hidden" name="_subject" value="New case review — Loop 1604 I-35 NEX San Antonio">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
@@ -473,7 +475,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   btn.textContent = 'Sending…';
   var data = new FormData(this);
   try {
-    var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+    var res = await fetch(window.NR_LEAD_ENDPOINT, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: data

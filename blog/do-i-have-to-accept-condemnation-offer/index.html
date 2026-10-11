@@ -497,6 +497,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BlogPosting","headline":"Do I Have to Accept the Condemnation Offer?","description":"No. The agency offer is an opening position, not a final number. Learn your rights, why you can negotiate, and how to get more than the opening number in eminent domain.","url":"https://nationalrow.com/blog/do-i-have-to-accept-condemnation-offer/","datePublished":"2026-06-19","dateModified":"2026-06-28","author":{"@type":"Organization","name":"National ROW","url":"https://nationalrow.com"},"publisher":{"@type":"Organization","name":"National ROW"}}
   </script>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 <header class="site">
@@ -724,7 +725,7 @@
   if(!rm && 'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
   var form=document.getElementById('leadForm');
   var formLoaded=Date.now();
-  var FORM_ENDPOINT='https://formsubmit.co/ajax/info@nationalrow.com';  // leads emailed here
+  var FORM_ENDPOINT=window.NR_LEAD_ENDPOINT;  // leads emailed here
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(!form.checkValidity()){form.reportValidity();return;}

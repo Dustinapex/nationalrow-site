@@ -197,6 +197,7 @@ a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
 .form-success .nr-form-phones { margin-top: 20px; font-size: 18px; font-weight: 700; }
 .form-success .nr-form-phones a { color: var(--gold); }
 </style>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 <div class="topbar">
@@ -309,6 +310,7 @@ a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
 
       <div id="the-form">
         <form id="leadForm" novalidate>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0">
           <input type="hidden" name="_subject" value="New case review — About Page">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
@@ -408,7 +410,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   btn.textContent = 'Sending…';
   var data = new FormData(this);
   try {
-    var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+    var res = await fetch(window.NR_LEAD_ENDPOINT, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: data
