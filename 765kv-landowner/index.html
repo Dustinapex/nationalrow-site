@@ -583,6 +583,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
   .lp-routemap .map-key li{font-size:14.5px;}
 }
 </style>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 
@@ -918,6 +919,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     <div class="form-body">
       <div id="the-form">
         <form id="leadForm" novalidate>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0">
           <input type="hidden" name="_subject" value="New case review — 765 kV Landing Page">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="source" value="765kv_lp">
@@ -1029,7 +1031,7 @@ footer{background:#050e1c;color:rgba(255,255,255,.55);padding:48px 24px 32px;tex
     document.getElementById('consentPage').value = window.location.href;
     var data = new FormData(this);
     try{
-      var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+      var res = await fetch(window.NR_LEAD_ENDPOINT, {
         method:'POST', headers:{'Accept':'application/json'}, body:data
       });
       if(res.ok){

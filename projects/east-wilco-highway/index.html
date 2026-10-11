@@ -259,6 +259,7 @@ table.segtable .seg-n{font-weight:800;color:#fff;background:var(--navy);text-ali
 .segnote{font-size:13.5px;color:#5d6672;line-height:1.65;margin-top:14px;}
 @media(max-width:640px){table.segtable{font-size:14px;}}
 </style>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 
@@ -475,6 +476,7 @@ table.segtable .seg-n{font-weight:800;color:#fff;background:var(--navy);text-ali
 
       <div id="the-form">
         <form id="leadForm" novalidate>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0">
           <input type="hidden" name="_subject" value="New case review — East Wilco Highway">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_cc" value="dustin@apexfreedomfund.com,chris@apexfreedomfund.com">
@@ -547,7 +549,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   btn.textContent = 'Sending…';
   var data = new FormData(this);
   try {
-    var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+    var res = await fetch(window.NR_LEAD_ENDPOINT, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: data

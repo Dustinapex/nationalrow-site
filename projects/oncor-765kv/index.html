@@ -583,6 +583,7 @@ details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>u
   .jumpbar a{white-space:nowrap;flex:0 0 auto;}
 }
 </style>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 
@@ -975,6 +976,7 @@ details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>u
     <div class="form-body">
       <div id="the-form">
         <form id="leadForm" novalidate>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0">
           <input type="hidden" name="_subject" value="New case review — Texas 765kV">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
@@ -1258,7 +1260,7 @@ details.cty-detail>p,details.cty-detail>ul,details.faq-item>p,details.faq-item>u
     document.getElementById('consentPage').value = window.location.href;
     var data = new FormData(this);
     try{
-      var res = await fetch('https://formsubmit.co/ajax/info@nationalrow.com', {
+      var res = await fetch(window.NR_LEAD_ENDPOINT, {
         method:'POST', headers:{'Accept':'application/json'}, body:data
       });
       if(res.ok){

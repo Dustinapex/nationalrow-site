@@ -492,6 +492,7 @@
       *:has(> #navLinks),*:has(> .nav-links),*:has(> .links){height:auto!important;min-height:0!important;}
     }
 </style>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 <header class="site">
@@ -704,7 +705,7 @@
   if(!rm && 'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
   var form=document.getElementById('leadForm');
   var formLoaded=Date.now();
-  var FORM_ENDPOINT='https://formsubmit.co/ajax/info@nationalrow.com';  // leads emailed here
+  var FORM_ENDPOINT=window.NR_LEAD_ENDPOINT;  // leads emailed here
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(!form.checkValidity()){form.reportValidity();return;}

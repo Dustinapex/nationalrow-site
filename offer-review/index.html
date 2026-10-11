@@ -379,6 +379,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
+<script src="/assets/form-guard.js"></script>
 </head>
 <body>
 
@@ -776,7 +777,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0 28
   /* ---- form submit → FormSubmit.co → thank-you page ---- */
   var form=document.getElementById('reviewForm'), errBox=document.getElementById('formErr');
   /* TODO: confirm this matches the address your homepage form sends to */
-  var ENDPOINT='https://formsubmit.co/ajax/info@nationalrow.com';
+  var ENDPOINT=window.NR_LEAD_ENDPOINT;
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
