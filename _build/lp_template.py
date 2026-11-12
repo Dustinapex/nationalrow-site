@@ -38,8 +38,6 @@ from build import VIEWER, ROOT
 
 PHONE = "+14694847960"
 PHONE_H = "(469) 484-7960"
-PHONE2 = "+19563634144"
-PHONE2_H = "(956) 363-4144"
 CTA = "Free review by a senior consultant &rarr;"
 
 DEFAULTS = {
